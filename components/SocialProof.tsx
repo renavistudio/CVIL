@@ -43,31 +43,33 @@ const SocialProof: React.FC = () => {
                 </div>
 
                 {/* Mobile Carousel View */}
-                <div className="md:hidden relative h-[450px]">
-                    {testimonials.map((testimonial, idx) => (
-                        <div 
-                            key={testimonial.id}
-                            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-                        >
-                            <div className="flex flex-col justify-between h-full bg-offwhite p-10 border border-gray-200">
-                                <div className="flex space-x-1 mb-6">
-                                    {[1, 2, 3, 4, 5].map((star) => <Star key={star} className="w-4 h-4 fill-obsidian text-obsidian" />)}
-                                </div>
-                                <p className="text-2xl font-serif italic text-obsidian leading-relaxed mb-8">
-                                    {testimonial.text}
-                                </p>
-                                <div className="mt-auto">
-                                    <div className="h-px w-12 bg-gray-300 mb-4"></div>
-                                    <p className="text-xs font-sans font-bold uppercase tracking-widest text-gray-500">
-                                        {testimonial.author}
+                <div className="md:hidden">
+                    <div className="relative h-[450px]">
+                        {testimonials.map((testimonial, idx) => (
+                            <div 
+                                key={testimonial.id}
+                                className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                            >
+                                <div className="flex flex-col justify-between h-full bg-offwhite p-10 border border-gray-200">
+                                    <div className="flex space-x-1 mb-6">
+                                        {[1, 2, 3, 4, 5].map((star) => <Star key={star} className="w-4 h-4 fill-obsidian text-obsidian" />)}
+                                    </div>
+                                    <p className="text-2xl font-serif italic text-obsidian leading-relaxed mb-8">
+                                        {testimonial.text}
                                     </p>
+                                    <div className="mt-auto">
+                                        <div className="h-px w-12 bg-gray-300 mb-4"></div>
+                                        <p className="text-xs font-sans font-bold uppercase tracking-widest text-gray-500">
+                                            {testimonial.author}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                     
                     {/* Dots indicator */}
-                    <div className="absolute -bottom-8 left-0 right-0 flex justify-center space-x-2">
+                    <div className="mt-6 flex justify-center space-x-2">
                         {testimonials.map((_, idx) => (
                             <button 
                                 key={idx}
