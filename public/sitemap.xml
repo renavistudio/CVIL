@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cvil.mx/</loc>
-    <lastmod>2026-08-31</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://cvil.mx/images/fachada.jpeg</image:loc>
-      <image:title>Sede Corporativa CVIL en Zamora Michoacán</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://cvil.mx/images/socio_1.jpg</image:loc>
-      <image:title>Dr. Mario Enrique Cervantes Vieyra - Socio Penalista CVIL</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://cvil.mx/aviso-de-privacidad</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
