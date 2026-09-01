@@ -56,20 +56,6 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
             image: "images/dsc/DSC_6065_opt.webp"
         },
         {
-            id: 7,
-            name: "",
-            role: "Abogado",
-            description: "",
-            image: "images/dsc/DSC_6026_opt.webp"
-        },
-        {
-            id: 8,
-            name: "",
-            role: "Abogado",
-            description: "",
-            image: "images/dsc/DSC_6033_opt.webp"
-        },
-        {
             id: 12,
             name: "Lic. Cynthia Díaz",
             role: "Abogado",

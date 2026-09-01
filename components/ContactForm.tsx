@@ -11,7 +11,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
     const [matter, setMatter] = useState('Contratos Mercantiles y Acuerdos Comerciales');
     const [message, setMessage] = useState('');
 
-    const [errors, setErrors] = useState<{ name?: string; phone?: string; captcha?: string }>({});
+    const [errors, setErrors] = useState<{ name?: string; phone?: string;  }>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submittedSuccess, setSubmittedSuccess] = useState(false);
 
@@ -229,33 +229,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                 />
                             </div>
 
-                            {/* Math Captcha */}
-                            <div className="bg-gray-50 border border-gray-200 p-4 rounded-sm">
-                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
-                                    Verificación de Seguridad <span className="text-gold">*</span>
-                                </label>
-                                <div className="flex items-center space-x-3">
-                                    <span className="text-sm font-semibold text-obsidian bg-white px-3 py-2 border border-gray-300 rounded-sm">
-                                        ¿Cuánto es {captchaA} + {captchaB}?
-                                    </span>
-                                    <input
-                                        type="number"
-                                        value={captchaAnswer}
-                                        onChange={(e) => {
-                                            setCaptchaAnswer(e.target.value);
-                                            if (errors.captcha) setErrors(prev => ({ ...prev, captcha: undefined }));
-                                        }}
-                                        className={`w-24 bg-white border ${errors.captcha ? 'border-red-500 focus:border-red-600' : 'border-gray-300 focus:border-obsidian'} px-4 py-2 text-obsidian text-sm focus:outline-none transition-colors rounded-sm shadow-sm`}
-                                        placeholder="Total"
-                                    />
-                                </div>
-                                {errors.captcha && (
-                                    <p className="flex items-center text-xs text-red-600 font-medium mt-1.5 animate-fade-in">
-                                        <AlertCircle className="w-3.5 h-3.5 mr-1 shrink-0" />
-                                        {errors.captcha}
-                                    </p>
-                                )}
-                            </div>
+
 
                             {submittedSuccess && (
                                 <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-sm flex items-center space-x-2 animate-fade-in">
