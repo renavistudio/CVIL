@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- FAVICON & BRAND ICONS -->
-  <link rel="icon" type="image/png" href="/images/CVIL%20Logo.png" />
-  <link rel="apple-touch-icon" href="/images/CVIL%20Logo.png" />
+  <link rel="icon" type="image/png" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
 
   <!-- SEO PRIMARIO -->
   <title>CVIL | Derecho Corporativo | Abogados en Zamora, Michoacán</title>
@@ -22,7 +22,7 @@
   <meta property="og:title" content="CVIL | Derecho Corporativo" />
   <meta property="og:description"
     content="Protegemos su empresa, libertad y patrimonio con estrategia y firmeza en Zamora, Michoacán." />
-  <meta property="og:image" content="https://cvil.mx/images/og-image.jpg" />
+  <meta property="og:image" content="https://cvil.mx/images/og-image.webp" />
   <meta property="og:url" content="https://cvil.mx/" />
   <meta property="og:site_name" content="CVIL" />
 
@@ -31,7 +31,7 @@
   <meta name="twitter:title" content="CVIL | Derecho Corporativo" />
   <meta name="twitter:description"
     content="Especialistas en Derecho Corporativo y Penal. Resultados tangibles cuando más importa." />
-  <meta name="twitter:image" content="https://cvil.mx/images/og-image.jpg" />
+  <meta name="twitter:image" content="https://cvil.mx/images/og-image.webp" />
 
   <!-- ESTRUCTURA DE DATOS (JSON-LD) - 10/10 SEO -->
   <script type="application/ld+json">
@@ -80,104 +80,12 @@
     }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            obsidian: '#050505', // Negro profundo
-            charcoal: '#1a1a1a', // Gris oscuro elegante
-            stone: '#8c8c8c',    // Gris medio para textos secundarios
-            silver: '#e5e5e5',   // Gris claro para bordes finos
-            offwhite: '#f9f9f9', // Blanco roto
-            gold: '#B8860B',     // Dorado elegante para acentos y CTAs
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'], 
-          },
-          animation: {
-            'scroll': 'scroll 30s linear infinite',
-            'scroll-y': 'scrollY 20s linear infinite',
-            'fade-in': 'fadeIn 1s ease-out forwards',
-          },
-          keyframes: {
-            scroll: {
-              '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(-50%)' },
-            },
-            scrollY: {
-              '0%': { transform: 'translateY(0)' },
-              '100%': { transform: 'translateY(-50%)' },
-            },
-            fadeIn: {
-              '0%': { opacity: '0', transform: 'translateY(10px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 110px;
-    }
-
-    body {
-      background-color: #ffffff;
-      color: #050505;
-    }
-
-    .hide-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Clase para imágenes en escala de grises elegante con contraste */
-    .bw-filter {
-      filter: grayscale(100%) contrast(110%);
-      transition: filter 0.5s ease;
-    }
-
-    .bw-filter:hover {
-      filter: grayscale(0%) contrast(100%);
-    }
-
-    /* ===== 3D Flip Card ===== */
-    .flip-container {
-      perspective: 1500px;
-    }
-
-    .flip-inner {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    }
-
-    .flip-container:hover .flip-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-front,
-    .flip-back {
-      position: absolute;
-      inset: 0;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      overflow: hidden;
-    }
-
-    .flip-back {
-      transform: rotateY(180deg);
-    }
-  </style>
+  
+  
 </head>
 
 <body>
