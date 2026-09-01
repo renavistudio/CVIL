@@ -23,92 +23,53 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
             id: 3,
             name: "",
             role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            description: "",
             image: "images/dsc/DSC_6030_opt.webp"
         },
         {
             id: 4,
             name: "",
             role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            description: "",
             image: "images/dsc/DSC_6014_opt.webp"
         },
         {
             id: 5,
             name: "",
             role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            description: "",
             image: "images/dsc/DSC_6018_opt.webp"
         },
         {
             id: 6,
             name: "",
             role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            description: "",
             image: "images/dsc/DSC_6022_opt.webp"
         },
-        {
-            id: 7,
-            name: "",
-            role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            image: "images/dsc/DSC_6026_opt.webp"
-        },
-        {
-            id: 8,
-            name: "",
-            role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            image: "images/dsc/DSC_6033_opt.webp"
-        },
+        
+        
         {
             id: 9,
             name: "",
             role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            description: "",
             image: "images/dsc/DSC_6038_opt.webp"
         },
-        {
-            id: 10,
-            name: "",
-            role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            image: "images/dsc/DSC_6041_opt.webp"
-        },
+        
         {
             id: 11,
             name: "",
             role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            description: "",
             image: "images/dsc/DSC_6065_opt.webp"
         },
         {
             id: 12,
             name: "Lic. Cynthia Díaz",
             role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            description: "",
             image: "images/dsc/DSC_6075_opt.webp"
-        },
-        {
-            id: 13,
-            name: "",
-            role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            image: "images/dsc/DSC_6077_opt.webp"
-        },
-        {
-            id: 14,
-            name: "",
-            role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            image: "images/dsc/DSC_6080_opt.webp"
-        },
-        {
-            id: 15,
-            name: "",
-            role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            image: "images/dsc/DSC_6083_opt.webp"
         }
     ];
 
@@ -275,9 +236,11 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
                                     <p className="text-[#B8860B] font-semibold text-xs uppercase tracking-wider mb-5">
                                         {partners[currentIndex].role}
                                     </p>
-                                    <p className="text-charcoal/75 text-sm md:text-base font-light leading-relaxed max-w-lg mb-8">
-                                        {partners[currentIndex].description}
-                                    </p>
+                                    {partners[currentIndex].description && (
+                                        <p className="text-charcoal/75 text-sm md:text-base font-light leading-relaxed max-w-lg mb-8">
+                                            {partners[currentIndex].description}
+                                        </p>
+                                    )}
                                     {partners[currentIndex].link && (
                                         <div>
                                             <a

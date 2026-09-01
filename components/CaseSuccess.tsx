@@ -49,9 +49,7 @@ const CaseSuccess: React.FC = () => {
 
                 <div className="flex flex-col md:flex-row justify-between items-end mb-6 lg:mb-10 border-b border-gray-200 pb-8">
                     <div>
-                        <h2 className="text-4xl font-serif text-obsidian mb-2">
-                            Expedientes Recientes
-                        </h2>
+                        <h2 className="text-4xl font-serif text-obsidian mb-2">Expedientes Recientes</h2>
                         <p className="text-charcoal/60 text-sm">Algunos de nuestros casos recientes.</p>
                     </div>
 
