@@ -106,7 +106,7 @@ const CaseSuccess: React.FC = () => {
 
                 <div className="mt-12 text-center">
                     <p className="text-xs text-stone italic max-w-2xl mx-auto">
-                        * Debido a la naturaleza sensible de nuestros clientes, los detalles específicos y nombres se mantienen bajo estricto secreto profesional. Los casos mostrados son representativos de sentencias públicas.
+                        * En CVIL la confidencialidad es absoluta. Los casos presentados ilustran resoluciones reales omitiendo datos sensibles.
                     </p>
                 </div>
 
