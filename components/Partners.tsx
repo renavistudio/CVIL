@@ -47,22 +47,27 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
             description: "",
             image: "images/dsc/DSC_6022_opt.webp"
         },
-        
-        
-        {
-            id: 9,
-            name: "",
-            role: "Abogado",
-            description: "",
-            image: "images/dsc/DSC_6038_opt.webp"
-        },
-        
+
         {
             id: 11,
             name: "",
             role: "Abogado",
             description: "",
             image: "images/dsc/DSC_6065_opt.webp"
+        },
+        {
+            id: 7,
+            name: "",
+            role: "Abogado",
+            description: "",
+            image: "images/dsc/DSC_6026_opt.webp"
+        },
+        {
+            id: 8,
+            name: "",
+            role: "Abogado",
+            description: "",
+            image: "images/dsc/DSC_6033_opt.webp"
         },
         {
             id: 12,
@@ -178,7 +183,7 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
                         {/* Mobile edge arrows — overlaid on card borders */}
                         <button
                             onClick={handlePrev}
-                            className="lg:hidden absolute left-2 top-[32%] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
+                            className="lg:hidden absolute left-2 top-[220px] sm:top-[240px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
                             aria-label="Anterior"
                         >
                             <div className="bg-black/10 backdrop-blur-sm rounded-full p-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
@@ -187,7 +192,7 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
                         </button>
                         <button
                             onClick={handleNext}
-                            className="lg:hidden absolute right-2 top-[32%] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
+                            className="lg:hidden absolute right-2 top-[220px] sm:top-[240px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
                             aria-label="Siguiente"
                         >
                             <div className="bg-black/10 backdrop-blur-sm rounded-full p-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
@@ -267,5 +272,4 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
 };
 
 export default Partners;
-
 
