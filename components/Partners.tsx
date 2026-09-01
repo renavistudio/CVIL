@@ -15,8 +15,8 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
         {
             id: 2,
             name: "Lic. Alejandro Arriaga",
-            role: "Abogado",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            role: "Socio Fundador",
+            description: "Especialista en estructuración corporativa y planeación estratégica. Su visión ha sido fundamental para la consolidación de CVIL como firma líder en la región.",
             image: "images/dsc/DSC_6058_opt.webp"
         },
         {
