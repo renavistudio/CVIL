@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio de Encuadre por Persona — CVIL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Cinzel', serif; }
+        #canvasContainer { touch-action: none; }
+        
+        /* Composition Grids */
+        .grid-gold-3x3 {
+            background-image: 
+                linear-gradient(to right, rgba(184, 134, 11, 0.75) 1.5px, transparent 1.5px),
+                linear-gradient(to bottom, rgba(184, 134, 11, 0.75) 1.5px, transparent 1.5px);
+            background-size: 33.333% 33.333%;
+            box-shadow: inset 0 0 0 2px rgba(184, 134, 11, 0.9);
+        }
+
+        .grid-white-3x3 {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.65) 1.5px, transparent 1.5px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.65) 1.5px, transparent 1.5px);
+            background-size: 33.333% 33.333%;
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.85);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col">
+
+    <!-- Toast Notification -->
+    <div id="saveToast" class="fixed top-5 right-5 z-50 bg-emerald-600 text-white px-5 py-3.5 rounded-lg shadow-2xl flex items-center space-x-3 transition-all duration-300 transform translate-y-[-150%] opacity-0">
+        <div class="w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        <div>
+            <div class="font-bold text-sm" id="toastTitle">¡Recorte Guardado con Éxito!</div>
+            <div class="text-xs text-emerald-100" id="toastMsg">Se descargó la imagen lista para la web.</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-gray-900 border-b border-gray-800 px-6 py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded bg-[#B8860B] flex items-center justify-center font-serif font-bold text-gray-950 text-sm shadow">
+                CV
+            </div>
+            <div>
+                <h1 class="text-base font-bold tracking-wide text-white font-serif">Estudio de Encuadre por Persona</h1>
+                <p class="text-xs text-gray-400">Selecciona al miembro del equipo, elige su mejor foto y ajústala con cuadrícula</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-3">
+            <button id="saveBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center space-x-2 shadow-lg hover:shadow-emerald-900/50">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+                <span>Guardar Recorte</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="flex-1 flex flex-col xl:flex-row overflow-hidden">
+
+        <!-- Column 1: Team Members List (Organized by Person) -->
+        <div class="w-full xl:w-72 bg-gray-900/95 border-r border-gray-800 p-4 flex flex-col overflow-y-auto custom-scrollbar max-h-[calc(100vh-60px)]">
+            <div class="flex justify-between items-center mb-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#B8860B]">Personas del Equipo</span>
+                <span class="text-[10px] bg-gray-800 text-gray-300 px-2 py-0.5 rounded font-mono" id="memberCount">14</span>
+            </div>
+            <div class="space-y-1.5" id="membersList">
+                <!-- Dynamic Person Cards -->
+            </div>
+        </div>
+
+        <!-- Column 2: Selected Person's Candidate Photos & Controls -->
+        <div class="w-full xl:w-80 bg-gray-900/80 border-r border-gray-800 p-5 flex flex-col space-y-5 overflow-y-auto custom-scrollbar max-h-[calc(100vh-60px)]">
+            
+            <!-- Candidate Photos for Active Person -->
+            <div>
+                <div class="flex justify-between items-center mb-2">
+                    <label class="text-xs font-bold uppercase tracking-wider text-gray-300">
+                        Fotos Disponibles (<span id="photoCount" class="text-[#B8860B]">1</span>)
+                    </label>
+                    <span class="text-[10px] text-gray-400" id="photoSubtitle">Elige la definitiva</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2" id="candidatePhotosContainer">
+                    <!-- Dynamic Sub-thumbnails -->
+                </div>
+            </div>
+
+            <!-- Grid Guide Selector -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Cuadrícula Guía</label>
+                <div class="grid grid-cols-3 gap-1.5">
+                    <button class="grid-btn active bg-[#B8860B] text-gray-950 font-bold text-xs py-2 px-1 rounded border border-transparent" data-grid="gold3x3">Dorada 3x3</button>
+                    <button class="grid-btn bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs py-2 px-1 rounded border border-gray-700" data-grid="white3x3">Blanca 3x3</button>
+                    <button class="grid-btn bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs py-2 px-1 rounded border border-gray-700" data-grid="none">Ocultar</button>
+                </div>
+            </div>
+
+            <!-- Zoom & Alignment Controls -->
+            <div class="space-y-3 bg-gray-950/60 p-4 rounded-lg border border-gray-800">
+                <div>
+                    <div class="flex justify-between text-xs mb-1">
+                        <span class="text-gray-400 font-semibold">Zoom</span>
+                        <span id="zoomVal" class="text-[#B8860B] font-mono font-bold">1.0x</span>
+                    </div>
+                    <input type="range" id="zoomSlider" min="0.5" max="3" step="0.05" value="1" class="w-full accent-[#B8860B] cursor-pointer">
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <button id="resetCropBtn" class="bg-gray-800 hover:bg-gray-700 text-xs text-gray-300 py-2 rounded border border-gray-700 transition-colors">
+                        Centrar
+                    </button>
+                    <button id="fitHeightBtn" class="bg-gray-800 hover:bg-gray-700 text-xs text-gray-300 py-2 rounded border border-gray-700 transition-colors">
+                        Ajustar Alto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Upload option -->
+            <div class="pt-1">
+                <label class="w-full flex items-center justify-center px-4 py-2.5 bg-gray-800 hover:bg-gray-700 border border-dashed border-gray-600 rounded text-xs text-gray-300 cursor-pointer transition-colors space-x-2">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <span>Subir otra foto para esta persona</span>
+                    <input type="file" id="fileUpload" accept="image/*" class="hidden">
+                </label>
+            </div>
+
+        </div>
+
+        <!-- Column 3: Interactive Cropping Canvas with Active Grid -->
+        <div class="flex-1 bg-gray-950 p-6 flex flex-col items-center justify-center relative overflow-hidden select-none">
+            <div class="text-center mb-3">
+                <span class="text-xs text-gray-300 bg-gray-900 px-4 py-1.5 rounded-full border border-gray-800 shadow">
+                    💡 <strong>Arrastra</strong> con el mouse para mover • <strong>Rueda</strong> para hacer zoom
+                </span>
+            </div>
+
+            <!-- Canvas + Grid Wrapper -->
+            <div id="canvasContainer" class="relative bg-black rounded shadow-2xl border border-gray-800 overflow-hidden cursor-grab active:cursor-grabbing max-h-[58vh] flex items-center justify-center">
+                <canvas id="cropCanvas" class="max-w-full max-h-[56vh] block"></canvas>
+                
+                <!-- Active Grid Layer -->
+                <div id="gridOverlay" class="absolute inset-0 pointer-events-none grid-gold-3x3 transition-all duration-300"></div>
+            </div>
+        </div>
+
+        <!-- Column 4: 100% Exact Live Web Preview (Identical to Partners.tsx) -->
+        <div class="w-full xl:w-[460px] bg-gray-900 border-l border-gray-800 p-6 flex flex-col justify-between space-y-4 overflow-y-auto custom-scrollbar max-h-[calc(100vh-60px)]">
+            <div>
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-bold tracking-[0.2em] text-[#B8860B] uppercase">
+                        Vista Previa Exacta de la Web
+                    </span>
+                    <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded font-mono">
+                        En Vivo (1:1)
+                    </span>
+                </div>
+
+                <!-- Exact Replica of Website Card in Partners.tsx -->
+                <div class="w-full bg-[#fafaf9] rounded-sm border border-gray-200 shadow-xl overflow-hidden flex flex-row items-stretch min-h-[360px]">
+                    
+                    <!-- Left Full-Height Image Column (w-5/12) -->
+                    <div class="w-5/12 shrink-0 relative overflow-hidden bg-gray-200">
+                        <img id="livePreviewImg" src="" class="w-full h-full object-cover object-[center_top]" alt="Vista previa web">
+                    </div>
+
+                    <!-- Right Details Column (w-7/12) -->
+                    <div class="flex-1 flex flex-col justify-center p-6 text-left bg-[#fafaf9]">
+                        <h3 class="text-lg md:text-xl font-bold font-serif text-gray-900 tracking-wide uppercase mb-1" id="previewName">
+                            Nombre del Licenciado
+                        </h3>
+                        <p class="text-[#B8860B] font-semibold text-[11px] uppercase tracking-wider mb-3 leading-tight" id="previewRole">
+                            Socio / Especialidad
+                        </p>
+                        <p class="text-gray-700 text-xs font-light leading-relaxed mb-5" id="previewDesc">
+                            Descripción profesional y trayectoria legal estratégica.
+                        </p>
+                        <div id="previewBtnContainer">
+                            <span class="inline-block px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-gray-900 bg-transparent border border-gray-900 rounded-sm">
+                                Ver Currículum Completo
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Save Footer -->
+            <div class="space-y-3 pt-2">
+                <button id="saveBtnBottom" class="w-full bg-[#B8860B] hover:bg-[#d49b0b] text-gray-950 py-3 rounded text-xs font-bold uppercase tracking-widest transition-all flex items-center justify-center space-x-2 shadow-lg">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+                    <span>Guardar y Descargar Este Encuadre</span>
+                </button>
+                <div class="bg-gray-950/80 p-3 rounded text-[11px] text-gray-400 space-y-1">
+                    <div class="text-gray-200 font-semibold">Archivo de salida:</div>
+                    <div class="font-mono text-[#B8860B]" id="saveFilenameLabel">DSC_6043_opt.jpg</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+            {
+                id: "alejandro",
+                name: "Lic. Alejandro",
+                badge: "Socio Fundador",
+                role: "Socio Fundador | Derecho Corporativo y Estrategia Legal",
+                desc: "Especialista en estructuración jurídica empresarial, blindaje patrimonial y consultoría corporativa integral para personas físicas y morales de alto impacto.",
+                hasCV: false,
+                targetFilename: "DSC_6043_opt.jpg",
+                photos: [
+                    { id: "DSC_6043", label: "Traje Marino & Pisacorbata (Oficial)", url: "/images/dsc/DSC_6043_opt.jpg" },
+                    { id: "DSC_6047", label: "Apoyado en Repisa con Saco", url: "/images/dsc/DSC_6047_opt.jpg" },
+                    { id: "DSC_6049", label: "Camisa Blanca con Tirantes", url: "/images/dsc/DSC_6049_opt.jpg" },
+                    { id: "DSC_6051", label: "Tirantes apoyado en repisa", url: "/images/dsc/DSC_6051_opt.jpg" },
+                    { id: "DSC_6058", label: "Perfil leyendo Derecho Romano", url: "/images/dsc/DSC_6058_opt.jpg" }
+                ]
+            },
+            {
+                id: "fabian",
+                name: "Lic. Fabián",
+                badge: "Socio / Abogado Senior",
+                role: "Socio de Práctica — Litigio Mercantil y Estrategia Legal",
+                desc: "Especialista en litigación estratégica, controversias mercantiles de alta cuantía y blindaje corporativo empresarial.",
+                hasCV: false,
+                targetFilename: "DSC_6030_opt.jpg",
+                photos: [
+                    { id: "DSC_6030", label: "Foto Oficial (Traje Diplomático & Chaleco a Rayas)", url: "/images/dsc/DSC_6030_opt.jpg" }
+                ]
+            },
+            {
+                id: "mario",
+                name: "Dr. Mario Enrique Cervantes Vieyra",
+                badge: "Socio Fundador",
+                role: "Socio Fundador | Especialista en Sistema Penal Acusatorio",
+                desc: "Doctor en Derecho con sólida trayectoria en litigación estratégica y juicios orales. Representación de alto perfil ante instancias del fuero común y federal.",
+                hasCV: true,
+                targetFilename: "DSC_6010_opt.jpg",
+                photos: [
+                    { id: "DSC_6010", label: "Retrato Oficial Individual", url: "/images/dsc/DSC_6010_opt.jpg" },
+                    { id: "DSC_6061", label: "Dúo con Alejandro en Sala", url: "/images/dsc/DSC_6061_opt.jpg" }
+                ]
+            },
+            {
+                id: "maria_elena",
+                name: "Lic. María Elena R.",
+                badge: "Socia Directora",
+                role: "Socia Directora — Litigio Civil y Familiar",
+                desc: "Especialista en controversias civiles de alta complejidad, sucesiones y blindaje patrimonial familiar. Coordinación de estrategias procesales avanzadas.",
+                hasCV: false,
+                targetFilename: "DSC_6014_opt.jpg",
+                photos: [
+                    { id: "DSC_6014", label: "Foto Oficial (Saco Negro & Blusa Rosa)", url: "/images/dsc/DSC_6014_opt.jpg" }
+                ]
+            },
+            {
+                id: "claudia",
+                name: "Lic. Claudia M.",
+                badge: "Socia de Litigio",
+                role: "Socia de Litigio — Mercantil y Contractual",
+                desc: "Consultora legal especializada en estructuración contractual, recuperación de cartera y resolución estratégica de controversias comerciales.",
+                hasCV: false,
+                targetFilename: "DSC_6018_opt.jpg",
+                photos: [
+                    { id: "DSC_6018", label: "Foto Oficial (Traje Negro & Camisa Blanca)", url: "/images/dsc/DSC_6018_opt.jpg" }
+                ]
+            },
+            {
+                id: "carlos",
+                name: "Lic. Carlos V.",
+                badge: "Asociado Senior",
+                role: "Asociado Senior — Litigio y Amparo Constitucional",
+                desc: "Especialista en juicio de amparo directo e indirecto, litigio constitucional y defensa de derechos fundamentales ante tribunales federales.",
+                hasCV: false,
+                targetFilename: "DSC_6022_opt.jpg",
+                photos: [
+                    { id: "DSC_6022", label: "Foto Oficial (Saco Azul Claro Texturizado)", url: "/images/dsc/DSC_6022_opt.jpg" }
+                ]
+            },
+            {
+                id: "sofia",
+                name: "Lic. Sofía T.",
+                badge: "Consultora",
+                role: "Consultora en Cumplimiento Normativo y Corporativo",
+                desc: "Asesoría integral en gobierno corporativo, auditorías de cumplimiento legal y regularización de activos societarios.",
+                hasCV: false,
+                targetFilename: "DSC_6026_opt.jpg",
+                photos: [
+                    { id: "DSC_6026", label: "Foto Oficial (Traje Negro & Camisa Guinda)", url: "/images/dsc/DSC_6026_opt.jpg" }
+                ]
+            },
+            {
+                id: "valeria",
+                name: "Lic. Valeria G.",
+                badge: "Asociada",
+                role: "Asociada — Práctica Notarial e Inmobiliaria",
+                desc: "Gestión y regularización de inmuebles, operaciones de compraventa y enlace estratégico con notarías de la región.",
+                hasCV: false,
+                targetFilename: "DSC_6033_opt.jpg",
+                photos: [
+                    { id: "DSC_6033", label: "Foto Oficial (Saco Gris & Encaje)", url: "/images/dsc/DSC_6033_opt.jpg" }
+                ]
+            },
+            {
+                id: "fernanda",
+                name: "Lic. Fernanda S.",
+                badge: "Asociada",
+                role: "Asociada — Derecho Laboral y Corporativo",
+                desc: "Atención preventiva en relaciones laborales para empresas, negociación de contratos colectivos y defensa patronal estratégica.",
+                hasCV: false,
+                targetFilename: "DSC_6038_opt.jpg",
+                photos: [
+                    { id: "DSC_6038", label: "Foto Oficial (Saco Negro & Rayas)", url: "/images/dsc/DSC_6038_opt.jpg" }
+                ]
+            },
+            {
+                id: "daniel",
+                name: "Lic. Daniel P.",
+                badge: "Asociado",
+                role: "Asociado — Litigio Mercantil y Cobranza Judicial",
+                desc: "Especialista en cobranza ejecutiva mercantil, recuperación efectiva de cartera vencida y ejecución de garantías comerciales.",
+                hasCV: false,
+                targetFilename: "DSC_6041_opt.jpg",
+                photos: [
+                    { id: "DSC_6041", label: "Foto Oficial (Saco Azul Rey)", url: "/images/dsc/DSC_6041_opt.jpg" }
+                ]
+            },
+            {
+                id: "gabriela",
+                name: "Lic. Gabriela O.",
+                badge: "Consultora",
+                role: "Consultora en Blindaje y Gobierno Corporativo",
+                desc: "Consultoría jurídica en estructuración de sociedades mercantiles, actas de asamblea, estatutos sociales y acuerdos entre accionistas.",
+                hasCV: false,
+                targetFilename: "DSC_6065_opt.jpg",
+                photos: [
+                    { id: "DSC_6065", label: "Foto Oficial (Saco Azul Marino & Polo)", url: "/images/dsc/DSC_6065_opt.jpg" }
+                ]
+            },
+            {
+                id: "lorena",
+                name: "Lic. Lorena M.",
+                badge: "Especialista",
+                role: "Especialista en Contratos y Negociaciones Comerciales",
+                desc: "Diseño, redacción y auditoría de contratos mercantiles complejos, alianzas comerciales y convenios de confidencialidad y no competencia.",
+                hasCV: false,
+                targetFilename: "DSC_6075_opt.jpg",
+                photos: [
+                    { id: "DSC_6075", label: "Foto Oficial (Vestido Negro)", url: "/images/dsc/DSC_6075_opt.jpg" }
+                ]
+            },
+            {
+                id: "eduardo",
+                name: "Lic. Eduardo H.",
+                badge: "Asociado",
+                role: "Asociado — Derecho Fiscal y Administrativo",
+                desc: "Defensa jurídica ante autoridades administrativas y fiscales, impugnación de créditos fiscales y cumplimiento regulatorio empresarial.",
+                hasCV: false,
+                targetFilename: "DSC_6077_opt.jpg",
+                photos: [
+                    { id: "DSC_6077", label: "Foto Oficial (Traje Azul a Cuadros)", url: "/images/dsc/DSC_6077_opt.jpg" }
+                ]
+            },
+            {
+                id: "rodrigo",
+                name: "Lic. Rodrigo A.",
+                badge: "Asociado",
+                role: "Asociado — Litigio Corporativo y Juicio de Amparo",
+                desc: "Representación judicial ante juzgados de distrito y tribunales de circuito en controversias mercantiles y juicios constitucionales de amparo.",
+                hasCV: false,
+                targetFilename: "DSC_6080_opt.jpg",
+                photos: [
+                    { id: "DSC_6080", label: "Foto Oficial (Traje Marino Liso & Corbata Gris)", url: "/images/dsc/DSC_6080_opt.jpg" }
+                ]
+            },
+            {
+                id: "mateo",
+                name: "Lic. Mateo C.",
+                badge: "Asociado Jr.",
+                role: "Asociado Jr. — Cumplimiento y Operaciones Jurídicas",
+                desc: "Acompañamiento en trámites corporativos ante dependencias gubernamentales, registros públicos y seguimiento procesal continuo.",
+                hasCV: false,
+                targetFilename: "DSC_6083_opt.jpg",
+                photos: [
+                    { id: "DSC_6083", label: "Foto Oficial (Saco Vino / Borgoña)", url: "/images/dsc/DSC_6083_opt.jpg" }
+                ]
+            },
+            {
+                id: "hero_duo",
+                name: "Hero — Socios Mario & Alejandro",
+                badge: "Hero Principal",
+                role: "Sección Principal del Hero (Dúo de Socios)",
+                desc: "Fotografía principal del Hero en el encabezado de la web.",
+                hasCV: false,
+                targetFilename: "DSC_6061_opt.jpg",
+                photos: [
+                    { id: "DSC_6061", label: "Foto Dúo Mario & Alejandro", url: "/images/dsc/DSC_6061_opt.jpg" }
+                ]
+            }
+        ];
+
+        let activeMember = teamMembers[0];
+        let activePhoto = activeMember.photos[0];
+        let targetRatio = 0.8333; // 5:6
+        let currentImg = new Image();
+
+        let scale = 1;
+        let offsetX = 0;
+        let offsetY = 0;
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragStartY = 0;
+
+        const canvas = document.getElementById('cropCanvas');
+        const ctx = canvas.getContext('2d');
+        const zoomSlider = document.getElementById('zoomSlider');
+        const zoomVal = document.getElementById('zoomVal');
+        const livePreviewImg = document.getElementById('livePreviewImg');
+        const previewName = document.getElementById('previewName');
+        const previewRole = document.getElementById('previewRole');
+        const previewDesc = document.getElementById('previewDesc');
+        const previewBtnContainer = document.getElementById('previewBtnContainer');
+        const gridOverlay = document.getElementById('gridOverlay');
+        const saveToast = document.getElementById('saveToast');
+        const saveFilenameLabel = document.getElementById('saveFilenameLabel');
+        const photoCount = document.getElementById('photoCount');
+        const candidatePhotosContainer = document.getElementById('candidatePhotosContainer');
+
+        // Render Members List
+        const membersList = document.getElementById('membersList');
+        function renderMembersList() {
+            membersList.innerHTML = '';
+            teamMembers.forEach(member => {
+                const isSelected = member.id === activeMember.id;
+                const card = document.createElement('div');
+                card.className = `p-3 rounded cursor-pointer border transition-all flex items-center justify-between ${isSelected ? 'bg-gray-800 border-[#B8860B] ring-1 ring-[#B8860B]/40' : 'bg-gray-950/60 border-gray-800 hover:border-gray-700'}`;
+                
+                const photoCountBadge = member.photos.length > 1 
+                    ? `<span class="bg-[#B8860B]/20 text-[#B8860B] border border-[#B8860B]/40 text-[10px] font-bold px-1.5 py-0.5 rounded">${member.photos.length} fotos</span>` 
+                    : '';
+
+                card.innerHTML = `
+                    <div class="flex items-center space-x-2.5 overflow-hidden">
+                        <img src="${member.photos[0].url}" class="w-8 h-8 rounded object-cover shrink-0 border border-gray-700">
+                        <div class="truncate">
+                            <div class="text-xs font-bold text-gray-200 truncate ${isSelected ? 'text-[#B8860B]' : ''}">${member.name}</div>
+                            <div class="text-[10px] text-gray-400 truncate">${member.badge}</div>
+                        </div>
+                    </div>
+                    ${photoCountBadge}
+                `;
+                card.onclick = () => selectMember(member);
+                membersList.appendChild(card);
+            });
+        }
+
+        function selectMember(member) {
+            activeMember = member;
+            activePhoto = member.photos[0];
+            renderMembersList();
+            renderCandidatePhotos();
+            updatePreviewDetails();
+            loadImage(activePhoto.url);
+        }
+
+        function renderCandidatePhotos() {
+            photoCount.textContent = activeMember.photos.length;
+            candidatePhotosContainer.innerHTML = '';
+            
+            activeMember.photos.forEach((photo, idx) => {
+                const isPhotoSelected = photo.id === activePhoto.id;
+                const item = document.createElement('div');
+                item.className = `cursor-pointer rounded overflow-hidden border-2 transition-all p-1 bg-gray-950 flex flex-col ${isPhotoSelected ? 'border-[#B8860B] ring-2 ring-[#B8860B]/30' : 'border-gray-800 hover:border-gray-600'}`;
+                item.innerHTML = `
+                    <div class="aspect-[3/4] overflow-hidden rounded mb-1 bg-gray-900">
+                        <img src="${photo.url}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-[10px] font-medium text-gray-300 truncate px-1" title="${photo.label}">${photo.label}</div>
+                    <div class="text-[9px] font-mono text-gray-500 px-1">${photo.id}</div>
+                `;
+                item.onclick = () => selectCandidatePhoto(photo);
+                candidatePhotosContainer.appendChild(item);
+            });
+        }
+
+        function selectCandidatePhoto(photo) {
+            activePhoto = photo;
+            renderCandidatePhotos();
+            loadImage(photo.url);
+        }
+
+        function updatePreviewDetails() {
+            previewName.textContent = activeMember.name;
+            previewRole.textContent = activeMember.role;
+            previewDesc.textContent = activeMember.desc;
+            previewBtnContainer.style.display = activeMember.hasCV ? 'block' : 'none';
+            saveFilenameLabel.textContent = activeMember.targetFilename || `${activePhoto.id}_opt.jpg`;
+        }
+
+        function loadImage(src) {
+            currentImg = new Image();
+            currentImg.onload = () => {
+                resetCrop();
+                draw();
+            };
+            currentImg.onerror = () => {
+                // Fallback attempt without leading slash if failed
+                if (src.startsWith('/')) {
+                    currentImg.src = src.substring(1);
+                } else {
+                    currentImg.src = '/' + src;
+                }
+            };
+            currentImg.src = src;
+        }
+
+        function resetCrop() {
+            const baseH = 800;
+            const baseW = Math.round(baseH * targetRatio);
+            canvas.width = baseW;
+            canvas.height = baseH;
+
+            const scaleW = canvas.width / currentImg.naturalWidth;
+            const scaleH = canvas.height / currentImg.naturalHeight;
+            scale = Math.max(scaleW, scaleH);
+
+            zoomSlider.value = 1;
+            zoomSlider.min = 0.5;
+            zoomSlider.max = 3;
+            zoomVal.textContent = "1.0x";
+
+            offsetX = (canvas.width - currentImg.naturalWidth * scale) / 2;
+            offsetY = 0;
+
+            draw();
+        }
+
+        function draw() {
+            if (!currentImg.complete || !currentImg.naturalWidth) return;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(
+                currentImg,
+                offsetX,
+                offsetY,
+                currentImg.naturalWidth * scale,
+                currentImg.naturalHeight * scale
+            );
+
+            // Update live preview in 1:1 replica card
+            livePreviewImg.src = canvas.toDataURL('image/jpeg', 0.9);
+        }
+
+        // Dragging
+        canvas.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            dragStartX = e.clientX - offsetX;
+            dragStartY = e.clientY - offsetY;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            offsetX = e.clientX - dragStartX;
+            offsetY = e.clientY - dragStartY;
+            draw();
+        });
+
+        window.addEventListener('mouseup', () => { isDragging = false; });
+
+        // Wheel Zoom
+        canvas.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const zoomFactor = e.deltaY < 0 ? 1.05 : 0.95;
+            const mouseX = e.offsetX;
+            const mouseY = e.offsetY;
+
+            const newScale = scale * zoomFactor;
+            if (newScale > 0.2 && newScale < 10) {
+                offsetX = mouseX - (mouseX - offsetX) * zoomFactor;
+                offsetY = mouseY - (mouseY - offsetY) * zoomFactor;
+                scale = newScale;
+                zoomSlider.value = (scale / (canvas.width / currentImg.naturalWidth)).toFixed(2);
+                zoomVal.textContent = parseFloat(zoomSlider.value).toFixed(1) + "x";
+                draw();
+            }
+        });
+
+        // Zoom Slider
+        zoomSlider.addEventListener('input', (e) => {
+            const val = parseFloat(e.target.value);
+            const baseScale = Math.max(canvas.width / currentImg.naturalWidth, canvas.height / currentImg.naturalHeight);
+            const newScale = baseScale * val;
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            offsetX = centerX - (centerX - offsetX) * (newScale / scale);
+            offsetY = centerY - (centerY - offsetY) * (newScale / scale);
+            scale = newScale;
+            zoomVal.textContent = val.toFixed(1) + "x";
+            draw();
+        });
+
+        // Grid Buttons
+        document.querySelectorAll('.grid-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.grid-btn').forEach(b => {
+                    b.className = 'grid-btn bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs py-2 px-1 rounded border border-gray-700';
+                });
+                btn.className = 'grid-btn active bg-[#B8860B] text-gray-950 font-bold text-xs py-2 px-1 rounded border border-transparent';
+                
+                const gridType = btn.getAttribute('data-grid');
+                gridOverlay.className = 'absolute inset-0 pointer-events-none transition-all duration-300';
+                
+                if (gridType === 'gold3x3') {
+                    gridOverlay.classList.add('grid-gold-3x3');
+                } else if (gridType === 'white3x3') {
+                    gridOverlay.classList.add('grid-white-3x3');
+                } else {
+                    gridOverlay.classList.add('opacity-0');
+                }
+            });
+        });
+
+        document.getElementById('resetCropBtn').addEventListener('click', resetCrop);
+        document.getElementById('fitHeightBtn').addEventListener('click', () => {
+            scale = canvas.height / currentImg.naturalHeight;
+            offsetX = (canvas.width - currentImg.naturalWidth * scale) / 2;
+            offsetY = 0;
+            draw();
+        });
+
+        // Save Function
+        function saveCroppedImage() {
+            const filename = activeMember.targetFilename || `${activePhoto.id}_opt.jpg`;
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/jpeg', 0.95);
+            link.click();
+
+            // Show Toast Notification
+            document.getElementById('toastMsg').textContent = `Se descargó "${filename}" para ${activeMember.name}.`;
+            saveToast.classList.remove('translate-y-[-150%]', 'opacity-0');
+            saveToast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                saveToast.classList.remove('translate-y-0', 'opacity-100');
+                saveToast.classList.add('translate-y-[-150%]', 'opacity-0');
+            }, 3500);
+        }
+
+        document.getElementById('saveBtn').addEventListener('click', saveCroppedImage);
+        document.getElementById('saveBtnBottom').addEventListener('click', saveCroppedImage);
+
+        // Upload custom photo for active member
+        document.getElementById('fileUpload').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const newPhoto = {
+                        id: "subida_" + Date.now(),
+                        label: file.name.replace(/\.[^/.]+$/, ""),
+                        url: event.target.result
+                    };
+                    activeMember.photos.unshift(newPhoto);
+                    renderCandidatePhotos();
+                    selectCandidatePhoto(newPhoto);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Initialize
+        selectMember(teamMembers[0]);
+    </script>
+</body>
+</html>
