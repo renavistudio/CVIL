@@ -84,17 +84,17 @@ const CaseSuccess: React.FC = () => {
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-8 flex-1 flex flex-col">
-                                    <div className="flex justify-between items-start mb-4">
-                                        <h3 className="text-2xl font-serif text-obsidian group-hover:translate-x-1 transition-transform duration-300 leading-tight max-w-[80%]">
+                                <div className="p-6 md:p-8 flex-1 flex flex-col">
+                                    <div className="flex flex-col md:flex-row md:justify-between items-start gap-4 mb-4">
+                                        <h3 className="text-xl md:text-2xl font-serif text-obsidian group-hover:translate-x-1 transition-transform duration-300 leading-tight md:max-w-[70%]">
                                             {c.title}
                                         </h3>
-                                        <span className="text-[10px] font-bold text-green-700 bg-green-50 px-2 py-1 rounded flex items-center gap-1 border border-green-100 whitespace-nowrap">
-                                            <CheckCircle2 className="w-3 h-3" /> {c.result}
+                                        <span className="text-[10px] font-bold text-green-700 bg-green-50 px-2 py-1 rounded flex items-center gap-1 border border-green-100 self-start md:self-auto whitespace-nowrap">
+                                            <CheckCircle2 className="w-3 h-3 shrink-0" /> {c.result}
                                         </span>
                                     </div>
 
-                                    <p className="text-charcoal/70 text-sm leading-relaxed mb-8 border-l-2 border-gray-100 pl-4 group-hover:border-obsidian transition-colors flex-1">
+                                    <p className="text-charcoal/70 text-sm leading-relaxed mb-6 border-l-2 border-gray-100 pl-4 group-hover:border-obsidian transition-colors flex-1">
                                         {c.description}
                                     </p>
 
