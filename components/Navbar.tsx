@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-2.5">
+    <nav className="fixed w-full animate-fade-in z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-2.5">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-50">
         <div className="flex justify-between items-center">
           {/* Logo - Typographic & Elegant */}

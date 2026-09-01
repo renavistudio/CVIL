@@ -29,6 +29,9 @@ const Hero: React.FC = () => {
 
                     {/* Photo of the partners */}
                     <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
                         className="relative z-10 px-5 pt-6"
                     >
                         <div className="relative overflow-hidden rounded-sm">
@@ -47,6 +50,9 @@ const Hero: React.FC = () => {
 
                     {/* Text content */}
                     <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="relative z-10 px-6 pt-8 pb-4 flex-1 flex flex-col"
                     >
                         <h1 className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
@@ -91,7 +97,13 @@ const Hero: React.FC = () => {
                     <div className="grid grid-cols-12 gap-12 w-full items-center">
 
                         {/* Left: Typography */}
-                        <motion.div style={{ y: yText, opacity }} className="col-span-6 z-20">
+                        <motion.div 
+                            style={{ y: yText, opacity }} 
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="col-span-6 z-20"
+                        >
 
                             <h1 className="text-[6.8rem] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-8 mix-blend-multiply">
                                 Ganar es <br />
@@ -105,6 +117,9 @@ const Hero: React.FC = () => {
                             </div>
 
                             <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                                 className="mt-12 flex flex-wrap gap-6 items-center"
                             >
                                 <a href="https://wa.me/523511277317?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal." target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between bg-gold text-white px-8 py-4 min-w-[200px] hover:bg-obsidian transition-all duration-300 shadow-lg hover:shadow-xl">
@@ -120,6 +135,9 @@ const Hero: React.FC = () => {
                         {/* Right: Visual / Featured Partners Photo */}
                         <div className="col-span-6 relative h-[70vh] min-h-[520px] max-h-[680px]">
                             <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1.2, ease: "easeOut" }}
                                 className="w-full h-full overflow-hidden shadow-2xl cursor-pointer rounded-sm"
                                 onClick={() => setSelectedImage('images/dsc/DSC_6061_opt.webp')}
                             >
