@@ -55,10 +55,10 @@ const Hero: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="relative z-10 px-6 pt-8 pb-4 flex-1 flex flex-col"
                     >
-                        <h1 className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
+                        <h2 className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
                             Ganar es <br />
                             <span className="italic text-gray-400 font-light">lo único.</span>
-                        </h1>
+                        </h2>
 
                         <p className="text-base text-charcoal/75 font-light leading-relaxed mb-8 max-w-sm">
                             Protegemos su empresa, sus operaciones y la estabilidad de su negocio.
@@ -105,10 +105,10 @@ const Hero: React.FC = () => {
                             className="col-span-6 z-20"
                         >
 
-                            <h1 className="text-[6.8rem] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-8 mix-blend-multiply">
+                            <h2 className="text-[6.8rem] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-8 mix-blend-multiply">
                                 Ganar es <br />
                                 <span className="italic text-gray-400 font-light">lo único.</span>
-                            </h1>
+                            </h2>
 
                             <div className="max-w-2xl mt-4">
                                 <p className="text-xl text-charcoal/80 font-light leading-relaxed">
