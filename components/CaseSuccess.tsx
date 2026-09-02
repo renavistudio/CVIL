@@ -58,9 +58,13 @@ const CaseSuccess: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {cases.map((c, idx) => {
                         return (
-                            <div
-                                key={c.id}}}}}
-                                className="group bg-white border border-gray-200 hover:border-obsidian hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col"
+                            <motion.div
+                                key={c.id}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: idx * 0.1 }}
+                                viewport={{ once: true }}
+                                className="opacity-0 group bg-white border border-gray-200 hover:border-obsidian hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col"
                             >
                                 {/* Image Header */}
                                 <div className="h-48 overflow-hidden relative">
@@ -93,7 +97,7 @@ const CaseSuccess: React.FC = () => {
                                     </p>
 
                                 </div>
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </div>

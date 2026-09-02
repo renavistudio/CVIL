@@ -12,8 +12,12 @@ const Location: React.FC = () => {
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
 
                     {/* Left: Info */}
-                    <div}}}}
-                        className="w-full lg:w-1/3 flex flex-col pt-8"
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="opacity-0 w-full lg:w-1/3 flex flex-col pt-8"
                     >
                         <div className="flex items-center gap-4 mb-8">
                             <div className="h-[1px] w-12 bg-obsidian"></div>
@@ -48,11 +52,15 @@ const Location: React.FC = () => {
                             <span className="text-xs font-bold uppercase tracking-widest">Abrir en Mapa</span>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </a>
-                    </div>
+                    </motion.div>
 
                     {/* Right: Map */}
-                    <div}}}}
-                        className="w-full lg:w-2/3 h-[500px] border border-gray-200 bg-gray-100 p-2 shadow-2xl relative group overflow-hidden"
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="opacity-0 w-full lg:w-2/3 h-[500px] border border-gray-200 bg-gray-100 p-2 shadow-2xl relative group overflow-hidden"
                     >
                         {/* Map Overlay to prevent accidental scrolling unless clicked (optional, can just use pointer-events config on iframe) */}
                         <div className="absolute inset-0 bg-obsidian/5 pointer-events-none z-10 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -67,7 +75,7 @@ const Location: React.FC = () => {
                             referrerPolicy="no-referrer-when-downgrade"
                             className="bg-gray-100 contrast-[1.05] opacity-90 hover:opacity-100 transition-all duration-700 w-full h-full object-cover"
                         ></iframe>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
