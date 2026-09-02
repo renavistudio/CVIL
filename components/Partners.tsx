@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
-    const partners = [
+        const partners = [
         {
             id: 1,
             name: "Dr. Mario Enrique Cervantes Vieyra",
@@ -21,46 +21,66 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
         },
         {
             id: 3,
-            name: "",
+            name: "Lic. Julian Lora",
             role: "Abogado",
             description: "",
             image: "images/dsc/DSC_6030_opt.webp"
         },
         {
             id: 4,
-            name: "",
+            name: "Lic. Cristian Flores",
+            role: "Abogado",
+            description: "",
+            image: "images/dsc/DSC_6022_opt.webp"
+        },
+        {
+            id: 5,
+            name: "Lic. Fabiola Sánchez",
             role: "Abogado",
             description: "",
             image: "images/dsc/DSC_6014_opt.webp"
         },
         {
-            id: 5,
-            name: "",
-            role: "Abogado",
-            description: "",
-            image: "images/dsc/DSC_6018_opt.webp"
-        },
-        {
             id: 6,
-            name: "",
-            role: "Abogado",
-            description: "",
-            image: "images/dsc/DSC_6022_opt.webp"
-        },
-
-        {
-            id: 11,
-            name: "",
+            name: "Lic. Martha León",
             role: "Abogado",
             description: "",
             image: "images/dsc/DSC_6065_opt.webp"
         },
         {
-            id: 12,
+            id: 7,
+            name: "Lic. Leticia Herrera",
+            role: "Abogado",
+            description: "",
+            image: "images/dsc/DSC_6018_opt.webp"
+        },
+        {
+            id: 8,
             name: "Lic. Cynthia Díaz",
             role: "Abogado",
             description: "",
             image: "images/dsc/DSC_6075_opt.webp"
+        },
+        {
+            id: 9,
+            name: "",
+            role: "Abogado",
+            description: "",
+            image: "images/dsc/DSC_6026_opt.webp"
+        },
+        {
+            id: 10,
+            name: "",
+            role: "Abogado",
+            description: "",
+            image: "images/dsc/DSC_6033_opt.webp"
+        },
+        {
+            id: 11,
+            name: "",
+            role: "Abogado",
+            description: "",
+            image: "images/dsc/DSC_6038_opt.webp"
         }
     ];
 

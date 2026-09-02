@@ -278,7 +278,7 @@ const Services: React.FC = () => {
                                     </div>
 
                                     <a
-                                        href={`https://wa.me/523511277317?text=${encodeURIComponent("Hola, buen día. Vi su página web y busco asesoría especializada en " + selected.title + ". Me gustaría agendar una cita.")}`}
+                                        href={`https://wa.me/524432735543?text=${encodeURIComponent("Hola, buen día. Vi su página web y busco asesoría especializada en " + selected.title + ". Me gustaría agendar una cita.")}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         onClick={() => setSelected(null)}

@@ -19,7 +19,7 @@ const ChatWidget: React.FC = () => {
 
       {/* Botón de WhatsApp */}
       <a
-        href="https://wa.me/523511277317?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20legal."
+        href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20legal."
         target="_blank"
         rel="noopener noreferrer"
         className="h-[60px] w-[60px] rounded-full bg-[#25D366] hover:bg-[#1ebe5d] shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)] flex items-center justify-center text-white transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 block"

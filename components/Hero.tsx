@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
 
                         {/* CTA Button - full width golden */}
                         <a
-                            href="https://wa.me/523511277317?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
+                            href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-center justify-center gap-3 bg-[#B8860B] hover:bg-[#9a7209] text-white w-full py-4 rounded-sm transition-all duration-300 shadow-lg"
@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
 
                             <div className="mt-12 flex flex-wrap gap-6 items-center animate-fade-in"
                             >
-                                <a href="https://wa.me/523511277317?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal." target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between bg-gold text-white px-8 py-4 min-w-[200px] hover:bg-obsidian transition-all duration-300 shadow-lg hover:shadow-xl">
+                                <a href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal." target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between bg-gold text-white px-8 py-4 min-w-[200px] hover:bg-obsidian transition-all duration-300 shadow-lg hover:shadow-xl">
                                     <span className="text-xs font-bold uppercase tracking-widest">Agendar Consulta</span>
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </a>

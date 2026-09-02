@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <a
-              href="https://wa.me/523511277317?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
+              href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
               target="_blank"
               rel="noopener noreferrer"
               className="px-7 py-2.5 text-xs uppercase tracking-widest font-semibold text-white bg-obsidian border border-obsidian hover:bg-white hover:text-obsidian transition-all duration-300 rounded-sm"
@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
                 </a>
               ))}
               <a
-                href="https://wa.me/523511277317?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
+                href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}

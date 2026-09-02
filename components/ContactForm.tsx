@@ -44,7 +44,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
         if (!phone.trim()) {
             newErrors.phone = 'Por favor ingrese su número de teléfono o WhatsApp.';
         } else if (cleanPhone.length < 10) {
-            newErrors.phone = 'Ingrese un número válido a 10 dígitos (ej. 351 123 4567).';
+            newErrors.phone = 'Ingrese un número válido a 10 dígitos (ej. 443 123 4567).';
         } else if (cleanPhone.length > 13) {
             newErrors.phone = 'El número es demasiado largo.';
         } else if (invalidPhones.includes(cleanPhone) || /^(\d)\1{9}$/.test(cleanPhone)) {
@@ -69,7 +69,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
         setIsSubmitting(true);
 
         const waMessage = `Hola, mi nombre es ${name.trim()}. Vi su página web y los contacto para solicitar una consulta sobre *${matter}*.\n\nTeléfono de contacto: ${phone.trim()}${message.trim() ? `\nResumen del caso: ${message.trim()}` : ''}`;
-        const waUrl = `https://wa.me/523511277317?text=${encodeURIComponent(waMessage)}`;
+        const waUrl = `https://wa.me/524432735543?text=${encodeURIComponent(waMessage)}`;
 
         setTimeout(() => {
             window.open(waUrl, '_blank');
@@ -116,8 +116,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                 <Phone className="w-5 h-5 text-gold mt-1" />
                                 <div>
                                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Línea Directa & Urgencias 24/7</p>
-                                    <a href="tel:+523511277317" className="text-xl font-serif text-white hover:text-gold transition-colors block mb-1">
-                                        +52 (351) 127-7317
+                                    <a href="tel:+524432735543" className="text-xl font-serif text-white hover:text-gold transition-colors block mb-1">
+                                        +52 (443) 273-5543
                                     </a>
                                     <p className="text-[10px] text-gray-400">Atención profesional inmediata.</p>
                                 </div>
@@ -177,7 +177,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                             if (errors.phone) setErrors(prev => ({ ...prev, phone: undefined }));
                                         }}
                                         className={`w-full bg-white border ${errors.phone ? 'border-red-500 focus:border-red-600' : 'border-gray-300 focus:border-obsidian'} px-4 py-3 text-obsidian text-sm focus:outline-none transition-colors rounded-sm shadow-sm`}
-                                        placeholder="Ej. 351 127 7317"
+                                        placeholder="Ej. 443 273 5543"
                                     />
                                     {errors.phone && (
                                         <p className="flex items-center text-xs text-red-600 font-medium mt-1.5 animate-fade-in">
