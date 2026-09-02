@@ -17,16 +17,16 @@ const Location: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="opacity-0 w-full lg:w-1/3 flex flex-col pt-8"
+                        className="w-full lg:w-1/3 flex flex-col pt-8"
                     >
-                        <div className="opacity-0 flex items-center gap-4 mb-8">
-                            <div className="opacity-0 h-[1px] w-12 bg-obsidian"></div>
-                            <span className="opacity-0 text-xs font-bold tracking-[0.3em] text-stone uppercase">
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="h-[1px] w-12 bg-obsidian"></div>
+                            <span className="text-xs font-bold tracking-[0.3em] text-stone uppercase">
                                 Nuestras Instalaciones
                             </span>
                         </div>
 
-                        <h2 className="opacity-0 text-5xl lg:text-7xl font-serif text-obsidian leading-[0.9] tracking-tight mb-10">
+                        <h2 className="text-5xl lg:text-7xl font-serif text-obsidian leading-[0.9] tracking-tight mb-10">
                             CVIL.
                         </h2>
 
@@ -60,10 +60,10 @@ const Location: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="opacity-0 w-full lg:w-2/3 h-[500px] border border-gray-200 bg-gray-100 p-2 shadow-2xl relative group overflow-hidden"
+                        className="w-full lg:w-2/3 h-[500px] border border-gray-200 bg-gray-100 p-2 shadow-2xl relative group overflow-hidden"
                     >
                         {/* Map Overlay to prevent accidental scrolling unless clicked (optional, can just use pointer-events config on iframe) */}
-                        <div className="opacity-0 absolute inset-0 bg-obsidian/5 pointer-events-none z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                        <div className="absolute inset-0 bg-obsidian/5 pointer-events-none z-10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                         <iframe
                             src="https://maps.google.com/maps?q=C.+Suiza+721,+La+Luneta,+Zamora,+Michoacan&t=&z=16&ie=UTF8&iwloc=&output=embed"

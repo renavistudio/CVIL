@@ -124,15 +124,15 @@ const Services: React.FC = () => {
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="opacity-0 flex items-center gap-4 mb-4"
+                                className="flex items-center gap-4 mb-4"
                             >
-                                <div className="opacity-0 h-[1px] w-12 bg-white/50"></div>
-                                <span className="opacity-0 text-xs font-bold tracking-[0.3em] text-white/60 uppercase">
+                                <div className="h-[1px] w-12 bg-white/50"></div>
+                                <span className="text-xs font-bold tracking-[0.3em] text-white/60 uppercase">
                                     Nuestros Servicios
                                 </span>
                             </motion.div>
-                            <h2 className="opacity-0 text-5xl md:text-7xl font-serif text-white leading-[0.9] tracking-tight">
-                                Especialidades <span className="opacity-0 text-stone italic font-light">Legales.</span>
+                            <h2 className="text-5xl md:text-7xl font-serif text-white leading-[0.9] tracking-tight">
+                                Especialidades <span className="text-stone italic font-light">Legales.</span>
                             </h2>
                         </div>
                     </div>
@@ -146,16 +146,16 @@ const Services: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1, duration: 0.6 }}
-                                className={`opacity-0 group relative h-[420px] bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-8 transition-all duration-500 hover:border-white/20 ${!showAllMobile && idx >= 3 ? 'hidden md:flex' : 'flex'}`}
+                                className={`group relative h-[420px] bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-8 transition-all duration-500 hover:border-white/20 ${!showAllMobile && idx >= 3 ? 'hidden md:flex' : 'flex'}`}
                             >
                                 {/* BG image */}
-                                <div className="opacity-0 absolute inset-0">
+                                <div className="absolute inset-0">
                                     <img
                                         src={service.image}
                                         alt={service.title}
-                                        className="opacity-0 w-full h-full object-cover opacity-30 mix-blend-overlay group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
+                                        className="w-full h-full object-cover opacity-30 mix-blend-overlay group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
                                     />
-                                    <div className="opacity-0 absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
                                 </div>
 
                                 {/* Big number */}
@@ -222,7 +222,7 @@ const Services: React.FC = () => {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.25 }}
                             onClick={() => setSelected(null)}
-                            className="opacity-0 fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+                            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
                         />
 
                         {/* Modal */}
@@ -232,15 +232,15 @@ const Services: React.FC = () => {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
                             transition={{ duration: 0.3, type: 'spring', stiffness: 300, damping: 30 }}
-                            className="opacity-0 fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+                            className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
                         >
-                            <div className="opacity-0 bg-[#0f0f0f] border border-white/15 w-full max-w-lg relative pointer-events-auto shadow-2xl">
+                            <div className="bg-[#0f0f0f] border border-white/15 w-full max-w-lg relative pointer-events-auto shadow-2xl">
 
                                 {/* Modal Header without image */}
-                                <div className="opacity-0 pt-8 px-6 pb-2">
-                                    <div className="opacity-0 flex items-center gap-3 mb-2">
-                                        <selected.icon className="opacity-0 w-8 h-8 text-white/80" strokeWidth={1.5} />
-                                        <span className="opacity-0 text-[10px] font-bold uppercase tracking-widest text-stone">{selected.category}</span>
+                                <div className="pt-8 px-6 pb-2">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <selected.icon className="w-8 h-8 text-white/80" strokeWidth={1.5} />
+                                        <span className="text-[10px] font-bold uppercase tracking-widest text-stone">{selected.category}</span>
                                     </div>
                                 </div>
 
@@ -268,10 +268,10 @@ const Services: React.FC = () => {
                                                     initial={{ opacity: 0, x: -8 }}
                                                     animate={{ opacity: 1, x: 0 }}
                                                     transition={{ delay: i * 0.04 }}
-                                                    className="opacity-0 flex items-start text-white/80 text-sm font-light"
+                                                    className="flex items-start text-white/80 text-sm font-light"
                                                 >
-                                                    <span className="opacity-0 text-stone mr-3 mt-1 shrink-0">›</span>
-                                                    <span className="opacity-0 leading-snug">{detail}</span>
+                                                    <span className="text-stone mr-3 mt-1 shrink-0">›</span>
+                                                    <span className="leading-snug">{detail}</span>
                                                 </motion.li>
                                             ))}
                                         </ul>
