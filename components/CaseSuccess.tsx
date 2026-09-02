@@ -64,7 +64,7 @@ const CaseSuccess: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1 }}
                                 viewport={{ once: true }}
-                                className="group bg-white border border-gray-200 hover:border-obsidian hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col"
+                                className="opacity-0 group bg-white border border-gray-200 hover:border-obsidian hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col"
                             >
                                 {/* Image Header */}
                                 <div className="h-48 overflow-hidden relative">
