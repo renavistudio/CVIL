@@ -121,7 +121,7 @@ const Services: React.FC = () => {
                     <div className="flex flex-col md:flex-row justify-between items-end mb-6 lg:mb-10 border-b border-white/10 pb-8">
                         <div className="max-w-2xl">
                             <motion.div
-                                initial={{ opacity: 0, x: -20 }}
+                                initial={false}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 className="opacity-0 flex items-center gap-4 mb-4"
@@ -142,7 +142,7 @@ const Services: React.FC = () => {
                         {services.map((service, idx) => (
                             <motion.div
                                 key={service.id}
-                                initial={{ opacity: 0, y: 30 }}
+                                initial={false}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1, duration: 0.6 }}

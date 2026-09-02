@@ -60,7 +60,7 @@ const CaseSuccess: React.FC = () => {
                         return (
                             <motion.div
                                 key={c.id}
-                                initial={{ opacity: 0, y: 10 }}
+                                initial={false}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1 }}
                                 viewport={{ once: true }}
