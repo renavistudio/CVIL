@@ -120,17 +120,14 @@ const Services: React.FC = () => {
                     {/* Header */}
                     <div className="flex flex-col md:flex-row justify-between items-end mb-6 lg:mb-10 border-b border-white/10 pb-8">
                         <div className="max-w-2xl">
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="opacity-0 flex items-center gap-4 mb-4"
+                            <div}}}
+                                className="flex items-center gap-4 mb-4"
                             >
                                 <div className="h-[1px] w-12 bg-white/50"></div>
                                 <span className="text-xs font-bold tracking-[0.3em] text-white/60 uppercase">
                                     Nuestros Servicios
                                 </span>
-                            </motion.div>
+                            </div>
                             <h2 className="text-5xl md:text-7xl font-serif text-white leading-[0.9] tracking-tight">
                                 Especialidades <span className="text-stone italic font-light">Legales.</span>
                             </h2>
@@ -140,13 +137,9 @@ const Services: React.FC = () => {
                     {/* Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {services.map((service, idx) => (
-                            <motion.div
-                                key={service.id}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1, duration: 0.6 }}
-                                className={`opacity-0 group relative h-[420px] bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-8 transition-all duration-500 hover:border-white/20 ${!showAllMobile && idx >= 3 ? 'hidden md:flex' : 'flex'}`}
+                            <div
+                                key={service.id}}}}}
+                                className={`group relative h-[420px] bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-8 transition-all duration-500 hover:border-white/20 ${!showAllMobile && idx >= 3 ? 'hidden md:flex' : 'flex'}`}
                             >
                                 {/* BG image */}
                                 <div className="absolute inset-0">
@@ -192,7 +185,7 @@ const Services: React.FC = () => {
                                         <ArrowUpRight className="w-3 h-3 text-white group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                                     </button>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                     
@@ -215,24 +208,16 @@ const Services: React.FC = () => {
                 {selected && (
                     <>
                         {/* Backdrop */}
-                        <motion.div
-                            key="backdrop"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.25 }}
+                        <div
+                            key="backdrop"}}}}
                             onClick={() => setSelected(null)}
                             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
                         />
 
                         {/* Modal */}
-                        <motion.div
-                            key="modal"
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            transition={{ duration: 0.3, type: 'spring', stiffness: 300, damping: 30 }}
-                            className="opacity-0 fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+                        <div
+                            key="modal"}}}}
+                            className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
                         >
                             <div className="bg-[#0f0f0f] border border-white/15 w-full max-w-lg relative pointer-events-auto shadow-2xl">
 
@@ -263,16 +248,13 @@ const Services: React.FC = () => {
                                         </span>
                                         <ul className="space-y-3">
                                             {selected.details?.map((detail, i) => (
-                                                <motion.li
-                                                    key={i}
-                                                    initial={{ opacity: 0, x: -8 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ delay: i * 0.04 }}
-                                                    className="opacity-0 flex items-start text-white/80 text-sm font-light"
+                                                <li
+                                                    key={i}}}}
+                                                    className="flex items-start text-white/80 text-sm font-light"
                                                 >
                                                     <span className="text-stone mr-3 mt-1 shrink-0">›</span>
                                                     <span className="leading-snug">{detail}</span>
-                                                </motion.li>
+                                                </li>
                                             ))}
                                         </ul>
                                     </div>
@@ -288,7 +270,7 @@ const Services: React.FC = () => {
                                     </a>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </>
                 )}
             </AnimatePresence>
