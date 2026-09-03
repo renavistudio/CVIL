@@ -28,7 +28,8 @@ const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
           </div>
         </div>
 
-        <div className="flex space-x-6">
+        {/* Redes sociales ocultas temporalmente */}
+        <div className="hidden space-x-6">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-charcoal hover:text-obsidian transition-colors" aria-label="Facebook">
             <Facebook className="w-5 h-5 stroke-[1.5]" />
           </a>
