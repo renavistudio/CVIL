@@ -63,21 +63,21 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
         },
         {
             id: 9,
-            name: "",
+            name: "Lic. Daniela Molina",
             role: "Abogado",
             description: "",
             image: "images/dsc/DSC_6026_opt.webp"
         },
         {
             id: 10,
-            name: "",
+            name: "Lic. Esmeralda Ayala",
             role: "Abogado",
             description: "",
             image: "images/dsc/DSC_6033_opt.webp"
         },
         {
             id: 11,
-            name: "",
+            name: "Lic. Carol Ramirez",
             role: "Abogado",
             description: "",
             image: "images/dsc/DSC_6038_opt.webp"
