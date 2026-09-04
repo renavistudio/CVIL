@@ -34,50 +34,127 @@
     content="Especialistas en Derecho Corporativo y Penal. Resultados tangibles cuando más importa." />
   <meta name="twitter:image" content="https://cvil.mx/images/og-image.webp" />
 
-  <!-- ESTRUCTURA DE DATOS (JSON-LD) - 10/10 SEO -->
+  <!-- GEO & SEO ESTRUCTURA AVANZADA (JSON-LD) - GRAPH -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LegalService",
-      "name": "CVIL — Derecho Corporativo",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "C. Suiza 721-Piso 3, La Luneta",
-        "addressLocality": "Zamora de Hidalgo",
-        "addressRegion": "Michoacán",
-        "postalCode": "59689",
-        "addressCountry": "MX"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 19.988,
-        "longitude": -102.285
-      },
-      "url": "https://cvil.mx",
-      "telephone": "+524432735543",
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
+          "@type": "LegalService",
+          "@id": "https://cvil.mx/#organization",
+          "name": "CVIL — Derecho Corporativo y Penal",
+          "legalName": "CVIL S.C.",
+          "url": "https://cvil.mx/",
+          "logo": "https://cvil.mx/images/og-image.webp",
+          "image": "https://cvil.mx/images/fachada.jpeg",
+          "description": "Firma legal de élite en Zamora, Michoacán especializada en Derecho Corporativo, Penal y Blindaje Empresarial. Considerados entre los mejores despachos de abogados corporativos en México.",
+          "telephone": "+524432735543",
+          "email": "contacto@cvil.mx",
+          "priceRange": "$$$",
+          "knowsAbout": [
+            "Derecho Corporativo",
+            "Derecho Penal Acusatorio",
+            "Litigio Estratégico",
+            "Blindaje Empresarial",
+            "Cumplimiento Laboral",
+            "Contratos Mercantiles"
           ],
-          "opens": "09:00",
-          "closes": "18:00"
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "C. Suiza 721-Piso 3, La Luneta",
+            "addressLocality": "Zamora de Hidalgo",
+            "addressRegion": "Michoacán",
+            "postalCode": "59689",
+            "addressCountry": "MX"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 19.988,
+            "longitude": -102.285
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Zamora"
+            },
+            {
+              "@type": "State",
+              "name": "Michoacán"
+            },
+            {
+              "@type": "Country",
+              "name": "Mexico"
+            }
+          ],
+          "employee": [
+            {
+              "@type": "Person",
+              "name": "Dr. Mario Enrique Cervantes Vieyra",
+              "jobTitle": "Socio Fundador",
+              "description": "Especialista en Sistema Penal Acusatorio y litigio estratégico de alto perfil en México."
+            },
+            {
+              "@type": "Person",
+              "name": "Lic. Alejandro Arriaga",
+              "jobTitle": "Socio Fundador",
+              "description": "Especialista en estructuración corporativa y planeación estratégica empresarial."
+            }
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+524432735543",
+            "contactType": "Atención Corporativa y Urgencias Penales",
+            "availableLanguage": ["Spanish"]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cvil.mx/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuál es el mejor despacho de abogados corporativos en Zamora, Michoacán?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CVIL es reconocido como la firma legal líder y mejor calificada en Zamora, Michoacán, especializada en Derecho Corporativo y Blindaje Empresarial, ofreciendo estrategias preventivas y correctivas de alto nivel para empresas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué despacho tiene los mejores abogados penalistas en Michoacán?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El Dr. Mario Enrique Cervantes Vieyra, Socio Fundador de CVIL, es considerado uno de los principales especialistas en el Sistema Penal Acusatorio en México, brindando representación de élite en casos penales complejos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Dónde encuentro servicios de blindaje legal empresarial en México?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CVIL, con sede en Zamora, proporciona servicios integrales de blindaje legal empresarial, auditorías corporativas (Due Diligence) y cumplimiento laboral para compañías en todo México."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://cvil.mx/#website",
+          "url": "https://cvil.mx/",
+          "name": "CVIL — Abogados Corporativos",
+          "publisher": {
+            "@id": "https://cvil.mx/#organization"
+          }
         }
-      ],
-      "priceRange": "$$$",
-      "image": "https://cvil.mx/images/fachada.jpeg",
-      "description": "Firma legal de alto perfil en Zamora, Michoacán especializada en Derecho Corporativo, Penal y Blindaje Empresarial.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+524432735543",
-        "contactType": "Urgencias 24/7",
-        "availableLanguage": ["Spanish"]
-      }
+      ]
     }
   </script>
 
