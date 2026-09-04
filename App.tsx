@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Navbar from './components/Navbar';
-import LiveTicker from './components/LiveTicker';
 import Hero from './components/Hero';
-import Partners from './components/Partners';
-import Stats from './components/Stats';
-import CaseSuccess from './components/CaseSuccess';
-import BentoGrid from './components/BentoGrid';
-import Services from './components/Services';
-import Manifesto from './components/Manifesto';
-import ContactForm from './components/ContactForm';
-import Location from './components/Location';
-import Footer from './components/Footer';
-import SocialProof from './components/SocialProof';
-import ChatWidget from './components/ChatWidget';
-import SocioMario from './components/SocioMario';
-import SocioAlejandro from './components/SocioAlejandro';
-import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
+
+// Lazy load below-the-fold components to improve TBT & LCP
+const Partners = React.lazy(() => import('./components/Partners'));
+const Stats = React.lazy(() => import('./components/Stats'));
+const LiveTicker = React.lazy(() => import('./components/LiveTicker'));
+const CaseSuccess = React.lazy(() => import('./components/CaseSuccess'));
+const BentoGrid = React.lazy(() => import('./components/BentoGrid'));
+const Services = React.lazy(() => import('./components/Services'));
+const Manifesto = React.lazy(() => import('./components/Manifesto'));
+const ContactForm = React.lazy(() => import('./components/ContactForm'));
+const Location = React.lazy(() => import('./components/Location'));
+const Footer = React.lazy(() => import('./components/Footer'));
+const SocialProof = React.lazy(() => import('./components/SocialProof'));
+const ChatWidget = React.lazy(() => import('./components/ChatWidget'));
+const SocioMario = React.lazy(() => import('./components/SocioMario'));
+const SocioAlejandro = React.lazy(() => import('./components/SocioAlejandro'));
+const PrivacyPolicyPage = React.lazy(() => import('./components/PrivacyPolicyPage'));
 
 const App: React.FC = () => {
   const [activeSocio, setActiveSocio] = React.useState<string | null>(null);
@@ -59,7 +61,11 @@ const App: React.FC = () => {
   }, []);
 
   if (currentPath === "/aviso-de-privacidad") {
-    return <PrivacyPolicyPage />;
+    return (
+      <Suspense fallback={<div className="p-10 text-center font-sans">Cargando...</div>}>
+        <PrivacyPolicyPage />
+      </Suspense>
+    );
   }
 
   const handleCloseSocio = () => {
@@ -73,41 +79,47 @@ const App: React.FC = () => {
         <Navbar />
         <main>
           <Hero />
-          <Partners onOpenSocio={(id) => {
-            if (id === 1) {
-                setActiveSocio('mario');
-                window.location.hash = '#/socio/mario-cervantes';
-            }
-            if (id === 2) {
-                setActiveSocio('alejandro');
-                window.location.hash = '#/socio/alejandro-arriaga';
-            }
-          }} />
-          <Stats />
-          <LiveTicker />
-          <CaseSuccess />
-          <BentoGrid />
-          <Services />
-          <Manifesto />
-          <SocialProof />
-          <ContactForm />
-          <Location />
+          <Suspense fallback={<div className="h-20 w-full" />}>
+            <Partners onOpenSocio={(id) => {
+              if (id === 1) {
+                  setActiveSocio('mario');
+                  window.location.hash = '#/socio/mario-cervantes';
+              }
+              if (id === 2) {
+                  setActiveSocio('alejandro');
+                  window.location.hash = '#/socio/alejandro-arriaga';
+              }
+            }} />
+            <Stats />
+            <LiveTicker />
+            <CaseSuccess />
+            <BentoGrid />
+            <Services />
+            <Manifesto />
+            <SocialProof />
+            <ContactForm />
+            <Location />
+          </Suspense>
         </main>
-        <Footer />
-        <ChatWidget />
+        <Suspense fallback={null}>
+          <Footer />
+          <ChatWidget />
+        </Suspense>
       </div>
 
-      {activeSocio === 'mario' && (
-        <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
-          <SocioMario onClose={handleCloseSocio} />
-        </div>
-      )}
-      
-      {activeSocio === 'alejandro' && (
-        <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
-          <SocioAlejandro onClose={handleCloseSocio} />
-        </div>
-      )}
+      <Suspense fallback={null}>
+        {activeSocio === 'mario' && (
+          <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
+            <SocioMario onClose={handleCloseSocio} />
+          </div>
+        )}
+        
+        {activeSocio === 'alejandro' && (
+          <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
+            <SocioAlejandro onClose={handleCloseSocio} />
+          </div>
+        )}
+      </Suspense>
     </>
   );
 };
