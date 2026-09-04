@@ -277,7 +277,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                     exit: (direction: number) => ({
                                         x: direction > 0 ? '-30%' : '30%',
                                         opacity: 0,
-                                    })}
+                                    }),
                                 }}
                                 initial={isFirstRender.current ? false : "enter"}
                                 animate="center"
