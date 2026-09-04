@@ -69,13 +69,16 @@ const SocialProof: React.FC = () => {
                     </div>
                     
                     {/* Dots indicator */}
-                    <div className="mt-6 flex justify-center space-x-2">
+                    <div className="mt-2 flex justify-center">
                         {testimonials.map((_, idx) => (
-                            <button 
+                            <button
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
-                                className={`w-2 h-2 rounded-full transition-colors ${idx === currentIndex ? 'bg-obsidian' : 'bg-gray-300'}`}
-                            />
+                                aria-label={`Ir al testimonio ${idx + 1}`}
+                                className="flex items-center justify-center w-12 h-12"
+                            >
+                                <span className={`block w-2 h-2 rounded-full transition-colors ${idx === currentIndex ? 'bg-obsidian' : 'bg-gray-300'}`}></span>
+                            </button>
                         ))}
                     </div>
                 </div>
