@@ -105,6 +105,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             <img loading="lazy"
                                 src="/images/pasillo.webp"
                                 alt="Instalaciones y pasillo de las oficinas corporativas CVIL en Zamora"
+                                width="800"
+                                height="600"
                                 className="w-full h-full object-cover opacity-30"
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-obsidian/80 to-obsidian/90"></div>
@@ -152,10 +154,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {/* Name field */}
                                 <div className="group relative">
-                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="service">
+                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="name">
                                         Nombre Completo <span className="text-gold">*</span>
                                     </label>
                                     <input
+                                        id="name"
                                         name="name"
                                         type="text"
                                         value={name}
@@ -176,10 +179,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                                 {/* Phone field */}
                                 <div className="group relative">
-                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="service">
+                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="phone">
                                         Teléfono / WhatsApp <span className="text-gold">*</span>
                                     </label>
                                     <input
+                                        id="phone"
                                         name="phone"
                                         type="tel"
                                         value={phone}
@@ -229,10 +233,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                             {/* Optional message */}
                             <div>
-                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="service">
+                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="message">
                                     Breve descripción de su consulta <span className="text-gray-400 font-normal">(Opcional)</span>
                                 </label>
-                                <textarea
+                                <textarea id="message"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     rows={3}

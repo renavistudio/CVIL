@@ -79,7 +79,7 @@ const App: React.FC = () => {
         <Navbar />
         <main>
           <Hero />
-          <Suspense fallback={<div className="h-20 w-full" />}>
+          <Suspense fallback={null}>
             <Partners onOpenSocio={(id) => {
               if (id === 1) {
                   setActiveSocio('mario');
@@ -90,6 +90,8 @@ const App: React.FC = () => {
                   window.location.hash = '#/socio/alejandro-arriaga';
               }
             }} />
+          </Suspense>
+          <Suspense fallback={null}>
             <Stats />
             <LiveTicker />
             <CaseSuccess />

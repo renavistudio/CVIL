@@ -155,7 +155,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
 
                     {/* Left side: Section Header / Intro (4 columns) */}
                     <div className="lg:col-span-4 flex flex-col justify-center pr-0 lg:pr-8">
-                        <span className="text-xs font-bold tracking-[0.25em] text-[#B8860B] uppercase mb-4 block">
+                        <span className="text-xs font-bold tracking-[0.25em] text-gold uppercase mb-4 block">
                             Liderazgo Jurídico
                         </span>
                         <h2 className="text-4xl lg:text-5xl font-serif text-obsidian leading-[1.1] mb-6">
@@ -202,22 +202,26 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                     {partners.map((_, dotIdx) => {
                                         const isActive = currentIndex === dotIdx;
                                         return (
-                                            <motion.button
+                                            <button
                                                 key={dotIdx}
                                                 onClick={() => {
                                                     setDirection(dotIdx > currentIndex ? 1 : -1);
                                                     setCurrentIndex(dotIdx);
                                                 }}
-                                                layout
-                                                initial={false}
-                                                animate={{
-                                                    width: isActive ? 24 : 8,
-                                                    backgroundColor: isActive ? '#B8860B' : 'rgba(209, 213, 219, 0.8)'
-                                                }}
-                                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                                className="h-2 rounded-full shrink-0 focus:outline-none"
                                                 aria-label={`Ver socio ${dotIdx + 1}`}
-                                            />
+                                                className="flex items-center justify-center w-12 h-12"
+                                            >
+                                                <motion.span
+                                                    layout
+                                                    initial={false}
+                                                    animate={{
+                                                        width: isActive ? 24 : 8,
+                                                        backgroundColor: isActive ? '#946B00' : 'rgba(209, 213, 219, 0.8)'
+                                                    }}
+                                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                                    className="h-2 rounded-full shrink-0 block"
+                                                />
+                                            </button>
                                         );
                                     })}
                                 </motion.div>
@@ -287,6 +291,8 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                     <img loading="lazy"
                                         src={currentPartner.image}
                                         alt={currentPartner.name}
+                                        width="1000"
+                                        height="667"
                                         className="w-full h-full object-cover object-[center_top] sm:absolute sm:inset-0"
                                         style={{ minHeight: '280px' }}
                                     />
@@ -297,7 +303,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                     <h3 className="text-2xl md:text-3xl font-bold font-serif text-obsidian tracking-wide uppercase mb-1.5">
                                         {currentPartner.name}
                                     </h3>
-                                    <p className="text-[#B8860B] font-semibold text-xs uppercase tracking-wider mb-5">
+                                    <p className="text-gold font-semibold text-xs uppercase tracking-wider mb-5">
                                         {currentPartner.role}
                                     </p>
                                     {currentPartner.description && (

@@ -11,10 +11,10 @@ export default {
       colors: {
         obsidian: '#050505',
         charcoal: '#1a1a1a',
-        stone: '#8c8c8c',
+        stone: '#767676',
         silver: '#e5e5e5',
         offwhite: '#f9f9f9',
-        gold: '#B8860B',
+        gold: '#946B00',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

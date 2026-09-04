@@ -40,7 +40,7 @@ const Location: React.FC = () => {
                     <div className="w-full lg:w-5/12 flex flex-col pt-4">
                         <div className="flex items-center gap-4 mb-4">
                             <div className="h-[1px] w-12 bg-obsidian"></div>
-                            <span className="text-xs font-bold tracking-[0.3em] text-[#B8860B] uppercase">
+                            <span className="text-xs font-bold tracking-[0.3em] text-gold uppercase">
                                 Nuestras Instalaciones
                             </span>
                         </div>
@@ -56,7 +56,7 @@ const Location: React.FC = () => {
 
                         <div className="bg-[#fafaf9] border border-gray-200 p-6 rounded-sm mb-6">
                             <div className="flex items-start gap-4">
-                                <div className="p-2.5 bg-obsidian text-[#B8860B] rounded-sm shrink-0">
+                                <div className="p-2.5 bg-obsidian text-gold rounded-sm shrink-0">
                                     <MapPin className="w-5 h-5" strokeWidth={1.8} />
                                 </div>
                                 <div className="flex-1">
@@ -69,7 +69,7 @@ const Location: React.FC = () => {
                                     </p>
                                     <button
                                         onClick={handleCopy} aria-pressed={copied}
-                                        className="inline-flex items-center gap-1.5 text-xs text-charcoal/70 hover:text-obsidian font-medium transition-colors cursor-pointer"
+                                        className="inline-flex items-center gap-1.5 text-xs text-charcoal/70 hover:text-obsidian font-medium transition-colors cursor-pointer py-2.5 px-3 -ml-3"
                                     >
                                         {copied ? (
                                             <>
@@ -95,7 +95,7 @@ const Location: React.FC = () => {
                                 rel="noopener noreferrer"
                                 className="group flex-1 flex items-center justify-center gap-2 bg-obsidian text-white px-6 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-charcoal transition-all shadow-md rounded-sm"
                             >
-                                <Navigation className="w-4 h-4 text-[#B8860B]" />
+                                <Navigation className="w-4 h-4 text-gold" />
                                 <span>Abrir en Google Maps</span>
                                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                             </a>
@@ -117,13 +117,13 @@ const Location: React.FC = () => {
                         {/* Instant Placeholder while Map Iframe completes downloading */}
                         {!isMapLoaded && (
                             <div className="absolute inset-0 bg-[#0f0f0f] flex flex-col items-center justify-center p-6 text-center z-10 transition-opacity duration-500">
-                                <div className="w-14 h-14 rounded-full bg-[#B8860B]/10 border border-[#B8860B]/30 flex items-center justify-center mb-4 animate-pulse">
-                                    <MapPin className="w-7 h-7 text-[#B8860B]" />
+                                <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-4 animate-pulse">
+                                    <MapPin className="w-7 h-7 text-gold" />
                                 </div>
                                 <h3 className="text-white font-serif text-lg mb-1">CVIL — Despacho Legal</h3>
                                 <p className="text-stone text-xs max-w-sm mb-4">C. Suiza 721-Piso 3, La Luneta, Zamora, Mich.</p>
-                                <div className="flex items-center gap-2 text-xs text-[#B8860B]/80 font-medium">
-                                    <span className="w-2 h-2 rounded-full bg-[#B8860B] animate-ping"></span>
+                                <div className="flex items-center gap-2 text-xs text-gold/80 font-medium">
+                                    <span className="w-2 h-2 rounded-full bg-gold animate-ping"></span>
                                     <span>Cargando mapa interactivo...</span>
                                 </div>
                             </div>

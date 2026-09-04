@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './Logo';
 
 const Navbar: React.FC = () => {
@@ -49,7 +48,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-obsidian"
+              className="text-obsidian p-3"
               aria-label={isOpen ? "Cerrar menú" : "Abrir menú principal"}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -59,14 +58,8 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: '100vh' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white fixed inset-0 z-40 pt-24 px-6"
-          >
+      {isOpen && (
+        <div className="md:hidden bg-white fixed inset-0 z-40 pt-24 px-6 transition-all duration-300">
             <div className="flex flex-col space-y-6 items-center justify-center h-full pb-24">
               {navLinks.map((link) => (
                 <a
@@ -88,9 +81,8 @@ const Navbar: React.FC = () => {
                 Agendar Cita
               </a>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
     </nav>
   );
 };

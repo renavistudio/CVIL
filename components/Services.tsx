@@ -153,6 +153,8 @@ const Services: React.FC = () => {
                                     <img loading="lazy"
                                         src={service.image}
                                         alt={service.title}
+                                        width="800"
+                                        height="420"
                                         className="w-full h-full object-cover opacity-30 mix-blend-overlay group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
@@ -184,7 +186,7 @@ const Services: React.FC = () => {
                                     </p>
                                     <button
                                         onClick={() => setSelected(service)}
-                                        className="flex items-center gap-2 group/btn cursor-pointer"
+                                        className="flex items-center gap-2 group/btn cursor-pointer py-3"
                                     >
                                         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white border-b border-white/30 pb-1 group-hover/btn:border-white transition-colors">
                                             Ver más
@@ -201,7 +203,7 @@ const Services: React.FC = () => {
                         <div className="mt-8 flex justify-center md:hidden">
                             <button
                                 onClick={() => setShowAllMobile(true)}
-                                className="border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-white hover:text-black transition-colors"
+                                className="border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-8 py-3 hover:bg-white hover:text-black transition-colors"
                             >
                                 Ver más especialidades
                             </button>
@@ -247,7 +249,7 @@ const Services: React.FC = () => {
                                 {/* Close button */}
                                 <button
                                     onClick={() => setSelected(null)}
-                                    className="absolute top-4 right-4 p-2 border border-white/10 hover:bg-white hover:text-black transition-all duration-200 text-white"
+                                    className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center border border-white/10 hover:bg-white hover:text-black transition-all duration-200 text-white" aria-label="Cerrar"
                                 >
                                     <X className="w-4 h-4" />
                                 </button>

@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, ChevronDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -18,7 +17,7 @@ const Hero: React.FC = () => {
                 <div className="lg:hidden w-full flex flex-col min-h-screen">
 
                     {/* Top decorative gold line */}
-                    <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#B8860B]/40 to-transparent mt-16"></div>
+                    <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#946B00]/40 to-transparent mt-16"></div>
 
                     {/* Photo of the partners */}
                     <div className="relative z-10 px-5 pt-6 "
@@ -27,6 +26,8 @@ const Hero: React.FC = () => {
                             <img
                                 src="/images/dsc/DSC_6061_opt.webp"
                                 alt="Socios Fundadores de CVIL"
+                                width="1000"
+                                height="667"
                                 fetchPriority="high"
                                 className="w-full h-[85vw] object-cover contrast-[1.05]"
                                 
@@ -52,7 +53,7 @@ const Hero: React.FC = () => {
                             href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center justify-center gap-3 bg-[#B8860B] hover:bg-[#9a7209] text-white w-full py-4 rounded-sm transition-all duration-300 shadow-lg"
+                            className="group flex items-center justify-center gap-3 bg-gold hover:bg-[#7A5500] text-white w-full py-4 rounded-sm transition-all duration-300 shadow-lg"
                         >
                             <span className="text-xs font-bold uppercase tracking-[0.2em]">Agendar Consulta</span>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -63,14 +64,12 @@ const Hero: React.FC = () => {
                         </p>
 
                         {/* Scroll indicator */}
-                        <motion.div
-                            animate={{ y: [0, 6, 0] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                            className="flex flex-col items-center mt-auto pt-6 pb-4"
+                        <div
+                            className="flex flex-col items-center mt-auto pt-6 pb-4 animate-bounce"
                         >
                             <ChevronDown className="w-5 h-5 text-gray-300" />
                             <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em] mt-1">Desplazar para más</span>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
 
@@ -116,6 +115,8 @@ const Hero: React.FC = () => {
                                     <img
                                         src="/images/dsc/DSC_6061_opt.webp"
                                         alt="Socios Fundadores de CVIL"
+                                        width="1000"
+                                        height="667"
                                         fetchPriority="high"
                                         className="w-full h-full object-cover object-[center_top] contrast-[1.05]"
                                     />
@@ -127,36 +128,29 @@ const Hero: React.FC = () => {
             </section>
 
             {/* ===== Lightbox Popup Modal ===== */}
-            <AnimatePresence mode="wait">
-                {selectedImage && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        onClick={() => setSelectedImage(null)}
-                        role="dialog" aria-modal="true" className="fixed inset-0 z-[100] flex items-center justify-center bg-obsidian/95 p-4 md:p-12 backdrop-blur-sm cursor-zoom-out"
-                    >
-                        <div className="relative max-w-6xl w-full h-[80vh] flex items-center justify-center cursor-default bg-charcoal border border-white/5 shadow-2xl overflow-hidden "
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <img
-                                src={selectedImage}
-                                alt="Fotografía ampliada de las instalaciones corporativas de CVIL Abogados en Zamora"
-                                className="w-full h-full object-contain"
-                            />
-
-                            {/* Botón de cerrar elegante */}
-                            <button
-                                className="absolute top-4 right-4 p-3 bg-black/40 hover:bg-white text-white/70 hover:text-black rounded-full transition-all duration-300 backdrop-blur-md border border-white/10"
-                                onClick={() => setSelectedImage(null)}
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {selectedImage && (
+              <div
+                onClick={() => setSelectedImage(null)}
+                role="dialog" aria-modal="true" aria-label="Imagen ampliada" className="fixed inset-0 z-[100] flex items-center justify-center bg-obsidian/95 p-4 md:p-12 backdrop-blur-sm cursor-zoom-out"
+              >
+                <div className="relative max-w-6xl w-full h-[80vh] flex items-center justify-center cursor-default bg-charcoal border border-white/5 shadow-2xl overflow-hidden"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <img
+                    src={selectedImage} width="1000" height="667"
+                    alt="Fotografía ampliada de las instalaciones corporativas de CVIL Abogados en Zamora"
+                    className="w-full h-full object-contain"
+                  />
+                  <button
+                    className="absolute top-4 right-4 p-4 bg-black/40 hover:bg-white text-white/70 hover:text-black rounded-full transition-all duration-300 backdrop-blur-md border border-white/10"
+                    onClick={() => setSelectedImage(null)}
+                    aria-label="Cerrar imagen ampliada"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            )}
         </>
     );
 };

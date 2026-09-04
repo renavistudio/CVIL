@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Scale, Users, ArrowRight } from 'lucide-react';
+import { Scale, Users } from 'lucide-react';
 
 const TramitologiaIcon = ({ className }: { className?: string }) => (
     <svg
@@ -52,9 +51,8 @@ const BentoGrid: React.FC = () => {
                     </div>
 
                     {/* Card 1: Main Strategy */}
-                    <motion.div
-                        whileHover={{ scale: 1.005 }}
-                        className="md:col-span-8 relative h-[450px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-500"
+                    <div
+                        className="md:col-span-8 relative h-[450px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
                     >
                         {/* Background Image */}
                         <div className="absolute inset-0">
@@ -82,12 +80,11 @@ const BentoGrid: React.FC = () => {
                                 </p>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Card 2: Efficiency */}
-                    <motion.div
-                        whileHover={{ scale: 1.005 }}
-                        className="md:col-span-4 relative h-[450px] bg-obsidian text-white group overflow-hidden shadow-lg"
+                    <div
+                        className="md:col-span-4 relative h-[450px] bg-obsidian text-white group overflow-hidden shadow-lg hover:scale-[1.005] transition-transform duration-500"
                     >
                         <div className="absolute inset-0">
                             <img loading="lazy"
@@ -113,12 +110,11 @@ const BentoGrid: React.FC = () => {
                                 <div className="w-full h-px bg-white/10 group-hover:bg-white/30 transition-colors"></div>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Card 3: Team */}
-                    <motion.div
-                        whileHover={{ scale: 1.005 }}
-                        className="md:col-span-12 relative h-[300px] bg-white group overflow-hidden border border-gray-200 shadow-sm"
+                    <div
+                        className="md:col-span-12 relative h-[300px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:scale-[1.005] transition-transform duration-500"
                     >
                         <div className="absolute inset-0">
                             <img loading="lazy"
@@ -142,7 +138,7 @@ const BentoGrid: React.FC = () => {
                             </div>
                             <span className="text-9xl font-serif text-gray-100 absolute right-12 top-1/2 -translate-y-1/2 -z-10 font-bold hidden md:block">03</span>
                         </div>
-                    </motion.div>
+                    </div>
 
                 </div>
             </div>
