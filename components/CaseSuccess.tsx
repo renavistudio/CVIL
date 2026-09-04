@@ -64,17 +64,17 @@ const CaseSuccess: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1 }}
                                 viewport={{ once: true }}
-                                className="opacity-0 group bg-white border border-gray-200 hover:border-obsidian hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col"
+                                className="group bg-white border border-gray-200 hover:border-obsidian hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col"
                             >
                                 {/* Image Header */}
-                                <div className="opacity-0 h-48 overflow-hidden relative">
+                                <div className="h-48 overflow-hidden relative">
                                     <img
                                         src={c.image}
                                         alt={c.title}
-                                        className={`opacity-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105`}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                     />
-                                    <div className="opacity-0 absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                    <div className="opacity-0 absolute bottom-4 left-4">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                    <div className="absolute bottom-4 left-4">
                                         <span className="text-[10px] font-bold uppercase tracking-widest text-white/90 bg-black/50 px-2 py-1 backdrop-blur-md">
                                             {c.category}
                                         </span>
