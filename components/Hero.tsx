@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
 
                         {/* Scroll indicator */}
                         <div
-                            className="flex flex-col items-center mt-auto pt-6 pb-4 animate-bounce"
+                            className="flex flex-col items-center mt-auto pt-6 pb-4 opacity-75"
                         >
                             <ChevronDown className="w-5 h-5 text-gray-300" />
                             <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em] mt-1">Desplazar para más</span>
