@@ -22,17 +22,17 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         },
         {
             id: 3,
-            name: "Lic. Julian Lora",
-            role: "Abogado",
+            name: "Lic. Cynthia Díaz",
+            role: "Abogada",
             description: "",
-            image: "images/dsc/DSC_6030_opt.webp"
+            image: "images/dsc/DSC_6075_opt.webp"
         },
         {
             id: 4,
-            name: "Cristian Flores",
-            role: "Postulante",
+            name: "Lic. Daniela Molina",
+            role: "Abogada",
             description: "",
-            image: "images/dsc/DSC_6022_opt.webp"
+            image: "images/dsc/DSC_6026_opt.webp"
         },
         {
             id: 5,
@@ -57,31 +57,31 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         },
         {
             id: 8,
-            name: "Lic. Cynthia Díaz",
-            role: "Abogada",
+            name: "Lic. Julian Lora",
+            role: "Abogado",
             description: "",
-            image: "images/dsc/DSC_6075_opt.webp"
+            image: "images/dsc/DSC_6030_opt.webp"
         },
         {
             id: 9,
-            name: "Lic. Daniela Molina",
-            role: "Abogada",
-            description: "",
-            image: "images/dsc/DSC_6026_opt.webp"
-        },
-        {
-            id: 10,
             name: "Esmeralda Ayala",
             role: "Postulante",
             description: "",
             image: "images/dsc/DSC_6033_opt.webp"
         },
         {
-            id: 11,
+            id: 10,
             name: "Carol Ramirez",
             role: "Postulante",
             description: "",
             image: "images/dsc/DSC_6038_opt.webp"
+        },
+        {
+            id: 11,
+            name: "Cristian Flores",
+            role: "Postulante",
+            description: "",
+            image: "images/dsc/DSC_6022_opt.webp"
         }
     ];
 
