@@ -29,7 +29,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         },
         {
             id: 4,
-            name: "Lic. Cristian Flores",
+            name: "Cristian Flores",
             role: "Postulante",
             description: "",
             image: "images/dsc/DSC_6022_opt.webp"
@@ -37,48 +37,48 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         {
             id: 5,
             name: "Lic. Fabiola Sánchez",
-            role: "Abogado",
+            role: "Abogada",
             description: "",
             image: "images/dsc/DSC_6014_opt.webp"
         },
         {
             id: 6,
             name: "Lic. Martha León",
-            role: "Abogado",
+            role: "Abogada",
             description: "",
             image: "images/dsc/DSC_6065_opt.webp"
         },
         {
             id: 7,
             name: "Lic. Leticia Herrera",
-            role: "Abogado",
+            role: "Abogada",
             description: "",
             image: "images/dsc/DSC_6018_opt.webp"
         },
         {
             id: 8,
             name: "Lic. Cynthia Díaz",
-            role: "Abogado",
+            role: "Abogada",
             description: "",
             image: "images/dsc/DSC_6075_opt.webp"
         },
         {
             id: 9,
             name: "Lic. Daniela Molina",
-            role: "Abogado",
+            role: "Abogada",
             description: "",
             image: "images/dsc/DSC_6026_opt.webp"
         },
         {
             id: 10,
-            name: "Lic. Esmeralda Ayala",
-            role: "Abogado",
+            name: "Esmeralda Ayala",
+            role: "Postulante",
             description: "",
             image: "images/dsc/DSC_6033_opt.webp"
         },
         {
             id: 11,
-            name: "Lic. Carol Ramirez",
+            name: "Carol Ramirez",
             role: "Postulante",
             description: "",
             image: "images/dsc/DSC_6038_opt.webp"
