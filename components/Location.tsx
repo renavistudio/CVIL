@@ -60,9 +60,9 @@ const Location: React.FC = () => {
                                     <MapPin className="w-5 h-5" strokeWidth={1.8} />
                                 </div>
                                 <div className="flex-1">
-                                    <h4 className="text-[11px] font-bold text-stone uppercase tracking-widest mb-1.5">
+                                    <h3 className="text-[11px] font-bold text-stone uppercase tracking-widest mb-1.5">
                                         Dirección Principal
-                                    </h4>
+                                    </h3>
                                     <p className="text-sm md:text-base font-serif text-obsidian leading-relaxed mb-3">
                                         C. Suiza 721-Piso 3, La Luneta, <br />
                                         59689 Zamora de Hidalgo, Mich.

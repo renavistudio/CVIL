@@ -206,6 +206,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                 </label>
                                 <div className="relative">
                                     <select
+                                        id="service"
                                         value={matter}
                                         onChange={(e) => setMatter(e.target.value)}
                                         className="appearance-none w-full bg-white border border-gray-300 px-4 py-3 pr-10 text-obsidian text-sm focus:outline-none focus:border-obsidian transition-colors rounded-sm shadow-sm"
