@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -87,6 +87,53 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(1);
+    const [isFirstRender, setIsFirstRender] = useState(true);
+
+    // Touch/swipe handling
+    const touchStartX = useRef<number | null>(null);
+    const touchStartY = useRef<number | null>(null);
+    const swiping = useRef(false);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartX.current = e.touches[0].clientX;
+        touchStartY.current = e.touches[0].clientY;
+        swiping.current = false;
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (touchStartX.current === null || touchStartY.current === null) return;
+        const deltaX = e.touches[0].clientX - touchStartX.current;
+        const deltaY = e.touches[0].clientY - touchStartY.current;
+        // Only count as swipe if horizontal movement is dominant
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+            swiping.current = true;
+        }
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartX.current === null || !swiping.current) {
+            touchStartX.current = null;
+            touchStartY.current = null;
+            return;
+        }
+        const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+        const swipeThreshold = 50;
+        if (deltaX < -swipeThreshold) {
+            // Swiped left → next
+            handleNext();
+        } else if (deltaX > swipeThreshold) {
+            // Swiped right → prev
+            handlePrev();
+        }
+        touchStartX.current = null;
+        touchStartY.current = null;
+        swiping.current = false;
+    };
+
+    // Disable first-render flag after mount so animations only play on subsequent changes
+    useEffect(() => {
+        setIsFirstRender(false);
+    }, []);
 
     // Auto-scroll loop (6s timer, resets on manual index change)
     useEffect(() => {
@@ -118,7 +165,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                             Liderazgo Jurídico
                         </span>
                         <h2 className="text-4xl lg:text-5xl font-serif text-obsidian leading-[1.1] mb-6">
-                            Nuestros Socios & Equipo.
+                            Nuestros Socios &amp; Equipo.
                         </h2>
                         <p className="text-charcoal/70 font-light text-base leading-relaxed mb-8">
                             Defensa de prestigio guiada por socios con sólida trayectoria y visión estratégica en cada rama del derecho.
@@ -143,7 +190,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                 </button>
                             </div>
 
-                                                        {/* Advanced Sliding Pagination Track */}
+                                                    {/* Advanced Sliding Pagination Track */}
                             <div 
                                 className="relative flex items-center overflow-hidden mt-4"
                                 style={{ 
@@ -185,12 +232,18 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                     </div>
 
                     {/* Right side: The sliding content viewport (8 columns) */}
-                    <div className="lg:col-span-8 relative overflow-hidden h-auto sm:h-[420px] bg-[#fafaf9] rounded-sm border border-gray-100 shadow-sm flex flex-col sm:flex-row">
+                    {/* Fixed height on mobile prevents layout shift during card transitions */}
+                    <div
+                        className="lg:col-span-8 relative overflow-hidden h-[520px] sm:h-[420px] bg-[#fafaf9] rounded-sm border border-gray-100 shadow-sm"
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
+                    >
 
                         {/* Mobile edge arrows — overlaid on card borders */}
                         <button
                             onClick={handlePrev}
-                            className="lg:hidden absolute left-2 top-[220px] sm:top-[240px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
+                            className="lg:hidden absolute left-2 top-[140px] sm:top-[210px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
                             aria-label="Anterior"
                         >
                             <div className="bg-black/10 backdrop-blur-sm rounded-full p-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
@@ -199,7 +252,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                         </button>
                         <button
                             onClick={handleNext}
-                            className="lg:hidden absolute right-2 top-[220px] sm:top-[240px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
+                            className="lg:hidden absolute right-2 top-[140px] sm:top-[210px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
                             aria-label="Siguiente"
                         >
                             <div className="bg-black/10 backdrop-blur-sm rounded-full p-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
@@ -207,7 +260,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                             </div>
                         </button>
 
-                        <AnimatePresence initial={false} mode="popLayout" custom={direction}>
+                        <AnimatePresence initial={false} mode="wait" custom={direction}>
                             <motion.div
                                 key={currentIndex}
                                 custom={direction}
@@ -225,18 +278,18 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                         opacity: 0,
                                     }),
                                 }}
-                                initial="enter"
+                                initial={isFirstRender ? "center" : "enter"}
                                 animate="center"
                                 exit="exit"
                                 transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-                                className="w-full h-auto sm:h-full flex flex-col sm:flex-row items-stretch"
+                                className="absolute inset-0 w-full h-full flex flex-col sm:flex-row items-stretch"
                             >
                                 {/* Full-Height Left Image Column */}
-                                <div className="w-full sm:w-5/12 sm:h-full shrink-0 relative overflow-hidden">
+                                <div className="w-full sm:w-5/12 h-[280px] sm:h-full shrink-0 relative overflow-hidden">
                                     <img
                                         src={partners[currentIndex].image}
                                         alt={partners[currentIndex].name}
-                                        className="w-full h-auto sm:h-full object-cover object-[center_top]"
+                                        className="w-full h-full object-cover object-[center_top]"
                                     />
                                 </div>
 
@@ -279,4 +332,3 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
 };
 
 export default Partners;
-
