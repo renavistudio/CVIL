@@ -121,9 +121,9 @@ const Location: React.FC = () => {
                                     <MapPin className="w-7 h-7 text-gold" />
                                 </div>
                                 <h3 className="text-white font-serif text-lg mb-1">CVIL — Despacho Legal</h3>
-                                <p className="text-gray-700 text-xs max-w-sm mb-4">C. Suiza 721-Piso 3, La Luneta, Zamora, Mich.</p>
-                                <div className="flex items-center gap-2 text-xs text-gold/80 font-medium">
-                                    <span className="w-2 h-2 rounded-full bg-gold animate-ping"></span>
+                                <p className="text-gray-300 text-xs max-w-sm mb-4">C. Suiza 721-Piso 3, La Luneta, Zamora, Mich.</p>
+                                <div className="flex items-center gap-2 text-xs text-yellow-400 font-medium">
+                                    <span className="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
                                     <span>Cargando mapa interactivo...</span>
                                 </div>
                             </div>
