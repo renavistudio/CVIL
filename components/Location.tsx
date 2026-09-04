@@ -47,7 +47,7 @@ const Location: React.FC = () => {
 
                         <h2 className="text-4xl lg:text-6xl font-serif text-obsidian leading-[1.05] tracking-tight mb-6">
                             Sede Central <br />
-                            <span className="italic font-light text-stone">Zamora, Michoacán.</span>
+                            <span className="italic font-light text-gray-700">Zamora, Michoacán.</span>
                         </h2>
 
                         <p className="text-charcoal/70 text-sm md:text-base font-light leading-relaxed mb-8">
@@ -60,7 +60,7 @@ const Location: React.FC = () => {
                                     <MapPin className="w-5 h-5" strokeWidth={1.8} />
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="text-[11px] font-bold text-stone uppercase tracking-widest mb-1.5">
+                                    <h3 className="text-[11px] font-bold text-gray-700 uppercase tracking-widest mb-1.5">
                                         Dirección Principal
                                     </h3>
                                     <p className="text-sm md:text-base font-serif text-obsidian leading-relaxed mb-3">
@@ -121,7 +121,7 @@ const Location: React.FC = () => {
                                     <MapPin className="w-7 h-7 text-gold" />
                                 </div>
                                 <h3 className="text-white font-serif text-lg mb-1">CVIL — Despacho Legal</h3>
-                                <p className="text-stone text-xs max-w-sm mb-4">C. Suiza 721-Piso 3, La Luneta, Zamora, Mich.</p>
+                                <p className="text-gray-700 text-xs max-w-sm mb-4">C. Suiza 721-Piso 3, La Luneta, Zamora, Mich.</p>
                                 <div className="flex items-center gap-2 text-xs text-gold/80 font-medium">
                                     <span className="w-2 h-2 rounded-full bg-gold animate-ping"></span>
                                     <span>Cargando mapa interactivo...</span>

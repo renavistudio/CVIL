@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
           <div className="flex items-center space-x-3 text-[11px] text-stone">
             <a href="/aviso-de-privacidad" className="hover:text-obsidian transition-colors underline underline-offset-2">Aviso de Privacidad</a>
             <span>•</span>
-            <span className="text-stone/70">
+            <span className="text-gray-600">
               Hecho por <a href="https://www.instagram.com/renavistudio/" target="_blank" rel="noopener noreferrer" className="text-stone hover:text-obsidian transition-colors underline underline-offset-2">Renavi Studio</a>
             </span>
           </div>

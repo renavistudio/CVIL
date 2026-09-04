@@ -128,17 +128,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             <div className="flex items-start space-x-6">
                                 <Phone className="w-5 h-5 text-gold mt-1" />
                                 <div>
-                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Línea Directa & Urgencias 24/7</p>
+                                    <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-1">Línea Directa & Urgencias 24/7</p>
                                     <a href="tel:+524432735543" className="text-xl font-serif text-white hover:text-gold transition-colors block mb-1">
                                         +52 (443) 273-5543
                                     </a>
-                                    <p className="text-[10px] text-gray-400">Atención profesional inmediata.</p>
+                                    <p className="text-[10px] text-gray-600">Atención profesional inmediata.</p>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-6">
                                 <MapPin className="w-5 h-5 text-gold mt-1" />
                                 <div>
-                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Sede Corporativa</p>
+                                    <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-1">Sede Corporativa</p>
                                     <p className="text-sm text-gray-300 font-light">
                                         C. Suiza 721-Piso 3, La Luneta<br />
                                         59689 Zamora de Hidalgo, Michoacán.
@@ -225,7 +225,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                         <option value="Iguala Jurídica (Abogado de Cabecera para Empresas)">Iguala Jurídica (Abogado de Cabecera para Empresas)</option>
                                         <option value="Otra Consulta Corporativa / Empresarial">Otra Consulta Corporativa / Empresarial</option>
                                     </select>
-                                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-600">
                                         <ChevronDown className="w-4 h-4" />
                                     </div>
                                 </div>
@@ -234,7 +234,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             {/* Optional message */}
                             <div>
                                 <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="message">
-                                    Breve descripción de su consulta <span className="text-gray-400 font-normal">(Opcional)</span>
+                                    Breve descripción de su consulta <span className="text-gray-600 font-normal">(Opcional)</span>
                                 </label>
                                 <textarea id="message"
                                     value={message}
@@ -291,7 +291,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                     Al enviar este formulario, usted confirma que sus datos serán tratados conforme a nuestro{' '}
                                     <a href="/aviso-de-privacidad" className="text-obsidian font-semibold underline hover:text-gold transition-colors inline">Aviso de Privacidad</a>.
                                     <br />
-                                    <span className="text-gray-400">🔒 Información amparada por Secreto Profesional.</span>
+                                    <span className="text-gray-600">🔒 Información amparada por Secreto Profesional.</span>
                                 </p>
                             </div>
                         </form>
