@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
+const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSocio }) => {
         const partners = [
         {
             id: 1,
@@ -17,7 +17,8 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
             name: "Lic. Alejandro Arriaga",
             role: "Socio Fundador",
             description: "Especialista en estructuración corporativa y planeación estratégica. Su visión ha sido fundamental para la consolidación de CVIL como firma líder en la región.",
-            image: "images/dsc/DSC_6058_opt.webp"
+            image: "images/dsc/DSC_6058_opt.webp",
+            link: "#/socio/alejandro-arriaga"
         },
         {
             id: 3,
@@ -29,7 +30,7 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
         {
             id: 4,
             name: "Lic. Cristian Flores",
-            role: "Abogado",
+            role: "Postulante",
             description: "",
             image: "images/dsc/DSC_6022_opt.webp"
         },
@@ -78,7 +79,7 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
         {
             id: 11,
             name: "Lic. Carol Ramirez",
-            role: "Abogado",
+            role: "Postulante",
             description: "",
             image: "images/dsc/DSC_6038_opt.webp"
         }
@@ -258,7 +259,7 @@ const Partners: React.FC<{ onOpenSocio?: () => void }> = ({ onOpenSocio }) => {
                                                 href="#"
                                                 onClick={(e) => {
                                                     e.preventDefault();
-                                                    if (onOpenSocio) onOpenSocio();
+                                                    if (onOpenSocio) onOpenSocio(partners[currentIndex].id);
                                                 }}
                                                 className="inline-block px-7 py-3 text-xs font-bold uppercase tracking-widest text-obsidian bg-transparent border border-obsidian hover:bg-obsidian hover:text-white transition-colors duration-300 rounded-sm"
                                             >
