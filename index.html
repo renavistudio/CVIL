@@ -296,7 +296,8 @@
   <!-- PRECONNECTS & PRELOADS: PERFORMANCE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="/images/dsc/DSC_6061_opt.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/dsc/DSC_6061_mob.webp" fetchpriority="high" media="(max-width: 1023px)">
+  <link rel="preload" as="image" href="/images/dsc/DSC_6061_opt.webp" fetchpriority="high" media="(min-width: 1024px)">
   <link
     rel="preload"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
@@ -330,21 +331,11 @@
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
         background-color: #050505;
-        background-image: url('/images/dsc/DSC_6061_opt.webp');
-        background-size: cover;
-        background-position: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         z-index: 99999;
-      }
-      .initial-loader::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(5, 5, 5, 0.4);
-        z-index: -1;
       }
       .initial-loader-spinner {
         width: 40px;

@@ -24,13 +24,12 @@ const Hero: React.FC = () => {
                     >
                         <div className="relative overflow-hidden rounded-sm">
                             <img
-                                src="/images/dsc/DSC_6061_opt.webp"
+                                src="/images/dsc/DSC_6061_mob.webp"
                                 alt="Socios Fundadores de CVIL"
-                                width="1000"
-                                height="667"
+                                width="500"
+                                height="334"
                                 fetchPriority="high"
                                 className="w-full h-[85vw] object-cover contrast-[1.05]"
-                                
                                 onClick={() => setSelectedImage('/images/dsc/DSC_6061_opt.webp')}
                             />
                         </div>
