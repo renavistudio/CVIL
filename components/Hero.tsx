@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
             <section ref={targetRef} id="home" className="relative min-h-screen lg:h-screen lg:min-h-[700px] flex items-center bg-white overflow-hidden pt-0">
 
                 {/* Background Texture - Subtle Grain */}
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.webp')] opacity-20 pointer-events-none z-0"></div>
+                <div className="absolute inset-0 bg-[url('/images/stardust.png')] opacity-20 pointer-events-none z-0"></div>
 
                 {/* ===== MOBILE LAYOUT ===== */}
                 <div className="lg:hidden w-full flex flex-col min-h-screen">

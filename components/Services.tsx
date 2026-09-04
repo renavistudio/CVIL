@@ -113,7 +113,7 @@ const Services: React.FC = () => {
             <section id="services" className="py-8 lg:py-12 bg-black relative overflow-hidden">
 
                 {/* Fondo Sutil */}
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.webp')] opacity-20 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-[url('/images/stardust.png')] opacity-20 pointer-events-none"></div>
 
                 <div className="max-w-[1440px] mx-auto w-full px-6 lg:px-12 relative z-10">
 
