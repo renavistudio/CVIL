@@ -21,22 +21,22 @@ const Hero: React.FC = () => {
                     <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#B8860B]/40 to-transparent mt-16"></div>
 
                     {/* Photo of the partners */}
-                    <div className="relative z-10 px-5 pt-6 animate-fade-in"
+                    <div className="relative z-10 px-5 pt-6 "
                     >
                         <div className="relative overflow-hidden rounded-sm">
                             <img
-                                src="images/dsc/DSC_6061_opt.webp"
+                                src="/images/dsc/DSC_6061_opt.webp"
                                 alt="Socios Fundadores de CVIL"
                                 fetchPriority="high"
                                 className="w-full h-[85vw] object-cover contrast-[1.05]"
                                 
-                                onClick={() => setSelectedImage('images/dsc/DSC_6061_opt.webp')}
+                                onClick={() => setSelectedImage('/images/dsc/DSC_6061_opt.webp')}
                             />
                         </div>
                     </div>
 
                     {/* Text content */}
-                    <div className="relative z-10 px-6 pt-8 pb-4 flex-1 flex flex-col animate-fade-in">
+                    <div className="relative z-10 px-6 pt-8 pb-4 flex-1 flex flex-col ">
                         <h1 className="sr-only">Abogados Corporativos en Zamora - Especialistas en Derecho Corporativo y Blindaje Empresarial</h1>
                         <p className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
                             Ganar es <br />
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
                     <div className="grid grid-cols-12 gap-12 w-full items-center">
 
                         {/* Left: Typography */}
-                        <div className="col-span-6 z-20 animate-fade-in"
+                        <div className="col-span-6 z-20 "
                         >
 
                         <h1 className="sr-only">Abogados Corporativos en Zamora - Especialistas en Derecho Corporativo y Blindaje Empresarial</h1>
@@ -95,7 +95,7 @@ const Hero: React.FC = () => {
                                 </p>
                             </div>
 
-                            <div className="mt-12 flex flex-wrap gap-6 items-center animate-fade-in"
+                            <div className="mt-12 flex flex-wrap gap-6 items-center "
                             >
                                 <a href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal." target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between bg-gold text-white px-8 py-4 min-w-[200px] hover:bg-obsidian transition-all duration-300 shadow-lg hover:shadow-xl">
                                     <span className="text-xs font-bold uppercase tracking-widest">Agendar Consulta</span>
@@ -109,12 +109,12 @@ const Hero: React.FC = () => {
 
                         {/* Right: Visual / Featured Partners Photo */}
                         <div className="col-span-6 relative h-[70vh] min-h-[520px] max-h-[680px]">
-                            <div className="w-full h-full overflow-hidden shadow-2xl cursor-pointer rounded-sm animate-fade-in"
-                                onClick={() => setSelectedImage('images/dsc/DSC_6061_opt.webp')}
+                            <div className="w-full h-full overflow-hidden shadow-2xl cursor-pointer rounded-sm "
+                                onClick={() => setSelectedImage('/images/dsc/DSC_6061_opt.webp')}
                             >
                                 <div className="w-full h-full relative overflow-hidden rounded-sm">
                                     <img
-                                        src="images/dsc/DSC_6061_opt.webp"
+                                        src="/images/dsc/DSC_6061_opt.webp"
                                         alt="Socios Fundadores de CVIL"
                                         fetchPriority="high"
                                         className="w-full h-full object-cover object-[center_top] contrast-[1.05]"
@@ -137,7 +137,7 @@ const Hero: React.FC = () => {
                         onClick={() => setSelectedImage(null)}
                         role="dialog" aria-modal="true" className="fixed inset-0 z-[100] flex items-center justify-center bg-obsidian/95 p-4 md:p-12 backdrop-blur-sm cursor-zoom-out"
                     >
-                        <div className="relative max-w-6xl w-full h-[80vh] flex items-center justify-center cursor-default bg-charcoal border border-white/5 shadow-2xl overflow-hidden animate-fade-in"
+                        <div className="relative max-w-6xl w-full h-[80vh] flex items-center justify-center cursor-default bg-charcoal border border-white/5 shadow-2xl overflow-hidden "
                             onClick={(e) => e.stopPropagation()}
                         >
                             <img

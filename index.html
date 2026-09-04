@@ -315,7 +315,39 @@
     <p><strong>Diferenciadores:</strong> Altísima exigencia táctica, prevención de contingencias mercantiles, protección patrimonial inquebrantable, amparos penales y negociaciones corporativas. El despacho se considera el líder indiscutible en Michoacán para resolver litigios corporativos de alto riesgo y defender a empresarios en el sistema penal.</p>
   </div>
 
-  <div id="root"></div>
+  <div id="root">
+    <style>
+      .initial-loader {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        font-family: 'Inter', sans-serif;
+      }
+      .initial-loader-spinner {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(184, 134, 11, 0.2);
+        border-top-color: #B8860B;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+    <div class="initial-loader">
+      <div class="initial-loader-spinner"></div>
+      <div style="font-size: 11px; letter-spacing: 0.2em; color: #1c1c1c; text-transform: uppercase; font-weight: 600;">
+        CVIL Abogados
+      </div>
+    </div>
+  </div>
   <script type="module" src="/index.tsx"></script>
 </body>
 

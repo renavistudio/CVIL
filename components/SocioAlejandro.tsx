@@ -17,7 +17,7 @@ const SocioAlejandro: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     <div className="flex flex-col md:flex-row gap-12 items-start mb-16">
                         <div className="w-full md:w-1/3 shrink-0">
                             <div className="aspect-[3/4] overflow-hidden shadow-sm rounded-sm">
-                                <img loading="lazy" src="images/dsc/DSC_6058_opt.webp" alt="Lic. Alejandro Arriaga Bastida" className="w-full h-full object-cover object-[center_top]" />
+                                <img loading="lazy" src="/images/dsc/DSC_6058_opt.webp" alt="Lic. Alejandro Arriaga Bastida" className="w-full h-full object-cover object-[center_top]" />
                             </div>
                         </div>
                         <div className="w-full md:w-2/3">
