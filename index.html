@@ -329,19 +329,28 @@
       .initial-loader {
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
-        background-color: #ffffff;
+        background-color: #050505;
+        background-image: url('/images/dsc/DSC_6061_opt.webp');
+        background-size: cover;
+        background-position: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         z-index: 99999;
-        font-family: 'Inter', sans-serif;
+      }
+      .initial-loader::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(5, 5, 5, 0.4);
+        z-index: -1;
       }
       .initial-loader-spinner {
         width: 40px;
         height: 40px;
-        border: 2px solid rgba(184, 134, 11, 0.2);
-        border-top-color: #B8860B;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-top-color: #ffffff;
         border-radius: 50%;
         animation: spin 1s linear infinite;
         margin-bottom: 20px;
@@ -352,9 +361,6 @@
     </style>
     <div class="initial-loader">
       <div class="initial-loader-spinner"></div>
-      <div style="font-size: 11px; letter-spacing: 0.2em; color: #1c1c1c; text-transform: uppercase; font-weight: 600;">
-        CVIL Abogados
-      </div>
     </div>
   </div>
   <script type="module" src="/index.tsx"></script>
