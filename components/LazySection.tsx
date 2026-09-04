@@ -10,7 +10,7 @@ const LazySection: React.FC<{ children: React.ReactNode, minHeight?: string }> =
         setIsVisible(true);
         observer.disconnect();
       }
-    }, { rootMargin: '400px' });
+    }, { rootMargin: '-50px' });
     
     if (ref.current) observer.observe(ref.current);
     
