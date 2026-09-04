@@ -87,6 +87,14 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(1);
+    const isFirstRender = useRef(true);
+
+    // After the very first card change, allow animations
+    useEffect(() => {
+        if (isFirstRender.current && currentIndex !== 0) {
+            isFirstRender.current = false;
+        }
+    }, [currentIndex]);
 
     // Touch/swipe handling
     const touchStartX = useRef<number | null>(null);
@@ -269,9 +277,9 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                     exit: (direction: number) => ({
                                         x: direction > 0 ? '-30%' : '30%',
                                         opacity: 0,
-                                    }),
+                                    })}
                                 }}
-                                initial={false}
+                                initial={isFirstRender.current ? false : "enter"}
                                 animate="center"
                                 exit="exit"
                                 transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
