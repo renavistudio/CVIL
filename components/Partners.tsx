@@ -268,21 +268,24 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                 variants={{
                                     enter: (direction: number) => ({
                                         x: direction > 0 ? '100%' : '-100%',
-                                        opacity: 0.5,
+                                        opacity: 0,
+                                        scale: 0.98,
                                     }),
                                     center: {
                                         x: 0,
                                         opacity: 1,
+                                        scale: 1,
                                     },
                                     exit: (direction: number) => ({
-                                        x: direction > 0 ? '-30%' : '30%',
+                                        x: direction > 0 ? '-20%' : '20%',
                                         opacity: 0,
+                                        scale: 0.98,
                                     }),
                                 }}
                                 initial={isFirstRender.current ? false : "enter"}
                                 animate="center"
                                 exit="exit"
-                                transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
+                                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                                 className="w-full flex flex-col sm:flex-row items-stretch"
                                 style={{ minHeight: '420px' }}
                             >
