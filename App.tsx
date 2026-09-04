@@ -1,8 +1,9 @@
 import React, { Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import LazySection from './components/LazySection';
 
-// Lazy load below-the-fold components to improve TBT & LCP
+// Lazy load below-the-fold components
 const Partners = React.lazy(() => import('./components/Partners'));
 const Stats = React.lazy(() => import('./components/Stats'));
 const LiveTicker = React.lazy(() => import('./components/LiveTicker'));
@@ -37,9 +38,7 @@ const App: React.FC = () => {
     handleHash();
     window.addEventListener('hashchange', handleHash);
 
-    return () => {
-      window.removeEventListener('hashchange', handleHash);
-    };
+    return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
   React.useEffect(() => {
@@ -79,34 +78,69 @@ const App: React.FC = () => {
         <Navbar />
         <main>
           <Hero />
-          <Suspense fallback={null}>
-            <Partners onOpenSocio={(id) => {
-              if (id === 1) {
-                  setActiveSocio('mario');
-                  window.location.hash = '#/socio/mario-cervantes';
-              }
-              if (id === 2) {
-                  setActiveSocio('alejandro');
-                  window.location.hash = '#/socio/alejandro-arriaga';
-              }
-            }} />
-          </Suspense>
-          <Suspense fallback={null}>
-            <Stats />
-            <LiveTicker />
-            <CaseSuccess />
-            <BentoGrid />
-            <Services />
-            <Manifesto />
-            <SocialProof />
-            <ContactForm />
-            <Location />
-          </Suspense>
+          
+          <LazySection minHeight="800px">
+            <Suspense fallback={null}>
+              <Partners onOpenSocio={(id) => {
+                if (id === 1) {
+                    setActiveSocio('mario');
+                    window.location.hash = '#/socio/mario-cervantes';
+                }
+                if (id === 2) {
+                    setActiveSocio('alejandro');
+                    window.location.hash = '#/socio/alejandro-arriaga';
+                }
+              }} />
+            </Suspense>
+          </LazySection>
+
+          <LazySection minHeight="400px">
+            <Suspense fallback={null}>
+              <Stats />
+              <LiveTicker />
+            </Suspense>
+          </LazySection>
+
+          <LazySection minHeight="600px">
+            <Suspense fallback={null}>
+              <CaseSuccess />
+            </Suspense>
+          </LazySection>
+
+          <LazySection minHeight="600px">
+            <Suspense fallback={null}>
+              <BentoGrid />
+            </Suspense>
+          </LazySection>
+          
+          <LazySection minHeight="800px">
+            <Suspense fallback={null}>
+              <Services />
+            </Suspense>
+          </LazySection>
+
+          <LazySection minHeight="400px">
+            <Suspense fallback={null}>
+              <Manifesto />
+              <SocialProof />
+            </Suspense>
+          </LazySection>
+
+          <LazySection minHeight="800px">
+            <Suspense fallback={null}>
+              <ContactForm />
+              <Location />
+            </Suspense>
+          </LazySection>
+
         </main>
-        <Suspense fallback={null}>
-          <Footer />
-          <ChatWidget />
-        </Suspense>
+        
+        <LazySection minHeight="200px">
+          <Suspense fallback={null}>
+            <Footer />
+            <ChatWidget />
+          </Suspense>
+        </LazySection>
       </div>
 
       <Suspense fallback={null}>
