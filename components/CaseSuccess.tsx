@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CaseStudy } from '../types';
-import { FileText, CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 const cases: CaseStudy[] = [
     {
@@ -60,7 +60,7 @@ const CaseSuccess: React.FC = () => {
                         return (
                             <motion.div
                                 key={c.id}
-                                initial={false}
+                                initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1 }}
                                 viewport={{ once: true }}
@@ -68,7 +68,7 @@ const CaseSuccess: React.FC = () => {
                             >
                                 {/* Image Header */}
                                 <div className="h-48 overflow-hidden relative">
-                                    <img
+                                    <img loading="lazy"
                                         src={c.image}
                                         alt={c.title}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

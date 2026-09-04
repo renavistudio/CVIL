@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Shield, FileSignature, Building2, Users, Landmark, TreePine, X } from 'lucide-react';
+import { ArrowUpRight, Shield, FileSignature, Building2, Users, Landmark, X } from 'lucide-react';
 import { ServiceItem } from '../types';
 
 const services: (ServiceItem & { image: string, tag: string })[] = [
@@ -121,7 +121,7 @@ const Services: React.FC = () => {
                     <div className="flex flex-col md:flex-row justify-between items-end mb-6 lg:mb-10 border-b border-white/10 pb-8">
                         <div className="max-w-2xl">
                             <motion.div
-                                initial={false}
+                                initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 className="flex items-center gap-4 mb-4"
@@ -142,7 +142,7 @@ const Services: React.FC = () => {
                         {services.map((service, idx) => (
                             <motion.div
                                 key={service.id}
-                                initial={false}
+                                initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1, duration: 0.6 }}
@@ -150,7 +150,7 @@ const Services: React.FC = () => {
                             >
                                 {/* BG image */}
                                 <div className="absolute inset-0">
-                                    <img
+                                    <img loading="lazy"
                                         src={service.image}
                                         alt={service.title}
                                         className="w-full h-full object-cover opacity-30 mix-blend-overlay group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
@@ -159,7 +159,7 @@ const Services: React.FC = () => {
                                 </div>
 
                                 {/* Big number */}
-                                <span className="absolute top-0 right-0 text-[180px] font-serif font-bold text-white/[0.02] leading-none -translate-y-8 translate-x-8 select-none pointer-events-none group-hover:text-white/[0.04] transition-colors duration-500">
+                                <span className="absolute top-0 right-0 text-[100px] font-serif font-bold text-white/[0.02] leading-none -translate-y-8 translate-x-8 select-none pointer-events-none group-hover:text-white/[0.04] transition-colors duration-500">
                                     0{idx + 1}
                                 </span>
 
@@ -211,28 +211,28 @@ const Services: React.FC = () => {
             </section>
 
             {/* ===== MODAL POPUP ===== */}
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
                 {selected && (
-                    <>
+                    <motion.div
+                        key="modal-container"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+                    >
                         {/* Backdrop */}
-                        <motion.div
-                            key="backdrop"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.25 }}
+                        <div
                             onClick={() => setSelected(null)}
-                            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+                            role="dialog" aria-modal="true" className="absolute inset-0 bg-black/80 backdrop-blur-sm"
                         />
 
                         {/* Modal */}
                         <motion.div
-                            key="modal"
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            initial={{ scale: 0.95, y: 20 }}
+                            animate={{ scale: 1, y: 0 }}
+                            exit={{ scale: 0.95, y: 20 }}
                             transition={{ duration: 0.3, type: 'spring', stiffness: 300, damping: 30 }}
-                            className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+                            className="relative z-10 w-full max-w-lg"
                         >
                             <div className="bg-[#0f0f0f] border border-white/15 w-full max-w-lg relative pointer-events-auto shadow-2xl">
 
@@ -258,7 +258,7 @@ const Services: React.FC = () => {
                                     <p className="text-stone text-sm font-light mb-6 opacity-70">{selected.description}</p>
 
                                     <div className="border-t border-white/10 pt-5">
-                                        <span className="text-[9px] font-bold text-stone/60 uppercase tracking-widest block mb-4">
+                                        <span className="text-[10px] font-bold text-stone/60 uppercase tracking-widest block mb-4">
                                             Servicios que incluye:
                                         </span>
                                         <ul className="space-y-3">
@@ -289,7 +289,7 @@ const Services: React.FC = () => {
                                 </div>
                             </div>
                         </motion.div>
-                    </>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </>

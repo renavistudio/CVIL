@@ -4,8 +4,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
+    cssCodeSplit: true,
     outDir: 'dist',
-    sourcemap: false,
+    sourcemap: 'hidden',
     minify: 'terser',
     terserOptions: {
       compress: {

@@ -87,14 +87,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(1);
-    const isFirstRender = useRef(true);
 
-    // After the very first card change, allow animations
-    useEffect(() => {
-        if (isFirstRender.current && currentIndex !== 0) {
-            isFirstRender.current = false;
-        }
-    }, [currentIndex]);
 
     // Touch/swipe handling
     const touchStartX = useRef<number | null>(null);
@@ -282,7 +275,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                         scale: 0.98,
                                     }),
                                 }}
-                                initial={isFirstRender.current ? false : "enter"}
+                                initial="enter"
                                 animate="center"
                                 exit="exit"
                                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -291,7 +284,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                             >
                                 {/* Full-Height Left Image Column */}
                                 <div className="w-full sm:w-5/12 shrink-0 relative overflow-hidden" style={{ minHeight: '280px' }}>
-                                    <img
+                                    <img loading="lazy"
                                         src={currentPartner.image}
                                         alt={currentPartner.name}
                                         className="w-full h-full object-cover object-[center_top] sm:absolute sm:inset-0"

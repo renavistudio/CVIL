@@ -9,15 +9,15 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             <Navbar />
             <main className="pt-32 pb-24">
                 <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
-                    <a href="#" onClick={(e) => { e.preventDefault(); onClose(); }} className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-gold hover:text-obsidian transition-colors mb-12">
+                    <button onClick={onClose} className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-gold hover:text-obsidian transition-colors mb-12">
                         <ArrowLeft className="w-4 h-4 mr-2" />
                         Regresar
-                    </a>
+                    </button>
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mb-16">
                         <div className="w-full md:w-1/3 shrink-0">
                             <div className="aspect-[3/4] overflow-hidden shadow-sm rounded-sm">
-                                <img src="images/dsc/DSC_6010_opt.webp" alt="Dr. Mario Enrique Cervantes Vieyra" className="w-full h-full object-cover object-[center_top]" />
+                                <img loading="lazy" src="images/dsc/DSC_6010_opt.webp" alt="Dr. Mario Enrique Cervantes Vieyra" className="w-full h-full object-cover object-[center_top]" />
                             </div>
                         </div>
                         <div className="w-full md:w-2/3">

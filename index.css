@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 110px;
+  scroll-padding-top: 70px;
 }
 
 body {
@@ -12,44 +12,18 @@ body {
   color: #050505;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
 
-.bw-filter {
-  filter: grayscale(100%) contrast(110%);
-  transition: filter 0.5s ease;
-}
 
-.bw-filter:hover {
-  filter: grayscale(0%) contrast(100%);
-}
 
-.flip-container {
-  perspective: 1500px;
-}
 
-.flip-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-}
 
-.flip-container:hover .flip-inner {
-  transform: rotateY(180deg);
-}
 
-.flip-front,
-.flip-back {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  overflow: hidden;
-}
 
-.flip-back {
-  transform: rotateY(180deg);
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

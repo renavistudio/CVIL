@@ -1,16 +1,9 @@
 import React, { useRef, useState } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, ChevronDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
     const targetRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-        offset: ["start start", "end start"]
-    });
-
-    
-    
 
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -34,7 +27,7 @@ const Hero: React.FC = () => {
                             <img
                                 src="images/dsc/DSC_6061_opt.webp"
                                 alt="Socios Fundadores de CVIL"
-                                className="w-full h-[85vw] object-cover contrast-105"
+                                className="w-full h-[85vw] object-cover contrast-[1.05]"
                                 
                                 onClick={() => setSelectedImage('images/dsc/DSC_6061_opt.webp')}
                             />
@@ -42,15 +35,15 @@ const Hero: React.FC = () => {
                     </div>
 
                     {/* Text content */}
-                    <div className="relative z-10 px-6 pt-8 pb-4 flex-1 flex flex-col animate-fade-in"
-                    >
-                        <h1 className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
+                    <div className="relative z-10 px-6 pt-8 pb-4 flex-1 flex flex-col animate-fade-in">
+                        <h1 className="sr-only">Abogados Corporativos en Zamora - Especialistas en Derecho Corporativo y Blindaje Empresarial</h1>
+                        <p className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
                             Ganar es <br />
                             <span className="italic text-gray-400 font-light">lo único.</span>
-                        </h1>
+                        </p>
 
                         <p className="text-base text-charcoal/75 font-light leading-relaxed mb-8 max-w-sm">
-                            Protegemos su empresa, sus operaciones y la estabilidad de su negocio.
+                            Como su abogado corporativo de confianza, protegemos su empresa, sus operaciones comerciales y la estabilidad legal de su negocio en Zamora y todo Michoacán.
                         </p>
 
                         {/* CTA Button - full width golden */}
@@ -69,14 +62,14 @@ const Hero: React.FC = () => {
                         </p>
 
                         {/* Scroll indicator */}
-                        <div
+                        <motion.div
                             animate={{ y: [0, 6, 0] }}
                             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                             className="flex flex-col items-center mt-auto pt-6 pb-4"
                         >
                             <ChevronDown className="w-5 h-5 text-gray-300" />
-                            <span className="text-[9px] text-gray-400 uppercase tracking-[0.2em] mt-1">Desplazar para más</span>
-                        </div>
+                            <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em] mt-1">Desplazar para más</span>
+                        </motion.div>
                     </div>
                 </div>
 
@@ -89,14 +82,15 @@ const Hero: React.FC = () => {
                         <div className="col-span-6 z-20 animate-fade-in"
                         >
 
-                            <h1 className="text-[6.8rem] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-8 mix-blend-multiply">
-                                Ganar es <br />
-                                <span className="italic text-gray-400 font-light">lo único.</span>
-                            </h1>
+                        <h1 className="sr-only">Abogados Corporativos en Zamora - Especialistas en Derecho Corporativo y Blindaje Empresarial</h1>
+                        <p className="text-[6.8rem] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-8 mix-blend-multiply">
+                            Ganar es <br />
+                            <span className="italic text-gray-400 font-light">lo único.</span>
+                        </p>
 
                             <div className="max-w-2xl mt-4">
                                 <p className="text-xl text-charcoal/80 font-light leading-relaxed">
-                                    Protegemos su empresa, sus operaciones y la estabilidad de su negocio.
+                                    Como su despacho de abogados corporativos, protegemos su empresa, sus operaciones comerciales y la estabilidad legal de su negocio.
                                 </p>
                             </div>
 
@@ -121,7 +115,7 @@ const Hero: React.FC = () => {
                                     <img
                                         src="images/dsc/DSC_6061_opt.webp"
                                         alt="Socios Fundadores de CVIL"
-                                        className="w-full h-full object-cover object-[center_top] contrast-105"
+                                        className="w-full h-full object-cover object-[center_top] contrast-[1.05]"
                                     />
                                 </div>
                             </div>
@@ -131,15 +125,15 @@ const Hero: React.FC = () => {
             </section>
 
             {/* ===== Lightbox Popup Modal ===== */}
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
                 {selectedImage && (
-                    <div
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
                         onClick={() => setSelectedImage(null)}
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-obsidian/95 p-4 md:p-12 backdrop-blur-sm cursor-zoom-out"
+                        role="dialog" aria-modal="true" className="fixed inset-0 z-[100] flex items-center justify-center bg-obsidian/95 p-4 md:p-12 backdrop-blur-sm cursor-zoom-out"
                     >
                         <div className="relative max-w-6xl w-full h-[80vh] flex items-center justify-center cursor-default bg-charcoal border border-white/5 shadow-2xl overflow-hidden animate-fade-in"
                             onClick={(e) => e.stopPropagation()}
@@ -158,7 +152,7 @@ const Hero: React.FC = () => {
                                 <X className="w-5 h-5" />
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </>

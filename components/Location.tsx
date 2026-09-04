@@ -9,8 +9,21 @@ const Location: React.FC = () => {
     const googleMapsUrl = "https://maps.google.com/?q=C.+Suiza+721-Piso+3,+La+Luneta,+59689+Zamora+de+Hidalgo,+Mich.";
     const wazeUrl = "https://waze.com/ul?q=C.%20Suiza%20721%20La%20Luneta%20Zamora%20Michoacan&navigate=yes";
 
-    const handleCopy = () => {
-        navigator.clipboard.writeText(addressText);
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(addressText);
+        } catch (err) {
+            const textArea = document.createElement("textarea");
+            textArea.value = addressText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err2) {
+                console.error('Fallback copy failed', err2);
+            }
+            document.body.removeChild(textArea);
+        }
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -55,7 +68,7 @@ const Location: React.FC = () => {
                                         59689 Zamora de Hidalgo, Mich.
                                     </p>
                                     <button
-                                        onClick={handleCopy}
+                                        onClick={handleCopy} aria-pressed={copied}
                                         className="inline-flex items-center gap-1.5 text-xs text-charcoal/70 hover:text-obsidian font-medium transition-colors cursor-pointer"
                                     >
                                         {copied ? (
@@ -117,26 +130,20 @@ const Location: React.FC = () => {
                         )}
 
                         {/* Interactive Google Map with Eager Loading */}
-                        <iframe
+                        <iframe sandbox="allow-scripts allow-same-origin allow-popups"
                             src="https://maps.google.com/maps?q=C.+Suiza+721,+La+Luneta,+Zamora,+Michoacan&t=&z=16&ie=UTF8&iwloc=&output=embed"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
                             allowFullScreen={false}
-                            loading="eager"
+                            loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                             onLoad={() => setIsMapLoaded(true)}
                             title="Ubicación CVIL Abogados en Zamora"
                             className={`w-full h-full object-cover transition-opacity duration-700 contrast-[1.03] ${isMapLoaded ? 'opacity-100' : 'opacity-0'}`}
                         ></iframe>
 
-                        {/* Discreet overlay badge */}
-                        <div className="absolute top-4 left-4 z-20 pointer-events-none">
-                            <span className="bg-obsidian/90 backdrop-blur-md text-white border border-white/10 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-md flex items-center gap-1.5">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                                Edificio Corporativo CVIL
-                            </span>
-                        </div>
+                        {/* Discreet overlay badge removed */}
                     </div>
 
                 </div>

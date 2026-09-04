@@ -50,7 +50,15 @@ const App: React.FC = () => {
     }
   }, [activeSocio]);
 
-  if (window.location.pathname === "/aviso-de-privacidad") {
+  const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
+
+  React.useEffect(() => {
+    const handleLocationChange = () => setCurrentPath(window.location.pathname);
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  if (currentPath === "/aviso-de-privacidad") {
     return <PrivacyPolicyPage />;
   }
 

@@ -11,7 +11,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
     const [matter, setMatter] = useState('Contratos Mercantiles y Acuerdos Comerciales');
     const [message, setMessage] = useState('');
 
-    const [errors, setErrors] = useState<{ name?: string; phone?: string;  }>({});
+    const [errors, setErrors] = useState<{ name?: string; phone?: string; captcha?: string }>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submittedSuccess, setSubmittedSuccess] = useState(false);
 
@@ -19,13 +19,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
     const [captchaB, setCaptchaB] = useState(0);
     const [captchaAnswer, setCaptchaAnswer] = useState('');
 
+    const isMounted = React.useRef(true);
+
     React.useEffect(() => {
+        isMounted.current = true;
         setCaptchaA(Math.floor(Math.random() * 9) + 1);
         setCaptchaB(Math.floor(Math.random() * 9) + 1);
+        return () => { isMounted.current = false; };
     }, []);
 
     const validate = () => {
-        const newErrors: { name?: string; phone?: string } = {};
+        const newErrors: { name?: string; phone?: string; captcha?: string } = {};
 
         const nameTrimmed = name.trim();
         const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\.\-]{3,60}$/;
@@ -51,8 +55,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
             newErrors.phone = 'El número ingresado no parece ser un teléfono real.';
         }
 
-        if (parseInt(captchaAnswer) !== (captchaA + captchaB)) {
+        if (parseInt(captchaAnswer, 10) !== (captchaA + captchaB)) {
             newErrors.captcha = 'La respuesta de seguridad es incorrecta.';
+            setCaptchaAnswer('');
+            setCaptchaA(Math.floor(Math.random() * 9) + 1);
+            setCaptchaB(Math.floor(Math.random() * 9) + 1);
         }
 
         setErrors(newErrors);
@@ -72,13 +79,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
         const waUrl = `https://wa.me/524432735543?text=${encodeURIComponent(waMessage)}`;
 
         setTimeout(() => {
-            window.open(waUrl, '_blank');
-            setIsSubmitting(false);
-            setSubmittedSuccess(true);
-            setCaptchaAnswer('');
-            setCaptchaA(Math.floor(Math.random() * 9) + 1);
-            setCaptchaB(Math.floor(Math.random() * 9) + 1);
-            setTimeout(() => setSubmittedSuccess(false), 6000);
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            if (isMounted.current) {
+                setIsSubmitting(false);
+                setSubmittedSuccess(true);
+                setCaptchaAnswer('');
+                setCaptchaA(Math.floor(Math.random() * 9) + 1);
+                setCaptchaB(Math.floor(Math.random() * 9) + 1);
+                setTimeout(() => {
+                    if (isMounted.current) setSubmittedSuccess(false);
+                }, 6000);
+            }
         }, 400);
     };
 
@@ -91,7 +102,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                     <div className="lg:col-span-5 relative bg-obsidian text-white p-10 lg:p-16 overflow-hidden flex flex-col justify-between min-h-[500px]">
                         {/* Background Image */}
                         <div className="absolute inset-0 z-0">
-                            <img
+                            <img loading="lazy"
                                 src="images/pasillo.webp"
                                 alt="Instalaciones y pasillo de las oficinas corporativas CVIL en Zamora"
                                 className="w-full h-full object-cover opacity-30"
@@ -141,7 +152,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {/* Name field */}
                                 <div className="group relative">
-                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="service">
                                         Nombre Completo <span className="text-gold">*</span>
                                     </label>
                                     <input
@@ -165,7 +176,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                                 {/* Phone field */}
                                 <div className="group relative">
-                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="service">
                                         Teléfono / WhatsApp <span className="text-gold">*</span>
                                     </label>
                                     <input
@@ -190,7 +201,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                             {/* Matter dropdown */}
                             <div>
-                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="service">
                                     Servicio o Necesidad de su Empresa
                                 </label>
                                 <div className="relative">
@@ -217,7 +228,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                             {/* Optional message */}
                             <div>
-                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="service">
                                     Breve descripción de su consulta <span className="text-gray-400 font-normal">(Opcional)</span>
                                 </label>
                                 <textarea
@@ -231,8 +242,31 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
 
 
+                            <div className="group relative">
+                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2" htmlFor="captcha">
+                                    Verificación de seguridad: ¿Cuánto es {captchaA} + {captchaB}? <span className="text-gold">*</span>
+                                </label>
+                                <input
+                                    id="captcha"
+                                    name="captcha"
+                                    type="text"
+                                    value={captchaAnswer}
+                                    onChange={(e) => {
+                                        setCaptchaAnswer(e.target.value);
+                                        if (errors.captcha) setErrors(prev => ({ ...prev, captcha: undefined }));
+                                    }}
+                                    className={`w-full bg-white border ${errors.captcha ? 'border-red-500' : 'border-gray-200'} rounded-sm px-4 py-3.5 text-sm focus:outline-none focus:border-gold transition-colors text-charcoal placeholder-gray-400 font-sans shadow-sm`}
+                                    placeholder="Ingrese la suma"
+                                />
+                                {errors.captcha && (
+                                    <p className="absolute -bottom-5 left-0 text-[10px] text-red-500 font-medium">
+                                        {errors.captcha}
+                                    </p>
+                                )}
+                            </div>
+
                             {submittedSuccess && (
-                                <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-sm flex items-center space-x-2 animate-fade-in">
+                                <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-sm flex items-center space-x-2 animate-fade-in" aria-live="polite">
                                     <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
                                     <span>Solicitud recibida correctamente. Se ha abierto la conversación directa para brindarle atención.</span>
                                 </div>

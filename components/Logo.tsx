@@ -12,12 +12,12 @@ const Logo: React.FC<LogoProps> = ({ className = "h-10", showText = true, light 
     return (
         <div className="flex flex-col items-center justify-center group leading-none">
             <img 
-                src="/images/CVIL%20Logo.webp" 
+                src="/images/cvil-logo.webp" 
                 alt="CVIL Logo" 
                 className={`${className} w-auto object-contain transition-transform duration-300 group-hover:scale-105`} 
             />
             {showText && (
-                <span className={`text-[6.5px] md:text-[7px] tracking-[0.18em] uppercase font-medium mt-1 ${subTextColor} whitespace-nowrap`}>
+                <span className={`text-[6.5px] md:text-[10px] tracking-[0.18em] uppercase font-medium mt-1 ${subTextColor} whitespace-nowrap`}>
                     Alianza Estratégica En Derecho
                 </span>
             )}
