@@ -87,7 +87,6 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(1);
-    const [isFirstRender, setIsFirstRender] = useState(true);
 
     // Touch/swipe handling
     const touchStartX = useRef<number | null>(null);
@@ -104,7 +103,6 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         if (touchStartX.current === null || touchStartY.current === null) return;
         const deltaX = e.touches[0].clientX - touchStartX.current;
         const deltaY = e.touches[0].clientY - touchStartY.current;
-        // Only count as swipe if horizontal movement is dominant
         if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
             swiping.current = true;
         }
@@ -119,21 +117,14 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         const deltaX = e.changedTouches[0].clientX - touchStartX.current;
         const swipeThreshold = 50;
         if (deltaX < -swipeThreshold) {
-            // Swiped left → next
             handleNext();
         } else if (deltaX > swipeThreshold) {
-            // Swiped right → prev
             handlePrev();
         }
         touchStartX.current = null;
         touchStartY.current = null;
         swiping.current = false;
     };
-
-    // Disable first-render flag after mount so animations only play on subsequent changes
-    useEffect(() => {
-        setIsFirstRender(false);
-    }, []);
 
     // Auto-scroll loop (6s timer, resets on manual index change)
     useEffect(() => {
@@ -153,6 +144,8 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         setDirection(-1);
         setCurrentIndex((prev) => (prev - 1 + partners.length) % partners.length);
     };
+
+    const currentPartner = partners[currentIndex];
 
     return (
         <section id="partners" className="py-8 lg:py-12 bg-white border-t border-gray-100 overflow-hidden relative">
@@ -232,9 +225,9 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                     </div>
 
                     {/* Right side: The sliding content viewport (8 columns) */}
-                    {/* Fixed height on mobile prevents layout shift during card transitions */}
                     <div
-                        className="lg:col-span-8 relative overflow-hidden h-[520px] sm:h-[420px] bg-[#fafaf9] rounded-sm border border-gray-100 shadow-sm"
+                        className="lg:col-span-8 relative overflow-hidden bg-[#fafaf9] rounded-sm border border-gray-100 shadow-sm"
+                        style={{ minHeight: '420px' }}
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                         onTouchEnd={handleTouchEnd}
@@ -243,7 +236,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                         {/* Mobile edge arrows — overlaid on card borders */}
                         <button
                             onClick={handlePrev}
-                            className="lg:hidden absolute left-2 top-[140px] sm:top-[210px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
+                            className="lg:hidden absolute left-2 top-[220px] sm:top-[240px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
                             aria-label="Anterior"
                         >
                             <div className="bg-black/10 backdrop-blur-sm rounded-full p-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
@@ -252,7 +245,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                         </button>
                         <button
                             onClick={handleNext}
-                            className="lg:hidden absolute right-2 top-[140px] sm:top-[210px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
+                            className="lg:hidden absolute right-2 top-[220px] sm:top-[240px] -translate-y-1/2 z-20 p-2 flex items-center justify-center active:scale-90 transition-all"
                             aria-label="Siguiente"
                         >
                             <div className="bg-black/10 backdrop-blur-sm rounded-full p-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
@@ -260,7 +253,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                             </div>
                         </button>
 
-                        <AnimatePresence initial={false} mode="wait" custom={direction}>
+                        <AnimatePresence initial={false} mode="popLayout" custom={direction}>
                             <motion.div
                                 key={currentIndex}
                                 custom={direction}
@@ -278,41 +271,43 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                         opacity: 0,
                                     }),
                                 }}
-                                initial={isFirstRender ? "center" : "enter"}
+                                initial={false}
                                 animate="center"
                                 exit="exit"
                                 transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-                                className="absolute inset-0 w-full h-full flex flex-col sm:flex-row items-stretch"
+                                className="w-full flex flex-col sm:flex-row items-stretch"
+                                style={{ minHeight: '420px' }}
                             >
                                 {/* Full-Height Left Image Column */}
-                                <div className="w-full sm:w-5/12 h-[280px] sm:h-full shrink-0 relative overflow-hidden">
+                                <div className="w-full sm:w-5/12 shrink-0 relative overflow-hidden" style={{ minHeight: '280px' }}>
                                     <img
-                                        src={partners[currentIndex].image}
-                                        alt={partners[currentIndex].name}
-                                        className="w-full h-full object-cover object-[center_top]"
+                                        src={currentPartner.image}
+                                        alt={currentPartner.name}
+                                        className="w-full h-full object-cover object-[center_top] sm:absolute sm:inset-0"
+                                        style={{ minHeight: '280px' }}
                                     />
                                 </div>
 
                                 {/* Partner details on the right */}
                                 <div className="flex-1 flex flex-col justify-center p-8 sm:p-10 md:p-12 text-center sm:text-left">
                                     <h3 className="text-2xl md:text-3xl font-bold font-serif text-obsidian tracking-wide uppercase mb-1.5">
-                                        {partners[currentIndex].name}
+                                        {currentPartner.name}
                                     </h3>
                                     <p className="text-[#B8860B] font-semibold text-xs uppercase tracking-wider mb-5">
-                                        {partners[currentIndex].role}
+                                        {currentPartner.role}
                                     </p>
-                                    {partners[currentIndex].description && (
+                                    {currentPartner.description && (
                                         <p className="text-charcoal/75 text-sm md:text-base font-light leading-relaxed max-w-lg mb-8">
-                                            {partners[currentIndex].description}
+                                            {currentPartner.description}
                                         </p>
                                     )}
-                                    {partners[currentIndex].link && (
+                                    {currentPartner.link && (
                                         <div>
                                             <a
                                                 href="#"
                                                 onClick={(e) => {
                                                     e.preventDefault();
-                                                    if (onOpenSocio) onOpenSocio(partners[currentIndex].id);
+                                                    if (onOpenSocio) onOpenSocio(currentPartner.id);
                                                 }}
                                                 className="inline-block px-7 py-3 text-xs font-bold uppercase tracking-widest text-obsidian bg-transparent border border-obsidian hover:bg-obsidian hover:text-white transition-colors duration-300 rounded-sm"
                                             >
