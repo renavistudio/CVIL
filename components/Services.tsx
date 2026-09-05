@@ -60,7 +60,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         actionText: "Ver más",
         icon: FileSignature,
         tag: "Intangibles",
-        image: "images/oficina.webp",
+        image: "images/office/IMG_0645.webp",
         details: [
             "Registro de marcas, patentes y derechos de autor.",
             "Estructuración de contratos de franquicia y licencias de uso.",
@@ -76,7 +76,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         actionText: "Ver más",
         icon: Shield,
         tag: "Defensa",
-        image: "images/fachada.webp",
+        image: "images/office/IMG_0585.webp",
         details: [
             "Atención y desahogo de auditorías y requerimientos de la autoridad.",
             "Interposición de Recursos de Revocación e Inconformidad.",
@@ -113,7 +113,7 @@ const Services: React.FC = () => {
             <section id="services" className="py-8 lg:py-12 bg-black relative overflow-hidden">
 
                 {/* Fondo Sutil */}
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.webp')] opacity-20 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none"></div>
 
                 <div className="max-w-[1440px] mx-auto w-full px-6 lg:px-12 relative z-10">
 
