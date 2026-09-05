@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cvil.mx/sitemap.xml
+Sitemap: https://cvilabogados.mx/sitemap.xml
+
+# Agentic Navigation
+Allow: /llms.txt
+Allow: /llms.md

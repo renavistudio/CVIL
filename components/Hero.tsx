@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
                     <div className="relative z-10 px-5 pt-6 animate-fade-in"
                     >
                         <div className="relative overflow-hidden rounded-sm">
-                            <img
+                            <img width="800" height="600"
                                 src="images/dsc/DSC_6061_opt.webp"
                                 alt="Socios Fundadores de CVIL"
                                 className="w-full h-[85vw] object-cover contrast-[1.05]"
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
                                 onClick={() => setSelectedImage('images/dsc/DSC_6061_opt.webp')}
                             >
                                 <div className="w-full h-full relative overflow-hidden rounded-sm">
-                                    <img
+                                    <img width="800" height="600"
                                         src="images/dsc/DSC_6061_opt.webp"
                                         alt="Socios Fundadores de CVIL"
                                         className="w-full h-full object-cover object-[center_top] contrast-[1.05]"
@@ -144,7 +144,7 @@ const Hero: React.FC = () => {
                         <div className="relative max-w-6xl w-full h-[80vh] flex items-center justify-center cursor-default bg-charcoal border border-white/5 shadow-2xl overflow-hidden animate-fade-in"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <img
+                            <img width="800" height="600"
                                 src={selectedImage}
                                 alt="Fotografía ampliada de las instalaciones corporativas de CVIL Abogados en Zamora"
                                 className="w-full h-full object-contain"

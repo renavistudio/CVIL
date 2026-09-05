@@ -91,7 +91,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                     <div className="lg:col-span-5 relative bg-obsidian text-white p-10 lg:p-16 overflow-hidden flex flex-col justify-between min-h-[500px]">
                         {/* Background Image */}
                         <div className="absolute inset-0 z-0">
-                            <img
+                            <img width="800" height="600"
                                 src="images/pasillo.webp"
                                 alt="Instalaciones y pasillo de las oficinas corporativas CVIL en Zamora"
                                 className="w-full h-full object-cover opacity-30"

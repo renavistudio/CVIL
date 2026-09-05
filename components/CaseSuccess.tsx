@@ -68,7 +68,7 @@ const CaseSuccess: React.FC = () => {
                             >
                                 {/* Image Header */}
                                 <div className="h-48 overflow-hidden relative">
-                                    <img
+                                    <img width="800" height="600"
                                         src={c.image}
                                         alt={c.title}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

@@ -150,7 +150,7 @@ const Services: React.FC = () => {
                             >
                                 {/* BG image */}
                                 <div className="absolute inset-0">
-                                    <img
+                                    <img width="800" height="600"
                                         src={service.image}
                                         alt={service.title}
                                         className="w-full h-full object-cover opacity-30 mix-blend-overlay group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"

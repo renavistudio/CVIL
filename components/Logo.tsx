@@ -11,7 +11,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-10", showText = true, light 
 
     return (
         <div className="flex flex-col items-center justify-center group leading-none">
-            <img 
+            <img width="800" height="600" 
                 src="/images/CVIL%20Logo.webp" 
                 alt="CVIL Logo" 
                 className={`${className} w-auto object-contain transition-transform duration-300 group-hover:scale-105`} 
