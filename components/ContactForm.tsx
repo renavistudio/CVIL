@@ -141,7 +141,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {/* Name field */}
                                 <div className="group relative">
-                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                    <label htmlFor="service" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
                                         Nombre Completo <span className="text-gold">*</span>
                                     </label>
                                     <input
@@ -165,7 +165,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                                 {/* Phone field */}
                                 <div className="group relative">
-                                    <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                    <label htmlFor="service" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
                                         Teléfono / WhatsApp <span className="text-gold">*</span>
                                     </label>
                                     <input
@@ -190,11 +190,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                             {/* Matter dropdown */}
                             <div>
-                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                <label htmlFor="service" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
                                     Servicio o Necesidad de su Empresa
                                 </label>
                                 <div className="relative">
-                                    <select
+                                    <select id="service"
                                         value={matter}
                                         onChange={(e) => setMatter(e.target.value)}
                                         className="appearance-none w-full bg-white border border-gray-300 px-4 py-3 pr-10 text-obsidian text-sm focus:outline-none focus:border-obsidian transition-colors rounded-sm shadow-sm"
@@ -217,7 +217,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                             {/* Optional message */}
                             <div>
-                                <label className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                <label htmlFor="service" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
                                     Breve descripción de su consulta <span className="text-gray-400 font-normal">(Opcional)</span>
                                 </label>
                                 <textarea

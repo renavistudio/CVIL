@@ -73,7 +73,7 @@ const SocialProof: React.FC = () => {
                         {testimonials.map((_, idx) => (
                             <button 
                                 key={idx}
-                                onClick={() => setCurrentIndex(idx)}
+                                onClick={() => setCurrentIndex(idx)} aria-label={`Ver testimonio ${idx + 1}`}
                                 className={`w-2 h-2 rounded-full transition-colors ${idx === currentIndex ? 'bg-obsidian' : 'bg-gray-300'}`}
                             />
                         ))}
