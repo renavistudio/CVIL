@@ -129,14 +129,6 @@ const Location: React.FC = () => {
                             title="Ubicación CVIL Abogados en Zamora"
                             className={`w-full h-full object-cover transition-opacity duration-700 contrast-[1.03] ${isMapLoaded ? 'opacity-100' : 'opacity-0'}`}
                         ></iframe>
-
-                        {/* Discreet overlay badge */}
-                        <div className="absolute top-4 left-4 z-20 pointer-events-none">
-                            <span className="bg-obsidian/90 backdrop-blur-md text-white border border-white/10 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-md flex items-center gap-1.5">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                                Edificio Corporativo CVIL
-                            </span>
-                        </div>
                     </div>
 
                 </div>

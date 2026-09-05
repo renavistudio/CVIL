@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
                             <img
                                 src="images/dsc/DSC_6061_opt.webp"
                                 alt="Socios Fundadores de CVIL"
-                                className="w-full h-[85vw] object-cover contrast-105"
+                                className="w-full h-[85vw] object-cover contrast-[1.05]"
                                 
                                 onClick={() => setSelectedImage('images/dsc/DSC_6061_opt.webp')}
                             />
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
                                     <img
                                         src="images/dsc/DSC_6061_opt.webp"
                                         alt="Socios Fundadores de CVIL"
-                                        className="w-full h-full object-cover object-[center_top] contrast-105"
+                                        className="w-full h-full object-cover object-[center_top] contrast-[1.05]"
                                     />
                                 </div>
                             </div>

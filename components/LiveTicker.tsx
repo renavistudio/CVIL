@@ -14,7 +14,7 @@ const tickerItems: TickerItem[] = [
 const LiveTicker: React.FC = () => {
   return (
     <div className="bg-offwhite text-charcoal py-3 overflow-hidden border-b border-gray-200 relative z-20">
-      <div className="flex animate-scroll whitespace-nowrap space-x-16 hover:pause items-center">
+      <div className="flex animate-scroll whitespace-nowrap space-x-16 hover:[animation-play-state:paused] items-center">
         {[...tickerItems, ...tickerItems, ...tickerItems].map((item, idx) => (
           <div key={`${item.id}-${idx}`} className="flex items-center space-x-3 opacity-90 hover:opacity-100 transition-opacity cursor-default group">
             <span className="w-1.5 h-1.5 rounded-full bg-obsidian shadow-[0_0_8px_rgba(5,5,5,0.3)]"></span>

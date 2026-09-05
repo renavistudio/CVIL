@@ -153,6 +153,13 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         setCurrentIndex((prev) => (prev + 1) % partners.length);
     };
 
+    // Pre-load next partner's image for smoother transition
+    useEffect(() => {
+        const nextPartnerIndex = (currentIndex + 1) % partners.length;
+        const img = new Image();
+        img.src = partners[nextPartnerIndex].image;
+    }, [currentIndex, partners.length]);
+
     const handlePrev = () => {
         setDirection(-1);
         setCurrentIndex((prev) => (prev - 1 + partners.length) % partners.length);

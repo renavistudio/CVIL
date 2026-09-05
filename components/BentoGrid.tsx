@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Scale, Users, ArrowRight } from 'lucide-react';
 
 const TramitologiaIcon = ({ className }: { className?: string }) => (
@@ -52,9 +51,8 @@ const BentoGrid: React.FC = () => {
                     </div>
 
                     {/* Card 1: Main Strategy */}
-                    <motion.div
-                        whileHover={{ scale: 1.005 }}
-                        className="md:col-span-8 relative h-[450px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-500"
+                    <div
+                        className="md:col-span-8 relative h-[450px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
                     >
                         {/* Background Image */}
                         <div className="absolute inset-0">
@@ -85,9 +83,8 @@ const BentoGrid: React.FC = () => {
                     </motion.div>
 
                     {/* Card 2: Efficiency */}
-                    <motion.div
-                        whileHover={{ scale: 1.005 }}
-                        className="md:col-span-4 relative h-[450px] bg-obsidian text-white group overflow-hidden shadow-lg"
+                    <div
+                        className="md:col-span-4 relative h-[450px] bg-obsidian text-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
                     >
                         <div className="absolute inset-0">
                             <img
@@ -100,25 +97,24 @@ const BentoGrid: React.FC = () => {
 
                         <div className="relative z-10 p-10 h-full flex flex-col justify-between">
                             <div className="flex justify-between items-start">
-                                <div className="w-12 h-12 border border-white/10 flex items-center justify-center rounded-full bg-white/5 backdrop-blur-sm">
-                                    <TramitologiaIcon className="w-6 h-6 text-white" />
+                                <div className="w-12 h-12 border border-white/10 flex items-center justify-center rounded-sm bg-white/5 backdrop-blur-sm group-hover:bg-white group-hover:text-obsidian transition-colors duration-500 shadow-sm">
+                                    <TramitologiaIcon className="w-6 h-6 text-current" />
                                 </div>
                                 <span className="text-9xl font-serif text-white/5 absolute right-4 top-4 -z-10 font-bold">02</span>
                             </div>
                             <div>
-                                <h3 className="text-2xl font-serif text-white mb-4">Cero vueltas al juzgado</h3>
+                                <h3 className="text-2xl font-serif text-white mb-4 group-hover:translate-x-2 transition-transform duration-300">Cero vueltas al juzgado</h3>
                                 <p className="text-gray-400 font-light leading-relaxed text-sm mb-6">
                                     Nosotros nos encargamos de cada trámite, fila y documento. Usted no necesita ir al juzgado ni preocuparse por el proceso; su única tarea es continuar con su vida mientras nosotros resolvemos todo.
                                 </p>
                                 <div className="w-full h-px bg-white/10 group-hover:bg-white/30 transition-colors"></div>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Card 3: Team */}
-                    <motion.div
-                        whileHover={{ scale: 1.005 }}
-                        className="md:col-span-12 relative h-[300px] bg-white group overflow-hidden border border-gray-200 shadow-sm"
+                    <div
+                        className="md:col-span-12 relative h-[300px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
                     >
                         <div className="absolute inset-0">
                             <img
@@ -132,17 +128,19 @@ const BentoGrid: React.FC = () => {
                         <div className="relative z-10 p-12 h-full flex flex-col md:flex-row items-center justify-between">
                             <div className="max-w-xl">
                                 <div className="flex items-center space-x-3 mb-4">
-                                    <Users className="w-5 h-5 text-obsidian" />
+                                    <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-obsidian group-hover:text-white transition-colors duration-500 shadow-sm rounded-sm shrink-0">
+                                        <Users className="w-5 h-5" />
+                                    </div>
                                     <span className="text-xs font-bold uppercase tracking-widest text-obsidian">Equipo Multidisciplinario</span>
                                 </div>
-                                <h3 className="text-3xl font-serif text-obsidian mb-2">Un equipo de especialistas por cada caso.</h3>
+                                <h3 className="text-3xl font-serif text-obsidian mb-2 group-hover:translate-x-2 transition-transform duration-300">Un equipo de especialistas por cada caso.</h3>
                                 <p className="text-charcoal/70 font-light text-sm">
                                     Cada caso es revisado simultáneamente por penalistas, fiscalistas y estrategas corporativos.
                                 </p>
                             </div>
                             <span className="text-9xl font-serif text-gray-100 absolute right-12 top-1/2 -translate-y-1/2 -z-10 font-bold hidden md:block">03</span>
                         </div>
-                    </motion.div>
+                    </div>
 
                 </div>
             </div>
