@@ -1,5 +1,6 @@
 import React from 'react';
-import { Scale, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Scale, Users, ArrowRight } from 'lucide-react';
 
 const TramitologiaIcon = ({ className }: { className?: string }) => (
     <svg
@@ -84,7 +85,7 @@ const BentoGrid: React.FC = () => {
 
                     {/* Card 2: Efficiency */}
                     <div
-                        className="md:col-span-4 relative h-[450px] bg-obsidian text-white group overflow-hidden shadow-lg hover:scale-[1.005] transition-transform duration-500"
+                        className="md:col-span-4 relative h-[450px] bg-obsidian text-white group overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
                     >
                         <div className="absolute inset-0">
                             <img loading="lazy"
@@ -97,8 +98,8 @@ const BentoGrid: React.FC = () => {
 
                         <div className="relative z-10 p-10 h-full flex flex-col justify-between">
                             <div className="flex justify-between items-start">
-                                <div className="w-12 h-12 border border-white/10 flex items-center justify-center rounded-full bg-white/5 backdrop-blur-sm">
-                                    <TramitologiaIcon className="w-6 h-6 text-white" />
+                                <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center text-obsidian group-hover:bg-obsidian group-hover:text-white transition-colors duration-500 shadow-sm">
+                                    <TramitologiaIcon className="w-5 h-5" />
                                 </div>
                                 <span className="text-9xl font-serif text-white/5 absolute right-4 top-4 -z-10 font-bold">02</span>
                             </div>
@@ -114,7 +115,7 @@ const BentoGrid: React.FC = () => {
 
                     {/* Card 3: Team */}
                     <div
-                        className="md:col-span-12 relative h-[300px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:scale-[1.005] transition-transform duration-500"
+                        className="md:col-span-12 relative h-[300px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
                     >
                         <div className="absolute inset-0">
                             <img loading="lazy"
@@ -127,8 +128,10 @@ const BentoGrid: React.FC = () => {
 
                         <div className="relative z-10 p-12 h-full flex flex-col md:flex-row items-center justify-between">
                             <div className="max-w-xl">
-                                <div className="flex items-center space-x-3 mb-4">
-                                    <Users className="w-5 h-5 text-obsidian" />
+                                <div className="flex items-center space-x-4 mb-6">
+                                    <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center text-obsidian group-hover:bg-obsidian group-hover:text-white transition-colors duration-500 shadow-sm shrink-0">
+                                        <Users className="w-5 h-5" />
+                                    </div>
                                     <span className="text-xs font-bold uppercase tracking-widest text-obsidian">Equipo Multidisciplinario</span>
                                 </div>
                                 <h3 className="text-3xl font-serif text-obsidian mb-2">Un equipo de especialistas por cada caso.</h3>
