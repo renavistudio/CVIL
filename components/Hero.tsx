@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
                         </h1>
 
                         <p className="text-base text-charcoal/75 font-light leading-relaxed mb-8 max-w-sm">
-                            Protegemos su empresa, sus operaciones y la estabilidad de su negocio.
+                            Como su despacho de abogados corporativos, protegemos su empresa, sus operaciones comerciales y la estabilidad legal de su negocio.
                         </p>
 
                         {/* CTA Button - full width golden */}
@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
 
                             <div className="max-w-2xl mt-4">
                                 <p className="text-xl text-charcoal/80 font-light leading-relaxed">
-                                    Protegemos su empresa, sus operaciones y la estabilidad de su negocio.
+                                    Como su despacho de abogados corporativos, protegemos su empresa, sus operaciones comerciales y la estabilidad legal de su negocio.
                                 </p>
                             </div>
 

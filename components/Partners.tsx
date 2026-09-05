@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSocio }) => {
         const partners = [
@@ -134,14 +134,19 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         swiping.current = false;
     };
 
+    const sectionRef = React.useRef(null);
+    const isInView = useInView(sectionRef);
+
     // Auto-scroll loop (6s timer, resets on manual index change)
     useEffect(() => {
+        if (!isInView) return;
+        
         const interval = setInterval(() => {
             setDirection(1);
             setCurrentIndex((prev) => (prev + 1) % partners.length);
         }, 6000);
         return () => clearInterval(interval);
-    }, [currentIndex, partners.length]);
+    }, [currentIndex, partners.length, isInView]);
 
     const handleNext = () => {
         setDirection(1);
@@ -156,7 +161,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
     const currentPartner = partners[currentIndex];
 
     return (
-        <section id="partners" className="py-8 lg:py-12 bg-white border-t border-gray-100 overflow-hidden relative">
+        <section id="partners" ref={sectionRef} className="py-8 lg:py-12 bg-white border-t border-gray-100 overflow-hidden relative">
             <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -234,8 +239,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
 
                     {/* Right side: The sliding content viewport (8 columns) */}
                     <div
-                        className="lg:col-span-8 relative overflow-hidden bg-[#fafaf9] rounded-sm border border-gray-100 shadow-sm"
-                        style={{ minHeight: '420px' }}
+                        className="lg:col-span-8 relative overflow-hidden bg-[#fafaf9] rounded-sm border border-gray-100 shadow-sm min-h-[600px] sm:min-h-[500px] md:min-h-[420px]"
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                         onTouchEnd={handleTouchEnd}
@@ -286,8 +290,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                 animate="center"
                                 exit="exit"
                                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                                className="w-full flex flex-col sm:flex-row items-stretch"
-                                style={{ minHeight: '420px' }}
+                                className="w-full flex flex-col sm:flex-row items-stretch min-h-[600px] sm:min-h-[500px] md:min-h-[420px]"
                             >
                                 {/* Full-Height Left Image Column */}
                                 <div className="w-full sm:w-5/12 shrink-0 relative overflow-hidden" style={{ minHeight: '280px' }}>
