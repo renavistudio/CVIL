@@ -55,7 +55,7 @@ const Location: React.FC = () => {
                                         59689 Zamora de Hidalgo, Mich.
                                     </p>
                                     <button
-                                        onClick={handleCopy}
+                                        onClick={handleCopy} aria-pressed={copied}
                                         className="inline-flex items-center gap-1.5 text-xs text-charcoal/70 hover:text-obsidian font-medium transition-colors cursor-pointer"
                                     >
                                         {copied ? (

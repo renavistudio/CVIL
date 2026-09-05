@@ -63,7 +63,7 @@ const App: React.FC = () => {
     <>
       <div className="min-h-screen bg-white text-obsidian selection:bg-stone selection:text-white font-sans antialiased">
         <Navbar />
-        <main>
+        <main role="main">
           <Hero />
           <Partners onOpenSocio={(id) => {
             if (id === 1) {

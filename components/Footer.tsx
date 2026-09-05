@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
   return (
-    <footer className="bg-white border-t border-gray-200 py-6 lg:py-10">
+    <footer role="contentinfo" className="bg-white border-t border-gray-200 py-6 lg:py-10">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
 
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
