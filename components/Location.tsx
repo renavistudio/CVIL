@@ -18,7 +18,7 @@ const Location: React.FC = () => {
     return (
         <section id="location" className="py-8 lg:py-16 bg-white border-t border-gray-100 relative overflow-hidden">
             {/* Background Texture */}
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.webp')] opacity-10 pointer-events-none z-0"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.15] pointer-events-none z-0"></div>
 
             <div className="max-w-[1440px] mx-auto w-full px-6 lg:px-12 relative z-10">
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">

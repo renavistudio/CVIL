@@ -8,7 +8,7 @@ const Manifesto: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img width="800" height="600"
-          src="images/fachada.webp"
+          src="images/office/IMG_0585.webp"
           alt="Fachada y sede corporativa de la firma legal CVIL en Zamora, Michoacán"
           className="w-full h-full object-cover opacity-40"
         />

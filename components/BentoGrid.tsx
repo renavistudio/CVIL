@@ -57,7 +57,7 @@ const BentoGrid: React.FC = () => {
                         {/* Background Image */}
                         <div className="absolute inset-0">
                             <img width="800" height="600"
-                                src="images/oficina.webp"
+                                src="images/office/IMG_0645.webp"
                                 alt="Estrategia"
                                 className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700"
                             />
@@ -88,7 +88,7 @@ const BentoGrid: React.FC = () => {
                     >
                         <div className="absolute inset-0">
                             <img width="800" height="600"
-                                src="images/pasillo2.webp"
+                                src="images/office/IMG_0559.webp"
                                 alt="Digital"
                                 className="w-full h-full object-cover opacity-20 mix-blend-overlay group-hover:scale-110 transition-transform duration-700"
                             />
@@ -118,7 +118,7 @@ const BentoGrid: React.FC = () => {
                     >
                         <div className="absolute inset-0">
                             <img width="800" height="600"
-                                src="images/recepcion.webp"
+                                src="images/office/IMG_0629.webp"
                                 alt="Team"
                                 className="w-full h-full object-cover opacity-10 group-hover:opacity-15 transition-opacity duration-500"
                             />
