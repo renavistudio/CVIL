@@ -80,7 +80,7 @@ const BentoGrid: React.FC = () => {
                                 </p>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Card 2: Efficiency */}
                     <div
