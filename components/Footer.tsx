@@ -12,7 +12,9 @@ const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
 
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <Logo showText={true} className="h-10" />
+          <a href="#" className="hover:opacity-80 transition-opacity" aria-label="Ir al inicio">
+            <Logo showText={true} className="h-10" />
+          </a>
         </div>
 
         <div className="flex flex-col items-center text-center space-y-2">

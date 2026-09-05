@@ -145,8 +145,8 @@ const Services: React.FC = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1, duration: 0.6 }}
-                                className={`group relative h-[420px] bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-8 transition-all duration-500 hover:border-white/20 ${!showAllMobile && idx >= 3 ? 'hidden md:flex' : 'flex'}`}
+                                transition={{ duration: 0.6 }}
+                                className={`group relative h-[420px] bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-8 transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:scale-[1.02] ${!showAllMobile && idx >= 3 ? 'hidden lg:flex' : 'flex'}`}
                             >
                                 {/* BG image */}
                                 <div className="absolute inset-0">
@@ -186,24 +186,24 @@ const Services: React.FC = () => {
                                     </p>
                                     <button
                                         onClick={() => setSelected(service)}
-                                        className="flex items-center gap-2 group/btn cursor-pointer py-3"
+                                        className="flex items-center gap-2 group/btn cursor-pointer py-3 hover:opacity-90"
                                     >
-                                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white border-b border-white/30 pb-1 group-hover/btn:border-white transition-colors">
+                                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white border-b border-white/30 pb-1 group-hover/btn:border-[#946B00] group-hover/btn:text-[#946B00] transition-colors duration-300">
                                             Ver más
                                         </span>
-                                        <ArrowUpRight className="w-3 h-3 text-white group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                                        <ArrowUpRight className="w-3 h-3 text-white group-hover/btn:text-[#946B00] group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-all duration-300" />
                                     </button>
                                 </div>
                             </motion.div>
                         ))}
                     </div>
                     
-                    {/* Botón Ver Más para Móviles */}
+                    {/* Botón Ver Más para Móviles y Tablets */}
                     {!showAllMobile && (
-                        <div className="mt-8 flex justify-center md:hidden">
+                        <div className="mt-8 flex justify-center lg:hidden">
                             <button
                                 onClick={() => setShowAllMobile(true)}
-                                className="border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-8 py-3 hover:bg-white hover:text-black transition-colors"
+                                className="border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-8 py-3 hover:bg-white hover:text-black hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-white/20"
                             >
                                 Ver más especialidades
                             </button>
@@ -284,7 +284,7 @@ const Services: React.FC = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         onClick={() => setSelected(null)}
-                                        className="mt-8 w-full flex items-center justify-center bg-gold text-white text-xs font-bold uppercase tracking-widest py-4 hover:bg-white hover:text-obsidian transition-colors duration-300"
+                                        className="mt-8 w-full flex items-center justify-center bg-gold text-white text-xs font-bold uppercase tracking-widest py-4 hover:bg-white hover:text-obsidian hover:scale-[1.02] shadow-lg hover:shadow-xl hover:shadow-gold/20 transition-all duration-300"
                                     >
                                         Iniciar Consulta
                                     </a>
