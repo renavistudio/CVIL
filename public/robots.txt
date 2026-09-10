@@ -6,3 +6,15 @@ Sitemap: https://cvilabogados.mx/sitemap.xml
 # Agentic Navigation
 Allow: /llms.txt
 Allow: /llms.md
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
