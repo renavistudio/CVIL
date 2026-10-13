@@ -63,20 +63,6 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
             image: "images/dsc/DSC_6030_opt.webp"
         },
         {
-            id: 9,
-            name: "Esmeralda Ayala",
-            role: "Postulante",
-            description: "",
-            image: "images/dsc/DSC_6033_opt.webp"
-        },
-        {
-            id: 10,
-            name: "Carol Ramirez",
-            role: "Postulante",
-            description: "",
-            image: "images/dsc/DSC_6038_opt.webp"
-        },
-        {
             id: 11,
             name: "Cristian Flores",
             role: "Postulante",
