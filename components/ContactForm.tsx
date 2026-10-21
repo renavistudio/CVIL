@@ -14,15 +14,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
     const [errors, setErrors] = useState<{ name?: string; phone?: string;  }>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submittedSuccess, setSubmittedSuccess] = useState(false);
-
-    const [captchaA, setCaptchaA] = useState(0);
-    const [captchaB, setCaptchaB] = useState(0);
-    const [captchaAnswer, setCaptchaAnswer] = useState('');
-
-    React.useEffect(() => {
-        setCaptchaA(Math.floor(Math.random() * 9) + 1);
-        setCaptchaB(Math.floor(Math.random() * 9) + 1);
-    }, []);
+    const [honeypot, setHoneypot] = useState('');
 
     const validate = () => {
         const newErrors: { name?: string; phone?: string } = {};
@@ -51,16 +43,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
             newErrors.phone = 'El número ingresado no parece ser un teléfono real.';
         }
 
-        if (parseInt(captchaAnswer) !== (captchaA + captchaB)) {
-            newErrors.captcha = 'La respuesta de seguridad es incorrecta.';
-        }
-
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        // Si el honeypot fue llenado, es un bot de spam: abortar en silencio
+        if (honeypot.trim() !== '') {
+            return;
+        }
 
         if (!validate()) {
             return;
@@ -75,9 +68,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
             window.open(waUrl, '_blank');
             setIsSubmitting(false);
             setSubmittedSuccess(true);
-            setCaptchaAnswer('');
-            setCaptchaA(Math.floor(Math.random() * 9) + 1);
-            setCaptchaB(Math.floor(Math.random() * 9) + 1);
             setTimeout(() => setSubmittedSuccess(false), 6000);
         }, 400);
     };
@@ -127,8 +117,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                 <div>
                                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Sede Corporativa</p>
                                     <p className="text-sm text-gray-300 font-light">
-                                        C. Suiza 721-Piso 3, La Luneta<br />
-                                        59689 Zamora de Hidalgo, Michoacán.
+                                        C. Suiza 721-Piso 3, La Luneta,<br />
+                                        59689 Zamora de Hidalgo, Mich.
                                     </p>
                                 </div>
                             </div>
@@ -229,6 +219,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                 />
                             </div>
 
+                            {/* Campo trampa invisible para bots (Honeypot antispam) */}
+                            <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+                                <label htmlFor="website">Website</label>
+                                <input
+                                    type="text"
+                                    id="website"
+                                    name="website"
+                                    value={honeypot}
+                                    onChange={(e) => setHoneypot(e.target.value)}
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                />
+                            </div>
 
 
                             {submittedSuccess && (

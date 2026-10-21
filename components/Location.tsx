@@ -1,12 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, ArrowRight, Navigation, Copy, Check } from 'lucide-react';
 
 const Location: React.FC = () => {
     const [isMapLoaded, setIsMapLoaded] = useState(false);
+    const [shouldLoadMap, setShouldLoadMap] = useState(false);
     const [copied, setCopied] = useState(false);
+    const mapSectionRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        // Carga anticipada imperceptible: el mapa se descarga 600px antes de que el usuario llegue
+        // Para el usuario la carga es instantánea, pero no bloquea el FCP/LCP inicial
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setShouldLoadMap(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '600px 0px', threshold: 0 }
+        );
+
+        if (mapSectionRef.current) {
+            observer.observe(mapSectionRef.current);
+        }
+
+        // Fallback de seguridad: si no se ha scrolleado en 4 segundos, activar
+        const timer = setTimeout(() => setShouldLoadMap(true), 4000);
+
+        return () => {
+            observer.disconnect();
+            clearTimeout(timer);
+        };
+    }, []);
 
     const addressText = "C. Suiza 721-Piso 3, La Luneta, 59689 Zamora de Hidalgo, Mich.";
-    const googleMapsUrl = "https://maps.google.com/?q=C.+Suiza+721-Piso+3,+La+Luneta,+59689+Zamora+de+Hidalgo,+Mich.";
+    const googleMapsUrl = "https://maps.google.com/?cid=8710019042285162848";
     const wazeUrl = "https://waze.com/ul?q=C.%20Suiza%20721%20La%20Luneta%20Zamora%20Michoacan&navigate=yes";
 
     const handleCopy = () => {
@@ -99,7 +127,7 @@ const Location: React.FC = () => {
                     </div>
 
                     {/* Right: Map with Instant Skeleton and Smooth Load */}
-                    <div className="w-full lg:w-7/12 h-[420px] md:h-[480px] border border-gray-200 bg-[#fafaf9] p-1.5 shadow-xl relative overflow-hidden rounded-sm">
+                    <div ref={mapSectionRef} className="w-full lg:w-7/12 h-[420px] md:h-[480px] border border-gray-200 bg-[#fafaf9] p-1.5 shadow-xl relative overflow-hidden rounded-sm">
                         
                         {/* Instant Placeholder while Map Iframe completes downloading */}
                         {!isMapLoaded && (
@@ -107,8 +135,8 @@ const Location: React.FC = () => {
                                 <div className="w-14 h-14 rounded-full bg-[#B8860B]/10 border border-[#B8860B]/30 flex items-center justify-center mb-4 animate-pulse">
                                     <MapPin className="w-7 h-7 text-[#B8860B]" />
                                 </div>
-                                <h3 className="text-white font-serif text-lg mb-1">CVIL — Despacho Legal</h3>
-                                <p className="text-stone text-xs max-w-sm mb-4">C. Suiza 721-Piso 3, La Luneta, Zamora, Mich.</p>
+                                <h3 className="text-white font-serif text-lg mb-1">CVIL Abogados Corporativos</h3>
+                                <p className="text-stone text-xs max-w-sm mb-4">C. Suiza 721-Piso 3, La Luneta, 59689 Zamora de Hidalgo, Mich.</p>
                                 <div className="flex items-center gap-2 text-xs text-[#B8860B]/80 font-medium">
                                     <span className="w-2 h-2 rounded-full bg-[#B8860B] animate-ping"></span>
                                     <span>Cargando mapa interactivo...</span>
@@ -116,19 +144,21 @@ const Location: React.FC = () => {
                             </div>
                         )}
 
-                        {/* Interactive Google Map with Eager Loading */}
-                        <iframe
-                            src="https://maps.google.com/maps?q=C.+Suiza+721,+La+Luneta,+Zamora,+Michoacan&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen={false}
-                            loading="eager"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            onLoad={() => setIsMapLoaded(true)}
-                            title="Ubicación CVIL Abogados en Zamora"
-                            className={`w-full h-full object-cover transition-opacity duration-700 contrast-[1.03] ${isMapLoaded ? 'opacity-100' : 'opacity-0'}`}
-                        ></iframe>
+                        {/* Interactive Google Map with Imperceptible Anticipated Lazy Loading */}
+                        {shouldLoadMap && (
+                            <iframe
+                                src="https://maps.google.com/maps?cid=8710019042285162848&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen={false}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                onLoad={() => setIsMapLoaded(true)}
+                                title="Ubicación CVIL Abogados en Zamora"
+                                className={`w-full h-full object-cover transition-opacity duration-700 contrast-[1.03] ${isMapLoaded ? 'opacity-100' : 'opacity-0'}`}
+                            ></iframe>
+                        )}
                     </div>
 
                 </div>
