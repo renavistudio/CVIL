@@ -143,21 +143,23 @@ server.listen(4173, async () => {
     const bodyEnd = indexHtml.indexOf('</body>', rootStart);
 
     if (rootHtml.length > 500 && rootStart !== -1 && bodyEnd !== -1) {
-      // 1. Inject into dist/index.html
-      indexHtml = indexHtml.slice(0, rootStart) + `<div id="root">${rootHtml}</div>\n\n` + indexHtml.slice(bodyEnd);
+      // 1. Inject into dist/index.html preserving any scripts before </body>
+      const distScriptsMatch = indexHtml.slice(rootStart, bodyEnd).match(/<script[\s\S]*?<\/script>/gi);
+      const distScripts = distScriptsMatch ? distScriptsMatch.join('\n  ') : '';
+      indexHtml = indexHtml.slice(0, rootStart) + `<div id="root">${rootHtml}</div>\n\n` + (distScripts ? `  ${distScripts}\n` : '') + indexHtml.slice(bodyEnd);
       fs.writeFileSync(indexPath, indexHtml, 'utf-8');
       console.log('✅ Successfully pre-rendered and injected full static HTML into dist/index.html!');
 
-      // 2. Also inject into source index.html so Git & Vercel builds always retain it
+      // 2. Also inject into source index.html ensuring /index.tsx is NEVER removed
       const sourceIndexPath = path.join(__dirname, 'index.html');
       if (fs.existsSync(sourceIndexPath)) {
         let srcHtml = fs.readFileSync(sourceIndexPath, 'utf-8');
         const srcRootStart = srcHtml.indexOf('<div id="root">');
         const srcBodyEnd = srcHtml.indexOf('</body>', srcRootStart);
         if (srcRootStart !== -1 && srcBodyEnd !== -1) {
-          srcHtml = srcHtml.slice(0, srcRootStart) + `<div id="root">${rootHtml}</div>\n\n` + srcHtml.slice(srcBodyEnd);
+          srcHtml = srcHtml.slice(0, srcRootStart) + `<div id="root">${rootHtml}</div>\n\n  <script type="module" src="/index.tsx"></script>\n` + srcHtml.slice(srcBodyEnd);
           fs.writeFileSync(sourceIndexPath, srcHtml, 'utf-8');
-          console.log('✅ Injected fresh static HTML into source index.html for Vercel/Git!');
+          console.log('✅ Injected fresh static HTML into source index.html with entry point preserved!');
         }
       }
     }
