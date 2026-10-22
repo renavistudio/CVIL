@@ -66,7 +66,7 @@ const Location: React.FC = () => {
                         </h2>
 
                         <p className="text-charcoal/70 text-sm md:text-base font-light leading-relaxed mb-8">
-                            Ubicación estratégica con infraestructura corporativa para reuniones de trabajo, audiencias y asesoría legal empresarial de alto nivel.
+                            Sede central de nuestros licenciados en derecho y abogados corporativos en Zamora, Michoacán. Atención directa a empresarios, directores y comerciantes de la región para resolver asuntos de derecho corporativo y patronal.
                         </p>
 
                         <div className="bg-[#fafaf9] border border-gray-200 p-6 rounded-sm mb-6">

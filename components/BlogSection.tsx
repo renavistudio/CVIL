@@ -22,7 +22,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
               Guías Prácticas para Dueños de Negocio en Zamora
             </h2>
             <p className="text-charcoal/70 text-sm mt-2 leading-relaxed">
-              Soluciones legales directas para resolver problemas con socios, cobrar pagarés, recuperar locales en renta y defender al patrón sin rodeos.
+              Soluciones legales de nuestros licenciados y abogados corporativos en Zamora para resolver controversias entre socios, cobrar pagarés mercantiles y defender al patrón sin rodeos.
             </p>
           </div>
           <div className="mt-6 md:mt-0">
