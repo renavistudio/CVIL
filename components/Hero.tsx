@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
                     >
                         <h1 className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
                             <span className="block text-[10px] uppercase tracking-[0.22em] text-[#B8860B] font-sans font-semibold mb-3">
-                                Despacho de Abogados en Zamora, Michoacán
+                                Despacho de Abogados en Zamora Michoacán | Derecho Corporativo y Laboral
                             </span>
                             Ganar es <br />
                             <span className="italic text-gray-400 font-light">lo único.</span>
@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
 
                             <h1 className="text-[6.8rem] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-8 mix-blend-multiply">
                                 <span className="block text-xs uppercase tracking-[0.25em] text-[#B8860B] font-sans font-semibold mb-4">
-                                    Despacho de Abogados en Zamora, Michoacán
+                                    Despacho de Abogados en Zamora Michoacán | Derecho Corporativo y Laboral
                                 </span>
                                 Ganar es <br />
                                 <span className="italic text-gray-400 font-light">lo único.</span>

@@ -61,9 +61,18 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
                     <Clock className="w-3 h-3 text-[#B8860B]" />
                     <span>{post.readTime}</span>
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-obsidian leading-snug group-hover:text-[#B8860B] transition-colors mb-3">
-                    {post.title}
-                  </h3>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onOpenBlog(post.slug);
+                    }}
+                    className="block group/title"
+                  >
+                    <h3 className="font-serif text-lg font-bold text-obsidian leading-snug group-hover:text-[#B8860B] transition-colors mb-3">
+                      {post.title}
+                    </h3>
+                  </a>
                   <p className="text-charcoal/70 text-xs leading-relaxed line-clamp-3 mb-4">
                     {post.subtitle}
                   </p>
