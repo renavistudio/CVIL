@@ -7,7 +7,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         {
             id: 1,
             name: "Dr. Mario Enrique Cervantes Vieyra",
-            role: "Socio Fundador | Especialista en Sistema Penal Acusatorio",
+            role: "Socio Fundador | Litigio Estrategico y Controversias",
             description: "Doctor en Derecho con sólida trayectoria en litigación estratégica y juicios orales. Representación de alto perfil ante instancias del fuero común y federal.",
             image: "images/dsc/DSC_6010_opt.webp",
             link: "#/socio/mario-cervantes"

@@ -41,7 +41,7 @@ const App: React.FC = () => {
         } else {
           setBlogArticleSlug(null);
         }
-      } else if (hash === '#/abogado-penalista-zamora') {
+      } else if (hash === '#/abogado-penalista-zamora' || hash === '#/litigio-estrategico-zamora') {
         setActiveSocio('mario');
         setIsBlogOpen(false);
       } else if (hash === '#/abogados-de-empresas-zamora') {
@@ -73,7 +73,7 @@ const App: React.FC = () => {
         document.title = 'Blog Legal & Recursos para Empresas | CVIL Abogados Zamora';
       }
     } else if (activeSocio === 'mario') {
-      document.title = 'Dr. Mario Enrique Cervantes Vieyra — Abogado Penalista | CVIL';
+      document.title = 'Dr. Mario Enrique Cervantes Vieyra — Litigio Estratégico | CVIL';
     } else if (activeSocio === 'alejandro') {
       document.title = 'Lic. Alejandro Arriaga — Abogado Corporativo & Laboral | CVIL';
     } else {

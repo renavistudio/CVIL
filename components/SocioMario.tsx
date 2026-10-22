@@ -22,9 +22,9 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                         </div>
                         <div className="w-full md:w-2/3">
                             <h1 className="text-4xl md:text-5xl font-serif text-obsidian mb-4">Dr. Mario Enrique Cervantes Vieyra</h1>
-                            <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-6">Abogado Penalista | Litigante en Sistema Penal Acusatorio</p>
+                            <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-6">Socio Fundador | Litigio Estratégico y Controversias</p>
                             <div className="prose prose-lg text-charcoal/80 font-light">
-                                <p className="mb-4">El Dr. Mario Enrique Cervantes Vieyra es un abogado penalista distinguido por su rigurosa formación académica y destreza en litigación estratégica dentro del Sistema Penal Acusatorio. Su trayectoria se fundamenta en la representación legal de personas físicas, corporaciones y víctimas en asuntos de la más alta complejidad penal, interviniendo con autoridad ante instancias de fuero común y federal.</p>
+                                <p className="mb-4">El Dr. Mario Enrique Cervantes Vieyra es un abogado litigante distinguido por su rigurosa formación académica y destreza en litigación estratégica dentro del Sistema Penal Acusatorio. Su trayectoria se fundamenta en la representación legal de personas físicas, corporaciones y víctimas en asuntos de la más alta complejidad jurídica y procesal, interviniendo con autoridad ante instancias de fuero común y federal.</p>
                                 <p>Su ejercicio profesional se caracteriza por una defensa técnica, audaz y sumamente personalizada. Su enfoque principal radica en el protección de los derechos fundamentales de sus representados, logrando resultados determinantes a través de un litigio estratégico, ético y de precisión impecable.</p>
                             </div>
                         </div>
@@ -40,19 +40,19 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
                                     <h3 className="font-bold text-lg mb-2 text-obsidian">Doctorado en Derecho</h3>
-                                    <p className="text-sm text-charcoal/70">Grado de excelencia orientado al análisis jurídico profundo, la investigación avanzada y la continua innovación de la práctica profesional en materia penal.</p>
+                                    <p className="text-sm text-charcoal/70">Grado de excelencia orientado al análisis jurídico profundo, la investigación avanzada y la continua innovación de la práctica profesional en materia litigiosa procesal.</p>
                                 </div>
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
-                                    <h3 className="font-bold text-lg mb-2 text-obsidian">Maestría en Justicia Penal para Adolescentes</h3>
-                                    <p className="text-sm text-charcoal/70">Especialización de alto nivel en el Sistema Integral de Justicia Penal para Adolescentes, priorizando los derechos humanos, la reinserción social y el dominio de procedimientos especializados.</p>
+                                    <h3 className="font-bold text-lg mb-2 text-obsidian">Maestría en Derecho Procesal y Oralidad</h3>
+                                    <p className="text-sm text-charcoal/70">Especialización de alto nivel en el Procedimientos Especializados y Oralidad, priorizando los derechos humanos, la reinserción social y el dominio de procedimientos especializados.</p>
                                 </div>
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
-                                    <h3 className="font-bold text-lg mb-1 text-obsidian">Maestría en Juicios Orales en Materia Penal</h3>
+                                    <h3 className="font-bold text-lg mb-1 text-obsidian">Maestría en Juicios Orales</h3>
                                     <p className="text-xs text-gold font-semibold mb-3">Instituto Especializado en Ciencias Penales (IECP)</p>
                                     <p className="text-sm text-charcoal/70">Entrenamiento avanzado en litigación oral, dominio absoluto de la teoría del caso, técnicas incisivas de interrogatorio y argumentación jurídica inquebrantable dentro del Sistema Penal Acusatorio.</p>
                                 </div>
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
-                                    <h3 className="font-bold text-lg mb-1 text-obsidian">Maestría en Juicios Orales en Materia Penal</h3>
+                                    <h3 className="font-bold text-lg mb-1 text-obsidian">Maestría en Juicios Orales</h3>
                                     <p className="text-xs text-gold font-semibold mb-3">Universidad Contemporánea de las Américas (UNICLA)</p>
                                     <p className="text-sm text-charcoal/70">Programa integral enfocado en la especialización de litigantes de élite para el manejo táctico y estratégico de procedimientos penales orales.</p>
                                 </div>
@@ -66,7 +66,7 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                 Áreas de Especialización
                             </h2>
                             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-sm text-charcoal/80 list-disc ml-4">
-                                <li>Defensa penal estratégica</li>
+                                <li>Litigio estratégico y controversias</li>
                                 <li>Delitos de alto impacto</li>
                                 <li>Delitos patrimoniales</li>
                                 <li>Delitos contra la salud</li>
@@ -75,9 +75,9 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                 <li>Homicidio</li>
                                 <li>Secuestro</li>
                                 <li>Delitos sexuales</li>
-                                <li>Justicia Penal para Adolescentes</li>
+                                <li>Procedimientos especializados de oralidad</li>
                                 <li>Recursos de apelación</li>
-                                <li>Juicio de amparo en materia penal</li>
+                                <li>Juicio de amparo y control constitucional</li>
                                 <li>Ejecución de sanciones penales</li>
                                 <li>Medidas cautelares</li>
                                 <li>Procedimientos abreviados</li>
@@ -129,7 +129,7 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                 Servicios
                             </h2>
                             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-sm text-charcoal/80 list-disc ml-4">
-                                <li>Defensa Penal Particular</li>
+                                <li>Litigio y Controversias Complejas</li>
                                 <li>Defensa en Delitos Federales</li>
                                 <li>Defensa en Delitos del Fuero Común</li>
                                 <li>Asesoría Jurídica para Víctimas</li>
@@ -139,7 +139,7 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                 <li>Suspensión Condicional del Proceso</li>
                                 <li>Procedimientos Abreviados</li>
                                 <li>Cumplimiento de Sentencias</li>
-                                <li>Asesoría Penal Preventiva para Empresas</li>
+                                <li>Blindaje y Prevención Legal para Empresas</li>
                             </ul>
                         </section>
 

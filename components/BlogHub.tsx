@@ -6,8 +6,6 @@ export interface BlogPost {
   title: string;
   subtitle: string;
   category: 'Problemas con Socios' | 'Cobranza & Pagarés' | 'Defensa Patronal' | 'Locales & Traspasos';
-  author: string;
-  authorRole: string;
   readTime: string;
   date: string;
   targetKeyword: string;
@@ -23,8 +21,6 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Mi socio no trabaja, se gasta el dinero o bloquea las cuentas: Cómo sacar a un socio de una empresa en Zamora',
     subtitle: 'Guía práctica para dueños de negocio: cómo quitarle poderes, sacarlo legalmente y salvar tu patrimonio sin irte a años de juicio.',
     category: 'Problemas con Socios',
-    author: 'Lic. Alejandro Arriaga',
-    authorRole: 'Socio Director · Estrategia Corporativa y Conflictos de Socios',
     readTime: '4 min de lectura',
     date: 'Octubre 2026',
     targetKeyword: 'como sacar a un socio de una empresa zamora',
@@ -96,8 +92,6 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Te firmaron pagarés y no te pagan: Cómo cobrar un pagaré en Zamora Michoacán y embargarles cuentas o bienes de inmediato',
     subtitle: 'Deja de esperar promesas que nunca llegan: la ley te permite caerle por sorpresa a tu deudor con un actuario y congelarle cuentas bancarias o camionetas desde el primer día.',
     category: 'Cobranza & Pagarés',
-    author: 'Lic. Alejandro Arriaga',
-    authorRole: 'Socio Director · Especialista Mercantil y Embargos Comerciales',
     readTime: '4 min de lectura',
     date: 'Octubre 2026',
     targetKeyword: 'como cobrar un pagare en zamora michoacan',
@@ -135,8 +129,6 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Tienes un empleado conflictivo, flojo o que te roba: Cómo despedir a un trabajador sin demanda en Zamora',
     subtitle: 'Deja de tener miedo a las demandas: el paso a paso patronal para darlo de baja legalmente sin pagarle liquidaciones infladas ni regalarle tu dinero.',
     category: 'Defensa Patronal',
-    author: 'Lic. Alejandro Arriaga',
-    authorRole: 'Socio Director · Coordinador de Defensa Laboral Patronal',
     readTime: '5 min de lectura',
     date: 'Octubre 2026',
     targetKeyword: 'como despedir a un trabajador sin demanda zamora',
@@ -177,8 +169,6 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Tu inquilino no paga la renta y no se quiere salir: Cómo sacar a un inquilino que no paga renta en Zamora',
     subtitle: 'No caigas en la trampa de cambiar chapas o cortarle la luz (te puede denunciar por despojo): así recuperas tu local o bodega por la vía legal y cobras lo que te debe.',
     category: 'Locales & Traspasos',
-    author: 'Lic. Alejandro Arriaga',
-    authorRole: 'Socio Director · Especialista en Inmuebles y Locales Comerciales',
     readTime: '4 min de lectura',
     date: 'Octubre 2026',
     targetKeyword: 'como sacar a un inquilino que no paga renta zamora',
@@ -369,17 +359,6 @@ const BlogHub: React.FC<BlogProps> = ({ onClose, initialSlug }) => {
               {currentArticle.subtitle}
             </p>
 
-            {/* Author Box */}
-            <div className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-sm mb-8">
-              <div className="w-12 h-12 rounded-full bg-obsidian text-[#E8CA9D] flex items-center justify-center font-serif text-lg font-bold">
-                AA
-              </div>
-              <div>
-                <div className="font-semibold text-obsidian text-sm">{currentArticle.author}</div>
-                <div className="text-xs text-stone">{currentArticle.authorRole}</div>
-              </div>
-            </div>
-
             {/* Hero Image */}
             <div className="w-full h-64 md:h-96 overflow-hidden rounded-sm mb-10 bg-gray-100 border border-gray-200 shadow-sm">
               <img
@@ -404,7 +383,7 @@ const BlogHub: React.FC<BlogProps> = ({ onClose, initialSlug }) => {
                   ¿Tienes este problema en tu empresa y necesitas resolverlo ya?
                 </h3>
                 <p className="text-stone text-sm leading-relaxed mb-6 max-w-xl">
-                  Habla directamente con el área corporativa y patronal de CVIL Abogados en Zamora. Analizamos tu caso en reunión confidencial y diseñamos la estrategia más rápida para proteger tu dinero.
+                  Habla directamente con el área corporativa y patronal de CVIL Abogados en Zamora. Revisamos tu situación directamente y diseñamos la estrategia más rápida para resolver el problema y proteger tu dinero.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -512,7 +491,7 @@ const BlogHub: React.FC<BlogProps> = ({ onClose, initialSlug }) => {
                   </div>
 
                   <div className="p-6 pt-0 border-t border-gray-100 flex justify-between items-center mt-auto">
-                    <span className="text-[11px] font-medium text-stone">{post.author}</span>
+                    <span className="text-[11px] font-medium text-stone">CVIL Abogados</span>
                     <span className="inline-flex items-center gap-1 text-xs font-bold text-obsidian group-hover:translate-x-1 transition-transform">
                       Leer Solución <ArrowRight className="w-3.5 h-3.5 text-[#B8860B]" />
                     </span>
@@ -528,7 +507,7 @@ const BlogHub: React.FC<BlogProps> = ({ onClose, initialSlug }) => {
                   ¿Tienes un problema legal urgente con un socio, cliente o empleado?
                 </h3>
                 <p className="text-xs text-stone">
-                  Atención directa y confidencial en nuestra sede de Zamora (C. Suiza 721, La Luneta) o por videollamada para todo Michoacán y El Bajío.
+                  Atención directa en nuestra sede de Zamora (C. Suiza 721, La Luneta) o por llamada para todo Michoacán y El Bajío.
                 </p>
               </div>
               <div className="flex gap-3 shrink-0">
@@ -538,7 +517,7 @@ const BlogHub: React.FC<BlogProps> = ({ onClose, initialSlug }) => {
                   rel="noopener noreferrer"
                   className="px-6 py-3.5 bg-obsidian hover:bg-[#B8860B] text-white text-xs font-bold uppercase tracking-widest transition-all rounded-sm shadow-sm"
                 >
-                  Agendar Reunión Confidencial
+                  Agendar Asesoría Legal
                 </a>
               </div>
             </div>

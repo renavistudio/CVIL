@@ -195,7 +195,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                         <option value="Cumplimiento Laboral y Contratos de Trabajo">Cumplimiento Laboral & Contratos de Trabajo</option>
                                         <option value="Litigio Mercantil y Controversias de Negocios">Litigio Mercantil & Controversias de Negocios</option>
                                         <option value="Registro de Marca (IMPI) y Propiedad Intelectual">Registro de Marca (IMPI) & Propiedad Intelectual</option>
-                                        <option value="Fraudes, Delitos Patrimoniales y Penal Empresarial">Fraudes, Delitos Patrimoniales & Penal Empresarial</option>
+                                        <option value="Conflictos Societarios y Litigio Mercantil">Conflictos Societarios y Litigio Mercantil</option>
                                         <option value="Iguala Jurídica (Abogado de Cabecera para Empresas)">Iguala Jurídica (Abogado de Cabecera para Empresas)</option>
                                         <option value="Otra Consulta Corporativa / Empresarial">Otra Consulta Corporativa / Empresarial</option>
                                     </select>

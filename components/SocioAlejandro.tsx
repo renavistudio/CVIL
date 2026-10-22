@@ -25,7 +25,7 @@ const SocioAlejandro: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                             <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-6">Abogado Litigante | Asesoría Jurídica Empresarial | Estrategia Procesal</p>
                             <div className="prose prose-lg text-charcoal/80 font-light">
                                 <p className="mb-4">Licenciado en Derecho con formación de posgrado en Justicia Familiar, Juicios Orales y Derecho Penal. Su práctica integra litigación estratégica, representación de personas físicas y morales, asesoría empresarial, negociación y prevención de contingencias.</p>
-                                <p className="mb-4">Interviene en asuntos de altísima exigencia familiar, penal, civil, mercantil y corporativa. Ha desarrollado una extensa trayectoria como coordinador jurídico del sector agroindustrial y comercial, asegurando una férrea protección del patrimonio empresarial e institucional.</p>
+                                <p className="mb-4">Interviene en asuntos de altísima exigencia familiar, civil, mercantil y corporativa. Ha desarrollado una extensa trayectoria como coordinador jurídico del sector agroindustrial y comercial, asegurando una férrea protección del patrimonio empresarial e institucional.</p>
                                 <p>Su estilo profesional es directo, técnico y reservado. Su firma es la construcción de rutas jurídicas viables basadas en diagnósticos inquebrantablemente honestos: prefiere distinguir con claridad entre lo jurídicamente posible y lo inviable antes de comprometer la estabilidad del cliente.</p>
                             </div>
                         </div>
@@ -50,7 +50,7 @@ const SocioAlejandro: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                     <p className="text-sm text-charcoal/70">Formación estratégica orientada al desarrollo impecable de audiencias y la destreza discursiva frente al estrado, vital para desarticular a la contraparte en el nuevo sistema de justicia.</p>
                                 </div>
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
-                                    <h3 className="font-bold text-lg mb-1 text-obsidian">Especialidad en Derecho Penal</h3>
+                                    <h3 className="font-bold text-lg mb-1 text-obsidian">Especialidad en Estrategia Procesal</h3>
                                     <p className="text-xs text-gold font-semibold mb-3">Universidad UNIVER</p>
                                     <p className="text-sm text-charcoal/70">Dominio técnico sobre los preceptos punitivos y la teoría del delito, dotándolo de la capacidad analítica para desmenuzar casos complejos y construir defensas herméticas.</p>
                                 </div>
@@ -72,7 +72,7 @@ const SocioAlejandro: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                 <li>Blindaje Corporativo y Empresarial</li>
                                 <li>Elaboración y Revisión de Contratos</li>
                                 <li>Litigio Civil y Mercantil</li>
-                                <li>Derecho Penal y Juicios Orales</li>
+                                <li>Litigio Estratégico y Juicios Orales</li>
                                 <li>Derecho Familiar Estratégico</li>
                                 <li>Juicio de Amparo Constitucional</li>
                                 <li>Recuperación de Cartera Vencida</li>
@@ -118,7 +118,7 @@ const SocioAlejandro: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                             <BookOpen className="w-8 h-8 mx-auto text-gold mb-6" />
                             <h2 className="text-xl font-bold uppercase tracking-widest text-obsidian mb-6">Principios de Ejercicio Profesional</h2>
                             <blockquote className="text-2xl font-serif text-charcoal italic max-w-3xl mx-auto leading-relaxed mb-10">
-                                "La firmeza se acompaña de preparación, seguimiento, absoluta confidencialidad y control documental."
+                                "La firmeza se acompaña de preparación, seguimiento, estricta reserva profesional y control documental."
                             </blockquote>
                             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left border-t border-gray-200 pt-10">
                                 <div>

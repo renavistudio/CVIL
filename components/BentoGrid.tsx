@@ -135,7 +135,7 @@ const BentoGrid: React.FC = () => {
                                 </div>
                                 <h3 className="text-3xl font-serif text-obsidian mb-2 group-hover:translate-x-2 transition-transform duration-300">Un equipo de especialistas por cada caso.</h3>
                                 <p className="text-charcoal/70 font-light text-sm">
-                                    Cada caso es revisado simultáneamente por penalistas, fiscalistas y estrategas corporativos.
+                                    Cada caso es revisado simultáneamente por auditores laborales, fiscalistas y estrategas corporativos.
                                 </p>
                             </div>
                             <span className="text-9xl font-serif text-gray-100 absolute right-12 top-1/2 -translate-y-1/2 -z-10 font-bold hidden md:block">03</span>

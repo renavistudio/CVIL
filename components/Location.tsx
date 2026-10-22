@@ -66,7 +66,7 @@ const Location: React.FC = () => {
                         </h2>
 
                         <p className="text-charcoal/70 text-sm md:text-base font-light leading-relaxed mb-8">
-                            Ubicación estratégica con infraestructura corporativa para sesiones confidenciales, audiencias y asesoría empresarial de alto perfil.
+                            Ubicación estratégica con infraestructura corporativa para reuniones de trabajo, audiencias y asesoría legal empresarial de alto nivel.
                         </p>
 
                         <div className="bg-[#fafaf9] border border-gray-200 p-6 rounded-sm mb-6">

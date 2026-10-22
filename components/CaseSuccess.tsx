@@ -104,7 +104,7 @@ const CaseSuccess: React.FC = () => {
 
                 <div className="mt-12 text-center">
                     <p className="text-xs text-stone italic max-w-2xl mx-auto">
-                        * En CVIL la confidencialidad es absoluta. Los casos presentados ilustran resoluciones reales omitiendo datos sensibles.
+                        * Los casos presentados ilustran resoluciones reales omitiendo datos de identidad para salvaguardar la privacidad de las partes.
                     </p>
                 </div>
 
