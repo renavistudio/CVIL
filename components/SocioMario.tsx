@@ -54,7 +54,7 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
                                     <h3 className="font-bold text-lg mb-1 text-obsidian">Maestría en Juicios Orales</h3>
                                     <p className="text-xs text-gold font-semibold mb-3">Universidad Contemporánea de las Américas (UNICLA)</p>
-                                    <p className="text-sm text-charcoal/70">Programa integral enfocado en la especialización de litigantes de élite para el manejo táctico y estratégico de procedimientos penales orales.</p>
+                                    <p className="text-sm text-charcoal/70">Programa integral enfocado en la especialización de abogados litigantes para el manejo táctico y estratégico de procedimientos penales orales.</p>
                                 </div>
                             </div>
                         </section>
@@ -139,7 +139,7 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                 <li>Suspensión Condicional del Proceso</li>
                                 <li>Procedimientos Abreviados</li>
                                 <li>Cumplimiento de Sentencias</li>
-                                <li>Blindaje y Prevención Legal para Empresas</li>
+                                <li>Prevención y Asesoría Legal para Empresas</li>
                             </ul>
                         </section>
 

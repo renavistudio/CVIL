@@ -4,7 +4,7 @@ import { TickerItem } from '../types';
 const tickerItems: TickerItem[] = [
   { id: 1, text: "Auditoría Laboral Patronal", location: "ZAMORA", time: "Hoy" },
   { id: 2, text: "Estructuración de Socios", location: "JACONA", time: "Ayer" },
-  { id: 3, text: "Blindaje Fiscal Superado", location: "MORELIA", time: "Ayer" },
+  { id: 3, text: "Convenio Fiscal Resuelto", location: "MORELIA", time: "Ayer" },
   { id: 4, text: "Recuperación de Cartera", location: "LA PIEDAD", time: "Esta semana" },
   { id: 5, text: "Registro de Marca Aprobado", location: "TANGANCÍCUARO", time: "Hace 2 días" },
   { id: 6, text: "Fusión Corporativa", location: "GUADALAJARA", time: "Hace 3 días" },

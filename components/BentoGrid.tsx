@@ -103,9 +103,9 @@ const BentoGrid: React.FC = () => {
                                 <span className="text-9xl font-serif text-white/5 absolute right-4 top-4 -z-10 font-bold">02</span>
                             </div>
                             <div>
-                                <h3 className="text-2xl font-serif text-white mb-4 group-hover:translate-x-2 transition-transform duration-300">Cero vueltas al juzgado</h3>
+                                <h3 className="text-2xl font-serif text-white mb-4 group-hover:translate-x-2 transition-transform duration-300">Gestión legal directa</h3>
                                 <p className="text-gray-400 font-light leading-relaxed text-sm mb-6">
-                                    Nosotros nos encargamos de cada trámite, fila y documento. Usted no necesita ir al juzgado ni preocuparse por el proceso; su única tarea es continuar con su vida mientras nosotros resolvemos todo.
+                                    Nosotros llevamos cada trámite, audiencia y documento ante los juzgados. No tienes que perder tiempo en juzgados ni en papeleo; nos encargamos de todo el procedimiento legal mientras te concentras en tu empresa.
                                 </p>
                                 <div className="w-full h-px bg-white/10 group-hover:bg-white/30 transition-colors"></div>
                             </div>

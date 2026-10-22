@@ -82,7 +82,7 @@ export const BLOG_POSTS: BlogPost[] = [
         </div>
 
         <div className="p-4 bg-amber-50 border border-amber-200 text-xs text-amber-900 rounded-sm mt-4">
-          ⚠️ <strong>Consejo estratégico urgente:</strong> No le avises a tu socio que quieres que se vaya hasta que tengamos revisada tu acta constitutiva y blindadas las cuentas bancarias en la oficina de CVIL Abogados en Zamora.
+          ⚠️ <strong>Recomendación legal:</strong> No le avises a tu socio que quieres que se vaya hasta que tengamos revisada tu acta constitutiva y protegidas las cuentas bancarias en la oficina de CVIL Abogados en Zamora.
         </div>
       </div>
     )
@@ -134,7 +134,7 @@ export const BLOG_POSTS: BlogPost[] = [
     targetKeyword: 'como despedir a un trabajador sin demanda zamora',
     competition: 'Competencia SEO: NULA en Zamora',
     imageUrl: '/images/blog/blog_despido_patronal.jpg',
-    excerpt: 'Correr a un trabajador al calor del coraje te puede costar 90 días de indemnización más salarios caídos. Así blindamos a los patrones y negocios en Zamora para despedir sin contingencias.',
+    excerpt: 'Correr a un trabajador al calor del coraje te puede costar 90 días de indemnización más salarios caídos. Así protegemos a los patrones y negocios en Zamora para despedir sin contingencias.',
     content: (
       <div className="space-y-6 text-charcoal/90 leading-relaxed font-sans text-base">
         <p className="text-lg font-light leading-relaxed text-obsidian border-l-2 border-[#B8860B] pl-4 italic">
@@ -209,14 +209,14 @@ export const BLOG_POSTS: BlogPost[] = [
     targetKeyword: 'traspaso de negocio deudas anteriores zamora',
     competition: 'Competencia SEO: NULA en Zamora',
     imageUrl: '/images/blog/blog_traspaso_empresas.jpg',
-    excerpt: 'Comprar un restaurante, empacadora o tienda en marcha parece un gran negocio, hasta que llega un actuario a cobrarte deudas y demandas del dueño anterior. Así blindamos tu inversión.',
+    excerpt: 'Comprar un restaurante, empacadora o tienda en marcha parece un gran negocio, hasta que llega un actuario a cobrarte deudas y demandas del dueño anterior. Así protegemos tu inversión.',
     content: (
       <div className="space-y-6 text-charcoal/90 leading-relaxed font-sans text-base">
         <p className="text-lg font-light leading-relaxed text-obsidian border-l-2 border-[#B8860B] pl-4 italic">
           "El negocio ya está acreditado, tiene clientela cautiva y proveedores fijos; solo págame el traspaso y te entrego las llaves". En Zamora esto se pacta a diario con un simple apretón de manos, y semanas después el nuevo dueño descubre por qué vendían con tanta prisa.
         </p>
 
-        <h3 className="text-xl font-serif font-semibold text-obsidian pt-2">Las 3 deudas ocultas que heredas si compras sin blindaje legal</h3>
+        <h3 className="text-xl font-serif font-semibold text-obsidian pt-2">Las 3 deudas ocultas que heredas si compras sin revisión legal previa</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
           <div className="border border-gray-200 p-3 rounded-sm bg-gray-50">
             <h4 className="font-bold text-obsidian text-xs mb-1">1. Sustitución Patronal</h4>
@@ -232,7 +232,7 @@ export const BLOG_POSTS: BlogPost[] = [
           </div>
         </div>
 
-        <h3 className="text-xl font-serif font-semibold text-obsidian pt-2">Cómo estructuramos un contrato de traspaso blindado</h3>
+        <h3 className="text-xl font-serif font-semibold text-obsidian pt-2">Cómo estructuramos un contrato de traspaso seguro y formal</h3>
         <p className="text-sm">
           Auditamos en 48 horas el estado laboral, mercantil y contractual del negocio, obligamos a que los empleados firmen finiquitos con el dueño saliente ante Conciliación y redactamos un contrato mercantil con <strong>retención de precio en garantía</strong> por 6 meses para responder si brotan adeudos sorpresa.
         </p>

@@ -13,6 +13,7 @@ import Location from './components/Location';
 import Footer from './components/Footer';
 import SocialProof from './components/SocialProof';
 import ChatWidget from './components/ChatWidget';
+import { BlogSection } from './components/BlogSection';
 import SocioMario from './components/SocioMario';
 import SocioAlejandro from './components/SocioAlejandro';
 import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
@@ -32,15 +33,16 @@ const App: React.FC = () => {
       } else if (hash === '#/socio/alejandro-arriaga') {
         setActiveSocio('alejandro');
         setIsBlogOpen(false);
-      } else if (hash.startsWith('#/blog')) {
+      } else if (hash.startsWith('#/blog') || window.location.pathname.startsWith('/blog')) {
         setIsBlogOpen(true);
         setActiveSocio(null);
-        const parts = hash.split('#/blog/');
-        if (parts.length > 1 && parts[1]) {
-          setBlogArticleSlug(parts[1]);
-        } else {
-          setBlogArticleSlug(null);
+        let slug = null;
+        if (window.location.pathname.startsWith('/blog/')) {
+          slug = window.location.pathname.replace('/blog/', '').replace(/\/$/, '');
+        } else if (hash.startsWith('#/blog/')) {
+          slug = hash.split('#/blog/')[1];
         }
+        setBlogArticleSlug(slug || null);
       } else if (hash === '#/abogado-penalista-zamora' || hash === '#/litigio-estrategico-zamora') {
         setActiveSocio('mario');
         setIsBlogOpen(false);
@@ -130,6 +132,7 @@ const App: React.FC = () => {
           <Services />
           <Manifesto />
           <SocialProof />
+          <BlogSection onOpenBlog={(slug) => handleOpenBlog(slug)} />
           <ContactForm />
           <Location />
         </main>

@@ -69,7 +69,7 @@ const SocioAlejandro: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                 Áreas de Especialización
                             </h2>
                             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-sm text-charcoal/80 list-disc ml-4">
-                                <li>Blindaje Corporativo y Empresarial</li>
+                                <li>Derecho Corporativo y Contratos de Empresa</li>
                                 <li>Elaboración y Revisión de Contratos</li>
                                 <li>Litigio Civil y Mercantil</li>
                                 <li>Litigio Estratégico y Juicios Orales</li>
@@ -97,7 +97,7 @@ const SocioAlejandro: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Representación y defensa jurídica ante órganos jurisdiccionales</li>
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Diseño de estrategias procesales e impugnaciones de alta complejidad</li>
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Coordinación jurídica, corporativa y patrimonial de emporios agroindustriales</li>
-                                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Negociación y formalización de convenios blindados</li>
+                                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Negociación y formalización de convenios legales definitivos</li>
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Trazabilidad y contención de crisis corporativas (contingencias)</li>
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Evaluación implacable de avales, garantías y viabilidad de cobranza</li>
                                 </ul>

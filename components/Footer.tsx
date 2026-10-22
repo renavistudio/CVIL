@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenBlog, onOpenServic
               <Logo showText={true} className="h-10 invert brightness-0" />
             </a>
             <p className="text-xs text-stone mt-2 font-light tracking-wide">
-              Firma legal corporativa · Blindaje empresarial, contratos y acuerdos de socios en Zamora, Michoacán.
+              Firma legal corporativa · Asesoría legal a empresas, contratos y acuerdos de socios en Zamora, Michoacán.
             </p>
           </div>
 
