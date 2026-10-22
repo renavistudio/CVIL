@@ -70,16 +70,16 @@ const App: React.FC = () => {
   useEffect(() => {
     if (isBlogOpen) {
       if (blogArticleSlug) {
-        document.title = 'Artículo Legal | CVIL Abogados Zamora';
+        document.title = 'Abogado en Zamora Mich | Abogados Corporativos CVIL';
       } else {
-        document.title = 'Blog Legal & Recursos para Empresas | CVIL Abogados Zamora';
+        document.title = 'Abogado en Zamora Mich | Abogados Corporativos CVIL';
       }
     } else if (activeSocio === 'mario') {
       document.title = 'Dr. Mario Enrique Cervantes Vieyra — Litigio Estratégico | CVIL';
     } else if (activeSocio === 'alejandro') {
       document.title = 'Lic. Alejandro Arriaga — Abogado Corporativo & Laboral | CVIL';
     } else {
-      document.title = 'CVIL Abogados | Derecho Corporativo y de Empresas en Zamora, Michoacán';
+      document.title = 'Abogado en Zamora Mich | Abogados Corporativos CVIL';
     }
   }, [activeSocio, isBlogOpen, blogArticleSlug]);
 
