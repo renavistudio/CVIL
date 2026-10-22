@@ -102,6 +102,18 @@ const Location: React.FC = () => {
                             </div>
                         </div>
 
+                        {/* Google Reviews Badge */}
+                        <div className="mb-4">
+                            <a
+                                href="https://g.page/r/CWCRS9orNOB4EBI/review"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-xs text-amber-800 bg-amber-50 border border-amber-200 px-3.5 py-1.5 rounded-sm hover:bg-amber-100 transition-colors font-semibold"
+                            >
+                                ⭐ 4.9 en Google Reviews · Calificar o ver opiniones
+                            </a>
+                        </div>
+
                         {/* Fast Action Buttons */}
                         <div className="flex flex-col sm:flex-row gap-3">
                             <a

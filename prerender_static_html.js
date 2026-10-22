@@ -48,6 +48,48 @@ const BLOG_ARTICLES = [
   }
 ];
 
+const CORE_PRACTICE_PAGES = [
+  {
+    slug: 'abogados-corporativos-zamora',
+    title: 'Abogados Corporativos en Zamora | Derecho de Empresas CVIL',
+    description: 'Firma de abogados corporativos en Zamora, Michoacán: gobierno corporativo, salida de socios, contratos comerciales y defensa patronal. Cita directa.',
+    h1: 'Abogados Corporativos en Zamora, Michoacán',
+    subtitle: 'Asesoría legal directa para accionistas, dueños de empresas y directores generales en Zamora, Jacona y la región.',
+    p1: 'En CVIL Abogados Corporativos brindamos respaldo legal integral para empresas y sociedades mercantiles en Michoacán. Nuestro enfoque está diseñado para resolver contingencias societarias, asegurar contratos de suministro y proteger el patrimonio de la empresa ante desacuerdos internos o reclamos externos.',
+    sections: [
+      ['Conflictos entre Socios y Gobierno Corporativo', 'Convocatoria formal de asambleas extraordinarias de accionistas, remoción legal de administradores desleales, revocación de poderes bancarios y estructuración de convenios de salida con cláusulas de no competencia.'],
+      ['Contratos Mercantiles y Alianzas Comerciales', 'Diseño, redacción y auditoría de contratos de distribución, suministro, arrendamiento de bodegas y convenios de confidencialidad (NDA) para blindar la operación diaria de tu negocio.'],
+      ['Cobranza Ejecutiva y Embargos Comerciales', 'Demandas mercantiles inmediatas por pagarés o facturas impagadas con embargo precautorio de cuentas bancarias y vehículos en Zamora y todo Michoacán.']
+    ]
+  },
+  {
+    slug: 'derecho-corporativo-zamora',
+    title: 'Derecho Corporativo en Zamora Michoacán | CVIL Abogados',
+    description: 'Servicios de derecho corporativo en Zamora Michoacán: estructuración societaria, contratos, auditoría legal y defensa empresarial en La Luneta.',
+    h1: 'Servicios de Derecho Corporativo en Zamora',
+    subtitle: 'Estructuración legal y prevención de contingencias para empresas agroindustriales, comerciales y de servicios.',
+    p1: 'El derecho corporativo es el pilar fundamental que asegura la continuidad de las empresas frente a inspecciones, pleitos de socios o incumplimientos contractuales. Nuestra sede en La Luneta, Zamora, ofrece atención directa y resolución inmediata para corporaciones en todo Michoacán.',
+    sections: [
+      ['Constitución y Reestructuración de Sociedades', 'Formalización de actas constitutivas, aumento o reducción de capital, transmisión de acciones y adecuación de estatutos a las reformas legales mercantiles.'],
+      ['Auditoría Legal Empresarial (Due Diligence)', 'Revisión preventiva de contratos, pasivos laborales y licencias antes de adquirir un negocio o realizar fusiones comerciales en la región.'],
+      ['Protección Patrimonial y Sucesión Familiar', 'Diseño de protocolos para empresas familiares, fideicomisos y protección de activos clave ante contingencias legales.']
+    ]
+  },
+  {
+    slug: 'abogados-laborales-zamora',
+    title: 'Abogados Laborales en Zamora Michoacán | Defensa Patronal CVIL',
+    description: 'Abogados laborales en Zamora Michoacán especializados exclusivamente en defensa patronal: bajas justificadas, actas LFT y Centro de Conciliación.',
+    h1: 'Abogados Laborales Patronales en Zamora',
+    subtitle: 'Protección jurídica exclusiva para patrones y empresas: despidos sin demandas y negociación en el Centro de Conciliación Laboral.',
+    p1: 'Una demanda laboral mal atendida puede paralizar las finanzas de tu negocio con indemnizaciones de 3 meses, 20 días por año y salarios caídos. En CVIL representamos con firmeza a los empleadores de Zamora, asegurando bajas conforme al Art. 47 de la Ley Federal del Trabajo.',
+    sections: [
+      ['Actas Administrativas con Rigor Probatorio', 'Documentación exhaustiva de faltas, desobediencia o robos con testigos presenciales para anular pretensiones de liquidación forzosa ante los tribunales.'],
+      ['Atención en el Centro de Conciliación Laboral (Justo Sierra 290)', 'Representación patronal directa en las audiencias de conciliación obligatoria de Zamora para cerrar convenios con validez definitiva de cosa juzgada.'],
+      ['Contratos Laborales y Reglamento Interior', 'Estructuración de contratos de trabajo individuales, confidencialidad para personal clave y depósito del Reglamento Interior de Trabajo.']
+    ]
+  }
+];
+
 // 1. Start simple static server for dist
 const server = http.createServer((req, res) => {
   let reqPath = req.url === '/' ? '/index.html' : req.url.split('?')[0];
@@ -120,7 +162,7 @@ server.listen(4173, async () => {
       }
     }
 
-    // 3. Prerender standalone Blog pages for SEO & Search Console
+    // 3. Prerender standalone Blog pages
     const publicBlogDir = path.join(__dirname, 'public', 'blog');
     const distBlogDir = path.join(distDir, 'blog');
     fs.mkdirSync(publicBlogDir, { recursive: true });
@@ -170,6 +212,97 @@ server.listen(4173, async () => {
       } catch (e) {
         console.log(`[-] Article ${art.slug} prerender note:`, e.message);
       }
+    }
+
+    // 4. Generate Core Practice Silo Pages
+    console.log('[+] Generating 3 Core Practice Silo Pages...');
+    const navMatch = indexHtml.match(/(<nav[^>]*>.*?<\/nav>)/s);
+    const footerMatch = indexHtml.match(/(<footer[^>]*>.*?<\/footer>)/s);
+    const navHtml = navMatch ? navMatch[1] : '';
+    const footerHtml = footerMatch ? footerMatch[1] : '';
+
+    for (const p of CORE_PRACTICE_PAGES) {
+      let pHtml = indexHtml;
+      pHtml = pHtml.replace(/<title>.*?<\/title>/i, `<title>${p.title}</title>`);
+      pHtml = pHtml.replace(/<meta name="description" content=".*?"/i, `<meta name="description" content="${p.description}"`);
+      pHtml = pHtml.replace(/<meta property="og:title" content=".*?"/i, `<meta property="og:title" content="${p.title}"`);
+      pHtml = pHtml.replace(/<meta name="twitter:title" content=".*?"/i, `<meta name="twitter:title" content="${p.title}"`);
+      pHtml = pHtml.replace(/<meta property="og:description" content=".*?"/i, `<meta property="og:description" content="${p.description}"`);
+      pHtml = pHtml.replace(/<meta name="twitter:description" content=".*?"/i, `<meta name="twitter:description" content="${p.description}"`);
+      pHtml = pHtml.replace(/<link rel="canonical" href=".*?"/i, `<link rel="canonical" href="https://cvilabogados.mx/${p.slug}"`);
+
+      const h1Block = `<h1 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-obsidian tracking-tight mb-6">
+        <span class="block text-xs uppercase tracking-[0.25em] text-[#B8860B] font-sans font-semibold mb-3">Sede Central Zamora, Michoacán · CVIL Abogados</span>
+        ${p.h1}
+      </h1>`;
+
+      const sectionsHtml = p.sections.map(([title, desc]) => `
+        <div class="bg-white border border-gray-200 p-8 rounded-sm shadow-sm hover:border-obsidian transition-colors flex flex-col justify-between">
+          <div>
+            <h3 class="text-xl font-serif text-obsidian mb-3 font-semibold">${title}</h3>
+            <p class="text-charcoal/70 text-sm leading-relaxed mb-4">${desc}</p>
+          </div>
+          <div class="pt-4 border-t border-gray-100">
+            <a href="https://wa.me/524432735543" target="_blank" class="text-xs font-bold text-[#B8860B] uppercase tracking-wider hover:underline inline-flex items-center gap-1">
+              Consultar Caso →
+            </a>
+          </div>
+        </div>
+      `).join('');
+
+      const bodyContent = `
+      <div class="min-h-screen bg-white text-obsidian font-sans">
+        ${navHtml}
+        <main class="pt-24 pb-16">
+          <section class="py-12 lg:py-20 bg-[#fafaf9] border-b border-gray-200">
+            <div class="max-w-[1200px] mx-auto px-6 lg:px-12">
+              <div class="max-w-3xl mb-12">
+                ${h1Block}
+                <p class="text-lg md:text-xl text-charcoal/80 font-light leading-relaxed mb-6">${p.subtitle}</p>
+                <p class="text-sm md:text-base text-charcoal/70 leading-relaxed mb-8">${p.p1}</p>
+                <div class="flex flex-wrap gap-4">
+                  <a href="https://wa.me/524432735543?text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20para%20mi%20empresa%20en%20Zamora." target="_blank" class="px-8 py-4 bg-[#B8860B] hover:bg-obsidian text-white text-xs font-bold uppercase tracking-widest transition-all rounded-sm shadow-md">
+                    Agendar Asesoría Legal
+                  </a>
+                  <a href="tel:+523511277317" class="px-8 py-4 border border-obsidian text-obsidian hover:bg-obsidian hover:text-white text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
+                    Llamar a Sede: 351 127 7317
+                  </a>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+                ${sectionsHtml}
+              </div>
+
+              <div class="mt-12 bg-obsidian text-white p-8 md:p-12 rounded-sm flex flex-col md:flex-row justify-between items-center gap-6 shadow-xl">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-widest text-[#E8CA9D] mb-1 block">Atención Inmediata</span>
+                  <h4 class="text-2xl font-serif mb-2">¿Tienes un asunto legal que resolver en Zamora?</h4>
+                  <p class="text-stone text-sm">Sede en C. Suiza 721-Piso 3, Col. La Luneta, Zamora de Hidalgo, Mich.</p>
+                </div>
+                <a href="https://wa.me/524432735543" target="_blank" class="px-8 py-3.5 bg-white text-obsidian hover:bg-[#B8860B] hover:text-white transition-all text-xs font-bold uppercase tracking-widest rounded-sm shrink-0">
+                  WhatsApp 443 273 5543
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+        ${footerHtml}
+      </div>`;
+
+      const pRootStart = pHtml.indexOf('<div id="root">');
+      const pBodyEnd = pHtml.indexOf('</body>', pRootStart);
+      if (pRootStart !== -1 && pBodyEnd !== -1) {
+        pHtml = pHtml.slice(0, pRootStart) + `<div id="root">${bodyContent}</div>\n\n` + pHtml.slice(pBodyEnd);
+      }
+
+      const pubDir = path.join(__dirname, 'public', p.slug);
+      const disDir = path.join(distDir, p.slug);
+      fs.mkdirSync(pubDir, { recursive: true });
+      fs.mkdirSync(disDir, { recursive: true });
+      fs.writeFileSync(path.join(pubDir, 'index.html'), pHtml, 'utf-8');
+      fs.writeFileSync(path.join(disDir, 'index.html'), pHtml, 'utf-8');
+      console.log(`   ✅ Practice Silo created: /${p.slug}`);
     }
 
     await browser.close();

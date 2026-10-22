@@ -58,15 +58,15 @@ const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenBlog, onOpenServic
         {/* Middle: Enlaces Corporativos sutiles en una sola línea (Sin saturación) */}
         <div className="py-6 flex flex-wrap justify-center md:justify-between items-center gap-y-3 gap-x-6 text-xs text-stone">
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <a href="#services" className="hover:text-white transition-colors">
-              Derecho Corporativo
+            <a href="/derecho-corporativo-zamora" className="hover:text-white transition-colors">
+              Derecho Corporativo en Zamora
             </a>
             <span className="text-white/20">•</span>
-            <a href="#services" className="hover:text-white transition-colors">
-              Acuerdos de Socios
+            <a href="/abogados-corporativos-zamora" className="hover:text-white transition-colors">
+              Abogados Corporativos
             </a>
             <span className="text-white/20">•</span>
-            <a href="#services" className="hover:text-white transition-colors">
+            <a href="/abogados-laborales-zamora" className="hover:text-white transition-colors">
               Defensa Laboral Patronal
             </a>
             <span className="text-white/20">•</span>
@@ -94,6 +94,8 @@ const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenBlog, onOpenServic
         <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-stone/80">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-center md:text-left">
             <span>📍 C. Suiza 721-Piso 3, La Luneta, 59689 Zamora de Hidalgo, Mich.</span>
+              <span className="hidden md:inline text-white/20">|</span>
+              <a href="https://g.page/r/CWCRS9orNOB4EBI/review" target="_blank" rel="noopener noreferrer" className="text-[#E8CA9D] hover:text-white transition-colors font-semibold">⭐ 4.9 en Google Maps</a>
             <span className="hidden md:inline text-white/20">|</span>
             <a href="https://wa.me/524432735543" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               📲 WhatsApp: 443 273 5543
