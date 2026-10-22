@@ -98,11 +98,11 @@ server.listen(4173, async () => {
 
     let indexHtml = fs.readFileSync(indexPath, 'utf-8');
     const rootStart = indexHtml.indexOf('<div id="root">');
-    const scriptStart = indexHtml.indexOf('<script', rootStart);
+    const bodyEnd = indexHtml.indexOf('</body>', rootStart);
 
-    if (rootHtml.length > 500 && rootStart !== -1 && scriptStart !== -1) {
+    if (rootHtml.length > 500 && rootStart !== -1 && bodyEnd !== -1) {
       // 1. Inject into dist/index.html
-      indexHtml = indexHtml.slice(0, rootStart) + `<div id="root">${rootHtml}</div>\n  ` + indexHtml.slice(scriptStart);
+      indexHtml = indexHtml.slice(0, rootStart) + `<div id="root">${rootHtml}</div>\n\n` + indexHtml.slice(bodyEnd);
       fs.writeFileSync(indexPath, indexHtml, 'utf-8');
       console.log('✅ Successfully pre-rendered and injected full static HTML into dist/index.html!');
 
@@ -111,9 +111,9 @@ server.listen(4173, async () => {
       if (fs.existsSync(sourceIndexPath)) {
         let srcHtml = fs.readFileSync(sourceIndexPath, 'utf-8');
         const srcRootStart = srcHtml.indexOf('<div id="root">');
-        const srcScriptStart = srcHtml.indexOf('<script', srcRootStart);
-        if (srcRootStart !== -1 && srcScriptStart !== -1) {
-          srcHtml = srcHtml.slice(0, srcRootStart) + `<div id="root">${rootHtml}</div>\n  ` + srcHtml.slice(srcScriptStart);
+        const srcBodyEnd = srcHtml.indexOf('</body>', srcRootStart);
+        if (srcRootStart !== -1 && srcBodyEnd !== -1) {
+          srcHtml = srcHtml.slice(0, srcRootStart) + `<div id="root">${rootHtml}</div>\n\n` + srcHtml.slice(srcBodyEnd);
           fs.writeFileSync(sourceIndexPath, srcHtml, 'utf-8');
           console.log('✅ Injected fresh static HTML into source index.html for Vercel/Git!');
         }
@@ -133,7 +133,7 @@ server.listen(4173, async () => {
       await page.waitForTimeout(800);
       const blogHubRoot = await page.evaluate(() => document.getElementById('root')?.innerHTML || '');
       if (blogHubRoot.length > 500) {
-        let blogHubHtml = indexHtml.slice(0, rootStart) + `<div id="root">${blogHubRoot}</div>\n  ` + indexHtml.slice(scriptStart);
+        let blogHubHtml = indexHtml.slice(0, rootStart) + `<div id="root">${blogHubRoot}</div>\n\n` + indexHtml.slice(bodyEnd);
         blogHubHtml = blogHubHtml.replace(/<title>.*?<\/title>/i, '<title>Recursos Legales & Guías para Empresas en Zamora | CVIL Abogados</title>');
         fs.writeFileSync(path.join(publicBlogDir, 'index.html'), blogHubHtml, 'utf-8');
         fs.writeFileSync(path.join(distBlogDir, 'index.html'), blogHubHtml, 'utf-8');
@@ -151,7 +151,7 @@ server.listen(4173, async () => {
         await page.waitForTimeout(600);
         const artRoot = await page.evaluate(() => document.getElementById('root')?.innerHTML || '');
         if (artRoot.length > 500) {
-          let artHtml = indexHtml.slice(0, rootStart) + `<div id="root">${artRoot}</div>\n  ` + indexHtml.slice(scriptStart);
+          let artHtml = indexHtml.slice(0, rootStart) + `<div id="root">${artRoot}</div>\n\n` + indexHtml.slice(bodyEnd);
           artHtml = artHtml.replace(/<title>.*?<\/title>/i, `<title>${art.title}</title>`);
           artHtml = artHtml.replace(/<meta name="description" content=".*?"/i, `<meta name="description" content="${art.description}"`);
           artHtml = artHtml.replace(/<meta property="og:title" content=".*?"/i, `<meta property="og:title" content="${art.title}"`);
