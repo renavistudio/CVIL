@@ -38,13 +38,13 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {BLOG_POSTS.map((post) => (
             <article
-              key={post.id}
+              key={post.slug}
               className="group bg-white border border-gray-200 hover:border-obsidian hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden rounded-sm"
             >
               <div className="h-52 overflow-hidden relative bg-gray-100">
                 <img
-                  src={post.image}
-                  alt={post.title}
+                  src={post.imageUrl}
+                  alt={post.title} width="400" height="208"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
