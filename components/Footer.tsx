@@ -83,9 +83,13 @@ const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenBlog, onOpenServic
             </a>
           </div>
 
-          <div>
+          <div className="flex items-center gap-3">
             <a href="/aviso-de-privacidad" className="hover:text-white transition-colors">
               Aviso de Privacidad
+            </a>
+            <span className="text-white/20">•</span>
+            <a href="https://sites.google.com/view/abogado-en-zamora" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-stone/80" title="Directorio Jurídico Local Zamora">
+              Directorio Local
             </a>
           </div>
         </div>
