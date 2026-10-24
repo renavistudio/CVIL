@@ -44,16 +44,19 @@ const Hero: React.FC = () => {
                     {/* Text content */}
                     <div className="relative z-10 px-6 pt-8 pb-4 flex-1 flex flex-col animate-fade-in"
                     >
-                        <h1 className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
-                            <span className="block text-[10px] uppercase tracking-[0.22em] text-[#B8860B] font-sans font-semibold mb-3">
-                                Despacho de Abogados en Zamora Michoacán | Derecho Corporativo y Laboral
-                            </span>
+                        <span className="block text-[10px] uppercase tracking-[0.22em] text-[#B8860B] font-sans font-semibold mb-2">
+                            Firma Legal Corporativa y Penal • Zamora, Mich.
+                        </span>
+                        <h1 className="text-2xl sm:text-3xl font-serif font-medium text-obsidian tracking-tight mb-3">
+                            Abogados en Zamora Michoacán
+                        </h1>
+                        <p className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
                             Ganar es <br />
                             <span className="italic text-gray-400 font-light">lo único.</span>
-                        </h1>
+                        </p>
 
                         <p className="text-base text-charcoal/75 font-light leading-relaxed mb-8 max-w-sm">
-                            Como su despacho de abogados corporativos, protegemos su empresa, sus operaciones comerciales y la estabilidad legal de su negocio.
+                            Firma especializada en blindaje de empresas, derecho corporativo, defensa laboral patronal y materia penal. Protegemos su patrimonio y su libertad.
                         </p>
 
                         {/* CTA Button - full width golden */}
@@ -92,17 +95,20 @@ const Hero: React.FC = () => {
                         <div className="col-span-6 z-20 animate-fade-in"
                         >
 
-                            <h1 className="text-[6.8rem] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-8 mix-blend-multiply">
-                                <span className="block text-xs uppercase tracking-[0.25em] text-[#B8860B] font-sans font-semibold mb-4">
-                                    Despacho de Abogados en Zamora Michoacán | Derecho Corporativo y Laboral
-                                </span>
+                            <span className="block text-xs uppercase tracking-[0.25em] text-[#B8860B] font-sans font-semibold mb-3">
+                                Firma Legal Especializada • Zamora, Michoacán
+                            </span>
+                            <h1 className="text-3xl lg:text-4xl font-serif font-semibold text-obsidian tracking-tight mb-4">
+                                Abogados en Zamora Michoacán
+                            </h1>
+                            <p className="text-[6.5rem] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-8 mix-blend-multiply">
                                 Ganar es <br />
                                 <span className="italic text-gray-400 font-light">lo único.</span>
-                            </h1>
+                            </p>
 
                             <div className="max-w-2xl mt-4">
                                 <p className="text-xl text-charcoal/80 font-light leading-relaxed">
-                                    Como su despacho de abogados corporativos, protegemos su empresa, sus operaciones comerciales y la estabilidad legal de su negocio.
+                                    Firma especializada en blindaje de empresas, defensa laboral patronal y materia penal. Protegemos su patrimonio y su libertad con estrategia jurídica de alto rigor.
                                 </p>
                             </div>
 
