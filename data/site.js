@@ -1,101 +1,336 @@
 export const BLOG_ARTICLES = [
   {
     "slug": "como-sacar-a-un-socio-de-una-empresa-zamora",
-    "title": "Conflictos entre socios: opciones legales en Zamora",
-    "description": "Documentos y alternativas que conviene revisar ante un conflicto entre socios: estatutos, poderes, acuerdos y continuidad de la empresa."
+    "title": "Conflictos entre socios de una empresa en Zamora",
+    "description": "Documentos y alternativas que conviene revisar ante un conflicto entre socios: estatutos, poderes, acuerdos y continuidad de la empresa.",
+    "seoTitle": "Conflictos entre socios en Zamora | CVIL Abogados",
+    "practiceSlug": "abogados-corporativos-zamora",
+    "imageUrl": "/images/blog/blog_socios_conflicto.webp",
+    "checklist": [
+      "Acta constitutiva y reformas de estatutos.",
+      "Actas de asamblea, acuerdos de socios y poderes vigentes.",
+      "Relación de participaciones y comunicaciones sobre el desacuerdo."
+    ],
+    "dateModified": "2026-10-26"
   },
   {
     "slug": "como-cobrar-un-pagare-en-zamora-michoacan",
-    "title": "Cómo cobrar un pagaré en Zamora, Michoacán",
-    "description": "Qué documentos reunir y qué aspectos evaluar para reclamar un pagaré vencido. La vía de cobro depende del título y de las circunstancias del adeudo."
+    "title": "Cómo cobrar un pagaré vencido en Zamora, Michoacán",
+    "description": "Qué documentos reunir y qué aspectos evaluar para reclamar un pagaré vencido. La vía de cobro depende del título y de las circunstancias del adeudo.",
+    "seoTitle": "Cómo cobrar un pagaré vencido en Zamora | CVIL",
+    "practiceSlug": "abogados-mercantiles-zamora",
+    "imageUrl": "/images/blog/blog_cobranza_pagares.webp",
+    "checklist": [
+      "Pagaré original o soporte electrónico y documentación de su emisión.",
+      "Comprobantes de abonos y cálculo separado de capital e intereses reclamados.",
+      "Datos disponibles del obligado y comunicaciones sobre el pago."
+    ],
+    "dateModified": "2026-10-26"
   },
   {
     "slug": "como-despedir-a-un-trabajador-sin-demanda-zamora",
-    "title": "Terminación laboral y prevención de conflictos en Zamora",
-    "description": "Cómo preparar el expediente laboral, evaluar una terminación y revisar los pagos que correspondan, sin prometer ausencia de demandas."
+    "title": "Terminación laboral: qué revisar como patrón en Zamora",
+    "description": "Cómo preparar el expediente laboral, evaluar una terminación y revisar los pagos que correspondan, sin prometer ausencia de demandas.",
+    "seoTitle": "Terminación laboral y defensa patronal en Zamora | CVIL",
+    "practiceSlug": "abogados-laborales-zamora",
+    "imageUrl": "/images/blog/blog_despido_patronal.webp",
+    "checklist": [
+      "Contrato de trabajo, fecha de ingreso y recibos de nómina.",
+      "Controles de asistencia, incidencias y comunicaciones relevantes.",
+      "Cualquier convenio, renuncia o aviso relacionado con la terminación."
+    ],
+    "dateModified": "2026-10-26"
   },
   {
     "slug": "como-sacar-a-un-inquilino-que-no-paga-renta-zamora",
-    "title": "Arrendamiento comercial: qué hacer ante rentas impagadas en Zamora",
-    "description": "Documentación y alternativas para atender el incumplimiento de un arrendamiento comercial y solicitar asesoría sobre la recuperación del inmueble."
+    "title": "Qué hacer si un inquilino no paga un local en Zamora",
+    "description": "Documentación y alternativas para atender el incumplimiento de un arrendamiento comercial y solicitar asesoría sobre la recuperación del inmueble.",
+    "seoTitle": "Inquilino que no paga un local en Zamora | CVIL",
+    "practiceSlug": "derecho-corporativo-zamora",
+    "imageUrl": "/images/blog/blog_inquilino_arrendamiento.webp",
+    "checklist": [
+      "Contrato de arrendamiento, anexos y garantías.",
+      "Relación de mensualidades pendientes y comprobantes de pagos.",
+      "Documentos del inmueble y comunicaciones con el arrendatario."
+    ],
+    "dateModified": "2026-10-26"
   },
   {
     "slug": "traspaso-de-negocio-deudas-anteriores-zamora",
-    "title": "Qué revisar antes de comprar o traspasar un negocio en Zamora",
-    "description": "Revisión contractual, laboral y documental antes de adquirir un negocio: activos, pasivos, arrendamiento y obligaciones pendientes."
+    "title": "Traspaso de negocio en Zamora: contratos y deudas",
+    "description": "Revisión contractual, laboral y documental antes de adquirir un negocio: activos, pasivos, arrendamiento y obligaciones pendientes.",
+    "seoTitle": "Traspaso de negocio y deudas en Zamora | CVIL",
+    "practiceSlug": "derecho-corporativo-zamora",
+    "imageUrl": "/images/blog/blog_traspaso_empresas.webp",
+    "checklist": [
+      "Inventario de activos y relación de obligaciones pendientes.",
+      "Contratos con proveedores, trabajadores y arrendador.",
+      "Documentos de representación, licencias y propuesta de compraventa."
+    ],
+    "dateModified": "2026-10-26"
   },
   {
     "slug": "citatorio-centro-de-conciliacion-laboral-zamora-que-hacer",
-    "title": "Citatorio de conciliación laboral en Zamora: cómo prepararse",
-    "description": "Revisa la autoridad, fecha, representación y documentos de tu empresa antes de una audiencia de conciliación laboral en Zamora."
+    "title": "Citatorio de conciliación laboral en Zamora: qué hacer",
+    "description": "Revisa la autoridad, fecha, representación y documentos de tu empresa antes de una audiencia de conciliación laboral en Zamora.",
+    "seoTitle": "Citatorio de conciliación laboral en Zamora | CVIL",
+    "practiceSlug": "abogados-laborales-zamora",
+    "imageUrl": "/images/blog/blog_citatorio_conciliacion.webp",
+    "checklist": [
+      "Citatorio completo y constancia de recepción.",
+      "Identificación y documentos de representación del empleador.",
+      "Contrato, nómina, antigüedad y antecedentes del desacuerdo."
+    ],
+    "dateModified": "2026-10-26"
   }
 ];
 
 export const PRACTICE_PAGES = [
   {
     "slug": "abogados-corporativos-zamora",
-    "title": "Abogados Corporativos en Zamora | Derecho de Empresas CVIL",
-    "description": "Firma de abogados corporativos en Zamora, Michoacán: gobierno corporativo, salida de socios, contratos comerciales y defensa patronal. Cita directa.",
-    "h1": "Abogados Corporativos en Zamora, Michoacán",
-    "subtitle": "Asesoría legal directa para accionistas, dueños de empresas y directores generales en Zamora, Jacona y la región.",
-    "p1": "En CVIL Abogados Corporativos brindamos respaldo legal integral para empresas y sociedades mercantiles en Michoacán. Nuestro enfoque está diseñado para resolver contingencias societarias, asegurar contratos de suministro y proteger el patrimonio de la empresa ante desacuerdos internos o reclamos externos.",
+    "title": "Abogados corporativos en Zamora, Michoacán | CVIL",
+    "h1": "Abogados corporativos en Zamora, Michoacán",
+    "description": "Asesoría para empresas y socios en Zamora: conflictos societarios, acuerdos y revisión legal de negocios. CVIL, en La Luneta. Agenda una consulta.",
+    "subtitle": "Asesoría para dueños de negocio, accionistas y administradores que necesitan tomar decisiones con respaldo jurídico.",
+    "p1": "En CVIL Abogados Corporativos atendemos a empresas de Zamora, Jacona y la región desde nuestras oficinas en La Luneta. Revisamos la situación de la sociedad, los documentos y el objetivo de sus integrantes para definir el alcance de la asesoría. Una consulta puede centrarse en una decisión puntual o en la revisión de varios asuntos de la operación.",
     "sections": [
       [
-        "Conflictos entre Socios y Gobierno Corporativo",
-        "Convocatoria formal de asambleas extraordinarias de accionistas, remoción legal de administradores desleales, revocación de poderes bancarios y estructuración de convenios de salida con cláusulas de no competencia."
+        "Conflictos entre socios y accionistas",
+        "Analizamos estatutos, acuerdos, participaciones y facultades de administración ante desacuerdos sobre decisiones, utilidades o continuidad de la empresa. Evaluamos alternativas de negociación y las acciones que correspondan; ser socio y administrar la sociedad son funciones diferentes."
       ],
       [
-        "Contratos Mercantiles y Alianzas Comerciales",
-        "Diseño, redacción y auditoría de contratos de distribución, suministro, arrendamiento de bodegas y convenios de confidencialidad (NDA) para blindar la operación diaria de tu negocio."
+        "Compra, venta y revisión de negocios",
+        "Revisamos la documentación de la operación, los contratos y las obligaciones que requieren atención antes de comprar activos o participaciones. Identificamos qué información falta y qué puntos conviene resolver antes de firmar."
       ],
       [
-        "Cobranza Ejecutiva y Embargos Comerciales",
-        "Evaluación de pagarés, contratos y facturas para determinar las vías de cobro y las medidas judiciales que puedan proceder."
+        "Coordinación de asuntos de la empresa",
+        "La operación puede involucrar contratos, cobranza y relaciones laborales. Ayudamos a identificar el área jurídica de cada problema y a ordenar su atención, con un alcance definido para la consulta, negociación o procedimiento."
       ]
+    ],
+    "situations": [
+      "Un socio quiere salir o hay desacuerdos sobre la administración.",
+      "Se necesita evaluar una compra, venta o reestructuración del negocio.",
+      "La empresa requiere ordenar sus contratos y asuntos legales pendientes."
+    ],
+    "documents": [
+      "Acta constitutiva, reformas y acuerdos entre socios.",
+      "Poderes y documentos de las personas que representan a la empresa.",
+      "Contratos y una relación de fechas y hechos del asunto."
+    ],
+    "faqs": [
+      [
+        "¿La asesoría es solo para empresas grandes?",
+        "También atendemos a dueños de negocios y empresas familiares. El alcance depende de su operación y del problema que necesitan resolver."
+      ],
+      [
+        "¿Qué diferencia hay entre asesoría corporativa y litigio mercantil?",
+        "La asesoría corporativa revisa decisiones, organización y acuerdos de la empresa. El litigio mercantil atiende controversias comerciales mediante los procedimientos que correspondan. En la primera consulta se identifica qué servicio necesita el asunto."
+      ]
+    ],
+    "guides": [
+      "como-sacar-a-un-socio-de-una-empresa-zamora",
+      "traspaso-de-negocio-deudas-anteriores-zamora"
+    ],
+    "related": [
+      "derecho-corporativo-zamora",
+      "abogados-mercantiles-zamora",
+      "abogados-laborales-zamora"
     ]
   },
   {
     "slug": "derecho-corporativo-zamora",
-    "title": "Derecho Corporativo en Zamora Michoacán | CVIL Abogados",
-    "description": "Servicios de derecho corporativo en Zamora Michoacán: estructuración societaria, contratos, auditoría legal y defensa empresarial en La Luneta.",
-    "h1": "Servicios de Derecho Corporativo en Zamora",
-    "subtitle": "Estructuración legal y prevención de contingencias para empresas agroindustriales, comerciales y de servicios.",
-    "p1": "El derecho corporativo es el pilar fundamental que asegura la continuidad de las empresas frente a inspecciones, pleitos de socios o incumplimientos contractuales. Nuestra sede en La Luneta, Zamora, ofrece atención directa y estrategias adaptadas a las necesidades de cada empresa.",
+    "title": "Contratos y gobierno corporativo en Zamora | CVIL",
+    "h1": "Contratos y gobierno corporativo en Zamora",
+    "description": "Revisión y elaboración de contratos comerciales, acuerdos de socios y documentos corporativos en Zamora, Michoacán. Consulta con CVIL en La Luneta.",
+    "subtitle": "Derecho corporativo preventivo para documentar acuerdos, definir responsabilidades y revisar operaciones antes de firmar.",
+    "p1": "Un contrato debe reflejar la operación real del negocio: quién se obliga, qué entregará, cómo se pagará y qué ocurrirá ante un incumplimiento. En CVIL revisamos y elaboramos documentos corporativos y comerciales para empresas de Zamora y Jacona. Partimos de los acuerdos y documentos existentes para detectar puntos pendientes y proponer una redacción adecuada al asunto.",
     "sections": [
       [
-        "Constitución y Reestructuración de Sociedades",
-        "Formalización de actas constitutivas, aumento o reducción de capital, transmisión de acciones y adecuación de estatutos a las reformas legales mercantiles."
+        "Revisión y elaboración de contratos mercantiles",
+        "Trabajamos sobre contratos de suministro, distribución, prestación de servicios y confidencialidad. Revisamos obligaciones, entregables, pagos, vigencia, terminación y mecanismos para resolver desacuerdos según la operación."
       ],
       [
-        "Auditoría Legal Empresarial (Due Diligence)",
-        "Revisión preventiva de contratos, pasivos laborales y licencias antes de adquirir un negocio o realizar fusiones comerciales en la región."
+        "Actas, poderes y acuerdos de socios",
+        "Apoyamos la revisión de estatutos, actas y acuerdos para documentar decisiones empresariales. La representación y las formalidades se evalúan según el tipo de sociedad y el acto; cuando se requiere intervención de un fedatario, se identifica esa necesidad."
       ],
       [
-        "Protección Patrimonial y Sucesión Familiar",
-        "Diseño de protocolos para empresas familiares, fideicomisos y protección de activos clave ante contingencias legales."
+        "Arrendamiento comercial y traspaso de negocios",
+        "Revisamos contratos sobre locales, bodegas y operaciones de transmisión de negocios. Analizamos los bienes, obligaciones y autorizaciones involucrados para identificar qué puede contratarse y qué requiere una revisión adicional."
       ]
+    ],
+    "situations": [
+      "Tienes un borrador de contrato que debes revisar antes de firmar.",
+      "Necesitas documentar un acuerdo entre socios o actualizar facultades.",
+      "Vas a rentar un local, adquirir activos o negociar el traspaso de un negocio."
+    ],
+    "documents": [
+      "Borrador del contrato y anexos disponibles.",
+      "Propuesta comercial: entregables, importes, plazos y condiciones acordadas.",
+      "Identificación y documentos de representación de quienes firmarán."
+    ],
+    "faqs": [
+      [
+        "¿Pueden revisar un contrato que ya elaboró la otra parte?",
+        "Sí. Podemos revisar el borrador y sus anexos, contrastarlos con lo acordado e identificar cláusulas que conviene aclarar o negociar."
+      ],
+      [
+        "¿Sirve un formato descargado de internet para mi negocio?",
+        "Un formato puede omitir condiciones importantes de la operación. La revisión debe comprobar que las partes, las obligaciones y las formalidades correspondan al caso concreto."
+      ]
+    ],
+    "guides": [
+      "traspaso-de-negocio-deudas-anteriores-zamora",
+      "como-sacar-a-un-inquilino-que-no-paga-renta-zamora"
+    ],
+    "related": [
+      "abogados-corporativos-zamora",
+      "abogados-mercantiles-zamora"
     ]
   },
   {
     "slug": "abogados-laborales-zamora",
-    "title": "Abogados Laborales en Zamora Michoacán | Defensa Patronal CVIL",
-    "description": "Abogados laborales en Zamora Michoacán especializados exclusivamente en defensa patronal: bajas justificadas, actas LFT y Centro de Conciliación.",
-    "h1": "Abogados Laborales Patronales en Zamora",
-    "subtitle": "Protección jurídica exclusiva para patrones y empresas: prevención de conflictos y representación en el Centro de Conciliación Laboral.",
-    "p1": "En CVIL asesoramos a empleadores de Zamora para documentar sus relaciones laborales, evaluar contingencias y atender procedimientos de conciliación o juicio. Cada terminación requiere revisar las circunstancias, las pruebas y los derechos de las personas involucradas.",
+    "title": "Abogados laborales en Zamora: defensa patronal | CVIL",
+    "h1": "Abogados laborales para empresas en Zamora",
+    "description": "Defensa laboral patronal en Zamora, Michoacán: contratos, conciliación y atención de demandas para empresas y empleadores. Agenda con CVIL.",
+    "subtitle": "Asesoría laboral dirigida a patrones y empresas: prevención, conciliación y representación ante controversias.",
+    "p1": "En CVIL atendemos asuntos laborales de empleadores en Zamora, Michoacán. Revisamos contratos, expedientes y antecedentes para evaluar obligaciones, preparar decisiones y atender citatorios o demandas. Nuestro servicio laboral se enfoca en la parte patronal, con respeto a los derechos de las personas trabajadoras y a las formalidades aplicables.",
     "sections": [
       [
-        "Actas Administrativas con Rigor Probatorio",
-        "Revisión de expedientes, incidencias y documentación para evaluar su alcance probatorio. Un acta administrativa por sí sola no garantiza que una rescisión sea procedente."
+        "Contratos y expedientes laborales",
+        "Revisamos contratos individuales, documentación de pagos y registros relacionados con la relación de trabajo. Ayudamos a identificar faltantes y a organizar la información para la operación diaria y la atención de controversias."
       ],
       [
-        "Atención en el Centro de Conciliación Laboral",
-        "Representación patronal directa en las audiencias de conciliación obligatoria de Zamora para preparar la audiencia, revisar propuestas y formalizar los acuerdos que legalmente procedan."
+        "Conciliación laboral para empleadores",
+        "Preparamos la documentación y representación de la empresa, revisamos el asunto planteado y evaluamos propuestas de acuerdo. La autoridad competente y los requisitos se comprueban con el citatorio y las circunstancias del caso."
       ],
       [
-        "Contratos Laborales y Reglamento Interior",
-        "Estructuración de contratos de trabajo individuales, confidencialidad para personal clave y depósito del Reglamento Interior de Trabajo."
+        "Terminaciones y defensa en juicio",
+        "Evaluamos antecedentes y documentos para distinguir las opciones ante una terminación o reclamación. Un acta administrativa o un recibo no garantizan por sí solos la procedencia de una decisión ni la ausencia de una demanda."
       ]
+    ],
+    "situations": [
+      "Recibiste un citatorio de conciliación o una demanda laboral.",
+      "Necesitas revisar contratos, expedientes o una posible terminación.",
+      "Buscas asesoría para documentar acuerdos laborales de la empresa."
+    ],
+    "documents": [
+      "Citatorio, demanda o notificación completa, si ya existe.",
+      "Contrato, recibos de nómina, antigüedad y controles disponibles.",
+      "Documentos de representación y comunicaciones relevantes."
+    ],
+    "faqs": [
+      [
+        "¿Atienden a trabajadores o exclusivamente a empleadores?",
+        "Esta área de CVIL está dirigida a empleadores y empresas. Al contactar, indica en qué calidad intervienes para confirmar que el despacho pueda atender tu asunto."
+      ],
+      [
+        "¿Qué información debo enviar si recibí un citatorio?",
+        "Indica la autoridad, fecha de audiencia y persona citada. Conserva el documento completo y consulta el canal adecuado para compartirlo de forma privada con el despacho."
+      ]
+    ],
+    "guides": [
+      "citatorio-centro-de-conciliacion-laboral-zamora-que-hacer",
+      "como-despedir-a-un-trabajador-sin-demanda-zamora"
+    ],
+    "related": [
+      "abogados-corporativos-zamora",
+      "derecho-corporativo-zamora"
+    ]
+  },
+  {
+    "slug": "abogados-mercantiles-zamora",
+    "title": "Abogados mercantiles en Zamora, Michoacán | CVIL",
+    "h1": "Abogados mercantiles en Zamora, Michoacán",
+    "description": "Cobranza de pagarés, adeudos e incumplimientos comerciales en Zamora. CVIL evalúa documentos, negociación y litigio mercantil. Agenda una consulta.",
+    "subtitle": "Asesoría y representación ante adeudos, pagarés e incumplimientos de contratos comerciales.",
+    "p1": "En CVIL revisamos controversias mercantiles de empresas y negocios en Zamora y la región. Evaluamos los documentos, la relación entre las partes y las alternativas de negociación o reclamación. La estrategia de cobro y defensa depende del origen de la obligación, las pruebas disponibles y la situación del expediente.",
+    "sections": [
+      [
+        "Cobranza de pagarés y adeudos comerciales",
+        "Revisamos títulos, vencimientos, pagos y comunicaciones para evaluar quién puede reclamar y por qué vía. La existencia de un adeudo debe analizarse junto con los documentos que lo respaldan y las posibilidades de recuperación."
+      ],
+      [
+        "Incumplimiento de contratos",
+        "Analizamos obligaciones, entregas, pagos, garantías y acuerdos modificatorios ante conflictos con clientes o proveedores. El objetivo de la revisión es identificar el incumplimiento alegado y las opciones que corresponden a cada parte."
+      ],
+      [
+        "Representación en controversias mercantiles",
+        "Atendemos la evaluación y seguimiento de juicios y medidas judiciales relacionadas con el asunto contratado. Un embargo o una medida sobre cuentas depende de la autoridad y del procedimiento; no constituye un resultado automático de presentar una demanda."
+      ]
+    ],
+    "situations": [
+      "Un cliente dejó de pagar un pagaré o una obligación comercial.",
+      "Un proveedor incumplió entregas o condiciones de un contrato.",
+      "Recibiste una demanda mercantil o una notificación judicial."
+    ],
+    "documents": [
+      "Pagaré, contrato, facturas y anexos que respalden la operación.",
+      "Comprobantes de entrega, pagos parciales y estados de cuenta relevantes.",
+      "Notificaciones recibidas y comunicaciones entre las partes."
+    ],
+    "faqs": [
+      [
+        "¿Pueden revisar un adeudo si no tengo pagaré?",
+        "Sí. Se puede evaluar la documentación disponible, como contratos, comprobantes y comunicaciones. La ausencia de pagaré cambia el análisis de las vías de reclamación; no permite concluir por sí sola que el adeudo pueda o no cobrarse."
+      ],
+      [
+        "¿Cuánto cuesta y cuánto tarda una cobranza?",
+        "Se cotiza después de conocer el monto, los documentos y el alcance de la intervención. El tiempo depende de la negociación, el procedimiento y las circunstancias de las partes; no hay un plazo único aplicable a todos los adeudos."
+      ]
+    ],
+    "guides": [
+      "como-cobrar-un-pagare-en-zamora-michoacan"
+    ],
+    "related": [
+      "derecho-corporativo-zamora",
+      "abogados-corporativos-zamora"
+    ]
+  },
+  {
+    "slug": "abogados-penalistas-zamora",
+    "title": "Abogados penalistas en Zamora, Michoacán | CVIL",
+    "h1": "Abogados penalistas en Zamora, Michoacán",
+    "description": "Asesoría y defensa penal en Zamora, Michoacán. Revisión de citatorios, investigación y representación en juicio oral. Contacta a CVIL en La Luneta.",
+    "subtitle": "Defensa penal y litigio estratégico con revisión de los hechos, documentos y etapa del procedimiento.",
+    "p1": "El área penal de CVIL atiende la evaluación de asuntos y representación jurídica en Zamora, Michoacán. Ante un citatorio, una investigación o un procedimiento, es necesario conocer en qué calidad interviene la persona, qué autoridad actúa y qué documentos existen. La atención se organiza según la situación y la etapa del asunto.",
+    "sections": [
+      [
+        "Evaluación de citatorios e investigaciones",
+        "Revisamos la autoridad emisora, el motivo indicado y los antecedentes disponibles para identificar la intervención que se requiere. Un mismo documento puede referirse a situaciones distintas; conviene valorar su contenido completo."
+      ],
+      [
+        "Defensa y juicios orales",
+        "La preparación de la defensa comprende el estudio del expediente, la evaluación de datos y pruebas, y la definición de la estrategia procesal. La representación se acuerda conforme a la etapa y alcance del asunto."
+      ],
+      [
+        "Delitos patrimoniales y controversias",
+        "Analizamos los hechos y documentos de asuntos que afectan el patrimonio para identificar las cuestiones penales y su relación con otras controversias. Un desacuerdo contractual no debe tratarse automáticamente como un delito."
+      ]
+    ],
+    "situations": [
+      "Recibiste un citatorio relacionado con una investigación penal.",
+      "Necesitas consultar la defensa de una persona en un procedimiento.",
+      "Buscas una revisión jurídica de hechos que afectan tu patrimonio."
+    ],
+    "documents": [
+      "Citatorio o notificación completa y datos de la autoridad.",
+      "Número de carpeta o expediente, si se conoce.",
+      "Una relación de hechos y documentos disponibles, conservando sus originales."
+    ],
+    "faqs": [
+      [
+        "¿Qué debo indicar al solicitar una consulta penal?",
+        "Explica brevemente la situación, la autoridad involucrada y si hay una fecha o actuación próxima. El equipo confirmará disponibilidad y el canal para revisar la documentación."
+      ],
+      [
+        "¿Se puede garantizar el resultado de un asunto penal?",
+        "No. La estrategia depende del expediente, las pruebas y las decisiones de la autoridad. La primera revisión permite explicar el alcance de la defensa y los siguientes pasos."
+      ]
+    ],
+    "guides": [],
+    "related": [
+      "abogados-corporativos-zamora",
+      "abogados-mercantiles-zamora"
     ]
   }
 ];
@@ -111,9 +346,9 @@ export const SITE = {
 // One source of truth for the HTML response and the running React application.
 export const PAGE_META = {
   '/': {
-    type: 'home', title: 'Abogados en Zamora Michoacán | CVIL Abogados',
+    type: 'home', title: 'Abogados en Zamora, Michoacán | CVIL',
     h1: 'Abogados en Zamora Michoacán',
-    description: 'CVIL Abogados Corporativos en Zamora, Michoacán. Asesoría a empresas, contratos, conflictos entre socios, litigio mercantil y defensa laboral patronal.',
+    description: 'Despacho de abogados en Zamora, Michoacán. Derecho corporativo, mercantil, defensa laboral patronal y penal. Oficinas en La Luneta. Agenda con CVIL.',
   },
   '/blog': {
     type: 'blog', title: 'Guías legales para empresas en Zamora | CVIL Abogados',
@@ -128,7 +363,7 @@ export const PAGE_META = {
 
 BLOG_ARTICLES.forEach((article) => {
   PAGE_META[`/blog/${article.slug}`] = {
-    type: 'article', title: `${article.title} | CVIL Abogados`, h1: article.title, description: article.description,
+    type: 'article', title: article.seoTitle, h1: article.title, description: article.description, image: article.imageUrl, dateModified: article.dateModified,
   };
 });
 PRACTICE_PAGES.forEach((practice) => {
@@ -150,7 +385,7 @@ export function getStructuredData(pathname) {
   const organization = {
     '@type': 'LegalService', '@id': organizationId, name: SITE.name, url: SITE.url + '/',
     telephone: SITE.phones, email: 'contacto@cvilabogados.mx',
-    description: 'Firma jurídica con sede en Zamora, Michoacán. Asesoría empresarial, derecho corporativo, litigio mercantil y defensa patronal.',
+    description: 'Firma jurídica con sede en Zamora, Michoacán. Derecho corporativo, mercantil, defensa laboral patronal y defensa penal.',
     logo: `${SITE.url}/images/CVIL%20Logo.webp`, image: `${SITE.url}/images/og-image.webp`,
     address: { '@type': 'PostalAddress', streetAddress: 'Calle Suiza 721, Piso 3, Col. La Luneta', addressLocality: 'Zamora de Hidalgo', addressRegion: 'Michoacán', postalCode: '59689', addressCountry: 'MX' },
     geo: { '@type': 'GeoCoordinates', latitude: 19.9757124, longitude: -102.289546 },
@@ -166,7 +401,7 @@ export function getStructuredData(pathname) {
   }];
   if (page.type === 'article') {
     graph.push({ '@type': 'BlogPosting', '@id': `${url}#article`, headline: page.h1, description: page.description,
-      mainEntityOfPage: { '@id': `${url}#webpage` }, author: { '@id': organizationId }, publisher: { '@id': organizationId }, inLanguage: 'es-MX' });
+      mainEntityOfPage: { '@id': `${url}#webpage` }, author: { '@id': organizationId }, publisher: { '@id': organizationId }, inLanguage: 'es-MX', image: SITE.url + page.image, dateModified: page.dateModified });
   }
   if (page.type === 'practice') {
     graph.push({ '@type': 'Service', '@id': `${url}#service`, name: page.h1, description: page.description, url,

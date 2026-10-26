@@ -4,7 +4,7 @@ import http from 'node:http';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
-import { ROUTES, getPageMeta, SITE } from '../data/site.js';
+import { ROUTES, getPageMeta, SITE, BLOG_ARTICLES, PRACTICE_PAGES } from '../data/site.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
@@ -23,6 +23,8 @@ const server = http.createServer(async (req,res) => {
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
 const origin=`http://127.0.0.1:${server.address().port}`;
 const results=[];
+assert.equal(new Set(ROUTES.map(route=>getPageMeta(route).title)).size,ROUTES.length,'Unique page titles');
+assert.equal(new Set(ROUTES.map(route=>getPageMeta(route).description)).size,ROUTES.length,'Unique descriptions');
 let browser;
 try {
   try { browser=await chromium.launch({headless:true}); } catch (e) { if (process.platform !== 'win32') throw e; browser=await chromium.launch({channel:'msedge',headless:true}); }
@@ -43,10 +45,38 @@ try {
         links:[...document.querySelectorAll('a[href]')].map(e=>e.getAttribute('href')),
         images:[...document.images].map(e=>({src:e.getAttribute('src'),alt:e.alt})),
         text:document.body.textContent,
+        description:document.querySelector('meta[name=description]')?.content,
+        shareImage:document.querySelector('meta[property="og:image"]')?.content,
+        ids:[...document.querySelectorAll('[id]')].map(e=>e.id),
+        mainLinks:[...document.querySelectorAll('main a[href]')].map(e=>e.getAttribute('href')),
+        modified:document.querySelector('time[datetime]')?.getAttribute('datetime'),
+        breadcrumbs:!!document.querySelector('nav[aria-label="Ruta de navegación"]'),
+        overflow:document.documentElement.scrollWidth>innerWidth,
       }));
       const meta=getPageMeta(pathname);
       assert.deepEqual(state.h1,[meta.h1],`${pathname}: h1`);
       assert.equal(state.title,meta.title,`${pathname}: title`);
+      assert.equal(state.description,meta.description,`${pathname}: description`);
+      assert.ok(!state.overflow,`${pathname}: desktop overflow`);
+      for(const href of state.links.filter(href=>href?.startsWith('#') && href.length > 1 && !href.startsWith('#/'))) {
+        assert.ok(state.ids.includes(decodeURIComponent(href.slice(1))),`${pathname}: broken section ${href}`);
+      }
+      if(meta.type==='article') {
+        const article=BLOG_ARTICLES.find(item=>pathname==='/blog/'+item.slug);
+        assert.ok(state.mainLinks.includes('/'+article.practiceSlug),`${pathname}: missing contextual service link`);
+        assert.equal(state.shareImage,SITE.url+article.imageUrl);
+        assert.equal(state.modified,article.dateModified);
+        const schemaArticle=state.schema[0]['@graph'].find(e=>e['@type']==='BlogPosting');
+        assert.equal(schemaArticle.image,state.shareImage);
+        assert.equal(schemaArticle.dateModified,state.modified);
+        assert.ok(state.breadcrumbs);
+      }
+      if(meta.type==='practice') {
+        const practice=PRACTICE_PAGES.find(item=>pathname==='/'+item.slug);
+        for(const guide of practice.guides)assert.ok(state.mainLinks.includes('/blog/'+guide),`${pathname}: missing guide link`);
+        assert.ok(state.breadcrumbs);
+      }
+      if(pathname==='/')for(const practice of PRACTICE_PAGES)assert.ok(state.mainLinks.includes('/'+practice.slug),`Home must link to ${practice.slug}`);
       assert.equal(state.canonical,SITE.url+(pathname==='/'?'/':pathname));
       assert.equal(state.roots,1);assert.equal(state.main,1);assert.equal(state.schema.length,1);
       assert.deepEqual(errors,[],`${pathname}: browser errors`);
@@ -86,8 +116,8 @@ try {
     await fs.mkdir(process.env.CVIL_SCREENSHOT_DIR,{recursive:true});
     for(const width of [1440,390]){
       const page=await browser.newPage({viewport:{width,height:width===390?844:1000}});
-      for(const [name,route] of [['inicio','/'],['blog','/blog'],['corporativo','/abogados-corporativos-zamora']]){
-        await page.goto(origin+route,{waitUntil:'networkidle'});await page.screenshot({path:path.join(process.env.CVIL_SCREENSHOT_DIR,`${name}-${width}.png`),fullPage:name!=='inicio'});
+      for(const [name,route] of [['inicio','/'],['blog','/blog'],['corporativo','/abogados-corporativos-zamora'],['mercantil','/abogados-mercantiles-zamora'],['penal','/abogados-penalistas-zamora'],['guia-pagare','/blog/como-cobrar-un-pagare-en-zamora-michoacan']]){
+        await page.goto(origin+route,{waitUntil:'networkidle'});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${route}: viewport overflow ${width}`);await page.screenshot({path:path.join(process.env.CVIL_SCREENSHOT_DIR,`${name}-${width}.png`),fullPage:name!=='inicio'});
       }
       await page.close();
     }

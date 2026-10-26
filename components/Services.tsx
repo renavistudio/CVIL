@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Shield, FileSignature, Building2, Users, Landmark, TreePine, X } from 'lucide-react';
 import { ServiceItem } from '../types';
 
-const services: (ServiceItem & { image: string, tag: string })[] = [
+const services: (ServiceItem & { image: string, tag: string, href?: string })[] = [
     {
         id: 1,
         category: 'CORPORATIVO',
         title: "Gobierno Corporativo",
+        href: "/derecho-corporativo-zamora",
         description: "Establecemos los cimientos legales sólidos que toda empresa necesita para operar, crecer y recibir inversión institucional.",
         actionText: "Ver más",
         icon: Building2,
@@ -24,6 +25,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         id: 2,
         category: 'MERCANTIL',
         title: "Litigio Mercantil Complejo",
+        href: "/abogados-mercantiles-zamora",
         description: "Representación contundente en disputas comerciales de alta cuantía, enfocada en la recuperación de activos y la resolución favorable.",
         actionText: "Ver más",
         icon: Landmark,
@@ -40,6 +42,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         id: 3,
         category: 'LABORAL',
         title: "Auditoría Laboral Patronal",
+        href: "/abogados-laborales-zamora",
         description: "Aseguramos el estricto cumplimiento normativo de su empresa, mitigando el riesgo de demandas y multas ante autoridades locales o federales.",
         actionText: "Ver más",
         icon: Users,
@@ -88,7 +91,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         id: 6,
         category: 'INMOBILIARIO',
         title: "Inmobiliario Corporativo",
-        description: "Brindamos certeza jurídica absoluta en la adquisición, desarrollo y comercialización de proyectos inmobiliarios, comerciales e industriales.",
+        description: "Revisamos los riesgos jurídicos de la adquisición, desarrollo y comercialización de inmuebles comerciales e industriales.",
         actionText: "Ver más",
         icon: Building2,
         tag: "Desarrollo",
@@ -182,15 +185,7 @@ const Services: React.FC = () => {
                                     <p className="text-stone text-sm font-light leading-relaxed mb-5 opacity-60 group-hover:opacity-90 transition-opacity duration-300">
                                         {service.description}
                                     </p>
-                                    <button
-                                        onClick={() => setSelected(service)}
-                                        className="flex items-center gap-2 group/btn cursor-pointer"
-                                    >
-                                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white border-b border-white/30 pb-1 group-hover/btn:border-white transition-colors">
-                                            Ver más
-                                        </span>
-                                        <ArrowUpRight className="w-3 h-3 text-white group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                                    </button>
+                                    {service.href ? <a href={service.href} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">Consultar {service.title.toLowerCase()}<ArrowUpRight className="w-3 h-3" /></a> : <button onClick={() => setSelected(service)} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">Ver {service.title.toLowerCase()}<ArrowUpRight className="w-3 h-3" /></button>}
                                 </div>
                             </motion.div>
                         ))}

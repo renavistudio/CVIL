@@ -14,3 +14,6 @@ Firma jurídica con sede en Zamora de Hidalgo, Michoacán, México.
 - [Defensa laboral patronal](https://cvilabogados.mx/abogados-laborales-zamora)
 - [Guías legales](https://cvilabogados.mx/blog)
 - [Aviso de privacidad](https://cvilabogados.mx/aviso-de-privacidad)
+
+- [Litigio mercantil y cobranza](https://cvilabogados.mx/abogados-mercantiles-zamora)
+- [Defensa penal](https://cvilabogados.mx/abogados-penalistas-zamora)

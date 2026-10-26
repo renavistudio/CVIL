@@ -21,6 +21,10 @@ export default function Seo() {
     meta('property', 'og:description', page.description);
     meta('property', 'og:url', url);
     meta('property', 'og:type', page.type === 'article' ? 'article' : 'website');
+    const image = SITE.url + (page.image || '/images/og-image.webp');
+    meta('property', 'og:image', image);
+    meta('property', 'og:image:alt', page.h1);
+    meta('name', 'twitter:image', image);
     meta('name', 'twitter:title', page.title);
     meta('name', 'twitter:description', page.description);
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');

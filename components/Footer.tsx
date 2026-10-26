@@ -13,9 +13,11 @@ const Footer: React.FC = () => (
         <a href="https://maps.google.com/?cid=8710019042285162848" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm hover:text-white"><MapPin className="w-4 h-4" />Ver ubicación y opiniones en Google</a>
       </div>
       <nav aria-label="Enlaces del despacho" className="py-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-stone">
-        <a href="/derecho-corporativo-zamora" className="hover:text-white">Derecho corporativo</a>
+        <a href="/derecho-corporativo-zamora" className="hover:text-white">Contratos y gobierno corporativo</a>
         <a href="/abogados-corporativos-zamora" className="hover:text-white">Abogados corporativos</a>
         <a href="/abogados-laborales-zamora" className="hover:text-white">Defensa laboral patronal</a>
+        <a href="/abogados-mercantiles-zamora" className="hover:text-white">Litigio mercantil y cobranza</a>
+        <a href="/abogados-penalistas-zamora" className="hover:text-white">Defensa penal</a>
         <a href="/#services" className="hover:text-white">Especialidades legales</a>
         <a href="/blog" className="text-[#E8CA9D] hover:text-white">Guías legales</a>
         <a href="/aviso-de-privacidad" className="hover:text-white">Aviso de privacidad</a>
