@@ -78,6 +78,7 @@ export default function BlogHub({ initialSlug }: BlogProps) {
             <p className="text-xs font-bold uppercase tracking-widest text-gold mb-4">{currentArticle.category}</p>
             <h1 className="text-3xl md:text-5xl font-serif font-medium leading-tight mb-5">{currentArticle.title}</h1>
             <p className="text-lg text-charcoal mb-5">{currentArticle.description}</p>
+            {practice && <p className="text-sm text-charcoal mb-6">¿Necesitas ayuda con este asunto? <a href={`/${practice.slug}`} className="underline font-semibold">Conoce el servicio y solicita una consulta con CVIL en Zamora.</a></p>}
             <p className="text-sm text-stone mb-8">Por <a href="/#partners" className="underline">CVIL Abogados Corporativos</a> · Actualizado el <time dateTime={currentArticle.dateModified}>26 de octubre de 2026</time></p>
             <img src={currentArticle.imageUrl} width="1200" height="675" alt={currentArticle.title} className="w-full h-64 md:h-96 object-cover rounded-sm mb-10" />
             <nav aria-label="Contenido de la guía" className="mb-10 border border-gray-200 bg-offwhite p-6"><p className="font-semibold mb-3">En esta guía</p><ol className="list-decimal pl-5 space-y-2">{currentArticle.sections.map((section, i) => <li key={section.title}><a href={`#seccion-${i + 1}`} className="underline">{section.title}</a></li>)}<li><a href="#documentos" className="underline">Lista de documentos</a></li></ol></nav>
@@ -87,10 +88,10 @@ export default function BlogHub({ initialSlug }: BlogProps) {
             <section id="documentos" className="mt-10 p-6 border border-gray-200"><h2 className="text-2xl font-serif mb-4">Lista de documentos para consultar tu caso</h2><ul className="list-disc pl-5 space-y-3 text-charcoal">{currentArticle.checklist.map((item) => <li key={item}>{item}</li>)}</ul><p className="mt-4 text-sm text-charcoal">Lleva lo que tengas disponible e indica qué documentos faltan. Esta información es general; las opciones dependen de la documentación y las circunstancias del asunto.</p></section>
             <p className="mt-8 text-sm text-stone">Referencia: <a href={currentArticle.source[1]} target="_blank" rel="noopener noreferrer" className="underline">{currentArticle.source[0]}</a>.</p>
             <section className="mt-10 p-8 bg-obsidian text-white rounded-sm">
-              <h2 className="text-2xl font-serif mb-4">Consulta tu situación con CVIL</h2>
+              <h2 className="text-2xl font-serif mb-4">Solicita asesoría para tu caso</h2>
               <p className="text-gray-300 text-sm mb-6">Revisamos los documentos y las circunstancias para evaluar las alternativas de tu asunto.</p>
               {practice && <a href={`/${practice.slug}`} className="block underline text-white mb-6">{practice.h1}: conoce el servicio y cómo preparar una consulta</a>}
-              <a href="https://wa.me/524432735543" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-white text-sm rounded-sm"><MessageSquare className="w-4 h-4" />WhatsApp: 443 273 5543</a>
+              <a href={`https://wa.me/524432735543?text=${encodeURIComponent(`Hola, quiero agendar una consulta sobre este asunto: ${currentArticle.title}`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-white text-sm rounded-sm"><MessageSquare className="w-4 h-4" />Solicitar consulta por WhatsApp</a>
             </section>
             <nav aria-label="Guías relacionadas" className="mt-10 space-y-3">
               <h2 className="text-xl font-serif">Otras guías legales</h2>
@@ -100,7 +101,7 @@ export default function BlogHub({ initialSlug }: BlogProps) {
         ) : (
           <>
             <h1 className="text-4xl lg:text-5xl font-serif font-medium mb-5">Soluciones legales para dueños de negocio y empresas</h1>
-            <p className="text-charcoal max-w-3xl mb-10">Guías para preparar una consulta y entender qué documentos y alternativas revisar ante conflictos societarios, adeudos, relaciones laborales y contratos de negocios en Zamora.</p>
+            <p className="text-charcoal max-w-3xl mb-10">¿Tienes problemas con un socio, un cliente que no paga o un contrato por firmar? Encuentra información para preparar tu consulta con CVIL en Zamora. La atención laboral está dirigida a empleadores y empresas.</p>
             <div className="flex flex-wrap gap-2 mb-10" aria-label="Filtrar guías">
               {categories.map((category) => <button key={category} onClick={() => setActiveCategory(category)} aria-pressed={activeCategory === category} className={`px-4 py-2 text-xs rounded-sm ${activeCategory === category ? 'bg-obsidian text-white' : 'bg-gray-100 text-charcoal'}`}>{category}</button>)}
             </div>

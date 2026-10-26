@@ -2,7 +2,7 @@ export const BLOG_ARTICLES = [
   {
     "slug": "como-sacar-a-un-socio-de-una-empresa-zamora",
     "title": "Conflictos entre socios de una empresa en Zamora",
-    "description": "Documentos y alternativas que conviene revisar ante un conflicto entre socios: estatutos, poderes, acuerdos y continuidad de la empresa.",
+    "description": "¿Tienes problemas con tu socio? CVIL revisa los acuerdos y las opciones para atender el conflicto de tu empresa. Solicita una consulta en Zamora.",
     "seoTitle": "Conflictos entre socios en Zamora | CVIL Abogados",
     "practiceSlug": "abogados-corporativos-zamora",
     "imageUrl": "/images/blog/blog_socios_conflicto.webp",
@@ -16,7 +16,7 @@ export const BLOG_ARTICLES = [
   {
     "slug": "como-cobrar-un-pagare-en-zamora-michoacan",
     "title": "Cómo cobrar un pagaré vencido en Zamora, Michoacán",
-    "description": "Qué documentos reunir y qué aspectos evaluar para reclamar un pagaré vencido. La vía de cobro depende del título y de las circunstancias del adeudo.",
+    "description": "¿No te pagaron un pagaré? En CVIL revisamos el adeudo y las opciones de cobranza. Solicita asesoría para tu caso en Zamora, Michoacán.",
     "seoTitle": "Cómo cobrar un pagaré vencido en Zamora | CVIL",
     "practiceSlug": "abogados-mercantiles-zamora",
     "imageUrl": "/images/blog/blog_cobranza_pagares.webp",
@@ -29,9 +29,9 @@ export const BLOG_ARTICLES = [
   },
   {
     "slug": "como-despedir-a-un-trabajador-sin-demanda-zamora",
-    "title": "Terminación laboral: qué revisar como patrón en Zamora",
-    "description": "Cómo preparar el expediente laboral, evaluar una terminación y revisar los pagos que correspondan, sin prometer ausencia de demandas.",
-    "seoTitle": "Terminación laboral y defensa patronal en Zamora | CVIL",
+    "title": "¿Vas a despedir a un trabajador en Zamora?",
+    "description": "¿Eres patrón y necesitas terminar una relación laboral? CVIL revisa el expediente, los pagos y las opciones de tu empresa. Agenda una consulta en Zamora.",
+    "seoTitle": "Asesoría para despedir a un trabajador en Zamora | CVIL",
     "practiceSlug": "abogados-laborales-zamora",
     "imageUrl": "/images/blog/blog_despido_patronal.webp",
     "checklist": [
@@ -44,7 +44,7 @@ export const BLOG_ARTICLES = [
   {
     "slug": "como-sacar-a-un-inquilino-que-no-paga-renta-zamora",
     "title": "Qué hacer si un inquilino no paga un local en Zamora",
-    "description": "Documentación y alternativas para atender el incumplimiento de un arrendamiento comercial y solicitar asesoría sobre la recuperación del inmueble.",
+    "description": "¿Tu inquilino dejó de pagar la renta de un local? CVIL revisa tu contrato y las opciones para reclamar rentas o recuperar el inmueble en Zamora.",
     "seoTitle": "Inquilino que no paga un local en Zamora | CVIL",
     "practiceSlug": "derecho-corporativo-zamora",
     "imageUrl": "/images/blog/blog_inquilino_arrendamiento.webp",
@@ -58,7 +58,7 @@ export const BLOG_ARTICLES = [
   {
     "slug": "traspaso-de-negocio-deudas-anteriores-zamora",
     "title": "Traspaso de negocio en Zamora: contratos y deudas",
-    "description": "Revisión contractual, laboral y documental antes de adquirir un negocio: activos, pasivos, arrendamiento y obligaciones pendientes.",
+    "description": "¿Vas a comprar o recibir el traspaso de un negocio? Solicita a CVIL la revisión de contratos y deudas antes de firmar. Asesoría en Zamora.",
     "seoTitle": "Traspaso de negocio y deudas en Zamora | CVIL",
     "practiceSlug": "derecho-corporativo-zamora",
     "imageUrl": "/images/blog/blog_traspaso_empresas.webp",
@@ -72,7 +72,7 @@ export const BLOG_ARTICLES = [
   {
     "slug": "citatorio-centro-de-conciliacion-laboral-zamora-que-hacer",
     "title": "Citatorio de conciliación laboral en Zamora: qué hacer",
-    "description": "Revisa la autoridad, fecha, representación y documentos de tu empresa antes de una audiencia de conciliación laboral en Zamora.",
+    "description": "¿Tu empresa recibió un citatorio de conciliación laboral? CVIL te asesora para preparar la representación y atender la audiencia en Zamora.",
     "seoTitle": "Citatorio de conciliación laboral en Zamora | CVIL",
     "practiceSlug": "abogados-laborales-zamora",
     "imageUrl": "/images/blog/blog_citatorio_conciliacion.webp",
@@ -139,14 +139,14 @@ export const PRACTICE_PAGES = [
   },
   {
     "slug": "derecho-corporativo-zamora",
-    "title": "Contratos y gobierno corporativo en Zamora | CVIL",
-    "h1": "Contratos y gobierno corporativo en Zamora",
+    "title": "Revisión de contratos en Zamora | CVIL",
+    "h1": "Revisión y elaboración de contratos en Zamora",
     "description": "Revisión y elaboración de contratos comerciales, acuerdos de socios y documentos corporativos en Zamora, Michoacán. Consulta con CVIL en La Luneta.",
-    "subtitle": "Derecho corporativo preventivo para documentar acuerdos, definir responsabilidades y revisar operaciones antes de firmar.",
+    "subtitle": "¿Necesitas revisar un contrato antes de firmar o redactar uno para tu negocio? Te ayudamos a documentar lo acordado y revisar tus obligaciones.",
     "p1": "Un contrato debe reflejar la operación real del negocio: quién se obliga, qué entregará, cómo se pagará y qué ocurrirá ante un incumplimiento. En CVIL revisamos y elaboramos documentos corporativos y comerciales para empresas de Zamora y Jacona. Partimos de los acuerdos y documentos existentes para detectar puntos pendientes y proponer una redacción adecuada al asunto.",
     "sections": [
       [
-        "Revisión y elaboración de contratos mercantiles",
+        "Contratos para clientes y proveedores de tu negocio",
         "Trabajamos sobre contratos de suministro, distribución, prestación de servicios y confidencialidad. Revisamos obligaciones, entregables, pagos, vigencia, terminación y mecanismos para resolver desacuerdos según la operación."
       ],
       [
