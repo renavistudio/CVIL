@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 
-export type ServiceCategory = 'PENAL' | 'CIVIL' | 'FAMILIAR' | 'AGRARIO' | 'NOTARIAL' | 'CORPORATIVO' | 'AMPAROS';
+export type ServiceCategory = 'PENAL' | 'CIVIL' | 'FAMILIAR' | 'AGRARIO' | 'NOTARIAL' | 'CORPORATIVO' | 'AMPAROS' | 'MERCANTIL' | 'LABORAL' | 'PROPIEDAD' | 'FISCAL' | 'INMOBILIARIO';
 
 export interface ServiceItem {
   id: number;

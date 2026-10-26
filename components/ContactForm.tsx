@@ -82,7 +82,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                         {/* Background Image */}
                         <div className="absolute inset-0 z-0">
                             <img width="800" height="600"
-                                src="images/office/IMG_0559.webp"
+                                src="/images/office/IMG_0559.webp"
                                 alt="Instalaciones y pasillo de las oficinas corporativas CVIL en Zamora"
                                 className="w-full h-full object-cover opacity-30"
                             />

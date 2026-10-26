@@ -3,7 +3,7 @@ import { BLOG_POSTS } from './BlogHub';
 import { ArrowRight, BookOpen, Clock } from 'lucide-react';
 
 interface BlogSectionProps {
-  onOpenBlog: (slug?: string) => void;
+  onOpenBlog?: (slug?: string) => void;
 }
 
 export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
@@ -26,12 +26,12 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
             </p>
           </div>
           <div className="mt-6 md:mt-0">
-            <button
-              onClick={() => onOpenBlog()}
+            <a
+              href="/blog"
               className="inline-flex items-center gap-2 px-6 py-3 border border-obsidian text-obsidian hover:bg-obsidian hover:text-white transition-colors duration-300 text-xs font-bold uppercase tracking-widest rounded-sm"
             >
               Ver Todas las Guías <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
           </div>
         </div>
 
@@ -63,10 +63,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
                   </div>
                   <a
                     href={`/blog/${post.slug}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onOpenBlog(post.slug);
-                    }}
                     className="block group/title"
                   >
                     <h3 className="font-serif text-lg font-bold text-obsidian leading-snug group-hover:text-[#B8860B] transition-colors mb-3">
@@ -82,10 +78,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
                   <span className="text-[11px] font-semibold text-stone">CVIL Abogados</span>
                   <a
                     href={`/blog/${post.slug}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onOpenBlog(post.slug);
-                    }}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-obsidian group-hover:translate-x-1 transition-transform"
                   >
                     Leer Solución <ArrowRight className="w-3.5 h-3.5 text-[#B8860B]" />

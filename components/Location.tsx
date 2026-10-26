@@ -110,7 +110,7 @@ const Location: React.FC = () => {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-1.5 text-xs text-amber-800 bg-amber-50 border border-amber-200 px-3.5 py-1.5 rounded-sm hover:bg-amber-100 transition-colors font-semibold"
                             >
-                                ⭐ 4.9 en Google Reviews · Calificar o ver opiniones
+                                Ver opiniones en Google · Compartir una experiencia
                             </a>
                         </div>
 

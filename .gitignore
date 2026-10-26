@@ -23,3 +23,12 @@ public/images_backup_original/
 *.njsproj
 *.sln
 *.sw?
+
+# Credentials and local browser sessions
+.env
+.env.*
+!.env.example
+client_secret*.json
+gsc-credentials*.json
+*storage-state*.json
+playwright-browsers/

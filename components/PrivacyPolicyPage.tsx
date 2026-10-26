@@ -3,7 +3,6 @@ import { ArrowLeft } from 'lucide-react';
 
 const PrivacyPolicyPage: React.FC = () => {
     useEffect(() => {
-        document.title = 'Aviso de Privacidad | CVIL';
         window.scrollTo(0, 0);
     }, []);
 

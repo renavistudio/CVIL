@@ -11,7 +11,7 @@ const cases: CaseStudy[] = [
         result: "Control Operativo Recuperado",
         stat: "Asamblea validada",
         description: "Un socio bloqueaba la toma de decisiones y el reparto de dividendos. Ejecutamos una asamblea extraordinaria, ajustamos los estatutos y logramos la exclusión legal pagando el valor contable estricto, destrabando la operación en menos de 4 meses.",
-        image: "images/cases/caso_1_societario_v3.webp"
+        image: "/images/cases/caso_1_societario_v3.webp"
     },
     {
         id: 2,
@@ -20,7 +20,7 @@ const cases: CaseStudy[] = [
         result: "Cuentas Liberadas",
         stat: "Garantía sustituida en 72h",
         description: "Un proveedor demandó por la vía ejecutiva mercantil y congeló las cuentas operativas del cliente. Promovimos un incidente de sustitución de garantía, liberando los fondos en 72 horas para asegurar el pago de nómina.",
-        image: "images/cases/caso_2_mercantil_v3.webp"
+        image: "/images/cases/caso_2_mercantil_v3.webp"
     },
     {
         id: 3,
@@ -29,7 +29,7 @@ const cases: CaseStudy[] = [
         result: "Cero Contingencia Laboral",
         stat: "Demanda evitada",
         description: "El directivo desvió recursos a empresas personales. Instrumentamos las actas administrativas ante notario y ejecutamos la rescisión sin responsabilidad patronal, evitando un juicio por despido injustificado de alto impacto.",
-        image: "images/cases/caso_3_laboral_v3.webp"
+        image: "/images/cases/caso_3_laboral_v3.webp"
     },
     {
         id: 4,
@@ -38,7 +38,7 @@ const cases: CaseStudy[] = [
         result: "Titularidad Restituida",
         stat: "Juicio de Nulidad ganado",
         description: "Un ex-gerente registró a su nombre el logotipo y nombre comercial de la empresa. Presentamos un juicio de nulidad ante el IMPI demostrando mala fe y uso previo, recuperando así el activo intangible de la compañía.",
-        image: "images/cases/caso_4_propiedad_v3.webp"
+        image: "/images/cases/caso_4_propiedad_v3.webp"
     },
 ];
 

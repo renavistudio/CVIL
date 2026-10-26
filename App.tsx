@@ -16,165 +16,60 @@ import ChatWidget from './components/ChatWidget';
 import { BlogSection } from './components/BlogSection';
 import SocioMario from './components/SocioMario';
 import SocioAlejandro from './components/SocioAlejandro';
-import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import BlogHub from './components/BlogHub';
+import PracticePage from './components/PracticePage';
+import Seo from './components/Seo';
+import { getPageMeta } from './data/site.js';
 
 const App: React.FC = () => {
   const [activeSocio, setActiveSocio] = useState<string | null>(null);
-  const [isBlogOpen, setIsBlogOpen] = useState(false);
-  const [blogArticleSlug, setBlogArticleSlug] = useState<string | null>(null);
-
+  const page = getPageMeta(window.location.pathname);
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash;
-      if (hash === '#/socio/mario-cervantes') {
-        setActiveSocio('mario');
-        setIsBlogOpen(false);
-      } else if (hash === '#/socio/alejandro-arriaga') {
-        setActiveSocio('alejandro');
-        setIsBlogOpen(false);
-      } else if (hash.startsWith('#/blog') || window.location.pathname.startsWith('/blog')) {
-        setIsBlogOpen(true);
-        setActiveSocio(null);
-        let slug = null;
-        if (window.location.pathname.startsWith('/blog/')) {
-          slug = window.location.pathname.replace('/blog/', '').replace(/\/$/, '');
-        } else if (hash.startsWith('#/blog/')) {
-          slug = hash.split('#/blog/')[1];
-        }
-        setBlogArticleSlug(slug || null);
-      } else if (hash === '#/abogado-penalista-zamora' || hash === '#/litigio-estrategico-zamora') {
-        setActiveSocio('mario');
-        setIsBlogOpen(false);
-      } else if (hash === '#/abogados-de-empresas-zamora') {
-        setActiveSocio('alejandro');
-        setIsBlogOpen(false);
-      } else if (hash === '#/abogado-laboral-patronal-zamora') {
-        setActiveSocio('alejandro');
-        setIsBlogOpen(false);
-      } else {
-        setActiveSocio(null);
-        setIsBlogOpen(false);
-        setBlogArticleSlug(null);
+      // Preserve old shared links, but move blog navigation to real URLs.
+      if (hash === '#/blog' || hash.startsWith('#/blog/')) {
+        window.location.replace(hash.slice(1));
+        return;
       }
+      if (['#/socio/mario-cervantes', '#/abogado-penalista-zamora', '#/litigio-estrategico-zamora'].includes(hash)) setActiveSocio('mario');
+      else if (['#/socio/alejandro-arriaga', '#/abogados-de-empresas-zamora', '#/abogado-laboral-patronal-zamora'].includes(hash)) setActiveSocio('alejandro');
+      else setActiveSocio(null);
     };
-
     handleHash();
     window.addEventListener('hashchange', handleHash);
-
-    return () => {
-      window.removeEventListener('hashchange', handleHash);
-    };
+    return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
-  useEffect(() => {
-    if (isBlogOpen) {
-      if (blogArticleSlug) {
-        document.title = 'Abogado en Zamora Mich | Abogados Corporativos CVIL';
-      } else {
-        document.title = 'Abogado en Zamora Mich | Abogados Corporativos CVIL';
-      }
-    } else if (activeSocio === 'mario') {
-      document.title = 'Dr. Mario Enrique Cervantes Vieyra — Litigio Estratégico | CVIL';
-    } else if (activeSocio === 'alejandro') {
-      document.title = 'Lic. Alejandro Arriaga — Abogado Corporativo & Laboral | CVIL';
-    } else {
-      document.title = 'Abogado en Zamora Mich | Abogados Corporativos CVIL';
-    }
-  }, [activeSocio, isBlogOpen, blogArticleSlug]);
-
-  if (window.location.pathname === "/aviso-de-privacidad") {
-    return <PrivacyPolicyPage />;
-  }
-
-  const handleCloseSocio = () => {
-    setActiveSocio(null);
-    window.location.hash = '';
-  };
-
-  const handleOpenBlog = (slug?: string) => {
-    setIsBlogOpen(true);
-    if (slug) {
-      setBlogArticleSlug(slug);
-      window.location.hash = `#/blog/${slug}`;
-    } else {
-      setBlogArticleSlug(null);
-      window.location.hash = '#/blog';
-    }
-  };
-
-  const handleCloseBlog = () => {
-    setIsBlogOpen(false);
-    setBlogArticleSlug(null);
-    window.location.hash = '';
-  };
-
-  return (
+  const closeSocio = () => { setActiveSocio(null); window.location.hash = 'partners'; };
+  let content: React.ReactNode;
+  if (page.type === 'privacy') content = <main><PrivacyPolicyPage /></main>;
+  else if (page.type === 'practice') content = <PracticePage slug={page.path.slice(1)} />;
+  else if (page.type === 'blog' || page.type === 'article') content = <BlogHub onClose={() => window.location.assign('/')} initialSlug={page.type === 'article' ? page.path.slice('/blog/'.length) : null} />;
+  else if (page.type === 'notFound') content = (
+    <main className="min-h-screen flex flex-col items-center justify-center gap-6 p-8 text-center">
+      <h1 className="text-4xl font-serif">Página no encontrada</h1>
+      <p>La dirección solicitada no existe.</p>
+      <a href="/" className="underline">Volver al inicio</a><a href="/blog" className="underline">Consultar las guías legales</a>
+    </main>
+  );
+  else content = (
     <>
       <div className="min-h-screen bg-white text-obsidian selection:bg-stone selection:text-white font-sans antialiased">
-        <Navbar onOpenBlog={() => handleOpenBlog()} />
-        <main role="main">
+        <Navbar />
+        <main>
           <Hero />
-          <Partners onOpenSocio={(id) => {
-            if (id === 1) {
-              setActiveSocio('mario');
-              window.location.hash = '#/socio/mario-cervantes';
-            }
-            if (id === 2) {
-              setActiveSocio('alejandro');
-              window.location.hash = '#/socio/alejandro-arriaga';
-            }
-          }} />
-          <Stats />
-          <LiveTicker />
-          <CaseSuccess />
-          <BentoGrid />
-          <Services />
-          <Manifesto />
-          <SocialProof />
-          <BlogSection onOpenBlog={(slug) => handleOpenBlog(slug)} />
-          <ContactForm />
-          <Location />
+          <Partners onOpenSocio={(id) => { window.location.hash = id === 1 ? '#/socio/mario-cervantes' : '#/socio/alejandro-arriaga'; }} />
+          <Stats /><LiveTicker /><CaseSuccess /><BentoGrid /><Services /><Manifesto /><SocialProof /><BlogSection /><ContactForm /><Location />
         </main>
-        <Footer 
-          onOpenBlog={(slug) => handleOpenBlog(slug)}
-          onOpenService={(serviceId) => {
-            if (serviceId === 'penal') {
-              setActiveSocio('mario');
-              window.location.hash = '#/socio/mario-cervantes';
-            } else {
-              setActiveSocio('alejandro');
-              window.location.hash = '#/socio/alejandro-arriaga';
-            }
-          }}
-        />
-        <ChatWidget />
+        <Footer /><ChatWidget />
       </div>
-
-      {/* MODAL DE BLOG EDITORIAL COMPLETO */}
-      {isBlogOpen && (
-        <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
-          <BlogHub 
-            onClose={handleCloseBlog} 
-            initialSlug={blogArticleSlug}
-          />
-        </div>
-      )}
-
-      {/* MODALES DE SOCIOS */}
-      {activeSocio === 'mario' && (
-        <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
-          <SocioMario onClose={handleCloseSocio} />
-        </div>
-      )}
-      
-      {activeSocio === 'alejandro' && (
-        <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
-          <SocioAlejandro onClose={handleCloseSocio} />
-        </div>
-      )}
+      {activeSocio && <div role="dialog" aria-modal="true" aria-label="Perfil profesional" className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
+        {activeSocio === 'mario' ? <SocioMario onClose={closeSocio} /> : <SocioAlejandro onClose={closeSocio} />}
+      </div>}
     </>
   );
+  return <><Seo />{content}</>;
 };
-
 export default App;

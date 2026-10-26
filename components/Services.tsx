@@ -12,7 +12,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         actionText: "Ver más",
         icon: Building2,
         tag: "Preventivo",
-        image: "images/delitos de alto impacto_opt.webp",
+        image: "/images/delitos de alto impacto_opt.webp",
         details: [
             "Constitución y reestructuración de sociedades mercantiles.",
             "Estructuración de actas de asamblea y libros corporativos.",
@@ -28,7 +28,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         actionText: "Ver más",
         icon: Landmark,
         tag: "Estratégico",
-        image: "images/derecho civil.webp",
+        image: "/images/derecho civil.webp",
         details: [
             "Recuperación estratégica de cartera vencida comercial.",
             "Atención a juicios ejecutivos y ordinarios mercantiles.",
@@ -44,7 +44,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         actionText: "Ver más",
         icon: Users,
         tag: "Regulatorio",
-        image: "images/Materia familiar_opt.webp",
+        image: "/images/Materia familiar_opt.webp",
         details: [
             "Auditoría preventiva y cumplimiento normativo (Compliance).",
             "Redacción de contratos de trabajo especializados y para directivos.",
@@ -60,7 +60,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         actionText: "Ver más",
         icon: FileSignature,
         tag: "Intangibles",
-        image: "images/office/IMG_0645.webp",
+        image: "/images/office/IMG_0645.webp",
         details: [
             "Registro de marcas, patentes y derechos de autor.",
             "Estructuración de contratos de franquicia y licencias de uso.",
@@ -76,7 +76,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         actionText: "Ver más",
         icon: Shield,
         tag: "Defensa",
-        image: "images/office/IMG_0585.webp",
+        image: "/images/office/IMG_0585.webp",
         details: [
             "Atención y desahogo de auditorías y requerimientos de la autoridad.",
             "Interposición de Recursos de Revocación e Inconformidad.",
@@ -92,7 +92,7 @@ const services: (ServiceItem & { image: string, tag: string })[] = [
         actionText: "Ver más",
         icon: Building2,
         tag: "Desarrollo",
-        image: "images/derecho civil.webp",
+        image: "/images/derecho civil.webp",
         details: [
             "Auditoría legal de inmuebles (Due Diligence inmobiliario).",
             "Elaboración y revisión de contratos de compraventa y fideicomisos.",

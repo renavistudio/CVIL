@@ -9,7 +9,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
             name: "Dr. Mario Enrique Cervantes Vieyra",
             role: "Socio Fundador | Litigio Estrategico y Controversias",
             description: "Doctor en Derecho con sólida trayectoria en litigación estratégica y juicios orales. Representación de alto perfil ante instancias del fuero común y federal.",
-            image: "images/dsc/DSC_6010_opt.webp",
+            image: "/images/dsc/DSC_6010_opt.webp",
             link: "#/socio/mario-cervantes"
         },
         {
@@ -17,7 +17,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
             name: "Lic. Alejandro Arriaga",
             role: "Socio Fundador",
             description: "Especialista en estructuración corporativa y planeación estratégica. Su visión ha sido fundamental para la consolidación de CVIL como firma líder en la región.",
-            image: "images/dsc/DSC_6058_opt.webp",
+            image: "/images/dsc/DSC_6058_opt.webp",
             link: "#/socio/alejandro-arriaga"
         },
         {
@@ -25,49 +25,49 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
             name: "Lic. Cynthia Díaz",
             role: "Abogada",
             description: "",
-            image: "images/dsc/DSC_6075_opt.webp"
+            image: "/images/dsc/DSC_6075_opt.webp"
         },
         {
             id: 4,
             name: "Lic. Daniela Molina",
             role: "Abogada",
             description: "",
-            image: "images/dsc/DSC_6026_opt.webp"
+            image: "/images/dsc/DSC_6026_opt.webp"
         },
         {
             id: 5,
             name: "Lic. Fabiola Sánchez",
             role: "Abogada",
             description: "",
-            image: "images/dsc/DSC_6014_opt.webp"
+            image: "/images/dsc/DSC_6014_opt.webp"
         },
         {
             id: 6,
             name: "Lic. Martha León",
             role: "Abogada",
             description: "",
-            image: "images/dsc/DSC_6065_opt.webp"
+            image: "/images/dsc/DSC_6065_opt.webp"
         },
         {
             id: 7,
             name: "Lic. Leticia Herrera",
             role: "Abogada",
             description: "",
-            image: "images/dsc/DSC_6018_opt.webp"
+            image: "/images/dsc/DSC_6018_opt.webp"
         },
         {
             id: 8,
             name: "Lic. Julian Lora",
             role: "Abogado",
             description: "",
-            image: "images/dsc/DSC_6030_opt.webp"
+            image: "/images/dsc/DSC_6030_opt.webp"
         },
         {
             id: 11,
             name: "Cristian Flores",
             role: "Postulante",
             description: "",
-            image: "images/dsc/DSC_6022_opt.webp"
+            image: "/images/dsc/DSC_6022_opt.webp"
         }
     ];
 

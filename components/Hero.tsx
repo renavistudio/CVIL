@@ -1,180 +1,35 @@
-import React, { useRef, useState } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { ArrowRight, X, ChevronDown } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, X } from 'lucide-react';
 
 const Hero: React.FC = () => {
-    const targetRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-        offset: ["start start", "end start"]
-    });
-
-    
-    
-
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-    return (
-        <>
-            <section ref={targetRef} id="home" className="relative min-h-screen lg:h-screen lg:min-h-[700px] flex items-center bg-white overflow-hidden pt-0">
-
-                {/* Background Texture - Subtle Grain */}
-                <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none z-0"></div>
-
-                {/* ===== MOBILE LAYOUT ===== */}
-                <div className="lg:hidden w-full flex flex-col min-h-screen">
-
-                    {/* Top decorative gold line */}
-                    <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#B8860B]/40 to-transparent mt-16"></div>
-
-                    {/* Photo of the partners */}
-                    <div className="relative z-10 px-5 pt-6 animate-fade-in"
-                    >
-                        <div className="relative overflow-hidden rounded-sm">
-                            <img width="800" height="600"
-                                src="images/dsc/DSC_6061_opt.webp"
-                                alt="Socios Fundadores de CVIL"
-                                className="w-full h-[85vw] object-cover contrast-[1.05]"
-                                
-                                onClick={() => setSelectedImage('images/dsc/DSC_6061_opt.webp')}
-                            />
-                        </div>
-                    </div>
-
-                    {/* Text content */}
-                    <div className="relative z-10 px-6 pt-8 pb-4 flex-1 flex flex-col animate-fade-in"
-                    >
-                        <span className="block text-[10px] uppercase tracking-[0.22em] text-[#B8860B] font-sans font-semibold mb-2">
-                            Firma Legal Corporativa y Penal • Zamora, Mich.
-                        </span>
-                        <h1 className="text-2xl sm:text-3xl font-serif font-medium text-obsidian tracking-tight mb-3">
-                            Abogados en Zamora Michoacán
-                        </h1>
-                        <p className="text-[13vw] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-5">
-                            Ganar es <br />
-                            <span className="italic text-gray-400 font-light">lo único.</span>
-                        </p>
-
-                        <p className="text-base text-charcoal/75 font-light leading-relaxed mb-8 max-w-sm">
-                            Firma especializada en blindaje de empresas, derecho corporativo, defensa laboral patronal y materia penal. Protegemos su patrimonio y su libertad.
-                        </p>
-
-                        {/* CTA Button - full width golden */}
-                        <a
-                            href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex items-center justify-center gap-3 bg-[#B8860B] hover:bg-[#9a7209] text-white w-full py-4 rounded-sm transition-all duration-300 shadow-lg"
-                        >
-                            <span className="text-xs font-bold uppercase tracking-[0.2em]">Agendar Consulta</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
-
-                        <p className="text-[10px] text-stone uppercase tracking-[0.2em] text-center mt-4 font-medium">
-                            Respuesta en menos de 15 minutos
-                        </p>
-
-                        {/* Scroll indicator */}
-                        <div
-                            animate={{ y: [0, 6, 0] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                            className="flex flex-col items-center mt-auto pt-6 pb-4"
-                        >
-                            <ChevronDown className="w-5 h-5 text-gray-300" />
-                            <span className="text-[9px] text-gray-400 uppercase tracking-[0.2em] mt-1">Desplazar para más</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* ===== DESKTOP LAYOUT ===== */}
-                <div className="hidden lg:block max-w-[1440px] mx-auto w-full px-6 lg:px-12 relative z-10">
-
-                    <div className="grid grid-cols-12 gap-12 w-full items-center">
-
-                        {/* Left: Typography */}
-                        <div className="col-span-6 z-20 animate-fade-in"
-                        >
-
-                            <span className="block text-xs uppercase tracking-[0.25em] text-[#B8860B] font-sans font-semibold mb-3">
-                                Firma Legal Especializada • Zamora, Michoacán
-                            </span>
-                            <h1 className="text-3xl lg:text-4xl font-serif font-semibold text-obsidian tracking-tight mb-4">
-                                Abogados en Zamora Michoacán
-                            </h1>
-                            <p className="text-[6.5rem] leading-[0.9] font-serif font-medium text-obsidian tracking-tighter mb-8 mix-blend-multiply">
-                                Ganar es <br />
-                                <span className="italic text-gray-400 font-light">lo único.</span>
-                            </p>
-
-                            <div className="max-w-2xl mt-4">
-                                <p className="text-xl text-charcoal/80 font-light leading-relaxed">
-                                    Firma especializada en blindaje de empresas, defensa laboral patronal y materia penal. Protegemos su patrimonio y su libertad con estrategia jurídica de alto rigor.
-                                </p>
-                            </div>
-
-                            <div className="mt-12 flex flex-wrap gap-6 items-center animate-fade-in"
-                            >
-                                <a href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal." target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between bg-gold text-white px-8 py-4 min-w-[200px] hover:bg-obsidian transition-all duration-300 shadow-lg hover:shadow-xl">
-                                    <span className="text-xs font-bold uppercase tracking-widest">Agendar Consulta</span>
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </a>
-                                <span className="text-[10px] text-stone uppercase tracking-widest">
-                                    Respuesta en menos de 15 minutos
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Right: Visual / Featured Partners Photo */}
-                        <div className="col-span-6 relative h-[70vh] min-h-[520px] max-h-[680px]">
-                            <div className="w-full h-full overflow-hidden shadow-2xl cursor-pointer rounded-sm animate-fade-in"
-                                onClick={() => setSelectedImage('images/dsc/DSC_6061_opt.webp')}
-                            >
-                                <div className="w-full h-full relative overflow-hidden rounded-sm">
-                                    <img width="800" height="600"
-                                        src="images/dsc/DSC_6061_opt.webp"
-                                        alt="Socios Fundadores de CVIL"
-                                        className="w-full h-full object-cover object-[center_top] contrast-[1.05]"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ===== Lightbox Popup Modal ===== */}
-            <AnimatePresence>
-                {selectedImage && (
-                    <div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        onClick={() => setSelectedImage(null)}
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-obsidian/95 p-4 md:p-12 backdrop-blur-sm cursor-zoom-out"
-                    >
-                        <div className="relative max-w-6xl w-full h-[80vh] flex items-center justify-center cursor-default bg-charcoal border border-white/5 shadow-2xl overflow-hidden animate-fade-in"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <img width="800" height="600"
-                                src={selectedImage}
-                                alt="Fotografía ampliada de las instalaciones corporativas de CVIL Abogados en Zamora"
-                                className="w-full h-full object-contain"
-                            />
-
-                            {/* Botón de cerrar elegante */}
-                            <button
-                                className="absolute top-4 right-4 p-3 bg-black/40 hover:bg-white text-white/70 hover:text-black rounded-full transition-all duration-300 backdrop-blur-md border border-white/10"
-                                onClick={() => setSelectedImage(null)}
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
-                        </div>
-                    </div>
-                )}
-            </AnimatePresence>
-        </>
-    );
+  const [showPhoto, setShowPhoto] = useState(false);
+  return (
+    <>
+      <section id="home" className="relative min-h-screen lg:min-h-[700px] lg:h-screen flex items-center bg-white overflow-hidden pt-20 pb-10 lg:pb-0">
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none" />
+        <div className="max-w-[1440px] mx-auto w-full px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <button type="button" onClick={() => setShowPhoto(true)} aria-label="Ampliar fotografía de los socios fundadores" className="lg:order-2 w-full h-[85vw] lg:h-[70vh] lg:min-h-[520px] lg:max-h-[680px] overflow-hidden rounded-sm shadow-xl">
+            <img src="/images/dsc/DSC_6061_opt.webp" width="800" height="600" alt="Socios fundadores de CVIL Abogados Corporativos" fetchPriority="high" className="w-full h-full object-cover object-top contrast-[1.05]" />
+          </button>
+          <div className="lg:order-1">
+            <p className="text-[10px] lg:text-xs uppercase tracking-[0.22em] text-gold font-semibold mb-3">Firma legal corporativa y penal · Zamora, Michoacán</p>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium tracking-tight mb-4">Abogados en Zamora Michoacán</h1>
+            <p className="text-[13vw] lg:text-[6.5rem] leading-[0.9] font-serif font-medium tracking-tighter mb-6 lg:mb-8">Ganar es <br /><span className="italic text-gray-400 font-light">lo único.</span></p>
+            <p className="text-base lg:text-xl text-charcoal/80 font-light leading-relaxed max-w-2xl">Firma especializada en derecho corporativo, defensa laboral patronal y materia penal. Asesoría y representación para proteger su patrimonio y su libertad.</p>
+            <div className="mt-8 lg:mt-12 flex flex-wrap gap-6 items-center">
+              <a href="https://wa.me/524432735543?text=Hola%2C%20me%20interesa%20agendar%20una%20consulta%20con%20CVIL%20Abogados." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-4 bg-gold text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-obsidian transition-colors shadow-lg w-full sm:w-auto">Agendar consulta<ArrowRight className="w-4 h-4" /></a>
+              <span className="text-[10px] text-stone uppercase tracking-widest">Atención directa por WhatsApp</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      {showPhoto && <div role="dialog" aria-modal="true" aria-label="Fotografía de los socios fundadores" className="fixed inset-0 z-[100] flex items-center justify-center bg-obsidian/95 p-4 md:p-12" onClick={() => setShowPhoto(false)}>
+        <div className="relative max-w-6xl w-full h-[80vh]" onClick={(event) => event.stopPropagation()}>
+          <img src="/images/dsc/DSC_6061_opt.webp" width="800" height="600" alt="Socios fundadores de CVIL Abogados Corporativos" className="w-full h-full object-contain" />
+          <button type="button" aria-label="Cerrar fotografía" onClick={() => setShowPhoto(false)} className="absolute top-4 right-4 p-3 bg-black/60 text-white rounded-full"><X className="w-5 h-5" /></button>
+        </div>
+      </div>}
+    </>
+  );
 };
-
 export default Hero;

@@ -10,11 +10,11 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Socios', href: '#partners' },
-    { name: 'Experiencia', href: '#cases' },
-    { name: 'Prácticas', href: '#services' },
-    { name: 'La Firma', href: '#manifesto' },
-    { name: 'Blog', href: '#/blog', isBlog: true },
+    { name: 'Socios', href: '/#partners' },
+    { name: 'Experiencia', href: '/#cases' },
+    { name: 'Prácticas', href: '/#services' },
+    { name: 'La Firma', href: '/#manifesto' },
+    { name: 'Blog', href: '/blog', isBlog: true },
   ];
 
   const handleNavClick = (link: typeof navLinks[0]) => {
@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
         <div className="flex justify-between items-center">
           {/* Logo - Typographic & Elegant */}
           <div className="flex items-center">
-            <a href="#" className="flex items-center py-0.5">
+            <a href="/" className="flex items-center py-0.5">
               <Logo showText={true} className="h-11" />
             </a>
           </div>
