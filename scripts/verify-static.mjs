@@ -25,7 +25,7 @@ const origin=`http://127.0.0.1:${server.address().port}`;
 const results=[];
 let browser;
 try {
-  browser=await chromium.launch({headless:true});
+  try { browser=await chromium.launch({headless:true}); } catch (e) { if (process.platform !== 'win32') throw e; browser=await chromium.launch({channel:'msedge',headless:true}); }
   for (const javaScriptEnabled of [false,true]) {
     const context=await browser.newContext({javaScriptEnabled,viewport:{width:1440,height:1000},reducedMotion:'reduce'});
     await context.route('**/*',route=>route.request().url().startsWith(origin)?route.continue():route.abort());
