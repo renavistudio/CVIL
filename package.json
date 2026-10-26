@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build && node prerender_static_html.js",
     "preview": "vite preview",
-    "vercel-build": "playwright install chromium --only-shell && npm run build",
+    "vercel-build": "dnf install -y nss nspr mesa-libgbm && playwright install chromium --only-shell && npm run build",
     "check": "tsc --noEmit",
     "verify": "node scripts/verify-static.mjs"
   },
