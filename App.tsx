@@ -60,7 +60,7 @@ const App: React.FC = () => {
         <Navbar />
         <main>
           <Hero />
-          <Partners onOpenSocio={(id) => { window.location.hash = id === 1 ? '#/socio/mario-cervantes' : '#/socio/alejandro-arriaga'; }} />
+          <Partners paused={!!activeSocio} onOpenSocio={(id) => { window.location.hash = id === 1 ? '#/socio/mario-cervantes' : '#/socio/alejandro-arriaga'; }} />
           <Stats /><LiveTicker /><CaseSuccess /><BentoGrid /><Services /><Manifesto /><SocialProof /><BlogSection /><ContactForm /><Location />
         </main>
         <Footer /><ChatWidget />

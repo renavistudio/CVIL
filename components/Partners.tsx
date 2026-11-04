@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSocio }) => {
+const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean }> = ({ onOpenSocio, paused = false }) => {
         const partners = [
         {
             id: 1,
@@ -120,33 +120,89 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
         swiping.current = false;
     };
 
-    const sectionRef = React.useRef(null);
-    const isInView = useInView(sectionRef);
+    const sectionRef = useRef<HTMLElement>(null);
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [fullyVisible, setFullyVisible] = useState(false);
+    const remaining = useRef(6000);
+    const startedAt = useRef<number | null>(null);
+    const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    // Auto-scroll loop (6s timer, resets on manual index change)
+    // A tall mobile section cannot fit on screen: use the card's available
+    // viewport area instead. The fixed navigation must not cover that area.
     useEffect(() => {
-        if (!isInView) return;
-        
-        const interval = setInterval(() => {
+        let frame = 0;
+        const measure = () => {
+            frame = 0;
+            if (!sectionRef.current || !cardRef.current) return;
+            const top = Math.min(110, window.innerHeight / 4);
+            const available = window.innerHeight - top;
+            const section = sectionRef.current.getBoundingClientRect();
+            const card = cardRef.current.getBoundingClientRect();
+            const target = section.height <= available ? section : card;
+            const visible = Math.max(0, Math.min(target.bottom, window.innerHeight) - Math.max(target.top, top));
+            const fitsWidth = target.left >= -1 && target.right <= window.innerWidth + 1;
+            setFullyVisible(!document.hidden && fitsWidth && visible >= Math.min(target.height, available) - 1);
+        };
+        const schedule = () => { if (!frame) frame = requestAnimationFrame(measure); };
+        const resize = new ResizeObserver(schedule);
+        resize.observe(sectionRef.current!);
+        window.addEventListener('scroll', schedule, { passive: true });
+        window.addEventListener('resize', schedule);
+        document.addEventListener('visibilitychange', schedule);
+        measure();
+        return () => {
+            cancelAnimationFrame(frame);
+            resize.disconnect();
+            window.removeEventListener('scroll', schedule);
+            window.removeEventListener('resize', schedule);
+            document.removeEventListener('visibilitychange', schedule);
+        };
+    }, []);
+
+    const resetDelay = () => {
+        if (timer.current !== null) clearTimeout(timer.current);
+        timer.current = null;
+        startedAt.current = null;
+        remaining.current = 6000;
+    };
+
+    // Preserve elapsed time while offscreen instead of restarting the carousel.
+    useEffect(() => {
+        if (!fullyVisible || paused) return;
+        startedAt.current = performance.now();
+        timer.current = setTimeout(() => {
+            timer.current = null;
+            startedAt.current = null;
+            remaining.current = 6000;
             setDirection(1);
             setCurrentIndex((prev) => (prev + 1) % partners.length);
-        }, 6000);
-        return () => clearInterval(interval);
-    }, [currentIndex, partners.length, isInView]);
+        }, remaining.current);
+        return () => {
+            if (timer.current !== null) clearTimeout(timer.current);
+            timer.current = null;
+            if (startedAt.current !== null) {
+                remaining.current = Math.max(0, remaining.current - (performance.now() - startedAt.current));
+                startedAt.current = null;
+            }
+        };
+    }, [currentIndex, partners.length, fullyVisible, paused]);
 
     const handleNext = () => {
+        resetDelay();
         setDirection(1);
         setCurrentIndex((prev) => (prev + 1) % partners.length);
     };
 
     // Pre-load next partner's image for smoother transition
     useEffect(() => {
+        if (!fullyVisible || paused) return;
         const nextPartnerIndex = (currentIndex + 1) % partners.length;
         const img = new Image();
         img.src = partners[nextPartnerIndex].image;
-    }, [currentIndex, partners.length]);
+    }, [currentIndex, partners.length, fullyVisible, paused]);
 
     const handlePrev = () => {
+        resetDelay();
         setDirection(-1);
         setCurrentIndex((prev) => (prev - 1 + partners.length) % partners.length);
     };
@@ -210,6 +266,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
                                             <motion.button
                                                 key={dotIdx}
                                                 onClick={() => {
+                                                    resetDelay();
                                                     setDirection(dotIdx > currentIndex ? 1 : -1);
                                                     setCurrentIndex(dotIdx);
                                                 }}
@@ -232,6 +289,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void }> = ({ onOpenSoci
 
                     {/* Right side: The sliding content viewport (8 columns) */}
                     <div
+                        ref={cardRef}
                         className="lg:col-span-8 relative overflow-hidden bg-[#fafaf9] rounded-sm border border-gray-100 shadow-sm min-h-[600px] sm:min-h-[500px] md:min-h-[420px]"
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
