@@ -61,6 +61,8 @@ try {
     }
     if (state.canonical !== SITE.url + (pathname === '/' ? '/' : pathname)) throw new Error(`Wrong canonical: ${pathname}`);
     let html = await page.content();
+    // Only preload the hero on the page that actually displays it.
+    if (meta.type !== 'home') html = html.replace(/<link[^>]+rel="preload"[^>]+as="image"[^>]*>/g, '');
     // Runtime-only flag must not make a subsequent validation pass prematurely.
     html = html.replace(/ data-seo-ready="true"/, '');
     const output = pathname === '/404.html' ? path.join(dist, '404.html') : path.join(dist, pathname === '/' ? '' : pathname.slice(1), 'index.html');

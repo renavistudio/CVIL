@@ -1,5 +1,7 @@
 import React from 'react';
-import { BLOG_POSTS } from './BlogHub';
+import { BLOG_ARTICLES } from '../data/site.js';
+const categories = ['Problemas con Socios', 'Cobranza & Pagarés', 'Defensa Patronal', 'Locales & Traspasos', 'Locales & Traspasos', 'Defensa Patronal'];
+const BLOG_POSTS = BLOG_ARTICLES.map((article, index) => ({ ...article, category: categories[index], subtitle: article.description, readTime: '3 min de lectura' }));
 import { ArrowRight, BookOpen, Clock } from 'lucide-react';
 
 interface BlogSectionProps {
@@ -19,10 +21,10 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
               </span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-serif text-obsidian tracking-tight">
-              Guías Prácticas para Dueños de Negocio en Zamora
+              GuÃ­as PrÃ¡cticas para DueÃ±os de Negocio en Zamora
             </h2>
             <p className="text-charcoal/70 text-sm mt-2 leading-relaxed">
-              Soluciones legales de nuestros licenciados y abogados corporativos en Zamora para resolver controversias entre socios, cobrar pagarés mercantiles y defender al patrón sin rodeos.
+              Soluciones legales de nuestros licenciados y abogados corporativos en Zamora para resolver controversias entre socios, cobrar pagarÃ©s mercantiles y defender al patrÃ³n sin rodeos.
             </p>
           </div>
           <div className="mt-6 md:mt-0">
@@ -30,7 +32,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
               href="/blog"
               className="inline-flex items-center gap-2 px-6 py-3 border border-obsidian text-obsidian hover:bg-obsidian hover:text-white transition-colors duration-300 text-xs font-bold uppercase tracking-widest rounded-sm"
             >
-              Ver Todas las Guías <ArrowRight className="w-3.5 h-3.5" />
+              Ver Todas las GuÃ­as <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
@@ -80,7 +82,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
                     href={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-obsidian group-hover:translate-x-1 transition-transform"
                   >
-                    Leer Solución <ArrowRight className="w-3.5 h-3.5 text-[#B8860B]" />
+                    Leer SoluciÃ³n <ArrowRight className="w-3.5 h-3.5 text-[#B8860B]" />
                   </a>
                 </div>
               </div>

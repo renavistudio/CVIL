@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import LiveTicker from './components/LiveTicker';
 import Hero from './components/Hero';
@@ -14,11 +14,11 @@ import Footer from './components/Footer';
 import SocialProof from './components/SocialProof';
 import ChatWidget from './components/ChatWidget';
 import { BlogSection } from './components/BlogSection';
-import SocioMario from './components/SocioMario';
-import SocioAlejandro from './components/SocioAlejandro';
-import PrivacyPolicyPage from './components/PrivacyPolicyPage';
-import BlogHub from './components/BlogHub';
-import PracticePage from './components/PracticePage';
+const SocioMario = lazy(() => import('./components/SocioMario'));
+const SocioAlejandro = lazy(() => import('./components/SocioAlejandro'));
+const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage'));
+const BlogHub = lazy(() => import('./components/BlogHub'));
+const PracticePage = lazy(() => import('./components/PracticePage'));
 import Seo from './components/Seo';
 import { getPageMeta } from './data/site.js';
 
@@ -66,10 +66,10 @@ const App: React.FC = () => {
         <Footer /><ChatWidget />
       </div>
       {activeSocio && <div role="dialog" aria-modal="true" aria-label="Perfil profesional" className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
-        {activeSocio === 'mario' ? <SocioMario onClose={closeSocio} /> : <SocioAlejandro onClose={closeSocio} />}
+        <Suspense fallback={<p role="status" className="p-8 text-center">Cargando perfil…</p>}>{activeSocio === 'mario' ? <SocioMario onClose={closeSocio} /> : <SocioAlejandro onClose={closeSocio} />}</Suspense>
       </div>}
     </>
   );
-  return <><Seo />{content}</>;
+  return <><Seo /><Suspense fallback={<p role="status" className="p-8 text-center">Cargando…</p>}>{content}</Suspense></>;
 };
 export default App;

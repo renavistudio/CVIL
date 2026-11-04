@@ -36,7 +36,7 @@ try {
       page.on('pageerror',error=>errors.push(error.message));
       const response=await page.goto(origin+pathname,{waitUntil:'load'});
       assert.equal(response.status(),200);
-      if(javaScriptEnabled)await page.waitForFunction(()=>document.documentElement.dataset.seoReady==='true');
+      if(javaScriptEnabled)await page.waitForFunction(()=>document.documentElement.dataset.seoReady==='true' && !!document.querySelector('main h1'));
       const state=await page.evaluate(()=>({
         title:document.title, h1:[...document.querySelectorAll('h1')].map(e=>e.textContent.trim()),
         canonical:document.querySelector('link[rel="canonical"]')?.getAttribute('href'),
