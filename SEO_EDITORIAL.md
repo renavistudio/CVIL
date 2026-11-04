@@ -12,3 +12,7 @@ Preferencia explícita del propietario, confirmada el 26 de octubre de 2026: atr
 - No inventar cifras de clientes, experiencia, reseñas, resultados, precios, autores revisores ni garantías.
 - Evaluar consultas comerciales y contactos pertinentes; visitas totales por sí solas no demuestran captación. No afirmar que se excluye por completo a estudiantes o abogados de los resultados orgánicos.
 - Una ausencia de sugerencias de búsqueda no prueba ausencia de clientes; las sugerencias no son volúmenes ni dificultad SEO.
+
+## Diseño y voz — 4 de noviembre de 2026
+
+Preservar la jerarquía visual y el espacio en blanco. Evitar listados de palabras clave en el hero, enlaces subrayados dentro del texto de bienvenida y etiquetas largas en el footer. Usar nombres breves de servicios y enlaces contextuales útiles. Los textos alternativos describen las imágenes; no repiten por sistema una consulta exacta. Las preguntas responden a dudas reales de clientes. No añadir vídeos o anuncios como requisito SEO.

@@ -76,7 +76,7 @@ try {
         for(const guide of practice.guides)assert.ok(state.mainLinks.includes('/blog/'+guide),`${pathname}: missing guide link`);
         assert.ok(state.breadcrumbs);
       }
-      if(pathname==='/')for(const practice of PRACTICE_PAGES)assert.ok(state.mainLinks.includes('/'+practice.slug),`Home must link to ${practice.slug}`);
+      if(pathname==='/')for(const practice of PRACTICE_PAGES)assert.ok(state.links.includes('/'+practice.slug),`Home must link to ${practice.slug}`);
       assert.equal(state.canonical,SITE.url+(pathname==='/'?'/':pathname));
       assert.equal(state.roots,1);assert.equal(state.main,1);assert.equal(state.schema.length,1);
       assert.deepEqual(errors,[],`${pathname}: browser errors`);
