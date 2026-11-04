@@ -16,3 +16,7 @@ Preferencia explícita del propietario, confirmada el 26 de octubre de 2026: atr
 ## Diseño y voz — 4 de noviembre de 2026
 
 Preservar la jerarquía visual y el espacio en blanco. Evitar listados de palabras clave en el hero, enlaces subrayados dentro del texto de bienvenida y etiquetas largas en el footer. Usar nombres breves de servicios y enlaces contextuales útiles. Los textos alternativos describen las imágenes; no repiten por sistema una consulta exacta. Las preguntas responden a dudas reales de clientes. No añadir vídeos o anuncios como requisito SEO.
+
+## Cobertura confirmada y prioridad de indexación
+
+El propietario confirma oficina física en Zamora y atención nacional. La futura expansión priorizará diez ciudades de Michoacán y estados cercanos, sin inventar sucursales. Primero resolver la selección del aviso de privacidad en búsquedas comerciales. El aviso debe seguir accesible con noindex y fuera del sitemap; no bloquear su rastreo en robots.txt.

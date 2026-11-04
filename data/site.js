@@ -356,7 +356,7 @@ export const PAGE_META = {
     description: 'Guías de CVIL sobre conflictos entre socios, pagarés, relaciones laborales y contratos de negocios en Zamora, Michoacán.',
   },
   '/aviso-de-privacidad': {
-    type: 'privacy', title: 'Aviso de Privacidad | CVIL Abogados',
+    type: 'privacy', noindex: true, title: 'Aviso de Privacidad | CVIL Abogados',
     h1: 'Aviso de Privacidad', description: 'Aviso de privacidad y tratamiento de datos personales de CVIL Abogados Corporativos en Zamora, Michoacán.',
   },
 };

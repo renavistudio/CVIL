@@ -70,7 +70,7 @@ try {
     await page.close();
   }
   // Sitemap includes only the canonical, indexable routes. Do not invent lastmod dates.
-  const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ROUTES.map((route) => `  <url><loc>${SITE.url}${route === '/' ? '/' : route}</loc></url>`).join('\n') + '\n</urlset>\n';
+  const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ROUTES.filter((route) => !getPageMeta(route).noindex).map((route) => `  <url><loc>${SITE.url}${route === '/' ? '/' : route}</loc></url>`).join('\n') + '\n</urlset>\n';
   await fs.writeFile(path.join(dist, 'sitemap.xml'), sitemap, 'utf8');
   await context.close();
 } finally {

@@ -50,12 +50,14 @@ try {
         ids:[...document.querySelectorAll('[id]')].map(e=>e.id),
         mainLinks:[...document.querySelectorAll('main a[href]')].map(e=>e.getAttribute('href')),
         modified:document.querySelector('time[datetime]')?.getAttribute('datetime'),
+        robots:document.querySelector('meta[name=robots]')?.content,
         breadcrumbs:!!document.querySelector('nav[aria-label="Ruta de navegación"]'),
         overflow:document.documentElement.scrollWidth>innerWidth,
       }));
       const meta=getPageMeta(pathname);
       assert.deepEqual(state.h1,[meta.h1],`${pathname}: h1`);
       assert.equal(state.title,meta.title,`${pathname}: title`);
+      assert.equal(state.robots,meta.noindex ? 'noindex, follow' : 'index, follow',`${pathname}: indexing directive`);
       assert.equal(state.description,meta.description,`${pathname}: description`);
       assert.ok(!state.overflow,`${pathname}: desktop overflow`);
       for(const href of state.links.filter(href=>href?.startsWith('#') && href.length > 1 && !href.startsWith('#/'))) {
@@ -103,7 +105,7 @@ try {
   const config=JSON.parse(await fs.readFile(path.join(root,'vercel.json'),'utf8'));
   assert.equal(config.cleanUrls,true);assert.equal(config.trailingSlash,false);assert.ok(!config.rewrites);
   const sitemap=await fs.readFile(path.join(dist,'sitemap.xml'),'utf8');
-  for(const route of ROUTES)assert.ok(sitemap.includes(`<loc>${SITE.url}${route==='/'?'/':route}</loc>`));
+  for(const route of ROUTES)assert.equal(sitemap.includes(`<loc>${SITE.url}${route==='/'?'/':route}</loc>`),!getPageMeta(route).noindex,`${route}: sitemap indexability`);
   assert.ok(!sitemap.includes('<lastmod>')); // No fabricated freshness.
   const context=await browser.newContext({viewport:{width:390,height:844}});
   const page=await context.newPage();await page.goto(origin+'/#/blog',{waitUntil:'load'});await page.waitForURL(origin+'/blog');
