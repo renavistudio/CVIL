@@ -10,7 +10,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
             role: "Socio Fundador | Litigio Estrategico y Controversias",
             description: "Doctor en Derecho con sólida trayectoria en litigación estratégica y juicios orales. Representación de alto perfil ante instancias del fuero común y federal.",
             image: "/images/dsc/DSC_6010_opt.webp",
-            link: "#/socio/mario-cervantes"
+            link: "/socios/mario-cervantes"
         },
         {
             id: 2,
@@ -18,7 +18,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
             role: "Socio Fundador",
             description: "Especialista en estructuración corporativa y planeación estratégica. Su visión ha sido fundamental para la consolidación de CVIL como firma líder en la región.",
             image: "/images/dsc/DSC_6058_opt.webp",
-            link: "#/socio/alejandro-arriaga"
+            link: "/socios/alejandro-arriaga"
         },
         {
             id: 3,
@@ -369,10 +369,12 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                                     {currentPartner.link && (
                                         <div>
                                             <a
-                                                href="#"
+                                                href={currentPartner.link}
                                                 onClick={(e) => {
-                                                    e.preventDefault();
-                                                    if (onOpenSocio) onOpenSocio(currentPartner.id);
+                                                    if (onOpenSocio && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey && e.button === 0) {
+                                                        e.preventDefault();
+                                                        onOpenSocio(currentPartner.id);
+                                                    }
                                                 }}
                                                 className="inline-block px-7 py-3 text-xs font-bold uppercase tracking-widest text-obsidian bg-transparent border border-obsidian hover:bg-obsidian hover:text-white transition-colors duration-300 rounded-sm"
                                             >

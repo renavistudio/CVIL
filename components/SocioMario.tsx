@@ -9,7 +9,7 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             <Navbar />
             <main className="pt-32 pb-24">
                 <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
-                    <a href="#" onClick={(e) => { e.preventDefault(); onClose(); }} className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-gold hover:text-obsidian transition-colors mb-12">
+                    <a href="/#partners" onClick={(e) => { if (!e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey && e.button === 0) { e.preventDefault(); onClose(); } }} className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-gold hover:text-obsidian transition-colors mb-12">
                         <ArrowLeft className="w-4 h-4 mr-2" />
                         Regresar
                     </a>
@@ -153,6 +153,9 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                         </section>
                     </div>
                 </div>
+                <nav aria-label="Otros socios" className="max-w-[1000px] mx-auto px-6 lg:px-12 mt-12 text-sm text-gold">
+                    <a href="/socios/alejandro-arriaga" className="underline">Conocer a Alejandro Arriaga Bastida</a>
+                </nav>
             </main>
             <Footer />
         </div>

@@ -355,6 +355,18 @@ export const PAGE_META = {
     h1: 'Soluciones legales para dueños de negocio y empresas',
     description: 'Guías de CVIL sobre conflictos entre socios, pagarés, relaciones laborales y contratos de negocios en Zamora, Michoacán.',
   },
+  '/socios/mario-cervantes': {
+    type: 'profile', profile: 'mario', title: 'Mario Enrique Cervantes Vieyra | CVIL Abogados',
+    h1: 'Dr. Mario Enrique Cervantes Vieyra',
+    description: 'Conoce la formación y trayectoria de Mario Enrique Cervantes Vieyra, socio fundador de CVIL en Zamora. Litigio estratégico y defensa penal.',
+    image: '/images/dsc/DSC_6010_opt.webp',
+  },
+  '/socios/alejandro-arriaga': {
+    type: 'profile', profile: 'alejandro', title: 'Alejandro Arriaga Bastida | CVIL Abogados',
+    h1: 'Lic. Alejandro Arriaga Bastida',
+    description: 'Conoce la formación y trayectoria de Alejandro Arriaga Bastida, socio fundador de CVIL en Zamora. Asesoría empresarial y litigio civil y mercantil.',
+    image: '/images/dsc/DSC_6058_opt.webp',
+  },
   '/aviso-de-privacidad': {
     type: 'privacy', noindex: true, title: 'Aviso de Privacidad | CVIL Abogados',
     h1: 'Aviso de Privacidad', description: 'Aviso de privacidad y tratamiento de datos personales de CVIL Abogados Corporativos en Zamora, Michoacán.',

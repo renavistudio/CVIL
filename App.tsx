@@ -19,12 +19,16 @@ const SocioAlejandro = lazy(() => import('./components/SocioAlejandro'));
 let PrivacyPolicyPage: typeof import('./components/PrivacyPolicyPage').default;
 let BlogHub: typeof import('./components/BlogHub').default;
 let PracticePage: typeof import('./components/PracticePage').default;
+let ProfileMario: typeof import('./components/SocioMario').default;
+let ProfileAlejandro: typeof import('./components/SocioAlejandro').default;
 
 // Keep the prerendered page visible until its interactive component is ready.
 // Profile dialogs remain lazy because they are opened after initial navigation.
 export async function preparePage(pathname: string) {
   const page = getPageMeta(pathname);
   if (page.type === 'privacy') PrivacyPolicyPage = (await import('./components/PrivacyPolicyPage')).default;
+  else if (page.type === 'profile' && page.profile === 'mario') ProfileMario = (await import('./components/SocioMario')).default;
+  else if (page.type === 'profile') ProfileAlejandro = (await import('./components/SocioAlejandro')).default;
   else if (page.type === 'practice') PracticePage = (await import('./components/PracticePage')).default;
   else if (page.type === 'blog' || page.type === 'article') BlogHub = (await import('./components/BlogHub')).default;
 }
@@ -54,6 +58,7 @@ const App: React.FC = () => {
   const closeSocio = () => { setActiveSocio(null); window.location.hash = 'partners'; };
   let content: React.ReactNode;
   if (page.type === 'privacy') content = <main><PrivacyPolicyPage /></main>;
+  else if (page.type === 'profile') content = page.profile === 'mario' ? <ProfileMario onClose={() => window.location.assign('/#partners')} /> : <ProfileAlejandro onClose={() => window.location.assign('/#partners')} />;
   else if (page.type === 'practice') content = <PracticePage slug={page.path.slice(1)} />;
   else if (page.type === 'blog' || page.type === 'article') content = <BlogHub onClose={() => window.location.assign('/')} initialSlug={page.type === 'article' ? page.path.slice('/blog/'.length) : null} />;
   else if (page.type === 'notFound') content = (
