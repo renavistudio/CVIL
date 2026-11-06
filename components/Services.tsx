@@ -8,7 +8,7 @@ const services: (ServiceItem & { image: string, tag: string, href?: string })[] 
         id: 1,
         category: 'CORPORATIVO',
         title: "Gobierno Corporativo",
-        href: "/derecho-corporativo-zamora",
+        href: "/abogados-corporativos-zamora",
         description: "Establecemos los cimientos legales sólidos que toda empresa necesita para operar, crecer y recibir inversión institucional.",
         actionText: "Ver más",
         icon: Building2,

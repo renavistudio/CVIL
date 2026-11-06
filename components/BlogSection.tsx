@@ -21,10 +21,10 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
               </span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-serif text-obsidian tracking-tight">
-              GuÃ­as PrÃ¡cticas para DueÃ±os de Negocio en Zamora
+              Guías para tomar decisiones en tu negocio
             </h2>
             <p className="text-charcoal/70 text-sm mt-2 leading-relaxed">
-              Soluciones legales de nuestros licenciados y abogados corporativos en Zamora para resolver controversias entre socios, cobrar pagarÃ©s mercantiles y defender al patrÃ³n sin rodeos.
+              Orientación sobre problemas entre socios, pagarés pendientes y asuntos laborales de tu empresa. Si necesitas revisar tu caso, puedes agendar una consulta con nuestro despacho en Zamora.
             </p>
           </div>
           <div className="mt-6 md:mt-0">
@@ -32,7 +32,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
               href="/blog"
               className="inline-flex items-center gap-2 px-6 py-3 border border-obsidian text-obsidian hover:bg-obsidian hover:text-white transition-colors duration-300 text-xs font-bold uppercase tracking-widest rounded-sm"
             >
-              Ver Todas las GuÃ­as <ArrowRight className="w-3.5 h-3.5" />
+              Ver todas las guías <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
@@ -82,7 +82,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
                     href={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-obsidian group-hover:translate-x-1 transition-transform"
                   >
-                    Leer SoluciÃ³n <ArrowRight className="w-3.5 h-3.5 text-[#B8860B]" />
+                    Leer guía <ArrowRight className="w-3.5 h-3.5 text-[#B8860B]" />
                   </a>
                 </div>
               </div>

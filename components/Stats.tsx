@@ -3,7 +3,7 @@ import { StatItem } from '../types';
 
 const stats: StatItem[] = [
   { id: 1, value: "15+", label: "Años de Experiencia" },
-  { id: 2, value: "150+", label: "Empresas Protegidas" },
+  { id: 2, value: "Empresas", label: "Asesoría y defensa" },
   { id: 3, value: "100%", label: "Secreto Profesional" },
 ];
 
@@ -17,7 +17,7 @@ const Stats: React.FC = () => {
               key={stat.id}
               className="text-center p-6"
             >
-              <h3 className="text-5xl md:text-6xl font-serif font-bold text-obsidian mb-3">
+              <h3 className={`${stat.id === 2 ? "text-4xl md:text-5xl" : "text-5xl md:text-6xl"} font-serif font-bold text-obsidian mb-3}`}>
                 {stat.value}
               </h3>
               <p className="text-stone font-semibold tracking-widest uppercase text-xs">

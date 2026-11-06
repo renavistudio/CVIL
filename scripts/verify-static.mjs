@@ -79,6 +79,7 @@ try {
         assert.ok(state.breadcrumbs);
       }
       if(pathname==='/')for(const practice of PRACTICE_PAGES)assert.ok(state.links.includes('/'+practice.slug),`Home must link to ${practice.slug}`);
+      assert.ok(!/[ÃÂ�]/.test(state.text), `${pathname}: corrupted text encoding`);
       assert.equal(state.canonical,SITE.url+(pathname==='/'?'/':pathname));
       assert.equal(state.roots,1);assert.equal(state.main,1);assert.equal(state.schema.length,1);
       assert.deepEqual(errors,[],`${pathname}: browser errors`);
