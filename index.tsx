@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App';
+import App, { preparePage } from './App';
 import './index.css';
 
 interface ErrorBoundaryProps {
@@ -40,7 +40,9 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 }
 
 const rootElement = document.getElementById('root');
-if (rootElement) {
+async function start() {
+  if (!rootElement) return;
+  await preparePage(window.location.pathname);
   createRoot(rootElement).render(
     <React.StrictMode>
       <ErrorBoundary>
@@ -49,3 +51,8 @@ if (rootElement) {
     </React.StrictMode>
   );
 }
+
+void start().catch((error) => {
+  // A failed chunk must not erase usable server-rendered content and links.
+  console.error('Unable to activate page; static content preserved.', error);
+});

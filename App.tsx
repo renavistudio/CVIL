@@ -16,9 +16,18 @@ import ChatWidget from './components/ChatWidget';
 import { BlogSection } from './components/BlogSection';
 const SocioMario = lazy(() => import('./components/SocioMario'));
 const SocioAlejandro = lazy(() => import('./components/SocioAlejandro'));
-const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage'));
-const BlogHub = lazy(() => import('./components/BlogHub'));
-const PracticePage = lazy(() => import('./components/PracticePage'));
+let PrivacyPolicyPage: typeof import('./components/PrivacyPolicyPage').default;
+let BlogHub: typeof import('./components/BlogHub').default;
+let PracticePage: typeof import('./components/PracticePage').default;
+
+// Keep the prerendered page visible until its interactive component is ready.
+// Profile dialogs remain lazy because they are opened after initial navigation.
+export async function preparePage(pathname: string) {
+  const page = getPageMeta(pathname);
+  if (page.type === 'privacy') PrivacyPolicyPage = (await import('./components/PrivacyPolicyPage')).default;
+  else if (page.type === 'practice') PracticePage = (await import('./components/PracticePage')).default;
+  else if (page.type === 'blog' || page.type === 'article') BlogHub = (await import('./components/BlogHub')).default;
+}
 import Seo from './components/Seo';
 import { getPageMeta } from './data/site.js';
 
@@ -70,6 +79,6 @@ const App: React.FC = () => {
       </div>}
     </>
   );
-  return <><Seo /><Suspense fallback={<p role="status" className="p-8 text-center">Cargando…</p>}>{content}</Suspense></>;
+  return <><Seo />{content}</>;
 };
 export default App;

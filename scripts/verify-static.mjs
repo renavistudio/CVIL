@@ -101,6 +101,45 @@ try {
     }
     await context.close();
   }
+  // Slow/failed route chunks must never replace readable HTML with a loader.
+  for (const [pathname, chunk] of [
+    ['/blog/como-despedir-a-un-trabajador-sin-demanda-zamora', 'BlogHub'],
+    ['/abogados-corporativos-zamora', 'PracticePage'],
+    ['/aviso-de-privacidad', 'PrivacyPolicyPage'],
+  ]) {
+    for (const failChunk of [false, true]) {
+      const context = await browser.newContext();
+      const page = await context.newPage();
+      let release;
+      const gate = new Promise(resolve => { release = resolve; });
+      let requested;
+      const requestSeen = new Promise(resolve => { requested = resolve; });
+      await page.route(`**/assets/${chunk}-*.js`, async route => {
+        requested();
+        await gate;
+        if (failChunk) await route.abort(); else await route.continue();
+      });
+      try {
+        await page.goto(origin + pathname, { waitUntil: 'domcontentloaded' });
+        await Promise.race([requestSeen, new Promise((_, reject) => setTimeout(() => reject(new Error('Route chunk not requested')), 5000))]);
+        await page.waitForTimeout(100);
+        assert.equal(await page.locator('h1').innerText(), getPageMeta(pathname).h1, `${pathname}: content while chunk pending`);
+        assert.equal(await page.getByText('Cargando…', { exact: true }).count(), 0);
+        if (failChunk) {
+          const failure = page.waitForEvent('requestfailed', { predicate: request => request.url().includes(`/assets/${chunk}-`) });
+          release();
+          await failure;
+          await page.waitForTimeout(100);
+          assert.equal(await page.locator('h1').innerText(), getPageMeta(pathname).h1, `${pathname}: content after chunk failure`);
+          assert.ok(await page.locator('a[href]').count(), 'Static navigation remains available');
+        } else {
+          release();
+          await page.waitForFunction(() => document.documentElement.dataset.seoReady === 'true');
+          assert.equal(await page.locator('h1').innerText(), getPageMeta(pathname).h1);
+        }
+      } finally { release(); await context.close(); }
+    }
+  }
   const missing=await fetch(origin+'/esta-ruta-no-existe');assert.equal(missing.status,404);
   const config=JSON.parse(await fs.readFile(path.join(root,'vercel.json'),'utf8'));
   assert.equal(config.cleanUrls,true);assert.equal(config.trailingSlash,false);assert.ok(!config.rewrites);
