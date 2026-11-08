@@ -223,7 +223,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                             Nuestros Socios &amp; Equipo.
                         </h2>
                         <p className="text-charcoal/70 font-light text-base leading-relaxed mb-8">
-                            Defensa de prestigio guiada por socios con sólida trayectoria y visión estratégica en cada rama del derecho.
+                            Abogados en Zamora con sólida trayectoria y visión estratégica en derecho corporativo, litigio mercantil, laboral y penal.
                         </p>
 
                         {/* Custom Slider Navigation (Arrows & Dots) — desktop only */}
