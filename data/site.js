@@ -346,9 +346,9 @@ export const SITE = {
 // One source of truth for the HTML response and the running React application.
 export const PAGE_META = {
   '/': {
-    type: 'home', title: 'Abogados en Zamora | CVIL',
-    h1: 'Abogados en Zamora',
-    description: 'Despacho de abogados en Zamora, Michoacán. Asesoría y representación en derecho corporativo, mercantil, defensa laboral patronal y penal en La Luneta.',
+    type: 'home', title: 'Abogados en Zamora, Michoacán | CVIL',
+    h1: 'Abogados en Zamora Michoacán',
+    description: 'Despacho de abogados en Zamora, Michoacán. Derecho corporativo, mercantil, defensa laboral patronal y penal. Oficinas en La Luneta. Agenda con CVIL.',
   },
   '/blog': {
     type: 'blog', title: 'Guías legales para empresas en Zamora | CVIL Abogados',
