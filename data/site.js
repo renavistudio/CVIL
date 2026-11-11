@@ -346,9 +346,9 @@ export const SITE = {
 // One source of truth for the HTML response and the running React application.
 export const PAGE_META = {
   '/': {
-    type: 'home', title: 'Abogados en Zamora, Michoacán | CVIL',
+    type: 'home', title: 'Abogados en Zamora Michoacán | CVIL Abogados',
     h1: 'Abogados en Zamora Michoacán',
-    description: 'Despacho de abogados en Zamora, Michoacán. Derecho corporativo, mercantil, defensa laboral patronal y penal. Oficinas en La Luneta. Agenda con CVIL.',
+    description: '¿Busca un abogado en Zamora, Mich? Despacho legal corporativo CVIL: defensa patronal, contratos, acuerdos de socios y cobranza de pagarés. Cita directa.',
   },
   '/blog': {
     type: 'blog', title: 'Guías legales para empresas en Zamora | CVIL Abogados',
@@ -396,6 +396,8 @@ export function getStructuredData(pathname) {
   const organizationId = `${SITE.url}/#organization`;
   const organization = {
     '@type': 'LegalService', '@id': organizationId, name: SITE.name, url: SITE.url + '/',
+    alternateName: ['CVIL Abogados', 'CVIL Abogados Corporativos', 'Firma CVIL Zamora'],
+    knowsAbout: ['Abogados en Zamora', 'Abogado en Zamora', 'Despacho Jurídico en Zamora', 'Derecho Corporativo en Zamora', 'Defensa Laboral Patronal'],
     telephone: SITE.phones, email: 'contacto@cvilabogados.mx',
     description: 'Firma jurídica con sede en Zamora, Michoacán. Derecho corporativo, mercantil, defensa laboral patronal y defensa penal.',
     logo: `${SITE.url}/images/CVIL%20Logo.webp`, image: `${SITE.url}/images/og-image.webp`,
