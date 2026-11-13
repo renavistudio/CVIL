@@ -185,7 +185,7 @@ const Services: React.FC = () => {
                                     <p className="text-stone text-sm font-light leading-relaxed mb-5 opacity-60 group-hover:opacity-90 transition-opacity duration-300">
                                         {service.description}
                                     </p>
-                                    {service.href ? <a href={service.href} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">Consultar {service.title.toLowerCase()}<ArrowUpRight className="w-3 h-3" /></a> : <button onClick={() => setSelected(service)} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">Ver {service.title.toLowerCase()}<ArrowUpRight className="w-3 h-3" /></button>}
+                                    {service.href ? <a href={service.href} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{`Consultar ${service.title.toLowerCase()}`}<ArrowUpRight className="w-3 h-3" /></a> : <button onClick={() => setSelected(service)} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{`Ver ${service.title.toLowerCase()}`}<ArrowUpRight className="w-3 h-3" /></button>}
                                 </div>
                             </motion.div>
                         ))}
@@ -292,3 +292,4 @@ const Services: React.FC = () => {
 };
 
 export default Services;
+

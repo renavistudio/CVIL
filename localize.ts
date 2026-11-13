@@ -1,10 +1,33 @@
 let translations: Record<string, string> = {};
+let translationsByLowercase: Map<string, string> = new Map();
 let observer: MutationObserver | undefined;
 let enabled = false;
 
 export function setTranslationMap(map: Record<string, string>) {
   translations = map;
+  translationsByLowercase = new Map(Object.entries(map).map(([source, translated]) => [source.toLocaleLowerCase('es-MX'), translated]));
   enabled = true;
+}
+
+function translateTopic(topic: string): string {
+  return translations[topic] ?? translationsByLowercase.get(topic.toLocaleLowerCase('es-MX')) ?? topic;
+}
+
+function translateWhatsAppMessage(message: string): string {
+  const articlePrefix = 'Hola, quiero agendar una consulta sobre este asunto: ';
+  if (message.startsWith(articlePrefix)) {
+    return `Hello, I would like to schedule a consultation about: ${translateTopic(message.slice(articlePrefix.length))}`;
+  }
+  const practicePrefix = 'Hola, quiero consultar sobre ';
+  if (message.startsWith(practicePrefix)) {
+    return `Hello, I would like advice about ${translateTopic(message.slice(practicePrefix.length).replace(/\.$/, ''))}.`;
+  }
+  const servicePrefix = 'Hola, buen día. Vi su página web y busco asesoría especializada en ';
+  if (message.startsWith(servicePrefix)) {
+    const topic = message.slice(servicePrefix.length).replace(/\. Me gustaría agendar una cita\.$/, '');
+    return `Hello, I would like legal advice about ${translateTopic(topic)}. I would like to schedule a consultation.`;
+  }
+  return 'Hello, I would like to schedule a legal consultation with CVIL.';
 }
 
 function translatedPath(href: string): string {
@@ -33,8 +56,11 @@ function translateTree(root: Node) {
     if (href && translatedPath(href) !== href) root.setAttribute('href', translatedPath(href));
     if (href?.startsWith('https://wa.me/') && href.includes('text=')) {
       const url = new URL(href);
-      url.searchParams.set('text', 'Hello, I would like to schedule a legal consultation with CVIL.');
-      if (url.href !== href) root.setAttribute('href', url.href);
+      const message = url.searchParams.get('text');
+      if (message?.startsWith('Hola')) {
+        url.searchParams.set('text', translateWhatsAppMessage(message));
+        if (url.href !== href) root.setAttribute('href', url.href);
+      }
     }
   }
   for (const child of [...root.childNodes]) translateTree(child);
