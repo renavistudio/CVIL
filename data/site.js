@@ -7,7 +7,8 @@ export const BLOG_ARTICLES = [
     "description": "¿Tienes problemas con tu socio? CVIL revisa los acuerdos y las opciones para atender el conflicto de tu empresa. Solicita una consulta en Zamora.",
     "seoTitle": "Conflictos entre socios en Zamora | CVIL Abogados",
     "practiceSlug": "abogados-corporativos-zamora",
-    "imageUrl": "/images/blog/blog_socios_conflicto.webp",
+    "imageUrl": "/images/blog/blog_socios_conflicto_editorial.webp",
+    "imageAlt": "Dos personas conversan junto a una carpeta en una mesa de trabajo",
     "checklist": [
       "Acta constitutiva y reformas de estatutos.",
       "Actas de asamblea, acuerdos de socios y poderes vigentes.",
@@ -21,7 +22,8 @@ export const BLOG_ARTICLES = [
     "description": "¿No te pagaron un pagaré? En CVIL revisamos el adeudo y las opciones de cobranza. Solicita asesoría para tu caso en Zamora, Michoacán.",
     "seoTitle": "Cómo cobrar un pagaré vencido en Zamora | CVIL",
     "practiceSlug": "abogados-mercantiles-zamora",
-    "imageUrl": "/images/blog/blog_cobranza_pagares.webp",
+    "imageUrl": "/images/blog/blog_cobranza_pagares_editorial.webp",
+    "imageAlt": "Hoja sin datos legibles, libreta y calculadora sobre un escritorio",
     "checklist": [
       "Pagaré original o soporte electrónico y documentación de su emisión.",
       "Comprobantes de abonos y cálculo separado de capital e intereses reclamados.",
@@ -35,7 +37,8 @@ export const BLOG_ARTICLES = [
     "description": "¿Eres patrón y necesitas terminar una relación laboral? CVIL revisa el expediente, los pagos y las opciones de tu empresa. Agenda una consulta en Zamora.",
     "seoTitle": "Asesoría para despedir a un trabajador en Zamora | CVIL",
     "practiceSlug": "abogados-laborales-zamora",
-    "imageUrl": "/images/blog/blog_despido_patronal.webp",
+    "imageUrl": "/images/blog/blog_despido_patronal_editorial.webp",
+    "imageAlt": "Mesa de reunión con una carpeta y dos sillas en una oficina",
     "checklist": [
       "Contrato de trabajo, fecha de ingreso y recibos de nómina.",
       "Controles de asistencia, incidencias y comunicaciones relevantes.",
@@ -49,7 +52,8 @@ export const BLOG_ARTICLES = [
     "description": "¿Tu inquilino dejó de pagar la renta de un local? CVIL revisa tu contrato y las opciones para reclamar rentas o recuperar el inmueble en Zamora.",
     "seoTitle": "Inquilino que no paga un local en Zamora | CVIL",
     "practiceSlug": "derecho-corporativo-zamora",
-    "imageUrl": "/images/blog/blog_inquilino_arrendamiento.webp",
+    "imageUrl": "/images/blog/blog_inquilino_arrendamiento_editorial.webp",
+    "imageAlt": "Llaves y carpeta sobre el mostrador de un local vacío",
     "checklist": [
       "Contrato de arrendamiento, anexos y garantías.",
       "Relación de mensualidades pendientes y comprobantes de pagos.",
@@ -63,7 +67,8 @@ export const BLOG_ARTICLES = [
     "description": "¿Vas a comprar o recibir el traspaso de un negocio? Solicita a CVIL la revisión de contratos y deudas antes de firmar. Asesoría en Zamora.",
     "seoTitle": "Traspaso de negocio y deudas en Zamora | CVIL",
     "practiceSlug": "derecho-corporativo-zamora",
-    "imageUrl": "/images/blog/blog_traspaso_empresas.webp",
+    "imageUrl": "/images/blog/blog_traspaso_empresas_editorial.webp",
+    "imageAlt": "Llaves, libreta y carpeta sobre el mostrador de una tienda",
     "checklist": [
       "Inventario de activos y relación de obligaciones pendientes.",
       "Contratos con proveedores, trabajadores y arrendador.",
@@ -77,7 +82,8 @@ export const BLOG_ARTICLES = [
     "description": "¿Tu empresa recibió un citatorio de conciliación laboral? CVIL te asesora para preparar la representación y atender la audiencia en Zamora.",
     "seoTitle": "Citatorio de conciliación laboral en Zamora | CVIL",
     "practiceSlug": "abogados-laborales-zamora",
-    "imageUrl": "/images/blog/blog_citatorio_conciliacion.webp",
+    "imageUrl": "/images/blog/blog_citatorio_conciliacion_editorial.webp",
+    "imageAlt": "Sobre cerrado sobre una banca en un pasillo de oficinas",
     "checklist": [
       "Citatorio completo y constancia de recepción.",
       "Identificación y documentos de representación del empleador.",

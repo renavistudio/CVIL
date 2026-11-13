@@ -46,7 +46,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
               <div className="h-52 overflow-hidden relative bg-gray-100">
                 <img
                   src={post.imageUrl}
-                  alt={post.title} width="400" height="208"
+                  alt={post.imageAlt} width="400" height="208"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -93,3 +93,4 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
     </section>
   );
 };
+

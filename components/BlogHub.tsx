@@ -81,7 +81,7 @@ export default function BlogHub({ initialSlug }: BlogProps) {
             <p className="text-lg text-charcoal mb-5">{currentArticle.description}</p>
             {practice && <p className="text-sm text-charcoal mb-6"><a href={`/${practice.slug}`} className="underline font-semibold">Cómo podemos ayudarte</a></p>}
             <p className="text-sm text-stone mb-8">Por <a href="/#partners" className="underline">CVIL Abogados Corporativos</a> · Actualizado el <time dateTime={currentArticle.dateModified}>26 de octubre de 2026</time></p>
-            <img src={currentArticle.imageUrl} width="1200" height="675" alt={currentArticle.title} className="w-full h-64 md:h-96 object-cover rounded-sm mb-10" />
+            <img src={currentArticle.imageUrl} width="1200" height="675" alt={currentArticle.imageAlt} className="w-full h-64 md:h-96 object-cover rounded-sm mb-10" />
             <nav aria-label="Contenido de la guía" className="mb-10 border border-gray-200 bg-offwhite p-6"><p className="font-semibold mb-3">En esta guía</p><ol className="list-decimal pl-5 space-y-2">{currentArticle.sections.map((section, i) => <li key={section.title}><a href={`#seccion-${i + 1}`} className="underline">{section.title}</a></li>)}<li><a href="#documentos" className="underline">Lista de documentos</a></li></ol></nav>
             <div className="space-y-8 text-charcoal leading-relaxed">
               {currentArticle.sections.map((section, i) => <section id={`seccion-${i + 1}`} key={section.title}><h2 className="text-2xl font-serif text-obsidian mb-3">{section.title}</h2><p>{section.text}</p></section>)}
@@ -108,7 +108,7 @@ export default function BlogHub({ initialSlug }: BlogProps) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => <a key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col border border-gray-200 hover:border-gold rounded-sm overflow-hidden shadow-sm">
-                <img src={post.imageUrl} width="400" height="225" alt={post.title} loading="lazy" className="w-full h-48 object-cover" />
+                <img src={post.imageUrl} width="400" height="225" alt={post.imageAlt} loading="lazy" className="w-full h-48 object-cover" />
                 <div className="p-6 flex-1"><p className="text-xs text-gold mb-3">{post.category}</p><h2 className="text-xl font-serif mb-4">{post.title}</h2><p className="text-sm text-charcoal mb-5">{post.description}</p><span className="inline-flex items-center gap-2 text-sm">Leer guía<ArrowRight className="w-4 h-4" /></span></div>
               </a>)}
             </div>
