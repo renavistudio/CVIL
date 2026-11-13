@@ -18,7 +18,7 @@ const Footer: React.FC = () => (
         <a href="/abogados-laborales-zamora" className="hover:text-white">Defensa laboral patronal</a>
         <a href="/abogados-mercantiles-zamora" className="hover:text-white">Litigio mercantil y cobranza</a>
         <a href="/abogados-penalistas-zamora" className="hover:text-white">Defensa penal</a>
-        <a href="/#services" className="hover:text-white">Especialidades legales</a>
+        <a href="/#manifesto" className="hover:text-white">La firma</a>
         <a href="/blog" className="text-[#E8CA9D] hover:text-white">Guías legales</a>
         <a href="/aviso-de-privacidad" className="hover:text-white">Aviso de privacidad</a>
         <a href="https://www.linkedin.com/company/cvil-abogados" target="_blank" rel="noopener noreferrer" className="hover:text-white">LinkedIn de CVIL</a>
@@ -35,3 +35,4 @@ const Footer: React.FC = () => (
   </footer>
 );
 export default Footer;
+

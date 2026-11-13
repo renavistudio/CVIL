@@ -158,6 +158,21 @@ try {
   const sitemap=await fs.readFile(path.join(dist,'sitemap.xml'),'utf8');
   for(const route of ROUTES)assert.equal(sitemap.includes(`<loc>${SITE.url}${route==='/'?'/':route}</loc>`),!getPageMeta(route).noindex,`${route}: sitemap indexability`);
   assert.ok(!sitemap.includes('<lastmod>')); // No fabricated freshness.
+  const desktop=await browser.newPage({viewport:{width:1440,height:900}});
+  await desktop.goto(origin+'/',{waitUntil:'load'});
+  await desktop.waitForFunction(()=>document.documentElement.dataset.seoReady==='true');
+  const languageButton=desktop.getByRole('button',{name:'Elegir idioma, actual: Español'});
+  await languageButton.click();
+  assert.equal(await languageButton.getAttribute('aria-expanded'),'true');
+  assert.ok(await desktop.locator('#cvil-language-options').isVisible());
+  await desktop.keyboard.press('Escape');
+  assert.equal(await languageButton.getAttribute('aria-expanded'),'false');
+  await languageButton.press('ArrowDown');
+  assert.ok(await desktop.locator('#cvil-language-options a').first().evaluate(element=>element===document.activeElement),'Language choices support keyboard focus');
+  await desktop.locator('#cvil-language-options').getByRole('link',{name:'English'}).click();
+  await desktop.waitForURL(origin+'/en');
+  assert.ok(await desktop.getByRole('button',{name:'Choose language, current: English'}).isVisible());
+  await desktop.close();
   const context=await browser.newContext({viewport:{width:390,height:844}});
   const page=await context.newPage();await page.goto(origin+'/#/blog',{waitUntil:'load'});await page.waitForURL(origin+'/blog');
   await page.goto(origin+'/',{waitUntil:'load'});
@@ -167,7 +182,10 @@ try {
   await page.goto(origin+'/en',{waitUntil:'load'});
   await page.waitForFunction(()=>document.documentElement.dataset.seoReady==='true');
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'English mobile horizontal overflow');
-  await page.locator('button[aria-expanded]').click();
+  await page.getByRole('button',{name:'Open menu'}).click();
+  const mobileMenu=page.getByRole('navigation',{name:'Mobile menu'});
+  assert.ok(await mobileMenu.getByRole('link',{name:'Español'}).isVisible());
+  assert.ok(await mobileMenu.getByRole('link',{name:'English'}).isVisible());
   await page.getByRole('link',{name:'Blog',exact:true}).click();
   await page.waitForURL(origin+'/en/blog');
   await page.getByRole('link',{name:'ES',exact:true}).click();
