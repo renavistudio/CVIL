@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, BookOpen } from 'lucide-react';
 import Logo from './Logo';
+import { getPageMeta } from '../data/site.js';
 
 interface NavbarProps {
   onOpenBlog?: () => void;
@@ -8,6 +9,10 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const page = getPageMeta(window.location.pathname);
+  const spanishHref = page.sourcePath;
+  const englishHref = '/en' + (page.sourcePath === '/' ? '' : page.sourcePath);
+  const english = page.lang === 'en';
 
   const navLinks = [
     { name: 'Socios', href: '/#partners' },
@@ -52,6 +57,11 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
                 <span>{link.name}</span>
               </a>
             ))}
+            <nav data-no-translate aria-label="Language / Idioma" className="flex items-center gap-2 text-xs font-semibold tracking-widest">
+              <a href={spanishHref} lang="es" aria-current={!english ? 'page' : undefined} className={!english ? 'text-gold' : 'text-charcoal hover:text-gold'}>ES</a>
+              <span aria-hidden="true" className="text-gray-400">/</span>
+              <a href={englishHref} lang="en" aria-current={english ? 'page' : undefined} className={english ? 'text-gold' : 'text-charcoal hover:text-gold'}>EN</a>
+            </nav>
             <a
               href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
               target="_blank"
@@ -93,6 +103,11 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
                 <span>{link.name}</span>
               </a>
             ))}
+            <nav data-no-translate aria-label="Language / Idioma" className="flex items-center gap-3 text-sm font-semibold tracking-widest py-2">
+              <a href={spanishHref} lang="es" aria-current={!english ? 'page' : undefined} className={!english ? 'text-gold' : 'text-charcoal'}>ES</a>
+              <span aria-hidden="true">/</span>
+              <a href={englishHref} lang="en" aria-current={english ? 'page' : undefined} className={english ? 'text-gold' : 'text-charcoal'}>EN</a>
+            </nav>
             <a
               href="https://wa.me/524432735543?text=Hola%2C%20buen%20d%C3%ADa.%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20valoraci%C3%B3n%20legal."
               target="_blank"
@@ -109,3 +124,4 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
 };
 
 export default Navbar;
+

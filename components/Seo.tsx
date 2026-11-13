@@ -1,11 +1,13 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
+import { translateDocument } from '../localize';
 import { getPageMeta, getStructuredData, SITE } from '../data/site.js';
 
 export default function Seo() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const page = getPageMeta(window.location.pathname);
     const url = SITE.url + (page.path === '/' ? '/' : page.path);
     document.title = page.title;
+    document.documentElement.lang = page.lang;
     const meta = (attribute: string, key: string, content: string) => {
       let element = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
       if (!element) {
@@ -34,12 +36,19 @@ export default function Seo() {
       document.head.appendChild(canonical);
     }
     canonical.href = url;
+    for (const [lang, href] of (page.noindex ? [] : [['es-MX', SITE.url + page.sourcePath], ['en', SITE.url + '/en' + (page.sourcePath === '/' ? '' : page.sourcePath)], ['x-default', SITE.url + page.sourcePath]])) {
+      let alternate = document.head.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${lang}"]`);
+      if (!alternate) { alternate = document.createElement('link'); alternate.rel = 'alternate'; alternate.hreflang = lang; document.head.appendChild(alternate); }
+      alternate.href = href;
+    }
     document.head.querySelectorAll('script[type="application/ld+json"]').forEach((node) => node.remove());
     const schema = document.createElement('script');
     schema.type = 'application/ld+json';
     schema.textContent = JSON.stringify(getStructuredData(page.path));
     document.head.appendChild(schema);
+    translateDocument();
     document.documentElement.dataset.seoReady = 'true';
   }, []);
   return null;
 }
+

@@ -51,7 +51,7 @@ try {
         mainLinks:[...document.querySelectorAll('main a[href]')].map(e=>e.getAttribute('href')),
         modified:document.querySelector('time[datetime]')?.getAttribute('datetime'),
         robots:document.querySelector('meta[name=robots]')?.content,
-        breadcrumbs:!!document.querySelector('nav[aria-label="Ruta de navegación"]'),
+        breadcrumbs:!!document.querySelector('nav[aria-label="Ruta de navegación"],nav[aria-label="Navigation route"]'),
         overflow:document.documentElement.scrollWidth>innerWidth,
       }));
       const meta=getPageMeta(pathname);
@@ -64,8 +64,8 @@ try {
         assert.ok(state.ids.includes(decodeURIComponent(href.slice(1))),`${pathname}: broken section ${href}`);
       }
       if(meta.type==='article') {
-        const article=BLOG_ARTICLES.find(item=>pathname==='/blog/'+item.slug);
-        assert.ok(state.mainLinks.includes('/'+article.practiceSlug),`${pathname}: missing contextual service link`);
+        const article=BLOG_ARTICLES.find(item=>meta.sourcePath==='/blog/'+item.slug);
+        assert.ok(state.mainLinks.includes((meta.lang==='en'?'/en':'')+'/'+article.practiceSlug),`${pathname}: missing contextual service link`);
         assert.equal(state.shareImage,SITE.url+article.imageUrl);
         assert.equal(state.modified,article.dateModified);
         const schemaArticle=state.schema[0]['@graph'].find(e=>e['@type']==='BlogPosting');
@@ -74,13 +74,20 @@ try {
         assert.ok(state.breadcrumbs);
       }
       if(meta.type==='practice') {
-        const practice=PRACTICE_PAGES.find(item=>pathname==='/'+item.slug);
-        for(const guide of practice.guides)assert.ok(state.mainLinks.includes('/blog/'+guide),`${pathname}: missing guide link`);
+        const practice=PRACTICE_PAGES.find(item=>meta.sourcePath==='/'+item.slug);
+        for(const guide of practice.guides)assert.ok(state.mainLinks.includes((meta.lang==='en'?'/en':'')+'/blog/'+guide),`${pathname}: missing guide link`);
         assert.ok(state.breadcrumbs);
       }
-      if(pathname==='/')for(const practice of PRACTICE_PAGES)assert.ok(state.links.includes('/'+practice.slug),`Home must link to ${practice.slug}`);
+      if(meta.sourcePath==='/')for(const practice of PRACTICE_PAGES)assert.ok(state.links.includes((meta.lang==='en'?'/en':'')+'/'+practice.slug),`Home must link to ${practice.slug}`);
       assert.ok(!/[ÃÂ�]/.test(state.text), `${pathname}: corrupted text encoding`);
       assert.equal(state.canonical,SITE.url+(pathname==='/'?'/':pathname));
+      assert.equal(await page.locator('html').getAttribute('lang'),meta.lang,`${pathname}: document language`);
+      if (!meta.noindex) {
+        const expectedEn=SITE.url+'/en'+(meta.sourcePath==='/'?'':meta.sourcePath);
+        const expectedEs=SITE.url+meta.sourcePath;
+        assert.equal(await page.locator('link[rel="alternate"][hreflang="en"]').getAttribute('href'),expectedEn,`${pathname}: English alternate`);
+        assert.equal(await page.locator('link[rel="alternate"][hreflang="es-MX"]').getAttribute('href'),expectedEs,`${pathname}: Spanish alternate`);
+      }
       assert.equal(state.roots,1);assert.equal(state.main,1);assert.equal(state.schema.length,1);
       assert.deepEqual(errors,[],`${pathname}: browser errors`);
       assert.ok(!state.schema[0]['@graph'].some(e=>e.aggregateRating||e['@type']==='FAQPage'));
@@ -96,6 +103,10 @@ try {
       if(pathname==='/blog'&&javaScriptEnabled){
         await page.getByRole('button',{name:'Defensa Patronal',exact:true}).click();
         assert.equal(await page.locator('main h2').count(),2);
+      }
+      if(meta.lang==='en') {
+        assert.ok(state.links.includes(meta.sourcePath),`${pathname}: missing Spanish language switch`);
+        assert.ok(!state.text.includes('Aviso de Privacidad') && !state.text.includes('Consulta Inicial'),`${pathname}: untranslated visible text`);
       }
       results.push({path:pathname,javaScriptEnabled,title:state.title,h1:state.h1[0],links:state.links.length,images:state.images.length,ok:true});
       await page.close();
@@ -153,12 +164,34 @@ try {
   assert.equal(await page.locator('h1').count(),1);
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile horizontal overflow');
   await page.getByRole('button',{name:'Abrir Menú'}).click();await page.getByRole('link',{name:'Blog',exact:true}).click();await page.waitForURL(origin+'/blog');
+  await page.goto(origin+'/en',{waitUntil:'load'});
+  await page.waitForFunction(()=>document.documentElement.dataset.seoReady==='true');
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'English mobile horizontal overflow');
+  await page.locator('button[aria-expanded]').click();
+  await page.getByRole('link',{name:'Blog',exact:true}).click();
+  await page.waitForURL(origin+'/en/blog');
+  await page.getByRole('link',{name:'ES',exact:true}).click();
+  await page.waitForURL(origin+'/blog');
+  await page.goto(origin+'/en',{waitUntil:'load'});
+  await page.waitForFunction(()=>document.documentElement.dataset.seoReady==='true');
+  await page.locator('#contact button[type="submit"]').click();
+  await page.getByText('Please enter your full name.').waitFor();
+  await page.locator('#contact input[name="name"]').fill('Alex Smith');
+  await page.locator('#contact input[name="phone"]').fill('4432735543');
+  await page.evaluate(()=>{window.__openedUrl='';window.open=(url)=>{window.__openedUrl=String(url);return null;};});
+  await page.locator('#contact button[type="submit"]').click();
+  await page.waitForFunction(()=>!!window.__openedUrl);
+  assert.ok(decodeURIComponent(await page.evaluate(()=>window.__openedUrl)).includes('Hello, my name is Alex Smith.'),'English WhatsApp request');
+  for (const route of ROUTES.filter(route=>route.startsWith('/en'))) {
+    await page.goto(origin+route,{waitUntil:'load'});
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${route}: English mobile overflow`);
+  }
   await context.close();
   if(process.env.CVIL_SCREENSHOT_DIR){
     await fs.mkdir(process.env.CVIL_SCREENSHOT_DIR,{recursive:true});
     for(const width of [1440,390]){
       const page=await browser.newPage({viewport:{width,height:width===390?844:1000}});
-      for(const [name,route] of [['inicio','/'],['blog','/blog'],['corporativo','/abogados-corporativos-zamora'],['mercantil','/abogados-mercantiles-zamora'],['penal','/abogados-penalistas-zamora'],['guia-pagare','/blog/como-cobrar-un-pagare-en-zamora-michoacan']]){
+      for(const [name,route] of [['inicio','/'],['inicio-en','/en'],['blog','/blog'],['blog-en','/en/blog'],['corporativo','/abogados-corporativos-zamora'],['mercantil','/abogados-mercantiles-zamora'],['penal','/abogados-penalistas-zamora'],['guia-pagare','/blog/como-cobrar-un-pagare-en-zamora-michoacan']]){
         await page.goto(origin+route,{waitUntil:'networkidle'});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${route}: viewport overflow ${width}`);await page.screenshot({path:path.join(process.env.CVIL_SCREENSHOT_DIR,`${name}-${width}.png`),fullPage:name!=='inicio'});
       }
       await page.close();
@@ -169,3 +202,4 @@ try {
 } finally {
   if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));
 }
+

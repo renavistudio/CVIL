@@ -1,3 +1,5 @@
+import EN_META from './en-meta.json' with { type: 'json' };
+
 export const BLOG_ARTICLES = [
   {
     "slug": "como-sacar-a-un-socio-de-una-empresa-zamora",
@@ -382,13 +384,17 @@ PRACTICE_PAGES.forEach((practice) => {
   PAGE_META[`/${practice.slug}`] = { type: 'practice', title: practice.title, h1: practice.h1, description: practice.description };
 });
 
-export const ROUTES = Object.keys(PAGE_META);
+export const ROUTES = [...Object.keys(PAGE_META), ...Object.keys(PAGE_META).map((path) => `/en${path === "/" ? "" : path}`)];
 export function normalizePath(pathname) {
   return pathname.replace(/\/index\.html$/, '').replace(/\/+$/, '') || '/';
 }
 export function getPageMeta(pathname) {
   const path = normalizePath(pathname);
-  return { path, ...(PAGE_META[path] || { type: 'notFound', title: 'Página no encontrada | CVIL Abogados', h1: 'Página no encontrada', description: 'La página solicitada no existe. Consulta los servicios y guías de CVIL Abogados.', noindex: true }) };
+  const english = path === '/en' || path.startsWith('/en/');
+  const sourcePath = english ? (path.slice(3) || '/') : path;
+  const base = PAGE_META[sourcePath];
+  if (english && base) return { path, sourcePath, lang: 'en', ...base, ...EN_META[sourcePath] };
+  return { path, sourcePath, lang: 'es-MX', ...(PAGE_META[path] || { type: 'notFound', title: 'Página no encontrada | CVIL Abogados', h1: 'Página no encontrada', description: 'La página solicitada no existe. Consulta los servicios y guías de CVIL Abogados.', noindex: true }) };
 }
 export function getStructuredData(pathname) {
   const page = getPageMeta(pathname);
@@ -408,24 +414,25 @@ export function getStructuredData(pathname) {
     areaServed: { '@type': 'City', name: 'Zamora de Hidalgo' },
   };
   const graph = [organization, {
-    '@type': 'WebSite', '@id': `${SITE.url}/#website`, url: SITE.url + '/', name: SITE.name, inLanguage: 'es-MX', publisher: { '@id': organizationId },
+    '@type': 'WebSite', '@id': `${SITE.url}/#website`, url: SITE.url + '/', name: SITE.name, inLanguage: ['es-MX', 'en'], publisher: { '@id': organizationId },
   }, {
     '@type': page.type === 'blog' ? 'CollectionPage' : 'WebPage', '@id': `${url}#webpage`, url, name: page.title,
-    description: page.description, inLanguage: 'es-MX', isPartOf: { '@id': `${SITE.url}/#website` }, about: { '@id': organizationId },
+    description: page.description, inLanguage: page.lang, isPartOf: { '@id': `${SITE.url}/#website` }, about: { '@id': organizationId },
   }];
   if (page.type === 'article') {
     graph.push({ '@type': 'BlogPosting', '@id': `${url}#article`, headline: page.h1, description: page.description,
-      mainEntityOfPage: { '@id': `${url}#webpage` }, author: { '@id': organizationId }, publisher: { '@id': organizationId }, inLanguage: 'es-MX', image: SITE.url + page.image, dateModified: page.dateModified });
+      mainEntityOfPage: { '@id': `${url}#webpage` }, author: { '@id': organizationId }, publisher: { '@id': organizationId }, inLanguage: page.lang, image: SITE.url + page.image, dateModified: page.dateModified });
   }
   if (page.type === 'practice') {
     graph.push({ '@type': 'Service', '@id': `${url}#service`, name: page.h1, description: page.description, url,
       provider: { '@id': organizationId }, areaServed: { '@type': 'City', name: 'Zamora de Hidalgo' } });
   }
   if (page.path !== '/' && !page.noindex) {
-    const crumbs = [{ '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE.url + '/' }];
-    if (page.type === 'article') crumbs.push({ '@type': 'ListItem', position: 2, name: 'Guías legales', item: `${SITE.url}/blog` });
+    const crumbs = [{ '@type': 'ListItem', position: 1, name: page.lang === 'en' ? 'Home' : 'Inicio', item: SITE.url + (page.lang === 'en' ? '/en' : '/') }];
+    if (page.type === 'article') crumbs.push({ '@type': 'ListItem', position: 2, name: page.lang === 'en' ? 'Legal guides' : 'Guías legales', item: `${SITE.url}${page.lang === 'en' ? '/en' : ''}/blog` });
     crumbs.push({ '@type': 'ListItem', position: crumbs.length + 1, name: page.h1, item: url });
     graph.push({ '@type': 'BreadcrumbList', itemListElement: crumbs });
   }
   return { '@context': 'https://schema.org', '@graph': graph };
 }
+

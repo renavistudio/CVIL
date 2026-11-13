@@ -58,9 +58,9 @@ const App: React.FC = () => {
   const closeSocio = () => { setActiveSocio(null); window.location.hash = 'partners'; };
   let content: React.ReactNode;
   if (page.type === 'privacy') content = <main><PrivacyPolicyPage /></main>;
-  else if (page.type === 'profile') content = page.profile === 'mario' ? <ProfileMario onClose={() => window.location.assign('/#partners')} /> : <ProfileAlejandro onClose={() => window.location.assign('/#partners')} />;
-  else if (page.type === 'practice') content = <PracticePage slug={page.path.slice(1)} />;
-  else if (page.type === 'blog' || page.type === 'article') content = <BlogHub onClose={() => window.location.assign('/')} initialSlug={page.type === 'article' ? page.path.slice('/blog/'.length) : null} />;
+  else if (page.type === 'profile') content = page.profile === 'mario' ? <ProfileMario onClose={() => window.location.assign(page.lang === 'en' ? '/en#partners' : '/#partners')} /> : <ProfileAlejandro onClose={() => window.location.assign(page.lang === 'en' ? '/en#partners' : '/#partners')} />;
+  else if (page.type === 'practice') content = <PracticePage slug={page.sourcePath.slice(1)} />;
+  else if (page.type === 'blog' || page.type === 'article') content = <BlogHub onClose={() => window.location.assign('/')} initialSlug={page.type === 'article' ? page.sourcePath.slice('/blog/'.length) : null} />;
   else if (page.type === 'notFound') content = (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 p-8 text-center">
       <h1 className="text-4xl font-serif">Página no encontrada</h1>
@@ -87,3 +87,4 @@ const App: React.FC = () => {
   return <><Seo />{content}</>;
 };
 export default App;
+

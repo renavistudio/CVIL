@@ -61,7 +61,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
         setIsSubmitting(true);
 
-        const waMessage = `Hola, mi nombre es ${name.trim()}. Vi su página web y los contacto para solicitar una consulta sobre *${matter}*.\n\nTeléfono de contacto: ${phone.trim()}${message.trim() ? `\nResumen del caso: ${message.trim()}` : ''}`;
+        const english = window.location.pathname.startsWith('/en');
+        const selectedMatter = english ? (document.getElementById('service') as HTMLSelectElement)?.selectedOptions[0]?.text || matter : matter;
+        const waMessage = english
+            ? `Hello, my name is ${name.trim()}. I would like to schedule a consultation about *${selectedMatter}*.\n\nContact phone: ${phone.trim()}${message.trim() ? `\nCase summary: ${message.trim()}` : ''}`
+            : `Hola, mi nombre es ${name.trim()}. Vi su página web y los contacto para solicitar una consulta sobre *${matter}*.\n\nTeléfono de contacto: ${phone.trim()}${message.trim() ? `\nResumen del caso: ${message.trim()}` : ''}`;
         const waUrl = `https://wa.me/524432735543?text=${encodeURIComponent(waMessage)}`;
 
         setTimeout(() => {
@@ -267,3 +271,4 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 };
 
 export default ContactForm;
+

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, Clock, MessageSquare, Phone, ArrowRight } from 'lucide-react';
 import { BLOG_ARTICLES, PRACTICE_PAGES } from '../data/site.js';
 import Footer from './Footer';
+import LanguageSwitch from './LanguageSwitch';
 
 const articleDetails = [
   {
@@ -68,7 +69,7 @@ export default function BlogHub({ initialSlug }: BlogProps) {
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-4 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto flex justify-between items-center gap-4">
           <a href={currentArticle ? '/blog' : '/'} className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-gold"><ArrowLeft className="w-4 h-4" />{currentArticle ? 'Todas las guías' : 'Inicio'}</a>
-          <a href="tel:+523511277317" className="flex items-center gap-2 text-sm"><Phone className="w-4 h-4 text-gold" />351 127 7317</a>
+          <div className="flex items-center gap-4"><LanguageSwitch /><a href="tel:+523511277317" className="hidden sm:flex items-center gap-2 text-sm"><Phone className="w-4 h-4 text-gold" />351 127 7317</a></div>
         </div>
       </header>
       <main className="flex-1 max-w-[1200px] w-full mx-auto px-6 lg:px-12 py-10 lg:py-16">
@@ -118,3 +119,4 @@ export default function BlogHub({ initialSlug }: BlogProps) {
     </div>
   );
 }
+

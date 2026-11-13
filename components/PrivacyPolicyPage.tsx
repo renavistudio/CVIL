@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
+import LanguageSwitch from './LanguageSwitch';
 
 const PrivacyPolicyPage: React.FC = () => {
     useEffect(() => {
@@ -9,13 +10,13 @@ const PrivacyPolicyPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-white text-obsidian font-sans py-12 px-6 lg:py-24">
             <div className="max-w-3xl mx-auto">
-                <a 
+                <div className="flex items-start justify-between gap-4 mb-12"><a 
                     href="/"
-                    className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-stone hover:text-gold transition-colors mb-12"
+                    className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-stone hover:text-gold transition-colors"
                 >
                     <ArrowLeft className="w-4 h-4" />
                     Volver al inicio
-                </a>
+                </a><LanguageSwitch /></div>
 
                 <h1 className="text-4xl lg:text-5xl font-serif font-medium mb-6">
                     Aviso de Privacidad
@@ -95,3 +96,4 @@ const PrivacyPolicyPage: React.FC = () => {
 };
 
 export default PrivacyPolicyPage;
+
