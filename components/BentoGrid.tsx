@@ -43,10 +43,10 @@ const BentoGrid: React.FC = () => {
                     {/* Header */}
                     <div className="md:col-span-12 mb-8 text-center">
                         <span className="text-xs font-bold tracking-[0.2em] text-stone uppercase mb-4 block">
-                            Nuestra Filosofía
+                            Cómo empezamos
                         </span>
                         <h2 className="text-4xl md:text-5xl font-serif text-obsidian leading-tight">
-                            Nuestro Método.
+                            Cada asunto necesita contexto.
                         </h2>
                     </div>
 
@@ -58,7 +58,7 @@ const BentoGrid: React.FC = () => {
                         <div className="absolute inset-0">
                             <img width="800" height="600"
                                 src="/images/office/IMG_0645.webp"
-                                alt="Estrategia"
+                                alt="Oficinas de CVIL"
                                 className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700"
                             />
                         </div>
@@ -74,9 +74,9 @@ const BentoGrid: React.FC = () => {
                             </div>
 
                             <div>
-                                <h3 className="text-3xl font-serif text-obsidian mb-4 group-hover:translate-x-2 transition-transform duration-300">Evaluación Honesta y Directa</h3>
+                                <h3 className="text-3xl font-serif text-obsidian mb-4 group-hover:translate-x-2 transition-transform duration-300">Entender lo que pasó</h3>
                                 <p className="text-charcoal/70 font-light leading-relaxed text-base max-w-lg">
-                                    No vendemos falsas expectativas. Analizamos su caso a detalle. Si tomamos su representación, es porque tenemos una estrategia clara y factible para ganar.
+                                    Primero escuchamos qué ocurrió, qué necesitas resolver y qué documentos tienes. Con esa información podemos explicarte las alternativas y los puntos que requieren atención.
                                 </p>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ const BentoGrid: React.FC = () => {
                         <div className="absolute inset-0">
                             <img width="800" height="600"
                                 src="/images/office/IMG_0559.webp"
-                                alt="Digital"
+                                alt="Interior de las oficinas de CVIL"
                                 className="w-full h-full object-cover opacity-20 mix-blend-overlay group-hover:scale-110 transition-transform duration-700"
                             />
                         </div>
@@ -103,9 +103,9 @@ const BentoGrid: React.FC = () => {
                                 <span className="text-9xl font-serif text-white/5 absolute right-4 top-4 -z-10 font-bold">02</span>
                             </div>
                             <div>
-                                <h3 className="text-2xl font-serif text-white mb-4 group-hover:translate-x-2 transition-transform duration-300">Gestión legal directa</h3>
+                                <h3 className="text-2xl font-serif text-white mb-4 group-hover:translate-x-2 transition-transform duration-300">Preparar los siguientes pasos</h3>
                                 <p className="text-gray-400 font-light leading-relaxed text-sm mb-6">
-                                    Nosotros llevamos cada trámite, audiencia y documento ante los juzgados. No tienes que perder tiempo en juzgados ni en papeleo; nos encargamos de todo el procedimiento legal mientras te concentras en tu empresa.
+                                    Si acordamos trabajar juntos, definimos los trámites y actuaciones a nuestro cargo. Te indicamos qué información necesitamos de ti y cuándo será necesaria tu participación.
                                 </p>
                                 <div className="w-full h-px bg-white/10 group-hover:bg-white/30 transition-colors"></div>
                             </div>
@@ -119,7 +119,7 @@ const BentoGrid: React.FC = () => {
                         <div className="absolute inset-0">
                             <img width="800" height="600"
                                 src="/images/office/IMG_0629.webp"
-                                alt="Team"
+                                alt="Espacio de trabajo de CVIL"
                                 className="w-full h-full object-cover opacity-10 group-hover:opacity-15 transition-opacity duration-500"
                             />
                         </div>
@@ -131,11 +131,11 @@ const BentoGrid: React.FC = () => {
                                     <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-obsidian group-hover:text-white transition-colors duration-500 shadow-sm rounded-sm shrink-0">
                                         <Users className="w-5 h-5" />
                                     </div>
-                                    <span className="text-xs font-bold uppercase tracking-widest text-obsidian">Equipo Multidisciplinario</span>
+                                    <span className="text-xs font-bold uppercase tracking-widest text-obsidian">Durante el asunto</span>
                                 </div>
-                                <h3 className="text-3xl font-serif text-obsidian mb-2 group-hover:translate-x-2 transition-transform duration-300">Un equipo de especialistas por cada caso.</h3>
+                                <h3 className="text-3xl font-serif text-obsidian mb-2 group-hover:translate-x-2 transition-transform duration-300">Saber qué sigue.</h3>
                                 <p className="text-charcoal/70 font-light text-sm">
-                                    Cada caso es revisado simultáneamente por auditores laborales, fiscalistas y estrategas corporativos.
+                                    Te explicamos los avances y las decisiones pendientes. Si aparece un tema de otra área, revisamos cómo incorporarlo al trabajo acordado.
                                 </p>
                             </div>
                             <span className="text-9xl font-serif text-gray-100 absolute right-12 top-1/2 -translate-y-1/2 -z-10 font-bold hidden md:block">03</span>

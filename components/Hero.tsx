@@ -12,13 +12,13 @@ const Hero: React.FC = () => {
             <img src="/images/dsc/DSC_6061_opt.webp" width="800" height="600" alt="Socios fundadores de CVIL Abogados Corporativos" fetchPriority="high" className="w-full h-full object-cover object-top contrast-[1.05]" />
           </button>
           <div className="lg:order-1">
-            <p className="text-[10px] lg:text-xs uppercase tracking-[0.22em] text-gold font-semibold mb-3">Firma legal corporativa y penal · Zamora, Michoacán</p>
+            <p className="text-[10px] lg:text-xs uppercase tracking-[0.22em] text-gold font-semibold mb-3">Oficina en Zamora · Atención en todo México</p>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium tracking-tight mb-4">Abogados en Zamora Michoacán</h1>
-            <p className="text-[13vw] lg:text-[6.5rem] leading-[0.9] font-serif font-medium tracking-tighter mb-6 lg:mb-8">Ganar es <br /><span className="italic text-gray-400 font-light">lo único.</span></p>
-            <p className="text-base lg:text-xl text-charcoal/80 font-light leading-relaxed max-w-2xl">Despacho de abogados en La Luneta, Zamora, Michoacán. Asesoría y representación en <a href="/abogados-corporativos-zamora" className="underline underline-offset-4">derecho corporativo</a>, <a href="/abogados-mercantiles-zamora" className="underline underline-offset-4">litigio mercantil</a>, <a href="/abogados-laborales-zamora" className="underline underline-offset-4">defensa laboral patronal</a> y <a href="/abogados-penalistas-zamora" className="underline underline-offset-4">defensa penal</a>.</p>
+            <p className="text-[13vw] lg:text-[6.5rem] leading-[0.9] font-serif font-medium tracking-tighter mb-6 lg:mb-8">Hablemos de <br /><span className="italic text-gray-400 font-light">tu asunto.</span></p>
+            <p className="text-base lg:text-xl text-charcoal/80 font-light leading-relaxed max-w-2xl">Cuéntanos qué necesitas resolver. Te ayudamos con <a href="/abogados-corporativos-zamora" className="underline underline-offset-4">acuerdos entre socios</a>, <a href="/abogados-mercantiles-zamora" className="underline underline-offset-4">cobro de adeudos</a>, <a href="/abogados-laborales-zamora" className="underline underline-offset-4">asuntos laborales de tu empresa</a> y <a href="/abogados-penalistas-zamora" className="underline underline-offset-4">asuntos penales</a>.</p>
             <div className="mt-8 lg:mt-12 flex flex-wrap gap-6 items-center">
-              <a href="https://wa.me/524432735543?text=Hola%2C%20me%20interesa%20agendar%20una%20consulta%20con%20CVIL%20Abogados." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-4 bg-gold text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-obsidian transition-colors shadow-lg w-full sm:w-auto">Agendar consulta<ArrowRight className="w-4 h-4" /></a>
-              <span className="text-[10px] text-stone uppercase tracking-widest">Atención directa por WhatsApp</span>
+              <a href="https://wa.me/524432735543?text=Hola%2C%20me%20interesa%20agendar%20una%20consulta%20con%20CVIL%20Abogados." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-4 bg-gold text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-obsidian transition-colors shadow-lg w-full sm:w-auto">Hablar con el despacho<ArrowRight className="w-4 h-4" /></a>
+              <span className="text-[10px] text-stone uppercase tracking-widest">443 273 5543 · WhatsApp</span>
             </div>
           </div>
         </div>
@@ -33,3 +33,4 @@ const Hero: React.FC = () => {
   );
 };
 export default Hero;
+

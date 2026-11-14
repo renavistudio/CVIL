@@ -7,16 +7,16 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
         {
             id: 1,
             name: "Dr. Mario Enrique Cervantes Vieyra",
-            role: "Socio Fundador | Litigio Estrategico y Controversias",
-            description: "Doctor en Derecho con sólida trayectoria en litigación estratégica y juicios orales. Representación de alto perfil ante instancias del fuero común y federal.",
+            role: "Socio fundador · Litigio",
+            description: "Doctor en Derecho. Atiende litigios y representa a personas y empresas ante autoridades estatales y federales.",
             image: "/images/dsc/DSC_6010_opt.webp",
             link: "/socios/mario-cervantes"
         },
         {
             id: 2,
             name: "Lic. Alejandro Arriaga",
-            role: "Socio Fundador",
-            description: "Especialista en estructuración corporativa y planeación estratégica. Su visión ha sido fundamental para la consolidación de CVIL como firma líder en la región.",
+            role: "Socio fundador",
+            description: "Acompaña a empresas en acuerdos entre socios, organización de la sociedad y asuntos laborales.",
             image: "/images/dsc/DSC_6058_opt.webp",
             link: "/socios/alejandro-arriaga"
         },
@@ -217,13 +217,13 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                     {/* Left side: Section Header / Intro (4 columns) */}
                     <div className="lg:col-span-4 flex flex-col justify-center pr-0 lg:pr-8">
                         <span className="text-xs font-bold tracking-[0.25em] text-[#B8860B] uppercase mb-4 block">
-                            Liderazgo Jurídico
+                            Las personas detrás de CVIL
                         </span>
                         <h2 className="text-4xl lg:text-5xl font-serif text-obsidian leading-[1.1] mb-6">
-                            Nuestros Socios &amp; Equipo.
+                            Conoce al equipo.
                         </h2>
                         <p className="text-charcoal/70 font-light text-base leading-relaxed mb-8">
-                            Defensa de prestigio guiada por socios con sólida trayectoria y visión estratégica en cada rama del derecho.
+                            Consulta la trayectoria de nuestros socios y conoce a quienes participan en la atención de los asuntos.
                         </p>
 
                         {/* Custom Slider Navigation (Arrows & Dots) — desktop only */}
@@ -378,7 +378,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                                                 }}
                                                 className="inline-block px-7 py-3 text-xs font-bold uppercase tracking-widest text-obsidian bg-transparent border border-obsidian hover:bg-obsidian hover:text-white transition-colors duration-300 rounded-sm"
                                             >
-                                                Ver Currículum Completo
+                                                Conocer su trayectoria
                                             </a>
                                         </div>
                                     )}
@@ -394,3 +394,4 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
 };
 
 export default Partners;
+

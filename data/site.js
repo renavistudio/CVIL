@@ -14,7 +14,7 @@ export const BLOG_ARTICLES = [
       "Actas de asamblea, acuerdos de socios y poderes vigentes.",
       "Relación de participaciones y comunicaciones sobre el desacuerdo."
     ],
-    "dateModified": "2026-10-26"
+    "dateModified": "2026-11-13"
   },
   {
     "slug": "como-cobrar-un-pagare-en-zamora-michoacan",
@@ -29,7 +29,7 @@ export const BLOG_ARTICLES = [
       "Comprobantes de abonos y cálculo separado de capital e intereses reclamados.",
       "Datos disponibles del obligado y comunicaciones sobre el pago."
     ],
-    "dateModified": "2026-10-26"
+    "dateModified": "2026-11-13"
   },
   {
     "slug": "como-despedir-a-un-trabajador-sin-demanda-zamora",
@@ -44,7 +44,7 @@ export const BLOG_ARTICLES = [
       "Controles de asistencia, incidencias y comunicaciones relevantes.",
       "Cualquier convenio, renuncia o aviso relacionado con la terminación."
     ],
-    "dateModified": "2026-10-26"
+    "dateModified": "2026-11-13"
   },
   {
     "slug": "como-sacar-a-un-inquilino-que-no-paga-renta-zamora",
@@ -59,7 +59,7 @@ export const BLOG_ARTICLES = [
       "Relación de mensualidades pendientes y comprobantes de pagos.",
       "Documentos del inmueble y comunicaciones con el arrendatario."
     ],
-    "dateModified": "2026-10-26"
+    "dateModified": "2026-11-13"
   },
   {
     "slug": "traspaso-de-negocio-deudas-anteriores-zamora",
@@ -74,7 +74,7 @@ export const BLOG_ARTICLES = [
       "Contratos con proveedores, trabajadores y arrendador.",
       "Documentos de representación, licencias y propuesta de compraventa."
     ],
-    "dateModified": "2026-10-26"
+    "dateModified": "2026-11-13"
   },
   {
     "slug": "citatorio-centro-de-conciliacion-laboral-zamora-que-hacer",
@@ -89,7 +89,7 @@ export const BLOG_ARTICLES = [
       "Identificación y documentos de representación del empleador.",
       "Contrato, nómina, antigüedad y antecedentes del desacuerdo."
     ],
-    "dateModified": "2026-10-26"
+    "dateModified": "2026-11-13"
   }
 ];
 
@@ -99,40 +99,40 @@ export const PRACTICE_PAGES = [
     "title": "Abogados corporativos en Zamora, Michoacán | CVIL",
     "h1": "Abogados corporativos en Zamora, Michoacán",
     "description": "Asesoría para empresas y socios en Zamora: conflictos societarios, acuerdos y revisión legal de negocios. CVIL, en La Luneta. Agenda una consulta.",
-    "subtitle": "Asesoría para dueños de negocio, accionistas y administradores que necesitan tomar decisiones con respaldo jurídico.",
-    "p1": "En CVIL Abogados Corporativos atendemos a empresas de Zamora, Jacona y la región desde nuestras oficinas en La Luneta. Revisamos la situación de la sociedad, los documentos y el objetivo de sus integrantes para definir el alcance de la asesoría. Una consulta puede centrarse en una decisión puntual o en la revisión de varios asuntos de la operación.",
+    "subtitle": "¿Las decisiones entre socios se han vuelto un problema? Empecemos por aclarar las facultades de cada persona y lo que necesita la empresa para continuar.",
+    "p1": "Un desacuerdo puede afectar pagos, acceso a información o la marcha del negocio. Para ayudarte, necesitamos entender qué ocurrió y qué dicen el acta constitutiva, los acuerdos y los poderes vigentes. Con esa base podemos distinguir una diferencia que se puede negociar de un asunto que requiere una actuación formal.",
     "sections": [
       [
-        "Conflictos entre socios y accionistas",
-        "Analizamos estatutos, acuerdos, participaciones y facultades de administración ante desacuerdos sobre decisiones, utilidades o continuidad de la empresa. Evaluamos alternativas de negociación y las acciones que correspondan; ser socio y administrar la sociedad son funciones diferentes."
+        "Quién decide y con qué facultades",
+        "La participación en la sociedad y el cargo de administrador no son lo mismo. Contrastamos los documentos de la empresa con la decisión que se quiere tomar: quién debe aprobarla, quién puede firmar y qué constancias hacen falta. Esto ayuda a evitar acuerdos que después no puedan llevarse a la práctica."
       ],
       [
-        "Compra, venta y revisión de negocios",
-        "Revisamos la documentación de la operación, los contratos y las obligaciones que requieren atención antes de comprar activos o participaciones. Identificamos qué información falta y qué puntos conviene resolver antes de firmar."
+        "Una salida o un desacuerdo entre socios",
+        "Antes de proponer una salida, conviene separar la propiedad de las participaciones, la administración y las obligaciones pendientes. Trabajamos sobre los hechos y las reglas de la sociedad para plantear una negociación o las acciones que procedan. Un conflicto no permite quitar automáticamente a alguien su calidad de socio."
       ],
       [
-        "Coordinación de asuntos de la empresa",
-        "La operación puede involucrar contratos, cobranza y relaciones laborales. Ayudamos a identificar el área jurídica de cada problema y a ordenar su atención, con un alcance definido para la consulta, negociación o procedimiento."
+        "Dejar los acuerdos por escrito",
+        "Cuando ya existe una decisión, ayudamos a precisar su contenido y la forma de documentarla. Revisamos actas, acuerdos y facultades para que las responsabilidades no dependan de lo que cada persona recuerda de una conversación. Las formalidades se determinan según la sociedad y el acto concreto."
       ]
     ],
     "situations": [
-      "Un socio quiere salir o hay desacuerdos sobre la administración.",
-      "Se necesita evaluar una compra, venta o reestructuración del negocio.",
-      "La empresa requiere ordenar sus contratos y asuntos legales pendientes."
+      "Las decisiones se bloquean o hay dudas sobre quién puede administrar y firmar.",
+      "Un socio quiere retirarse y necesitas conocer las opciones antes de negociar.",
+      "Hay acuerdos sobre utilidades, aportaciones o administración que no quedaron documentados."
     ],
     "documents": [
-      "Acta constitutiva, reformas y acuerdos entre socios.",
-      "Poderes y documentos de las personas que representan a la empresa.",
-      "Contratos y una relación de fechas y hechos del asunto."
+      "Acta constitutiva, reformas y acuerdos vigentes entre socios.",
+      "Actas de asamblea, poderes y documentos sobre la administración.",
+      "Una cronología del desacuerdo, con comunicaciones y documentos que ayuden a entenderlo."
     ],
     "faqs": [
       [
-        "¿La asesoría es solo para empresas grandes?",
-        "También atendemos a dueños de negocios y empresas familiares. El alcance depende de su operación y del problema que necesitan resolver."
+        "¿Atienden empresas pequeñas o familiares?",
+        "Sí. El tamaño de la empresa no cambia la necesidad de saber quién decide, qué se acordó y cómo resolver un desacuerdo. La consulta se enfoca en tu operación y en la decisión que tienes pendiente."
       ],
       [
-        "¿Qué diferencia hay entre asesoría corporativa y litigio mercantil?",
-        "La asesoría corporativa revisa decisiones, organización y acuerdos de la empresa. El litigio mercantil atiende controversias comerciales mediante los procedimientos que correspondan. En la primera consulta se identifica qué servicio necesita el asunto."
+        "¿Se puede sacar a un socio de la empresa?",
+        "No hay una respuesta única. Depende del tipo de sociedad, sus reglas y los hechos. Puede ser necesario distinguir entre dejar un cargo, vender participaciones o ejercer una acción legal; no son trámites equivalentes."
       ]
     ],
     "guides": [
@@ -143,47 +143,50 @@ export const PRACTICE_PAGES = [
       "derecho-corporativo-zamora",
       "abogados-mercantiles-zamora",
       "abogados-laborales-zamora"
-    ]
+    ],
+    "consultationTitle": "Cuéntanos qué está detenido en tu empresa",
+    "consultationText": "Indica quiénes intervienen, qué decisión está pendiente y si existe una asamblea o una fecha próxima. Con los documentos disponibles podremos delimitar el trabajo necesario y explicarte el alcance y los honorarios antes de contratar.",
+    "linkLabel": "Empresas y socios"
   },
   {
     "slug": "derecho-corporativo-zamora",
     "title": "Revisión de contratos en Zamora | CVIL",
     "h1": "Revisión y elaboración de contratos en Zamora",
     "description": "Revisión y elaboración de contratos comerciales, acuerdos de socios y documentos corporativos en Zamora, Michoacán. Consulta con CVIL en La Luneta.",
-    "subtitle": "¿Necesitas revisar un contrato antes de firmar o redactar uno para tu negocio? Te ayudamos a documentar lo acordado y revisar tus obligaciones.",
-    "p1": "Un contrato debe reflejar la operación real del negocio: quién se obliga, qué entregará, cómo se pagará y qué ocurrirá ante un incumplimiento. En CVIL revisamos y elaboramos documentos corporativos y comerciales para empresas de Zamora y Jacona. Partimos de los acuerdos y documentos existentes para detectar puntos pendientes y proponer una redacción adecuada al asunto.",
+    "subtitle": "Antes de firmar, asegúrate de que el documento diga lo que realmente acordaste y de entender las obligaciones que estás aceptando.",
+    "p1": "Un contrato útil explica quién hará qué, cuándo debe cumplir y qué ocurre si las cosas cambian. Podemos trabajar sobre un borrador de la otra parte o preparar el documento a partir de tu operación. La revisión empieza con los acuerdos comerciales y sus anexos, no sólo con el nombre del contrato.",
     "sections": [
       [
-        "Contratos para clientes y proveedores de tu negocio",
-        "Trabajamos sobre contratos de suministro, distribución, prestación de servicios y confidencialidad. Revisamos obligaciones, entregables, pagos, vigencia, terminación y mecanismos para resolver desacuerdos según la operación."
+        "Lo que se entrega y cómo se paga",
+        "En contratos con clientes y proveedores, la descripción del servicio o producto debe coincidir con la operación. Revisamos entregables, importes, plazos, aceptación y comprobantes para detectar obligaciones ambiguas o puntos que todavía requieren acuerdo."
       ],
       [
-        "Actas, poderes y acuerdos de socios",
-        "Apoyamos la revisión de estatutos, actas y acuerdos para documentar decisiones empresariales. La representación y las formalidades se evalúan según el tipo de sociedad y el acto; cuando se requiere intervención de un fedatario, se identifica esa necesidad."
+        "Qué pasa si algo cambia o se incumple",
+        "Conviene conocer desde el principio cómo se modificará o terminará la relación, qué garantías existen y cómo se atenderán los desacuerdos. Estas cláusulas se revisan junto con las obligaciones principales; copiar una penalización de otro documento no resuelve por sí solo el riesgo de la operación."
       ],
       [
-        "Arrendamiento comercial y traspaso de negocios",
-        "Revisamos contratos sobre locales, bodegas y operaciones de transmisión de negocios. Analizamos los bienes, obligaciones y autorizaciones involucrados para identificar qué puede contratarse y qué requiere una revisión adicional."
+        "Quién firma y qué documentos faltan",
+        "Comprobamos cómo se identifica a las partes y qué facultades necesitan quienes las representan. En arrendamientos comerciales o traspasos, también importa precisar los bienes, derechos y autorizaciones incluidos. Si el acto requiere otras formalidades, se identifica qué falta antes de avanzar."
       ]
     ],
     "situations": [
-      "Tienes un borrador de contrato que debes revisar antes de firmar.",
-      "Necesitas documentar un acuerdo entre socios o actualizar facultades.",
-      "Vas a rentar un local, adquirir activos o negociar el traspaso de un negocio."
+      "Te enviaron un contrato y tienes una fecha para firmarlo.",
+      "Ya acordaste condiciones comerciales y necesitas ponerlas por escrito.",
+      "Vas a rentar un local o recibir un negocio y quieres aclarar qué incluye la operación."
     ],
     "documents": [
-      "Borrador del contrato y anexos disponibles.",
-      "Propuesta comercial: entregables, importes, plazos y condiciones acordadas.",
-      "Identificación y documentos de representación de quienes firmarán."
+      "Borrador completo, anexos y versiones previas del contrato.",
+      "Cotización o propuesta con precios, entregables, plazos y condiciones acordadas.",
+      "Datos de las partes y documentos que acrediten la representación de quienes firmarán."
     ],
     "faqs": [
       [
-        "¿Pueden revisar un contrato que ya elaboró la otra parte?",
-        "Sí. Podemos revisar el borrador y sus anexos, contrastarlos con lo acordado e identificar cláusulas que conviene aclarar o negociar."
+        "¿Pueden revisar un contrato preparado por la otra parte?",
+        "Sí. Es importante compartir el documento completo y explicar qué se negoció fuera del texto. Así podremos señalar diferencias, condiciones poco claras y temas que conviene conversar antes de firmar."
       ],
       [
-        "¿Sirve un formato descargado de internet para mi negocio?",
-        "Un formato puede omitir condiciones importantes de la operación. La revisión debe comprobar que las partes, las obligaciones y las formalidades correspondan al caso concreto."
+        "¿Y si el contrato ya está firmado?",
+        "También podemos revisarlo para entender las obligaciones vigentes y el problema concreto. Si ya hay un incumplimiento o una reclamación, la atención puede requerir negociación o representación en una controversia, además de la revisión del documento."
       ]
     ],
     "guides": [
@@ -193,47 +196,50 @@ export const PRACTICE_PAGES = [
     "related": [
       "abogados-corporativos-zamora",
       "abogados-mercantiles-zamora"
-    ]
+    ],
+    "consultationTitle": "Comparte el borrador y la fecha de firma",
+    "consultationText": "Cuéntanos qué estás contratando, qué condiciones ya se negociaron y qué te preocupa del documento. Antes de iniciar, acordaremos si necesitas una revisión, una nueva redacción o acompañamiento en la negociación, con sus honorarios correspondientes.",
+    "linkLabel": "Contratos"
   },
   {
     "slug": "abogados-laborales-zamora",
     "title": "Abogados laborales en Zamora: defensa patronal | CVIL",
     "h1": "Abogados laborales para empresas en Zamora",
     "description": "Defensa laboral patronal en Zamora, Michoacán: contratos, conciliación y atención de demandas para empresas y empleadores. Agenda con CVIL.",
-    "subtitle": "Asesoría laboral dirigida a patrones y empresas: prevención, conciliación y representación ante controversias.",
-    "p1": "En CVIL atendemos asuntos laborales de empleadores en Zamora, Michoacán. Revisamos contratos, expedientes y antecedentes para evaluar obligaciones, preparar decisiones y atender citatorios o demandas. Nuestro servicio laboral se enfoca en la parte patronal, con respeto a los derechos de las personas trabajadoras y a las formalidades aplicables.",
+    "subtitle": "Si tienes personal a tu cargo, te ayudamos a preparar decisiones laborales y a responder cuando surge un conflicto.",
+    "p1": "Esta área atiende a empresas y empleadores. Una contratación, una salida o una reclamación requieren conocer la relación de trabajo y sus documentos. Te ayudamos a ordenar esa información, identificar obligaciones pendientes y preparar la actuación que corresponda, respetando los derechos de las personas trabajadoras.",
     "sections": [
       [
-        "Contratos y expedientes laborales",
-        "Revisamos contratos individuales, documentación de pagos y registros relacionados con la relación de trabajo. Ayudamos a identificar faltantes y a organizar la información para la operación diaria y la atención de controversias."
+        "Antes de terminar una relación laboral",
+        "Es necesario conocer los hechos, la antigüedad, los pagos y el motivo de la decisión antes de elegir cómo actuar. Trabajamos con el expediente disponible para distinguir los escenarios y preparar la documentación. Un recibo o un acta administrativa no evitan por sí solos una reclamación."
       ],
       [
-        "Conciliación laboral para empleadores",
-        "Preparamos la documentación y representación de la empresa, revisamos el asunto planteado y evaluamos propuestas de acuerdo. La autoridad competente y los requisitos se comprueban con el citatorio y las circunstancias del caso."
+        "Si recibiste un citatorio de conciliación",
+        "La fecha de audiencia, la autoridad y la persona citada definen qué debe prepararse. Revisamos el citatorio completo, la representación de la empresa y los antecedentes del desacuerdo. También ayudamos a entender las propuestas y obligaciones que podrían formar parte de un acuerdo."
       ],
       [
-        "Terminaciones y defensa en juicio",
-        "Evaluamos antecedentes y documentos para distinguir las opciones ante una terminación o reclamación. Un acta administrativa o un recibo no garantizan por sí solos la procedencia de una decisión ni la ausencia de una demanda."
+        "Cuando ya existe una demanda",
+        "Conserva la notificación y todos sus anexos. La respuesta se prepara a partir de lo reclamado, las constancias del expediente y los documentos de la relación laboral. La contratación debe precisar la etapa que se atenderá y el seguimiento incluido."
       ]
     ],
     "situations": [
-      "Recibiste un citatorio de conciliación o una demanda laboral.",
-      "Necesitas revisar contratos, expedientes o una posible terminación.",
-      "Buscas asesoría para documentar acuerdos laborales de la empresa."
+      "Necesitas contratar, modificar condiciones o preparar la salida de una persona trabajadora.",
+      "La empresa recibió un citatorio, una reclamación o una demanda.",
+      "Faltan contratos, recibos u otros documentos en los expedientes del personal."
     ],
     "documents": [
-      "Citatorio, demanda o notificación completa, si ya existe.",
-      "Contrato, recibos de nómina, antigüedad y controles disponibles.",
-      "Documentos de representación y comunicaciones relevantes."
+      "Citatorio, demanda o notificación con todos sus anexos y fecha de recepción.",
+      "Contrato, fecha de ingreso, recibos de nómina y registros de asistencia disponibles.",
+      "Comunicaciones sobre el problema y documentos de quien representa a la empresa."
     ],
     "faqs": [
       [
-        "¿Atienden a trabajadores o exclusivamente a empleadores?",
-        "Esta área de CVIL está dirigida a empleadores y empresas. Al contactar, indica en qué calidad intervienes para confirmar que el despacho pueda atender tu asunto."
+        "¿Esta asesoría es para trabajadores o para empleadores?",
+        "El servicio descrito en esta página está dirigido a empleadores y empresas. Al escribir, indica cuál es tu relación con el asunto para confirmar si podemos atenderlo."
       ],
       [
-        "¿Qué información debo enviar si recibí un citatorio?",
-        "Indica la autoridad, fecha de audiencia y persona citada. Conserva el documento completo y consulta el canal adecuado para compartirlo de forma privada con el despacho."
+        "¿Qué hago si la audiencia es pronto?",
+        "Indica la fecha desde el primer contacto y conserva el citatorio completo. El equipo confirmará disponibilidad y cómo compartirlo por un canal privado. No conviene esperar a reunir un expediente perfecto para comunicar que existe una fecha próxima."
       ]
     ],
     "guides": [
@@ -243,47 +249,50 @@ export const PRACTICE_PAGES = [
     "related": [
       "abogados-corporativos-zamora",
       "derecho-corporativo-zamora"
-    ]
+    ],
+    "consultationTitle": "Si hay una audiencia o notificación, empieza por la fecha",
+    "consultationText": "Explícanos qué recibió la empresa y cuándo, o qué decisión laboral necesitas preparar. Con esos datos podremos indicar qué documentos hacen falta y acordar el alcance de la asesoría o representación antes de comenzar.",
+    "linkLabel": "Relaciones laborales"
   },
   {
     "slug": "abogados-mercantiles-zamora",
     "title": "Abogados mercantiles en Zamora, Michoacán | CVIL",
     "h1": "Abogados mercantiles en Zamora, Michoacán",
     "description": "Cobranza de pagarés, adeudos e incumplimientos comerciales en Zamora. CVIL evalúa documentos, negociación y litigio mercantil. Agenda una consulta.",
-    "subtitle": "Asesoría y representación ante adeudos, pagarés e incumplimientos de contratos comerciales.",
-    "p1": "En CVIL revisamos controversias mercantiles de empresas y negocios en Zamora y la región. Evaluamos los documentos, la relación entre las partes y las alternativas de negociación o reclamación. La estrategia de cobro y defensa depende del origen de la obligación, las pruebas disponibles y la situación del expediente.",
+    "subtitle": "Un adeudo o un contrato incumplido necesita algo más que insistir en el pago: hay que saber qué puedes reclamar y con qué documentos.",
+    "p1": "Atendemos a quienes necesitan cobrar una obligación comercial y a quienes deben responder una reclamación. El primer paso es reconstruir la operación: qué se acordó, qué se entregó, qué se pagó y qué sigue pendiente. A partir de esa información podemos plantear una negociación o la intervención en el procedimiento que corresponda.",
     "sections": [
       [
-        "Cobranza de pagarés y adeudos comerciales",
-        "Revisamos títulos, vencimientos, pagos y comunicaciones para evaluar quién puede reclamar y por qué vía. La existencia de un adeudo debe analizarse junto con los documentos que lo respaldan y las posibilidades de recuperación."
+        "Un pagaré o un adeudo sigue sin pagarse",
+        "Reunimos el documento que respalda la obligación, el vencimiento y el historial de abonos. También importa saber quién se obligó y qué comunicaciones existen sobre el pago. Estos elementos permiten estudiar la reclamación y los factores que pueden dificultar la recuperación."
       ],
       [
-        "Incumplimiento de contratos",
-        "Analizamos obligaciones, entregas, pagos, garantías y acuerdos modificatorios ante conflictos con clientes o proveedores. El objetivo de la revisión es identificar el incumplimiento alegado y las opciones que corresponden a cada parte."
+        "Un cliente o proveedor incumplió",
+        "Contrastamos el contrato con las entregas, pagos y modificaciones que realmente ocurrieron. La atención puede centrarse en exigir cumplimiento, negociar una salida o responder lo que reclama la otra parte. Antes de definir una vía, necesitamos conocer la documentación y el objetivo del cliente."
       ],
       [
-        "Representación en controversias mercantiles",
-        "Atendemos la evaluación y seguimiento de juicios y medidas judiciales relacionadas con el asunto contratado. Un embargo o una medida sobre cuentas depende de la autoridad y del procedimiento; no constituye un resultado automático de presentar una demanda."
+        "Ya te notificaron un juicio",
+        "La demanda y la fecha en que se recibió deben revisarse completas. Preparamos la intervención según las pretensiones, las pruebas y la etapa del expediente. Los embargos y otras medidas dependen de los requisitos del procedimiento y de la autoridad; no se obtienen automáticamente al presentar una demanda."
       ]
     ],
     "situations": [
-      "Un cliente dejó de pagar un pagaré o una obligación comercial.",
-      "Un proveedor incumplió entregas o condiciones de un contrato.",
-      "Recibiste una demanda mercantil o una notificación judicial."
+      "Tienes un pagaré vencido o una operación comercial con saldo pendiente.",
+      "Una entrega, un servicio o una condición del contrato no se cumplió.",
+      "Necesitas responder una demanda o una notificación judicial mercantil."
     ],
     "documents": [
-      "Pagaré, contrato, facturas y anexos que respalden la operación.",
-      "Comprobantes de entrega, pagos parciales y estados de cuenta relevantes.",
-      "Notificaciones recibidas y comunicaciones entre las partes."
+      "Pagaré original, contrato, facturas y anexos de la operación.",
+      "Comprobantes de entrega y de abonos, con el saldo que consideras pendiente.",
+      "Requerimientos de pago, comunicaciones y notificaciones recibidas."
     ],
     "faqs": [
       [
-        "¿Pueden revisar un adeudo si no tengo pagaré?",
-        "Sí. Se puede evaluar la documentación disponible, como contratos, comprobantes y comunicaciones. La ausencia de pagaré cambia el análisis de las vías de reclamación; no permite concluir por sí sola que el adeudo pueda o no cobrarse."
+        "¿Se puede revisar un adeudo si no tengo pagaré?",
+        "Sí. Un contrato, comprobantes de entrega, facturas o comunicaciones pueden ser relevantes para entender la operación. Deben estudiarse en conjunto para determinar qué respaldan y qué vía podría corresponder; no tener pagaré no resuelve por sí solo esa pregunta."
       ],
       [
-        "¿Cuánto cuesta y cuánto tarda una cobranza?",
-        "Se cotiza después de conocer el monto, los documentos y el alcance de la intervención. El tiempo depende de la negociación, el procedimiento y las circunstancias de las partes; no hay un plazo único aplicable a todos los adeudos."
+        "¿Cuánto cuesta y cuánto tarda recuperar el dinero?",
+        "La cotización depende de los documentos, el monto y el trabajo que se contrate. Los tiempos también cambian si hay negociación, juicio o dificultades para ejecutar lo resuelto. Después de conocer el asunto podremos explicar el alcance y los factores de costo, sin prometer una fecha de cobro."
       ]
     ],
     "guides": [
@@ -292,54 +301,60 @@ export const PRACTICE_PAGES = [
     "related": [
       "derecho-corporativo-zamora",
       "abogados-corporativos-zamora"
-    ]
+    ],
+    "consultationTitle": "Aclaremos qué se debe y qué lo respalda",
+    "consultationText": "Dinos si buscas cobrar o responder una reclamación, cuál es el saldo discutido y si recibiste alguna notificación. Conserva originales y comprobantes; acordaremos qué revisar y el trabajo que puede asumir el despacho.",
+    "linkLabel": "Cobros y conflictos comerciales"
   },
   {
     "slug": "abogados-penalistas-zamora",
     "title": "Abogados penalistas en Zamora, Michoacán | CVIL",
     "h1": "Abogados penalistas en Zamora, Michoacán",
     "description": "Asesoría y defensa penal en Zamora, Michoacán. Revisión de citatorios, investigación y representación en juicio oral. Contacta a CVIL en La Luneta.",
-    "subtitle": "Defensa penal y litigio estratégico con revisión de los hechos, documentos y etapa del procedimiento.",
-    "p1": "El área penal de CVIL atiende la evaluación de asuntos y representación jurídica en Zamora, Michoacán. Ante un citatorio, una investigación o un procedimiento, es necesario conocer en qué calidad interviene la persona, qué autoridad actúa y qué documentos existen. La atención se organiza según la situación y la etapa del asunto.",
+    "subtitle": "Si recibiste un citatorio o necesitas defensa en una investigación, empecemos por saber qué autoridad interviene y qué está ocurriendo.",
+    "p1": "Un citatorio, una investigación y un juicio requieren intervenciones distintas. Para orientar la primera consulta necesitamos conocer los hechos, la calidad en que interviene la persona y cualquier actuación próxima. Esa revisión permite explicar qué puede asumir el despacho y qué información hace falta para preparar la defensa.",
     "sections": [
       [
-        "Evaluación de citatorios e investigaciones",
-        "Revisamos la autoridad emisora, el motivo indicado y los antecedentes disponibles para identificar la intervención que se requiere. Un mismo documento puede referirse a situaciones distintas; conviene valorar su contenido completo."
+        "Recibiste un citatorio",
+        "Conserva el documento completo, incluidos anexos y datos de recepción. Revisamos qué autoridad lo emitió, a quién se dirige y qué actuación señala. El contexto importa: no es suficiente conocer el título del documento o una fotografía de una sola parte."
       ],
       [
-        "Defensa y juicios orales",
-        "La preparación de la defensa comprende el estudio del expediente, la evaluación de datos y pruebas, y la definición de la estrategia procesal. La representación se acuerda conforme a la etapa y alcance del asunto."
+        "Hay una investigación o un proceso en curso",
+        "La defensa se prepara con el conocimiento del expediente y de la etapa que se atenderá. El trabajo puede incluir el estudio de los antecedentes, la preparación de actuaciones y la representación acordada. Antes de contratar, se debe precisar el alcance y la forma de dar seguimiento al asunto."
       ],
       [
-        "Delitos patrimoniales y controversias",
-        "Analizamos los hechos y documentos de asuntos que afectan el patrimonio para identificar las cuestiones penales y su relación con otras controversias. Un desacuerdo contractual no debe tratarse automáticamente como un delito."
+        "El problema involucra bienes o dinero",
+        "Es necesario distinguir los hechos que pueden tener relevancia penal de un incumplimiento civil o comercial. Revisamos cómo ocurrió la operación y qué documentos la respaldan. Una deuda o un desacuerdo contractual no deben presentarse automáticamente como un delito."
       ]
     ],
     "situations": [
-      "Recibiste un citatorio relacionado con una investigación penal.",
-      "Necesitas consultar la defensa de una persona en un procedimiento.",
-      "Buscas una revisión jurídica de hechos que afectan tu patrimonio."
+      "Una autoridad te citó y necesitas entender qué se requiere de ti.",
+      "Buscas representación para una persona en una investigación o un proceso penal.",
+      "Necesitas consultar hechos que afectan bienes, dinero o la actividad de tu negocio."
     ],
     "documents": [
-      "Citatorio o notificación completa y datos de la autoridad.",
-      "Número de carpeta o expediente, si se conoce.",
-      "Una relación de hechos y documentos disponibles, conservando sus originales."
+      "Citatorio o notificación completos, con la fecha en que se recibieron.",
+      "Datos de la autoridad y número de carpeta o expediente, si los conoces.",
+      "Una cronología breve y los documentos disponibles, sin alterar sus originales."
     ],
     "faqs": [
       [
-        "¿Qué debo indicar al solicitar una consulta penal?",
-        "Explica brevemente la situación, la autoridad involucrada y si hay una fecha o actuación próxima. El equipo confirmará disponibilidad y el canal para revisar la documentación."
+        "¿Qué información necesitan en el primer contacto?",
+        "Indica la autoridad, el tipo de documento recibido y si hay una fecha o actuación próxima. No necesitas relatar información sensible en un formulario público: el equipo confirmará disponibilidad y un canal privado para revisar el asunto."
       ],
       [
-        "¿Se puede garantizar el resultado de un asunto penal?",
-        "No. La estrategia depende del expediente, las pruebas y las decisiones de la autoridad. La primera revisión permite explicar el alcance de la defensa y los siguientes pasos."
+        "¿Pueden asegurar cómo terminará el asunto?",
+        "No se puede asegurar un resultado. Sí se puede explicar el trabajo que se propone, las cuestiones que deben revisarse y los siguientes pasos según el expediente. Esa claridad debe formar parte de la decisión de contratar."
       ]
     ],
     "guides": [],
     "related": [
       "abogados-corporativos-zamora",
       "abogados-mercantiles-zamora"
-    ]
+    ],
+    "consultationTitle": "Indica si hay una actuación próxima",
+    "consultationText": "Al contactar, empieza por la fecha, la autoridad y el documento recibido. Confirmaremos si el despacho puede intervenir y cómo revisar la información de forma privada antes de acordar la representación.",
+    "linkLabel": "Asuntos penales"
   }
 ];
 

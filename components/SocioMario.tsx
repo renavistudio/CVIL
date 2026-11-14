@@ -22,48 +22,48 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                         </div>
                         <div className="w-full md:w-2/3">
                             <h1 className="text-4xl md:text-5xl font-serif text-obsidian mb-4">Dr. Mario Enrique Cervantes Vieyra</h1>
-                            <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-6">Socio Fundador | Litigio Estratégico y Controversias</p>
+                            <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-6">Socio fundador · Litigio penal y asesoría a víctimas</p>
                             <div className="prose prose-lg text-charcoal/80 font-light">
-                                <p className="mb-4">El Dr. Mario Enrique Cervantes Vieyra es un abogado litigante distinguido por su rigurosa formación académica y destreza en litigación estratégica dentro del Sistema Penal Acusatorio. Su trayectoria se fundamenta en la representación legal de personas físicas, corporaciones y víctimas en asuntos de la más alta complejidad jurídica y procesal, interviniendo con autoridad ante instancias de fuero común y federal.</p>
-                                <p>Su ejercicio profesional se caracteriza por una defensa técnica, audaz y sumamente personalizada. Su enfoque principal radica en el protección de los derechos fundamentales de sus representados, logrando resultados determinantes a través de un litigio estratégico, ético y de precisión impecable.</p>
+                                <p className="mb-4">Mario Enrique Cervantes Vieyra es socio fundador de CVIL. Su práctica se concentra en litigio penal, defensa de personas y empresas, y asesoría jurídica a víctimas ante autoridades estatales y federales.</p>
+                                <p>La atención parte de conocer los hechos, revisar el expediente y entender qué necesita resolver el cliente. A partir de esa información, explica las alternativas de defensa y prepara las actuaciones que corresponden a la etapa del procedimiento.</p>
                             </div>
                         </div>
                     </div>
 
                     <div className="space-y-16">
-                        {/* Formación Académica */}
+                        {/* Formación académica */}
                         <section>
                             <h2 className="text-2xl font-serif text-obsidian mb-8 flex items-center border-b border-gray-200 pb-4">
                                 <GraduationCap className="w-6 h-6 mr-3 text-gold" />
-                                Formación Académica
+                                Formación académica
                             </h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
                                     <h3 className="font-bold text-lg mb-2 text-obsidian">Doctorado en Derecho</h3>
-                                    <p className="text-sm text-charcoal/70">Grado de excelencia orientado al análisis jurídico profundo, la investigación avanzada y la continua innovación de la práctica profesional en materia litigiosa procesal.</p>
+                                    <p className="text-sm text-charcoal/70">Formación de posgrado en análisis e investigación jurídica.</p>
                                 </div>
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
                                     <h3 className="font-bold text-lg mb-2 text-obsidian">Maestría en Derecho Procesal y Oralidad</h3>
-                                    <p className="text-sm text-charcoal/70">Especialización de alto nivel en el Procedimientos Especializados y Oralidad, priorizando los derechos humanos, la reinserción social y el dominio de procedimientos especializados.</p>
+                                    <p className="text-sm text-charcoal/70">Formación en procedimientos judiciales y técnicas de oralidad.</p>
                                 </div>
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
                                     <h3 className="font-bold text-lg mb-1 text-obsidian">Maestría en Juicios Orales</h3>
                                     <p className="text-xs text-gold font-semibold mb-3">Instituto Especializado en Ciencias Penales (IECP)</p>
-                                    <p className="text-sm text-charcoal/70">Entrenamiento avanzado en litigación oral, dominio absoluto de la teoría del caso, técnicas incisivas de interrogatorio y argumentación jurídica inquebrantable dentro del Sistema Penal Acusatorio.</p>
+                                    <p className="text-sm text-charcoal/70">Estudios en litigación oral, preparación del caso e interrogatorio en el sistema penal acusatorio.</p>
                                 </div>
                                 <div className="bg-offwhite p-6 border border-gray-100 hover:border-gold/50 transition-colors">
                                     <h3 className="font-bold text-lg mb-1 text-obsidian">Maestría en Juicios Orales</h3>
                                     <p className="text-xs text-gold font-semibold mb-3">Universidad Contemporánea de las Américas (UNICLA)</p>
-                                    <p className="text-sm text-charcoal/70">Programa integral enfocado en la especialización de abogados litigantes para el manejo táctico y estratégico de procedimientos penales orales.</p>
+                                    <p className="text-sm text-charcoal/70">Estudios de posgrado en la preparación y desarrollo de juicios orales.</p>
                                 </div>
                             </div>
                         </section>
 
-                        {/* Áreas de Especialización */}
+                        {/* Asuntos en los que interviene */}
                         <section>
                             <h2 className="text-2xl font-serif text-obsidian mb-8 flex items-center border-b border-gray-200 pb-4">
                                 <Scale className="w-6 h-6 mr-3 text-gold" />
-                                Áreas de Especialización
+                                Asuntos en los que interviene
                             </h2>
                             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-sm text-charcoal/80 list-disc ml-4">
                                 <li>Litigio estratégico y controversias</li>
@@ -86,15 +86,15 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                             </ul>
                         </section>
 
-                        {/* Experiencia Profesional */}
+                        {/* Experiencia profesional */}
                         <section>
                             <h2 className="text-2xl font-serif text-obsidian mb-8 flex items-center border-b border-gray-200 pb-4">
                                 <Briefcase className="w-6 h-6 mr-3 text-gold" />
-                                Experiencia Profesional
+                                Experiencia profesional
                             </h2>
                             <div className="bg-obsidian text-white p-8 md:p-12 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
-                                <p className="mb-6 font-light leading-relaxed relative z-10 text-lg">A lo largo de su carrera, ha ejercido una representación jurídica de alto rigor en procedimientos penales de extrema complejidad, dominando intervenciones clave en:</p>
+                                <p className="mb-6 font-light leading-relaxed relative z-10 text-lg">Su experiencia comprende la representación durante las distintas etapas del procedimiento penal:</p>
                                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm font-light text-gray-300 mb-8">
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Audiencias iniciales</li>
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Control de detención</li>
@@ -108,7 +108,7 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Ejecución penal</li>
                                 </ul>
                                 
-                                <p className="mb-6 font-light leading-relaxed border-t border-gray-800 pt-8 relative z-10 text-lg">Su capacidad de litigio ha sido probada con éxito ante las máximas instancias, incluyendo:</p>
+                                <p className="mb-6 font-light leading-relaxed border-t border-gray-800 pt-8 relative z-10 text-lg">Ha intervenido en asuntos ante las siguientes autoridades:</p>
                                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm font-light text-gray-300">
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Juzgados de Control</li>
                                     <li className="flex items-center"><span className="w-1.5 h-1.5 bg-gold rounded-full mr-3 shrink-0"></span>Tribunales de Enjuiciamiento</li>
@@ -129,26 +129,26 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                                 Servicios
                             </h2>
                             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-sm text-charcoal/80 list-disc ml-4">
-                                <li>Litigio y Controversias Complejas</li>
-                                <li>Defensa en Delitos Federales</li>
-                                <li>Defensa en Delitos del Fuero Común</li>
-                                <li>Asesoría Jurídica para Víctimas</li>
-                                <li>Recursos de Apelación</li>
+                                <li>Litigio y controversias penales</li>
+                                <li>Defensa ante autoridades federales</li>
+                                <li>Defensa ante autoridades estatales</li>
+                                <li>Asesoría y acompañamiento a víctimas</li>
+                                <li>Impugnación de resoluciones</li>
                                 <li>Juicios de Amparo</li>
-                                <li>Medidas Cautelares</li>
-                                <li>Suspensión Condicional del Proceso</li>
-                                <li>Procedimientos Abreviados</li>
-                                <li>Cumplimiento de Sentencias</li>
-                                <li>Prevención y Asesoría Legal para Empresas</li>
+                                <li>Revisión de medidas cautelares</li>
+                                <li>Asesoría sobre suspensión condicional del proceso</li>
+                                <li>Asesoría sobre procedimientos abreviados</li>
+                                <li>Atención de la ejecución de sentencias</li>
+                                <li>Consulta sobre riesgos penales para empresas</li>
                             </ul>
                         </section>
 
-                        {/* Filosofía Profesional */}
+                        {/* Cómo aborda cada asunto */}
                         <section className="text-center py-12 px-6 border-y border-gray-200 bg-offwhite">
                             <BookOpen className="w-8 h-8 mx-auto text-gold mb-6" />
-                            <h2 className="text-xl font-bold uppercase tracking-widest text-obsidian mb-6">Filosofía Profesional</h2>
+                            <h2 className="text-xl font-bold uppercase tracking-widest text-obsidian mb-6">Cómo aborda cada asunto</h2>
                             <blockquote className="text-2xl font-serif text-charcoal italic max-w-3xl mx-auto leading-relaxed">
-                                "Cada asunto representa la confianza depositada por una persona en momentos de gran trascendencia. Por ello, cada defensa se construye con estrategia, preparación, estudio permanente y absoluto compromiso con la justicia y los derechos de nuestros representados."
+                                Una defensa requiere conocer el expediente, escuchar al cliente y preparar cada actuación. El trabajo incluye explicar las opciones y dar seguimiento al asunto.
                             </blockquote>
                         </section>
                     </div>
@@ -163,3 +163,4 @@ const SocioMario: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 };
 
 export default SocioMario;
+

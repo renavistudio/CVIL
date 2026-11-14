@@ -2,9 +2,9 @@ import React from 'react';
 import { StatItem } from '../types';
 
 const stats: StatItem[] = [
-  { id: 1, value: "15+", label: "Años de Experiencia" },
-  { id: 2, value: "Empresas", label: "Asesoría y defensa" },
-  { id: 3, value: "100%", label: "Secreto Profesional" },
+  { id: 1, value: "15+", label: "Años de experiencia profesional" },
+  { id: 2, value: "Empresas", label: "Acuerdos, contratos y conflictos" },
+  { id: 3, value: "Reserva", label: "En el manejo de tu información" },
 ];
 
 const Stats: React.FC = () => {
@@ -32,3 +32,4 @@ const Stats: React.FC = () => {
 };
 
 export default Stats;
+

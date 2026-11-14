@@ -55,6 +55,9 @@ try {
         overflow:document.documentElement.scrollWidth>innerWidth,
       }));
       const meta=getPageMeta(pathname);
+      const primaryContact=state.links.findIndex(href=>/^(tel:|https:\/\/wa\.me\/)/.test(href||'')&&href.includes('4432735543'));
+      const officeContact=state.links.findIndex(href=>href?.startsWith('tel:')&&href.includes('3511277317'));
+      if(officeContact>=0)assert.ok(primaryContact>=0&&primaryContact<officeContact,`${pathname}: primary 443 contact precedes office 351`);
       assert.deepEqual(state.h1,[meta.h1],`${pathname}: h1`);
       assert.equal(state.title,meta.title,`${pathname}: title`);
       assert.equal(state.robots,meta.noindex ? 'noindex, follow' : 'index, follow',`${pathname}: indexing directive`);
@@ -101,7 +104,7 @@ try {
         assert.equal((await fetch(new URL(image.src,origin))).status,200,`${pathname}: image ${image.src}`);
       }
       if(pathname==='/blog'&&javaScriptEnabled){
-        await page.getByRole('button',{name:'Defensa Patronal',exact:true}).click();
+        await page.getByRole('button',{name:'Laboral para empresas',exact:true}).click();
         assert.equal(await page.locator('main h2').count(),2);
       }
       if(meta.lang==='en') {
@@ -200,9 +203,9 @@ try {
   await page.locator('#contact button[type="submit"]').click();
   await page.waitForFunction(()=>!!window.__openedUrl);
   assert.ok(decodeURIComponent(await page.evaluate(()=>window.__openedUrl)).includes('Hello, my name is Alex Smith.'),'English WhatsApp request');
-  for (const route of ROUTES.filter(route=>route.startsWith('/en'))) {
+  for (const route of ROUTES) {
     await page.goto(origin+route,{waitUntil:'load'});
-    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${route}: English mobile overflow`);
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${route}: mobile overflow`);
   }
   await context.close();
   if(process.env.CVIL_SCREENSHOT_DIR){

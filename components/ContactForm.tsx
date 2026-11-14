@@ -8,7 +8,7 @@ interface ContactFormProps {
 const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
-    const [matter, setMatter] = useState('Contratos Mercantiles y Acuerdos Comerciales');
+    const [matter, setMatter] = useState('Contratos y acuerdos comerciales');
     const [message, setMessage] = useState('');
 
     const [errors, setErrors] = useState<{ name?: string; phone?: string;  }>({});
@@ -20,27 +20,27 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
         const newErrors: { name?: string; phone?: string } = {};
 
         const nameTrimmed = name.trim();
-        const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\.\-]{3,60}$/;
+        const nameRegex = /^[\p{L}\p{M}\s.'’\-]{3,60}$/u;
 
         if (!nameTrimmed) {
-            newErrors.name = 'Por favor ingrese su nombre completo.';
+            newErrors.name = 'Escribe tu nombre completo.';
         } else if (nameTrimmed.length < 3) {
-            newErrors.name = 'El nombre debe tener al menos 3 caracteres.';
+            newErrors.name = 'Escribe al menos 3 caracteres en el nombre.';
         } else if (!nameRegex.test(nameTrimmed)) {
-            newErrors.name = 'Ingrese un nombre válido (solo letras, sin números).';
+            newErrors.name = 'Revisa el nombre: usa letras y la puntuación que corresponda.';
         }
 
         const cleanPhone = phone.replace(/\D/g, '');
         const invalidPhones = ['0000000000', '1111111111', '1234567890', '9999999999', '8888888888', '5555555555', '1231231234'];
 
         if (!phone.trim()) {
-            newErrors.phone = 'Por favor ingrese su número de teléfono o WhatsApp.';
+            newErrors.phone = 'Escribe un teléfono de contacto.';
         } else if (cleanPhone.length < 10) {
-            newErrors.phone = 'Ingrese un número válido a 10 dígitos (ej. 443 123 4567).';
+            newErrors.phone = 'Revisa el teléfono e incluye al menos 10 dígitos.';
         } else if (cleanPhone.length > 13) {
-            newErrors.phone = 'El número es demasiado largo.';
+            newErrors.phone = 'Revisa la longitud del teléfono.';
         } else if (invalidPhones.includes(cleanPhone) || /^(\d)\1{9}$/.test(cleanPhone)) {
-            newErrors.phone = 'El número ingresado no parece ser un teléfono real.';
+            newErrors.phone = 'Revisa el número de contacto.';
         }
 
         setErrors(newErrors);
@@ -68,12 +68,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
             : `Hola, mi nombre es ${name.trim()}. Vi su página web y los contacto para solicitar una consulta sobre *${matter}*.\n\nTeléfono de contacto: ${phone.trim()}${message.trim() ? `\nResumen del caso: ${message.trim()}` : ''}`;
         const waUrl = `https://wa.me/524432735543?text=${encodeURIComponent(waMessage)}`;
 
-        setTimeout(() => {
-            window.open(waUrl, '_blank');
-            setIsSubmitting(false);
-            setSubmittedSuccess(true);
-            setTimeout(() => setSubmittedSuccess(false), 6000);
-        }, 400);
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+        setIsSubmitting(false);
+        setSubmittedSuccess(true);
+        setTimeout(() => setSubmittedSuccess(false), 6000);
     };
 
     return (
@@ -87,7 +85,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                         <div className="absolute inset-0 z-0">
                             <img width="800" height="600"
                                 src="/images/office/IMG_0559.webp"
-                                alt="Instalaciones y pasillo de las oficinas corporativas CVIL en Zamora"
+                                alt="Pasillo de las oficinas de CVIL"
                                 className="w-full h-full object-cover opacity-30"
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-obsidian/80 to-obsidian/90"></div>
@@ -95,13 +93,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                         <div className="relative z-10">
                             <span className="block text-xs font-bold tracking-[0.2em] text-gold uppercase mb-6">
-                                Atención Jurídica
+                                Contacto
                             </span>
                             <h2 className="text-4xl lg:text-5xl font-serif text-white mb-8">
-                                Platiquemos sobre su caso.
+                                Cuéntanos qué necesitas resolver.
                             </h2>
                             <p className="text-gray-300 font-light leading-relaxed mb-12 border-l-2 border-gold pl-6 text-sm">
-                                Todo lo que nos comparta es estrictamente reservado.
+                                Si recibiste una notificación o tienes una fecha próxima, menciónala al contactarnos.
                             </p>
                         </div>
 
@@ -109,17 +107,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             <div className="flex items-start space-x-6">
                                 <Phone className="w-5 h-5 text-gold mt-1" />
                                 <div>
-                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Línea Directa & Urgencias 24/7</p>
+                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Llamadas y WhatsApp</p>
                                     <a href="tel:+524432735543" className="text-xl font-serif text-white hover:text-gold transition-colors block mb-1">
                                         +52 (443) 273-5543
                                     </a>
-                                    <p className="text-[10px] text-gray-400">Atención profesional inmediata.</p>
+                                    <p className="text-[10px] text-gray-400"><a href="tel:+523511277317">Oficina: 351 127 7317</a></p>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-6">
                                 <MapPin className="w-5 h-5 text-gold mt-1" />
                                 <div>
-                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Sede Corporativa</p>
+                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Oficina en Zamora</p>
                                     <p className="text-sm text-gray-300 font-light">
                                         C. Suiza 721-Piso 3, La Luneta,<br />
                                         59689 Zamora de Hidalgo, Mich.
@@ -135,11 +133,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {/* Name field */}
                                 <div className="group relative">
-                                    <label htmlFor="service" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
-                                        Nombre Completo <span className="text-gold">*</span>
+                                    <label htmlFor="contact-name" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                        Nombre completo <span className="text-gold">*</span>
                                     </label>
                                     <input
+                                        id="contact-name"
                                         name="name"
+                                        autoComplete="name"
                                         type="text"
                                         value={name}
                                         onChange={(e) => {
@@ -147,7 +147,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                             if (errors.name) setErrors(prev => ({ ...prev, name: undefined }));
                                         }}
                                         className={`w-full bg-white border ${errors.name ? 'border-red-500 focus:border-red-600' : 'border-gray-300 focus:border-obsidian'} px-4 py-3 text-obsidian text-sm focus:outline-none transition-colors rounded-sm shadow-sm`}
-                                        placeholder="Ej. Lic. Roberto Gómez"
+                                        placeholder="Tu nombre y apellidos"
                                     />
                                     {errors.name && (
                                         <p className="flex items-center text-xs text-red-600 font-medium mt-1.5 animate-fade-in">
@@ -159,11 +159,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                                 {/* Phone field */}
                                 <div className="group relative">
-                                    <label htmlFor="service" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                    <label htmlFor="contact-phone" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
                                         Teléfono / WhatsApp <span className="text-gold">*</span>
                                     </label>
                                     <input
+                                        id="contact-phone"
                                         name="phone"
+                                        autoComplete="tel"
                                         type="tel"
                                         value={phone}
                                         onChange={(e) => {
@@ -185,7 +187,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             {/* Matter dropdown */}
                             <div>
                                 <label htmlFor="service" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
-                                    Servicio o Necesidad de su Empresa
+                                    ¿Sobre qué necesitas consultar?
                                 </label>
                                 <div className="relative">
                                     <select id="service"
@@ -193,15 +195,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                         onChange={(e) => setMatter(e.target.value)}
                                         className="appearance-none w-full bg-white border border-gray-300 px-4 py-3 pr-10 text-obsidian text-sm focus:outline-none focus:border-obsidian transition-colors rounded-sm shadow-sm"
                                     >
-                                        <option value="Contratos Mercantiles y Acuerdos Comerciales">Contratos Mercantiles & Acuerdos Comerciales</option>
-                                        <option value="Constitución de Empresas, Socios y Asambleas">Constitución de Empresas, Socios & Asambleas</option>
-                                        <option value="Cobranza Judicial y Recuperación de Cartera">Cobranza Judicial & Recuperación de Cartera</option>
-                                        <option value="Cumplimiento Laboral y Contratos de Trabajo">Cumplimiento Laboral & Contratos de Trabajo</option>
-                                        <option value="Litigio Mercantil y Controversias de Negocios">Litigio Mercantil & Controversias de Negocios</option>
-                                        <option value="Registro de Marca (IMPI) y Propiedad Intelectual">Registro de Marca (IMPI) & Propiedad Intelectual</option>
-                                        <option value="Conflictos Societarios y Litigio Mercantil">Conflictos Societarios y Litigio Mercantil</option>
-                                        <option value="Iguala Jurídica (Abogado de Cabecera para Empresas)">Iguala Jurídica (Abogado de Cabecera para Empresas)</option>
-                                        <option value="Otra Consulta Corporativa / Empresarial">Otra Consulta Corporativa / Empresarial</option>
+                                        <option value="Contratos y acuerdos comerciales">Contratos y acuerdos comerciales</option>
+                                        <option value="Empresa, socios y asambleas">Empresa, socios y asambleas</option>
+                                        <option value="Pago de un adeudo o pagaré">Pago de un adeudo o pagaré</option>
+                                        <option value="Relaciones laborales de mi empresa">Relaciones laborales de mi empresa</option>
+                                        <option value="Conflicto comercial">Conflicto comercial</option>
+                                        <option value="Registro de marca o propiedad intelectual">Registro de marca o propiedad intelectual</option>
+                                        <option value="Investigación o asunto penal">Investigación o asunto penal</option>
+                                        <option value="Asesoría continua para mi empresa">Asesoría continua para mi empresa</option>
+                                        <option value="Otro asunto">Otro asunto</option>
                                     </select>
                                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
                                         <ChevronDown className="w-4 h-4" />
@@ -211,15 +213,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 
                             {/* Optional message */}
                             <div>
-                                <label htmlFor="service" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
-                                    Breve descripción de su consulta <span className="text-gray-400 font-normal">(Opcional)</span>
+                                <label htmlFor="contact-message" className="block text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                                    ¿Qué está pasando? <span className="text-gray-400 font-normal">(opcional)</span>
                                 </label>
                                 <textarea
+                                    id="contact-message"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     rows={3}
                                     className="w-full bg-white border border-gray-300 px-4 py-3 text-obsidian text-sm focus:outline-none focus:border-obsidian transition-colors rounded-sm shadow-sm resize-none"
-                                    placeholder="Comparta de forma general la situación para canalizarlo con el socio especialista..."
+                                    placeholder="Escribe un resumen breve. Por ahora, evita datos o documentos sensibles."
                                 />
                             </div>
 
@@ -241,7 +244,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             {submittedSuccess && (
                                 <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-sm flex items-center space-x-2 animate-fade-in">
                                     <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                                    <span>Solicitud recibida correctamente. Se ha abierto la conversación directa para brindarle atención.</span>
+                                    <span>Tu mensaje está preparado. Envíalo en WhatsApp para que podamos leerlo.</span>
                                 </div>
                             )}
 
@@ -251,15 +254,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                                     disabled={isSubmitting}
                                     className="w-full px-12 bg-gold hover:bg-obsidian text-white text-xs font-bold uppercase tracking-widest py-5 transition-all duration-300 flex items-center justify-center space-x-4 shadow-md hover:shadow-xl rounded-sm"
                                 >
-                                    <span>{isSubmitting ? 'Conectando con el área legal...' : 'SOLICITAR CONSULTA'}</span>
+                                    <span>{isSubmitting ? 'Preparando mensaje...' : 'Continuar en WhatsApp'}</span>
                                     {!isSubmitting && <Phone className="w-3.5 h-3.5" />}
                                 </button>
 
                                 <p className="text-[11px] text-gray-500 mt-4 text-center leading-relaxed">
-                                    Al enviar este formulario, usted confirma que sus datos serán tratados conforme a nuestro{' '}
+                                    Al continuar, se abrirá WhatsApp con los datos que escribiste. Consulta nuestro{' '}
                                     <a href="/aviso-de-privacidad" className="text-obsidian font-semibold underline hover:text-gold transition-colors inline">Aviso de Privacidad</a>.
                                     <br />
-                                    <span className="text-gray-400">🔒 Información amparada por Secreto Profesional.</span>
+                                    <span className="text-gray-400">En WhatsApp podrás revisar el mensaje antes de enviarlo.</span>
                                 </p>
                             </div>
                         </form>

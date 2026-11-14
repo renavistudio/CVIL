@@ -24,70 +24,70 @@ const PrivacyPolicyPage: React.FC = () => {
                 
                 <div className="prose prose-stone max-w-none text-charcoal/80 font-light leading-relaxed">
                     <p className="font-medium text-obsidian">
-                        CVIL Alianza Estratégica en Derecho, con domicilio físico en C. Suiza 721-Piso 3, Col. La Luneta, C.P. 59689, Zamora de Hidalgo, Michoacán, México, es el responsable del tratamiento de sus datos personales, en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y su Reglamento.
+                        CVIL Alianza Estratégica en Derecho, con domicilio en C. Suiza 721-Piso 3, Col. La Luneta, C.P. 59689, Zamora de Hidalgo, Michoacán, México, es responsable de los datos personales que recibe para atender solicitudes de información y servicios jurídicos.
                     </p>
 
-                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">1. Datos Personales Recabados</h2>
+                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">1. Información que puedes proporcionar</h2>
                     <p>
-                        Para las finalidades señaladas en este aviso de privacidad, recabamos sus datos personales de forma directa cuando usted mismo los proporciona a través de los formularios de contacto de este sitio web. Los datos que obtenemos son:
+                        El formulario prepara un mensaje con la información que escribes y abre WhatsApp. CVIL recibe ese mensaje cuando lo envías desde la aplicación. También puedes contactar al despacho directamente por teléfono o correo. La información de contacto puede incluir:
                     </p>
                     <ul className="list-disc pl-5 mt-2 space-y-1">
                         <li>Nombre completo.</li>
                         <li>Número de teléfono (móvil o fijo).</li>
                         <li>Tipo de servicio jurídico que requiere.</li>
-                        <li>Descripción detallada del caso.</li>
+                        <li>Un resumen del asunto que deseas consultar.</li>
                     </ul>
 
-                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">2. Finalidades del Tratamiento de los Datos</h2>
+                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">2. Para qué se utiliza la información</h2>
                     <p>
-                        Sus datos personales serán utilizados para las siguientes finalidades necesarias para el servicio que solicita:
+                        La información que envías permite atender tu solicitud y preparar el contacto con el despacho:
                     </p>
                     <ul className="list-disc pl-5 mt-2 mb-4 space-y-1">
-                        <li>Gestionar y entregar el recurso informativo gratuito solicitado (lead magnet).</li>
-                        <li>Agendar, confirmar y dar seguimiento a su cita o llamada de asesoría jurídica.</li>
-                        <li>Evaluar y analizar la descripción del caso enviado para brindarle una atención legal personalizada.</li>
+                        <li>Responder preguntas sobre los servicios del despacho y la forma de solicitar una consulta.</li>
+                        <li>Agendar, confirmar y dar seguimiento a una cita o llamada.</li>
+                        <li>Identificar el asunto, los documentos necesarios y el alcance de la consulta solicitada.</li>
                     </ul>
-                    <p className="font-medium mt-6 mb-2 text-obsidian">Finalidades secundarias y complementarias:</p>
+                    <p className="font-medium mt-6 mb-2 text-obsidian">Para el primer contacto:</p>
                     <ul className="list-disc pl-5 mt-2 space-y-1">
-                        <li><strong>Análisis estadístico e interno:</strong> Utilizaremos la información de manera agregada y desasociada para generar estadísticas internas sobre los tipos de servicios jurídicos más solicitados, origen de los usuarios y efectividad de nuestra plataforma, con el objetivo de mejorar nuestros servicios legales y la experiencia en el sitio web.</li>
+                        <li><strong>Comparte sólo lo necesario.</strong> Evita incluir datos sensibles o documentos de otras personas en el resumen inicial. Si es necesario revisar un expediente, el despacho te indicará cómo continuar.</li>
                     </ul>
 
-                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">3. Transferencia de Datos</h2>
+                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">3. Contacto por WhatsApp y servicios externos</h2>
                     <p>
-                        Le informamos que sus datos personales no serán compartidos, transferidos ni vendidos a terceros ajenos a esta firma legal. El uso de la información es estrictamente interno y confidencial.
+                        Al abrir WhatsApp, utilizas un servicio externo con sus propios términos y política de privacidad. La información incluida en el mensaje preparado pasa a ese servicio; puedes revisarla antes de enviarla al despacho. La atención jurídica puede requerir comunicar información a autoridades u otras personas cuando corresponda al asunto y a la legislación aplicable.
                     </p>
 
-                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">4. Uso de Tecnologías de Rastreo (Cookies y Píxeles)</h2>
+                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">4. Recursos utilizados al navegar</h2>
                     <p>
-                        Le informamos que actualmente este sitio web no utiliza cookies para recabar datos personales de identificación. Sin embargo, en el futuro se prevé la integración de herramientas de análisis y conversión web (como el Píxel de Meta u otras tecnologías de seguimiento publicitario) con el único fin de optimizar el rendimiento de nuestras campañas técnicas y generar las estadísticas mencionadas en el punto 2, sin que esto implique la vulneración o venta de su información de identidad.
+                        El sitio carga tipografías de Google y un mapa de Google Maps para mostrar la ubicación de la oficina. Al cargar estos recursos, los proveedores pueden recibir información técnica de la conexión y aplicar sus propias políticas de privacidad. Los enlaces a otras plataformas se rigen por las condiciones de cada proveedor.
                     </p>
 
-                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">5. Derechos ARCO y Revocación del Consentimiento</h2>
+                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">5. Acceso, corrección y otras solicitudes sobre tus datos</h2>
                     <p>
-                        Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (Acceso). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (Rectificación); que la eliminemos de nuestros registros o bases de datos cuando considere que la misma no está siendo utilizada adecuadamente (Cancelación); así como oponerse al uso de sus datos personales para fines específicos (Oposición). Estos se conocen como Derechos ARCO.
+                        Puedes solicitar acceso a los datos que tiene el despacho, corregir información inexacta, pedir su cancelación u oponerte a determinados usos, en los supuestos que permite la ley. Estos derechos se conocen como ARCO. También puedes solicitar la revocación del consentimiento cuando proceda.
                     </p>
                     <p className="mt-4">
-                        Para el ejercicio de cualquiera de los derechos ARCO o para revocar el consentimiento que nos ha otorgado, usted deberá presentar una solicitud enviando un correo electrónico a: <strong>contacto@cvilabogados.mx</strong>.
+                        Para solicitar el ejercicio de estos derechos o la revocación del consentimiento, escribe a: <strong>contacto@cvilabogados.mx</strong>.
                     </p>
-                    <p className="mt-4">La solicitud deberá contener al menos:</p>
+                    <p className="mt-4">Incluye en tu solicitud:</p>
                     <ul className="list-disc pl-5 mt-2 space-y-1">
-                        <li>Nombre completo del titular y su domicilio o medio para comunicarle la respuesta.</li>
-                        <li>Documento oficial que acredite su identidad (INE o Pasaporte).</li>
-                        <li>Descripción clara de los datos sobre los que busca ejercer alguno de los derechos ARCO.</li>
+                        <li>Tu nombre y un medio para recibir la respuesta.</li>
+                        <li>Documentación para acreditar tu identidad o, en su caso, la representación de otra persona.</li>
+                        <li>El derecho que deseas ejercer, los datos relacionados y la información que ayude a localizarlos.</li>
                     </ul>
 
-                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">6. Tiempos de Respuesta</h2>
+                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">6. Atención de las solicitudes</h2>
                     <p>
-                        Una vez recibida su solicitud completa, CVIL Alianza Estratégica en Derecho le comunicará la determinación adoptada en un plazo máximo de 20 (veinte) días hábiles, contados desde la fecha en que se recibió la solicitud. Si resulta procedente, se hará efectiva la misma dentro de los 15 (quince) días hábiles siguientes a la fecha en que se comunica la respuesta.
+                        La Ley Federal de Protección de Datos Personales en Posesión de los Particulares establece un plazo máximo de veinte días hábiles, desde la recepción de una solicitud ARCO, para comunicar la determinación. Si procede, debe hacerse efectiva dentro de los quince días hábiles siguientes a esa respuesta. Los plazos pueden ampliarse una vez por un periodo igual cuando las circunstancias lo justifiquen. Para entregar datos debe acreditarse la identidad.
                     </p>
 
-                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">7. Modificaciones al Aviso de Privacidad</h2>
+                    <h2 className="text-2xl font-medium text-obsidian mt-10 mb-4 font-serif">7. Actualizaciones de este aviso</h2>
                     <p>
-                        Este aviso de privacidad puede sufrir modificaciones, cambios o actualizaciones derivadas de nuevos requerimientos legales, de nuestras propias necesidades por los servicios que ofrecemos o de nuestras prácticas de privacidad. Cualquier cambio a este aviso de privacidad será publicado de manera visible en esta misma landing page.
+                        Las modificaciones a este aviso se publicarán en esta página. La fecha al final permite identificar la versión disponible. Si cambia la forma de contacto o el tratamiento de la información, el aviso deberá reflejarlo.
                     </p>
 
                     <p className="mt-12 text-sm text-stone font-bold uppercase tracking-widest">
-                        Última actualización: Agosto de 2026.
+                        Última actualización: 13 de noviembre de 2026.
                     </p>
                 </div>
             </div>

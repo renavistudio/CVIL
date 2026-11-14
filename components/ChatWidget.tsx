@@ -12,7 +12,7 @@ const ChatWidget: React.FC = () => {
       <button
         onClick={() => setIsVisible(false)}
         className="absolute top-0 left-0 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-white text-gray-500 shadow-md border border-gray-200 hover:text-obsidian hover:bg-gray-50 transition-colors"
-        aria-label="Cerrar chat"
+        aria-label="Ocultar acceso a WhatsApp"
       >
         <X className="w-3 h-3" />
       </button>
@@ -23,7 +23,7 @@ const ChatWidget: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="h-[60px] w-[60px] rounded-full bg-[#25D366] hover:bg-[#1ebe5d] shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)] flex items-center justify-center text-white transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 block"
-        aria-label="Contactar por WhatsApp"
+        aria-label="Escribir a CVIL por WhatsApp"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

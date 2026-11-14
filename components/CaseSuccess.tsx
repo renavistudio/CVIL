@@ -6,38 +6,38 @@ import { FileText, CheckCircle2, ArrowRight } from 'lucide-react';
 const cases: CaseStudy[] = [
     {
         id: 1,
-        category: "Derecho Societario",
-        title: "Exclusión de socio minoritario y toma de control",
-        result: "Control Operativo Recuperado",
+        category: "Socios y empresa",
+        title: "Un desacuerdo que detenía las decisiones",
+        result: "Operación restablecida",
         stat: "Asamblea validada",
-        description: "Un socio bloqueaba la toma de decisiones y el reparto de dividendos. Ejecutamos una asamblea extraordinaria, ajustamos los estatutos y logramos la exclusión legal pagando el valor contable estricto, destrabando la operación en menos de 4 meses.",
+        description: "Un conflicto entre socios impedía tomar decisiones y distribuir utilidades. El trabajo incluyó una asamblea y la revisión de los documentos de la sociedad para resolver la participación del socio involucrado. La empresa recuperó la continuidad de su operación.",
         image: "/images/cases/caso_1_societario_v3.webp"
     },
     {
         id: 2,
-        category: "Litigio Mercantil",
-        title: "Levantamiento urgente de embargo en cuentas bancarias",
-        result: "Cuentas Liberadas",
+        category: "Adeudos y litigios",
+        title: "Cuentas bancarias necesarias para pagar la nómina",
+        result: "Fondos disponibles",
         stat: "Garantía sustituida en 72h",
-        description: "Un proveedor demandó por la vía ejecutiva mercantil y congeló las cuentas operativas del cliente. Promovimos un incidente de sustitución de garantía, liberando los fondos en 72 horas para asegurar el pago de nómina.",
+        description: "Una demanda de un proveedor derivó en el embargo de las cuentas operativas de la empresa. Se tramitó la sustitución de la garantía y, en ese expediente, los fondos quedaron disponibles en 72 horas para atender el pago de nómina.",
         image: "/images/cases/caso_2_mercantil_v3.webp"
     },
     {
         id: 3,
-        category: "Laboral Patronal",
-        title: "Rescisión de contrato a Director por conflicto de interés",
-        result: "Cero Contingencia Laboral",
-        stat: "Demanda evitada",
-        description: "El directivo desvió recursos a empresas personales. Instrumentamos las actas administrativas ante notario y ejecutamos la rescisión sin responsabilidad patronal, evitando un juicio por despido injustificado de alto impacto.",
+        category: "Laboral para empresas",
+        title: "La separación de un directivo por conflicto de interés",
+        result: "Terminación documentada",
+        stat: "Expediente laboral",
+        description: "La empresa detectó que un directivo destinaba recursos a negocios personales. Se documentaron los hechos y se prepararon las actuaciones para terminar la relación laboral. En este asunto, la separación se atendió sin llegar a un juicio por despido.",
         image: "/images/cases/caso_3_laboral_v3.webp"
     },
     {
         id: 4,
-        category: "Propiedad Intelectual",
-        title: "Recuperación de marca registrada por ex-empleado",
-        result: "Titularidad Restituida",
-        stat: "Juicio de Nulidad ganado",
-        description: "Un ex-gerente registró a su nombre el logotipo y nombre comercial de la empresa. Presentamos un juicio de nulidad ante el IMPI demostrando mala fe y uso previo, recuperando así el activo intangible de la compañía.",
+        category: "Marcas",
+        title: "Una marca registrada por un excolaborador",
+        result: "Marca recuperada",
+        stat: "Procedimiento ante el IMPI",
+        description: "Un exgerente había registrado a su nombre la marca que utilizaba la empresa. Se presentó un procedimiento de nulidad ante el IMPI con pruebas del uso previo y de las circunstancias del registro. En ese caso se recuperó la titularidad de la marca.",
         image: "/images/cases/caso_4_propiedad_v3.webp"
     },
 ];
@@ -49,8 +49,8 @@ const CaseSuccess: React.FC = () => {
 
                 <div className="flex flex-col md:flex-row justify-between items-end mb-6 lg:mb-10 border-b border-gray-200 pb-8">
                     <div>
-                        <h2 className="text-4xl font-serif text-obsidian mb-2">Expedientes Recientes</h2>
-                        <p className="text-charcoal/60 text-sm">Algunos de nuestros casos recientes.</p>
+                        <h2 className="text-4xl font-serif text-obsidian mb-2">Asuntos que hemos atendido</h2>
+                        <p className="text-charcoal/60 text-sm">Resúmenes de casos con identidades reservadas.</p>
                     </div>
 
                 </div>
@@ -104,7 +104,7 @@ const CaseSuccess: React.FC = () => {
 
                 <div className="mt-12 text-center">
                     <p className="text-xs text-stone italic max-w-2xl mx-auto">
-                        * Los casos presentados ilustran resoluciones reales omitiendo datos de identidad para salvaguardar la privacidad de las partes.
+                        Los resultados corresponden a asuntos concretos. Omitimos los datos de las partes por privacidad; cada nuevo caso depende de sus hechos y documentos.
                     </p>
                 </div>
 

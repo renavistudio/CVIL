@@ -5,17 +5,17 @@ const testimonials = [
     {
         id: 1,
         text: '"La estructuración corporativa que implementaron nos dio certeza jurídica y resolvió los conflictos internos de raíz."',
-        author: '— CONSEJO DE ADMINISTRACIÓN, EMPRESA AGROINDUSTRIAL.'
+        author: '— Consejo de administración, empresa agroindustrial.'
     },
     {
         id: 2,
         text: '"Teníamos un riesgo operativo grave por contingencias laborales. Su auditoría preventiva nos ahorró millones en posibles multas."',
-        author: '— DIRECTOR GENERAL, EMPRESA EMPACADORA.'
+        author: '— Director general, empresa empacadora.'
     },
     {
         id: 3,
         text: '"Enfrentábamos un litigio mercantil que amenazaba nuestras operaciones. Su estrategia liberó nuestros fondos en tiempo récord."',
-        author: '— CEO, COMPAÑÍA LOGÍSTICA Y TRANSPORTE.'
+        author: '— Dirección general, compañía de logística y transporte.'
     }
 ];
 
@@ -35,10 +35,10 @@ const SocialProof: React.FC = () => {
             <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
                 <div className="mb-6 lg:mb-10 text-center">
                     <span className="text-xs font-bold tracking-[0.2em] text-stone uppercase mb-4 block">
-                        Lo que dicen nuestros clientes
+                        Experiencias compartidas por clientes
                     </span>
                     <h2 className="text-4xl md:text-5xl font-serif text-obsidian leading-tight">
-                        Clientes que confiaron en nosotros.
+                        La atención, en sus palabras.
                     </h2>
                 </div>
 
@@ -105,3 +105,4 @@ const SocialProof: React.FC = () => {
 };
 
 export default SocialProof;
+

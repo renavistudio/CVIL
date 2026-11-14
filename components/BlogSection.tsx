@@ -1,7 +1,7 @@
 import React from 'react';
 import { BLOG_ARTICLES } from '../data/site.js';
-const categories = ['Problemas con Socios', 'Cobranza & Pagarés', 'Defensa Patronal', 'Locales & Traspasos', 'Locales & Traspasos', 'Defensa Patronal'];
-const BLOG_POSTS = BLOG_ARTICLES.map((article, index) => ({ ...article, category: categories[index], subtitle: article.description, readTime: '3 min de lectura' }));
+const categories = ['Socios y empresas', 'Cobro de deudas', 'Laboral para empresas', 'Locales y negocios', 'Locales y negocios', 'Laboral para empresas'];
+const BLOG_POSTS = BLOG_ARTICLES.map((article, index) => ({ ...article, category: categories[index], subtitle: article.description, readTime: 'Lectura práctica' }));
 import { ArrowRight, BookOpen, Clock } from 'lucide-react';
 
 interface BlogSectionProps {
@@ -17,14 +17,14 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
             <div className="flex items-center gap-2 mb-3">
               <BookOpen className="w-4 h-4 text-[#B8860B]" />
               <span className="text-xs font-bold tracking-[0.25em] text-[#B8860B] uppercase">
-                Recursos Legales & Soluciones para Empresas
+                Antes de dar el siguiente paso
               </span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-serif text-obsidian tracking-tight">
-              Guías para tomar decisiones en tu negocio
+              Respuestas para situaciones concretas
             </h2>
             <p className="text-charcoal/70 text-sm mt-2 leading-relaxed">
-              Orientación sobre problemas entre socios, pagarés pendientes y asuntos laborales de tu empresa. Si necesitas revisar tu caso, puedes agendar una consulta con nuestro despacho en Zamora.
+              Qué documentos conviene reunir, qué decisiones requieren cuidado y cuándo pedir asesoría ante un problema con socios, un adeudo o el personal de tu empresa.
             </p>
           </div>
           <div className="mt-6 md:mt-0">
@@ -32,7 +32,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
               href="/blog"
               className="inline-flex items-center gap-2 px-6 py-3 border border-obsidian text-obsidian hover:bg-obsidian hover:text-white transition-colors duration-300 text-xs font-bold uppercase tracking-widest rounded-sm"
             >
-              Ver todas las guías <ArrowRight className="w-3.5 h-3.5" />
+              Elegir una guía <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>

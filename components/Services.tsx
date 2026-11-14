@@ -7,100 +7,100 @@ const services: (ServiceItem & { image: string, tag: string, href?: string })[] 
     {
         id: 1,
         category: 'CORPORATIVO',
-        title: "Gobierno Corporativo",
+        title: "Empresas y socios",
         href: "/abogados-corporativos-zamora",
-        description: "Establecemos los cimientos legales sólidos que toda empresa necesita para operar, crecer y recibir inversión institucional.",
-        actionText: "Ver más",
+        description: "Acompañamos decisiones sobre la empresa: cómo se administra, quién puede representarla y cómo dejar por escrito los acuerdos entre socios.",
+        actionText: "Ver asuntos de socios",
         icon: Building2,
-        tag: "Preventivo",
+        tag: "Organización",
         image: "/images/delitos de alto impacto_opt.webp",
         details: [
-            "Constitución y reestructuración de sociedades mercantiles.",
-            "Estructuración de actas de asamblea y libros corporativos.",
-            "Acuerdos de accionistas y levantamiento de capital.",
-            "Diseño de protocolos familiares para sucesión empresarial."
+            "Constitución de sociedades y cambios en su estructura.",
+            "Actas de asamblea y actualización de libros corporativos.",
+            "Acuerdos entre socios y documentación de aportaciones.",
+            "Acuerdos para la continuidad de empresas familiares."
         ]
     },
     {
         id: 2,
         category: 'MERCANTIL',
-        title: "Litigio Mercantil Complejo",
+        title: "Cobranza y conflictos comerciales",
         href: "/abogados-mercantiles-zamora",
-        description: "Representación contundente en disputas comerciales de alta cuantía, enfocada en la recuperación de activos y la resolución favorable.",
-        actionText: "Ver más",
+        description: "Si hay un adeudo o un acuerdo incumplido, revisamos los documentos, las gestiones de cobro y las posibilidades de negociar o acudir a juicio.",
+        actionText: "Ver opciones ante un adeudo",
         icon: Landmark,
-        tag: "Estratégico",
+        tag: "Adeudos",
         image: "/images/derecho civil.webp",
         details: [
-            "Recuperación estratégica de cartera vencida comercial.",
-            "Atención a juicios ejecutivos y ordinarios mercantiles.",
-            "Ejecución, retención y sustitución de garantías.",
-            "Resolución de controversias contractuales B2B."
+            "Revisión de adeudos, pagarés y comprobantes de pago.",
+            "Representación en procedimientos mercantiles.",
+            "Revisión de garantías y medidas dictadas por la autoridad.",
+            "Negociación y atención de incumplimientos entre empresas."
         ]
     },
     {
         id: 3,
         category: 'LABORAL',
-        title: "Auditoría Laboral Patronal",
+        title: "Asesoría laboral para empresas",
         href: "/abogados-laborales-zamora",
-        description: "Aseguramos el estricto cumplimiento normativo de su empresa, mitigando el riesgo de demandas y multas ante autoridades locales o federales.",
-        actionText: "Ver más",
+        description: "Ayudamos a empleadores a revisar contratos, documentar decisiones y atender conciliaciones o demandas relacionadas con su personal.",
+        actionText: "Ver asesoría para empleadores",
         icon: Users,
-        tag: "Regulatorio",
+        tag: "Empleadores",
         image: "/images/Materia familiar_opt.webp",
         details: [
-            "Auditoría preventiva y cumplimiento normativo (Compliance).",
-            "Redacción de contratos de trabajo especializados y para directivos.",
-            "Diseño e implementación de Reglamentos Interiores de Trabajo.",
-            "Terminaciones, convenios y rescisiones laborales estratégicas."
+            "Revisión de expedientes y prácticas laborales de la empresa.",
+            "Contratos de trabajo acordes con el puesto y sus condiciones.",
+            "Revisión de reglamentos interiores de trabajo.",
+            "Asesoría en terminaciones, convenios y conciliaciones."
         ]
     },
     {
         id: 4,
         category: 'PROPIEDAD',
-        title: "Propiedad Intelectual",
-        description: "Protegemos los activos intangibles de su negocio y diseñamos los instrumentos jurídicos necesarios para asegurar su exclusividad comercial.",
-        actionText: "Ver más",
+        title: "Marcas y propiedad intelectual",
+        description: "Revisamos la protección de tu marca y los acuerdos para usar, compartir o licenciar los derechos que forman parte del negocio.",
+        actionText: "Ver asuntos de marcas",
         icon: FileSignature,
-        tag: "Intangibles",
+        tag: "Marcas",
         image: "/images/office/IMG_0645.webp",
         details: [
-            "Registro de marcas, patentes y derechos de autor.",
-            "Estructuración de contratos de franquicia y licencias de uso.",
-            "Acuerdos estrictos de confidencialidad (NDA) y no competencia.",
-            "Representación en procedimientos de nulidad, infracción y piratería."
+            "Orientación y trámites sobre marcas y otros derechos de propiedad intelectual.",
+            "Contratos de franquicia y licencias de uso.",
+            "Acuerdos de confidencialidad y revisión de restricciones contractuales.",
+            "Atención de controversias sobre registros y uso de derechos."
         ]
     },
     {
         id: 5,
         category: 'FISCAL',
-        title: "Litigio Administrativo y Fiscal",
-        description: "Protegemos el patrimonio de la empresa ante actos arbitrarios de autoridades fiscales y administrativas mediante estrategias de defensa especializadas.",
-        actionText: "Ver más",
+        title: "Asuntos fiscales y administrativos",
+        description: "Cuando llega un requerimiento, una multa o una resolución, revisamos su contenido, la fecha de notificación y las alternativas para responder.",
+        actionText: "Ver asuntos ante autoridades",
         icon: Shield,
-        tag: "Defensa",
+        tag: "Autoridades",
         image: "/images/office/IMG_0585.webp",
         details: [
-            "Atención y desahogo de auditorías y requerimientos de la autoridad.",
-            "Interposición de Recursos de Revocación e Inconformidad.",
-            "Juicio de Nulidad ante el Tribunal Federal de Justicia Administrativa.",
-            "Impugnación de multas, clausuras y créditos fiscales."
+            "Atención de auditorías y requerimientos de información.",
+            "Revisión y preparación de recursos administrativos.",
+            "Representación ante el Tribunal Federal de Justicia Administrativa.",
+            "Revisión de multas, clausuras y créditos fiscales."
         ]
     },
     {
         id: 6,
         category: 'INMOBILIARIO',
-        title: "Inmobiliario Corporativo",
-        description: "Revisamos los riesgos jurídicos de la adquisición, desarrollo y comercialización de inmuebles comerciales e industriales.",
-        actionText: "Ver más",
+        title: "Contratos e inmuebles",
+        description: "Antes de comprar, arrendar o invertir en un inmueble, revisamos los documentos disponibles y las condiciones de la operación.",
+        actionText: "Ver revisión de inmuebles",
         icon: Building2,
-        tag: "Desarrollo",
+        tag: "Operaciones",
         image: "/images/derecho civil.webp",
         details: [
-            "Auditoría legal de inmuebles (Due Diligence inmobiliario).",
-            "Elaboración y revisión de contratos de compraventa y fideicomisos.",
-            "Arrendamientos corporativos e industriales complejos.",
-            "Regularización de uso de suelo y trámites ante registro público."
+            "Revisión de la documentación y situación jurídica del inmueble.",
+            "Contratos de compraventa y documentación de fideicomisos.",
+            "Arrendamientos de locales, oficinas e inmuebles industriales.",
+            "Revisión de uso de suelo y trámites registrales relacionados."
         ]
     }
 ];
@@ -131,11 +131,11 @@ const Services: React.FC = () => {
                             >
                                 <div className="h-[1px] w-12 bg-white/50"></div>
                                 <span className="text-xs font-bold tracking-[0.3em] text-white/60 uppercase">
-                                    Nuestros Servicios
+                                    En qué podemos ayudarte
                                 </span>
                             </motion.div>
                             <h2 className="text-5xl md:text-7xl font-serif text-white leading-[0.9] tracking-tight">
-                                Especialidades <span className="text-stone italic font-light">Legales.</span>
+                                Asuntos que <span className="text-stone italic font-light">atendemos.</span>
                             </h2>
                         </div>
                     </div>
@@ -185,7 +185,7 @@ const Services: React.FC = () => {
                                     <p className="text-stone text-sm font-light leading-relaxed mb-5 opacity-60 group-hover:opacity-90 transition-opacity duration-300">
                                         {service.description}
                                     </p>
-                                    {service.href ? <a href={service.href} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{`Consultar ${service.title.toLowerCase()}`}<ArrowUpRight className="w-3 h-3" /></a> : <button onClick={() => setSelected(service)} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{`Ver ${service.title.toLowerCase()}`}<ArrowUpRight className="w-3 h-3" /></button>}
+                                    {service.href ? <a href={service.href} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{service.actionText}<ArrowUpRight className="w-3 h-3" /></a> : <button onClick={() => setSelected(service)} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{service.actionText}<ArrowUpRight className="w-3 h-3" /></button>}
                                 </div>
                             </motion.div>
                         ))}
@@ -198,7 +198,7 @@ const Services: React.FC = () => {
                                 onClick={() => setShowAllMobile(true)}
                                 className="border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-white hover:text-black transition-colors"
                             >
-                                Ver más especialidades
+                                Ver otros servicios
                             </button>
                         </div>
                     )}
@@ -242,6 +242,7 @@ const Services: React.FC = () => {
                                 {/* Close button */}
                                 <button
                                     onClick={() => setSelected(null)}
+                                    aria-label="Cerrar detalle del servicio"
                                     className="absolute top-4 right-4 p-2 border border-white/10 hover:bg-white hover:text-black transition-all duration-200 text-white"
                                 >
                                     <X className="w-4 h-4" />
@@ -254,7 +255,7 @@ const Services: React.FC = () => {
 
                                     <div className="border-t border-white/10 pt-5">
                                         <span className="text-[9px] font-bold text-stone/60 uppercase tracking-widest block mb-4">
-                                            Servicios que incluye:
+                                            Trabajo que podemos realizar:
                                         </span>
                                         <ul className="space-y-3">
                                             {selected.details?.map((detail, i) => (
@@ -279,7 +280,7 @@ const Services: React.FC = () => {
                                         onClick={() => setSelected(null)}
                                         className="mt-8 w-full flex items-center justify-center bg-gold text-white text-xs font-bold uppercase tracking-widest py-4 hover:bg-white hover:text-obsidian transition-colors duration-300"
                                     >
-                                        Iniciar Consulta
+                                        Consultar este asunto
                                     </a>
                                 </div>
                             </div>

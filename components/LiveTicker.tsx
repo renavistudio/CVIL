@@ -2,13 +2,13 @@ import React from 'react';
 import { TickerItem } from '../types';
 
 const tickerItems: TickerItem[] = [
-  { id: 1, text: "Auditoría Laboral Patronal", location: "ZAMORA", time: "Hoy" },
-  { id: 2, text: "Estructuración de Socios", location: "JACONA", time: "Ayer" },
-  { id: 3, text: "Convenio Fiscal Resuelto", location: "MORELIA", time: "Ayer" },
-  { id: 4, text: "Recuperación de Cartera", location: "LA PIEDAD", time: "Esta semana" },
-  { id: 5, text: "Registro de Marca Aprobado", location: "TANGANCÍCUARO", time: "Hace 2 días" },
-  { id: 6, text: "Fusión Corporativa", location: "GUADALAJARA", time: "Hace 3 días" },
-  { id: 7, text: "Convenio Comercial Ejecutado", location: "URUAPAN", time: "Hace 3 días" },
+  { id: 1, text: "Revisión de contratos", location: "ANTES DE FIRMAR", time: "" },
+  { id: 2, text: "Acuerdos entre socios", location: "EMPRESAS", time: "" },
+  { id: 3, text: "Cobro de adeudos", location: "PAGARÉS", time: "" },
+  { id: 4, text: "Asuntos laborales", location: "EMPLEADORES", time: "" },
+  { id: 5, text: "Compra de negocios", location: "CONTRATOS", time: "" },
+  { id: 6, text: "Registro de marcas", location: "PROPIEDAD INTELECTUAL", time: "" },
+  { id: 7, text: "Representación penal", location: "PERSONAS Y EMPRESAS", time: "" },
 ];
 
 const LiveTicker: React.FC = () => {

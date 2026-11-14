@@ -56,17 +56,17 @@ const Location: React.FC = () => {
                         <div className="flex items-center gap-4 mb-4">
                             <div className="h-[1px] w-12 bg-obsidian"></div>
                             <span className="text-xs font-bold tracking-[0.3em] text-[#B8860B] uppercase">
-                                Nuestras Instalaciones
+                                Dónde encontrarnos
                             </span>
                         </div>
 
                         <h2 className="text-4xl lg:text-6xl font-serif text-obsidian leading-[1.05] tracking-tight mb-6">
-                            Sede Central <br />
+                            Nuestra oficina en <br />
                             <span className="italic font-light text-stone">Zamora, Michoacán.</span>
                         </h2>
 
                         <p className="text-charcoal/70 text-sm md:text-base font-light leading-relaxed mb-8">
-                            Nuestra oficina está en La Luneta, Zamora, Michoacán. Atendemos a clientes de todo México. Contáctanos para revisar tu asunto y acordar cómo podemos atenderte.
+                            Estamos en La Luneta, en Zamora. Atendemos asuntos de todo México; contáctanos antes de acudir para acordar la cita y la forma de atención.
                         </p>
 
                         <div className="bg-[#fafaf9] border border-gray-200 p-6 rounded-sm mb-6">
@@ -76,7 +76,7 @@ const Location: React.FC = () => {
                                 </div>
                                 <div className="flex-1">
                                     <h4 className="text-[11px] font-bold text-stone uppercase tracking-widest mb-1.5">
-                                        Dirección Principal
+                                        Dirección
                                     </h4>
                                     <p className="text-sm md:text-base font-serif text-obsidian leading-relaxed mb-3">
                                         C. Suiza 721-Piso 3, La Luneta, <br />
@@ -89,7 +89,7 @@ const Location: React.FC = () => {
                                         {copied ? (
                                             <>
                                                 <Check className="w-3.5 h-3.5 text-emerald-600" />
-                                                <span className="text-emerald-600 font-semibold">¡Dirección copiada!</span>
+                                                <span className="text-emerald-600 font-semibold">Dirección copiada</span>
                                             </>
                                         ) : (
                                             <>
@@ -105,12 +105,12 @@ const Location: React.FC = () => {
                         {/* Google Reviews Badge */}
                         <div className="mb-4">
                             <a
-                                href="https://g.page/r/CWCRS9orNOB4EBI/review"
+                                href={googleMapsUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-1.5 text-xs text-amber-800 bg-amber-50 border border-amber-200 px-3.5 py-1.5 rounded-sm hover:bg-amber-100 transition-colors font-semibold"
                             >
-                                Ver opiniones en Google · Compartir una experiencia
+                                Ubicación y opiniones en Google
                             </a>
                         </div>
 
@@ -151,7 +151,7 @@ const Location: React.FC = () => {
                                 <p className="text-stone text-xs max-w-sm mb-4">C. Suiza 721-Piso 3, La Luneta, 59689 Zamora de Hidalgo, Mich.</p>
                                 <div className="flex items-center gap-2 text-xs text-[#B8860B]/80 font-medium">
                                     <span className="w-2 h-2 rounded-full bg-[#B8860B] animate-ping"></span>
-                                    <span>Cargando mapa interactivo...</span>
+                                    <span>Cargando ubicación...</span>
                                 </div>
                             </div>
                         )}
@@ -167,7 +167,7 @@ const Location: React.FC = () => {
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 onLoad={() => setIsMapLoaded(true)}
-                                title="Ubicación CVIL Abogados en Zamora"
+                                title="Mapa de la oficina de CVIL en Zamora"
                                 className={`w-full h-full object-cover transition-opacity duration-700 contrast-[1.03] ${isMapLoaded ? 'opacity-100' : 'opacity-0'}`}
                             ></iframe>
                         )}
@@ -180,3 +180,4 @@ const Location: React.FC = () => {
 };
 
 export default Location;
+

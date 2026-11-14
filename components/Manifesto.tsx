@@ -9,7 +9,7 @@ const Manifesto: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <img width="800" height="600"
           src="/images/office/IMG_0585.webp"
-          alt="Fachada y sede corporativa de la firma legal CVIL en Zamora, Michoacán"
+          alt="Oficinas de CVIL en La Luneta, Zamora"
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/90 to-obsidian"></div>
@@ -24,25 +24,25 @@ const Manifesto: React.FC = () => {
         </div>
 
         <p className="text-stone text-xs font-bold tracking-[0.3em] uppercase mb-8">
-          Nuestra Garantía
+          La relación con el despacho
         </p>
 
         <h2 className="text-4xl md:text-6xl font-serif leading-tight mb-12 tracking-tight">
-          "Cada caso que aceptamos tiene una estrategia clara.<br />
-          <span className="text-gray-500 italic font-light">Si lo tomamos, es porque sabemos cómo resolverlo."</span>
+          Antes de avanzar, necesitas saber<br />
+          <span className="text-gray-500 italic font-light">qué se va a hacer y cuánto cuesta.</span>
         </h2>
 
         <div className="flex flex-col md:flex-row justify-center gap-12 text-left max-w-4xl mx-auto mt-16">
           <div className="flex-1 p-6 border-l border-white/10 bg-white/[0.02] backdrop-blur-sm hover:bg-white/[0.05] transition-colors">
-            <h3 className="text-lg font-bold mb-4 text-white">Transparencia Total</h3>
+            <h3 className="text-lg font-bold mb-4 text-white">Seguimiento de tu asunto</h3>
             <p className="text-gray-400 text-sm font-light leading-relaxed">
-              Le mantenemos informado del avance de su caso en todo momento. Sin tecnicismos, sin sorpresas. Sabrá exactamente qué estamos haciendo y por qué.
+              Te explicamos las actuaciones realizadas, los pendientes y los siguientes pasos en un lenguaje que puedas entender.
             </p>
           </div>
           <div className="flex-1 p-6 border-l border-white/10 bg-white/[0.02] backdrop-blur-sm hover:bg-white/[0.05] transition-colors">
-            <h3 className="text-lg font-bold mb-4 text-white">Claridad en Resultados</h3>
+            <h3 className="text-lg font-bold mb-4 text-white">Alcance y honorarios</h3>
             <p className="text-gray-400 text-sm font-light leading-relaxed">
-              Nuestros honorarios están vinculados al avance real de su caso. Su inversión está protegida por contratos de prestación de servicios claros y transparentes.
+              Antes de contratar, revisamos contigo el servicio que necesitas, qué comprende y cómo se cobraría. Las condiciones deben quedar claras para ambas partes.
             </p>
           </div>
         </div>
