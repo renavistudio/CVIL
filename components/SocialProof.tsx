@@ -74,8 +74,8 @@ const SocialProof: React.FC = () => {
                             <button 
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)} aria-label={`Ver testimonio ${idx + 1}`}
-                                className={`w-2 h-2 rounded-full transition-colors ${idx === currentIndex ? 'bg-obsidian' : 'bg-gray-300'}`}
-                            />
+                                className="w-6 h-6 inline-flex items-center justify-center"
+                            ><span className={`w-2 h-2 rounded-full transition-colors ${idx === currentIndex ? 'bg-obsidian' : 'bg-gray-300'}`} /></button>
                         ))}
                     </div>
                 </div>

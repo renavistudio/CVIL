@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import App, { preparePage } from './App';
 import './index.css';
 import { setTranslationMap } from './localize';
@@ -48,17 +48,21 @@ async function start() {
     setTranslationMap(english.default);
   }
   await preparePage(window.location.pathname);
-  createRoot(rootElement).render(
+  const application = (
     <React.StrictMode>
       <ErrorBoundary>
         <App />
       </ErrorBoundary>
     </React.StrictMode>
   );
+  if (rootElement.hasChildNodes() && document.documentElement.lang === 'es-MX') {
+    hydrateRoot(rootElement, application);
+  } else {
+    createRoot(rootElement).render(application);
+  }
 }
 
 void start().catch((error) => {
   // A failed chunk must not erase usable server-rendered content and links.
   console.error('Unable to activate page; static content preserved.', error);
 });
-

@@ -20,7 +20,7 @@ const ChatWidget: React.FC = () => {
       {/* Botón de cerrar */}
       <button
         onClick={() => setIsVisible(false)}
-        className="absolute top-0 left-0 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-white text-gray-500 shadow-md border border-gray-200 hover:text-obsidian hover:bg-gray-50 transition-colors"
+        className="absolute -top-1 -left-1 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-white text-gray-500 shadow-md border border-gray-200 hover:text-obsidian hover:bg-gray-50 transition-colors"
         aria-label="Ocultar acceso a WhatsApp"
       >
         <X className="w-3 h-3" />

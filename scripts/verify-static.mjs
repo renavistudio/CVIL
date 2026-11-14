@@ -171,6 +171,7 @@ try {
   await desktop.keyboard.press('Escape');
   assert.equal(await languageButton.getAttribute('aria-expanded'),'false');
   await languageButton.press('ArrowDown');
+  await desktop.waitForFunction(()=>document.querySelector('#cvil-language-options a')===document.activeElement);
   assert.ok(await desktop.locator('#cvil-language-options a').first().evaluate(element=>element===document.activeElement),'Language choices support keyboard focus');
   await desktop.locator('#cvil-language-options').getByRole('link',{name:'English'}).click();
   await desktop.waitForURL(origin+'/en');

@@ -60,6 +60,14 @@ try {
       throw new Error(`Invalid prerender for ${pathname}: ${JSON.stringify({ ...state, html: state.html.length, errors })}`);
     }
     if (state.canonical !== SITE.url + (pathname === '/' ? '/' : pathname)) throw new Error(`Wrong canonical: ${pathname}`);
+    // Preserve React's adjacent-text boundaries when HTML is serialized. Without
+    // separators the browser merges text nodes and hydration must replace them.
+    await page.evaluate(() => {
+      const walker = document.createTreeWalker(document.getElementById('root'), NodeFilter.SHOW_TEXT);
+      const boundaries = [];
+      while (walker.nextNode()) if (walker.currentNode.nextSibling?.nodeType === Node.TEXT_NODE) boundaries.push(walker.currentNode);
+      for (const node of boundaries) node.after(document.createComment(' '));
+    });
     let html = await page.content();
     // Only preload the hero on the page that actually displays it.
     if (meta.type !== 'home') html = html.replace(/<link[^>]+rel="preload"[^>]+as="image"[^>]*>/g, '');

@@ -83,7 +83,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                     <div className="lg:col-span-5 relative bg-obsidian text-white p-10 lg:p-16 overflow-hidden flex flex-col justify-between min-h-[500px]">
                         {/* Background Image */}
                         <div className="absolute inset-0 z-0">
-                            <img width="800" height="600"
+                            <img loading="lazy" decoding="async" width="800" height="600"
                                 src="/images/office/IMG_0559.webp"
                                 alt="Pasillo de las oficinas de CVIL"
                                 className="w-full h-full object-cover opacity-30"
@@ -107,11 +107,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
                             <div className="flex items-start space-x-6">
                                 <Phone className="w-5 h-5 text-gold mt-1" />
                                 <div>
-                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Llamadas y WhatsApp</p>
+                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Llamadas / WhatsApp</p>
                                     <a href="tel:+524432735543" className="text-xl font-serif text-white hover:text-gold transition-colors block mb-1">
-                                        +52 (443) 273-5543
+                                        443 273 5543
                                     </a>
-                                    <p className="text-[10px] text-gray-400"><a href="tel:+523511277317">Oficina: 351 127 7317</a></p>
+                                    <a href="tel:+523511277317" className="text-xl font-serif text-white hover:text-gold transition-colors block mb-1">351 127 7317</a>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-6">
@@ -274,4 +274,3 @@ const ContactForm: React.FC<ContactFormProps> = ({ onOpenPrivacy }) => {
 };
 
 export default ContactForm;
-
