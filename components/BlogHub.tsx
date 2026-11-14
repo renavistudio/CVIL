@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, MessageSquare, Phone, ArrowRight } from 'lucide-react';
 import { BLOG_ARTICLES, PRACTICE_PAGES } from '../data/site.js';
 import Footer from './Footer';
-import LanguageSwitch from './LanguageSwitch';
+import Navbar from './Navbar';
 
 type ArticleDetail = {
   category: string;
@@ -254,13 +254,8 @@ export default function BlogHub({ initialSlug }: BlogProps) {
   const relatedPosts = currentArticle ? BLOG_POSTS.filter(post => currentArticle.relatedSlugs.includes(post.slug)) : [];
   return (
     <div className="min-h-screen bg-white text-obsidian flex flex-col">
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-4 px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto flex justify-between items-center gap-4">
-          <a href={currentArticle ? '/blog' : '/'} className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-gold"><ArrowLeft className="w-4 h-4" />{currentArticle ? 'Todas las guías' : 'Inicio'}</a>
-          <div className="flex items-center gap-4"><LanguageSwitch /><a href="tel:+524432735543" className="hidden sm:flex items-center gap-2 text-sm"><Phone className="w-4 h-4 text-gold" />443 273 5543</a></div>
-        </div>
-      </header>
-      <main className="flex-1 max-w-[1200px] w-full mx-auto px-6 lg:px-12 py-10 lg:py-16">
+      <Navbar />
+      <main className="flex-1 max-w-[1200px] w-full mx-auto px-6 lg:px-12 pt-28 pb-10 lg:pt-32 lg:pb-16">
         {currentArticle ? (
           <article className="max-w-3xl mx-auto">
             <nav aria-label="Ruta de navegación" className="flex flex-wrap gap-2 text-sm mb-6"><a href="/" className="underline">Inicio</a><span aria-hidden="true">/</span><a href="/blog" className="underline">Guías legales</a><span aria-hidden="true">/</span><span aria-current="page">{currentArticle.title}</span></nav>
@@ -293,8 +288,8 @@ export default function BlogHub({ initialSlug }: BlogProps) {
               {categories.map((category) => <button key={category} onClick={() => setActiveCategory(category)} aria-pressed={activeCategory === category} className={`px-4 py-2 text-xs rounded-sm ${activeCategory === category ? 'bg-obsidian text-white' : 'bg-gray-100 text-charcoal'}`}>{category}</button>)}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post) => <a key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col border border-gray-200 hover:border-gold rounded-sm overflow-hidden shadow-sm">
-                <img src={post.imageUrl} width="400" height="225" alt={post.imageAlt} loading="lazy" className="w-full h-48 object-cover" />
+              {filteredPosts.map((post, index) => <a key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col border border-gray-200 hover:border-gold rounded-sm overflow-hidden shadow-sm">
+                <img src={post.imageUrl} width="400" height="225" alt={post.imageAlt} loading={index === 0 ? 'eager' : 'lazy'} fetchPriority={index === 0 ? 'high' : 'low'} decoding="async" className="w-full h-48 object-cover" />
                 <div className="p-6 flex-1"><p className="text-xs text-gold mb-3">{post.category}</p><h2 className="text-xl font-serif mb-4">{post.title}</h2><p className="text-sm text-charcoal mb-5">{post.excerpt}</p><span className="inline-flex items-center gap-2 text-sm">Consulta la guía<ArrowRight className="w-4 h-4" /></span></div>
               </a>)}
             </div>
@@ -305,4 +300,3 @@ export default function BlogHub({ initialSlug }: BlogProps) {
     </div>
   );
 }
-

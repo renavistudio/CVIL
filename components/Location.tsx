@@ -24,12 +24,9 @@ const Location: React.FC = () => {
             observer.observe(mapSectionRef.current);
         }
 
-        // Fallback de seguridad: si no se ha scrolleado en 4 segundos, activar
-        const timer = setTimeout(() => setShouldLoadMap(true), 4000);
 
         return () => {
             observer.disconnect();
-            clearTimeout(timer);
         };
     }, []);
 
@@ -180,4 +177,3 @@ const Location: React.FC = () => {
 };
 
 export default Location;
-

@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
 const ChatWidget: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
 
+  const [footerVisible, setFooterVisible] = useState(false);
+  useEffect(() => {
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+    const observer = new IntersectionObserver(([entry]) => setFooterVisible(entry.isIntersecting));
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-10 right-6 z-[90] w-[60px] h-[60px] transform-gpu">
+    <div hidden={footerVisible} className="fixed bottom-10 right-6 z-[90] w-[60px] h-[60px] transform-gpu">
       {/* Botón de cerrar */}
       <button
         onClick={() => setIsVisible(false)}

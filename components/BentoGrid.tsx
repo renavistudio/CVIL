@@ -52,11 +52,11 @@ const BentoGrid: React.FC = () => {
 
                     {/* Card 1: Main Strategy */}
                     <div
-                        className="md:col-span-8 relative h-[450px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
+                        className="md:col-span-8 relative min-h-[450px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
                     >
                         {/* Background Image */}
                         <div className="absolute inset-0">
-                            <img width="800" height="600"
+                            <img loading="lazy" decoding="async" width="800" height="600"
                                 src="/images/office/IMG_0645.webp"
                                 alt="Oficinas de CVIL"
                                 className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700"
@@ -65,7 +65,7 @@ const BentoGrid: React.FC = () => {
 
                         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent"></div>
 
-                        <div className="relative z-10 p-12 h-full flex flex-col justify-between">
+                        <div className="relative z-10 p-6 md:p-10 min-h-[inherit] gap-10 flex flex-col justify-between">
                             <div className="flex justify-between items-start">
                                 <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-obsidian group-hover:text-white transition-colors duration-500 shadow-sm">
                                     <Scale className="w-5 h-5" />
@@ -84,10 +84,10 @@ const BentoGrid: React.FC = () => {
 
                     {/* Card 2: Efficiency */}
                     <div
-                        className="md:col-span-4 relative h-[450px] bg-obsidian text-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
+                        className="md:col-span-4 relative min-h-[450px] bg-obsidian text-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
                     >
                         <div className="absolute inset-0">
-                            <img width="800" height="600"
+                            <img loading="lazy" decoding="async" width="800" height="600"
                                 src="/images/office/IMG_0559.webp"
                                 alt="Interior de las oficinas de CVIL"
                                 className="w-full h-full object-cover opacity-20 mix-blend-overlay group-hover:scale-110 transition-transform duration-700"
@@ -95,7 +95,7 @@ const BentoGrid: React.FC = () => {
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-br from-charcoal/90 to-black/90"></div>
 
-                        <div className="relative z-10 p-10 h-full flex flex-col justify-between">
+                        <div className="relative z-10 p-6 md:p-10 min-h-[inherit] gap-10 flex flex-col justify-between">
                             <div className="flex justify-between items-start">
                                 <div className="w-12 h-12 border border-white/10 flex items-center justify-center rounded-sm bg-white/5 backdrop-blur-sm group-hover:bg-white group-hover:text-obsidian transition-colors duration-500 shadow-sm">
                                     <TramitologiaIcon className="w-6 h-6 text-current" />
@@ -114,10 +114,10 @@ const BentoGrid: React.FC = () => {
 
                     {/* Card 3: Team */}
                     <div
-                        className="md:col-span-12 relative h-[300px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
+                        className="md:col-span-12 relative min-h-[300px] bg-white group overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl hover:scale-[1.005] transition-all duration-500"
                     >
                         <div className="absolute inset-0">
-                            <img width="800" height="600"
+                            <img loading="lazy" decoding="async" width="800" height="600"
                                 src="/images/office/IMG_0629.webp"
                                 alt="Espacio de trabajo de CVIL"
                                 className="w-full h-full object-cover opacity-10 group-hover:opacity-15 transition-opacity duration-500"
@@ -125,7 +125,7 @@ const BentoGrid: React.FC = () => {
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/95 to-transparent"></div>
 
-                        <div className="relative z-10 p-12 h-full flex flex-col md:flex-row items-center justify-between">
+                        <div className="relative z-10 p-6 md:p-10 min-h-[inherit] gap-10 flex flex-col md:flex-row items-center justify-between">
                             <div className="max-w-xl">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className="w-12 h-12 bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-obsidian group-hover:text-white transition-colors duration-500 shadow-sm rounded-sm shrink-0">

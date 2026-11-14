@@ -15,12 +15,12 @@ const Stats: React.FC = () => {
           {stats.map((stat) => (
             <div
               key={stat.id}
-              className="text-center p-6"
+              className="text-center px-2 py-6 min-w-0"
             >
-              <h3 className={`${stat.id === 2 ? "text-4xl md:text-5xl" : "text-5xl md:text-6xl"} font-serif font-bold text-obsidian mb-3}`}>
+              <h3 className={`${stat.id === 2 ? "text-4xl lg:text-5xl" : "text-4xl lg:text-6xl"} font-serif font-bold text-obsidian leading-tight mb-4`}>
                 {stat.value}
               </h3>
-              <p className="text-stone font-semibold tracking-widest uppercase text-xs">
+              <p className="leading-relaxed text-stone font-semibold tracking-widest uppercase text-xs">
                 {stat.label}
               </p>
             </div>
@@ -32,4 +32,3 @@ const Stats: React.FC = () => {
 };
 
 export default Stats;
-

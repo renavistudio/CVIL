@@ -18,7 +18,7 @@ export default function Seo() {
       element.content = content;
     };
     meta('name', 'description', page.description);
-    meta('name', 'robots', page.noindex ? 'noindex, follow' : 'index, follow');
+    meta('name', 'robots', page.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large');
     meta('property', 'og:title', page.title);
     meta('property', 'og:description', page.description);
     meta('property', 'og:url', url);
@@ -51,4 +51,3 @@ export default function Seo() {
   }, []);
   return null;
 }
-

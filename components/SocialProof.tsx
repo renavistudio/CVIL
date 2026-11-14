@@ -105,4 +105,3 @@ const SocialProof: React.FC = () => {
 };
 
 export default SocialProof;
-

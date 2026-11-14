@@ -60,7 +60,7 @@ try {
       if(officeContact>=0)assert.ok(primaryContact>=0&&primaryContact<officeContact,`${pathname}: primary 443 contact precedes office 351`);
       assert.deepEqual(state.h1,[meta.h1],`${pathname}: h1`);
       assert.equal(state.title,meta.title,`${pathname}: title`);
-      assert.equal(state.robots,meta.noindex ? 'noindex, follow' : 'index, follow',`${pathname}: indexing directive`);
+      assert.equal(state.robots,meta.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large',`${pathname}: indexing directive`);
       assert.equal(state.description,meta.description,`${pathname}: description`);
       assert.ok(!state.overflow,`${pathname}: desktop overflow`);
       for(const href of state.links.filter(href=>href?.startsWith('#') && href.length > 1 && !href.startsWith('#/'))) {
@@ -191,7 +191,8 @@ try {
   assert.ok(await mobileMenu.getByRole('link',{name:'English'}).isVisible());
   await page.getByRole('link',{name:'Blog',exact:true}).click();
   await page.waitForURL(origin+'/en/blog');
-  await page.getByRole('link',{name:'ES',exact:true}).click();
+  await page.getByRole('button',{name:'Open menu'}).click();
+  await page.getByRole('navigation',{name:'Mobile menu'}).getByRole('link',{name:'Español'}).click();
   await page.waitForURL(origin+'/blog');
   await page.goto(origin+'/en',{waitUntil:'load'});
   await page.waitForFunction(()=>document.documentElement.dataset.seoReady==='true');
@@ -223,4 +224,3 @@ try {
 } finally {
   if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));
 }
-

@@ -424,15 +424,15 @@ export function getStructuredData(pathname) {
   const organization = {
     '@type': 'LegalService', '@id': organizationId, name: SITE.name, url: SITE.url + '/',
     alternateName: ['CVIL Abogados', 'CVIL Abogados Corporativos', 'Firma CVIL Zamora'],
-    knowsAbout: ['Abogados en Zamora', 'Abogado en Zamora', 'Despacho Jurídico en Zamora', 'Derecho Corporativo en Zamora', 'Defensa Laboral Patronal'],
+    knowsAbout: ['Derecho corporativo', 'Derecho civil', 'Derecho familiar', 'Derecho mercantil', 'Derecho laboral', 'Derecho penal', 'Derecho fiscal', 'Derecho administrativo'],
     telephone: SITE.phones, email: 'contacto@cvilabogados.mx',
-    description: 'Firma jurídica con sede en Zamora, Michoacán. Derecho corporativo, mercantil, defensa laboral patronal y defensa penal.',
+    description: 'Firma jurídica para personas, familias y empresas. Oficina en Zamora, Michoacán, y atención de asuntos en todo México.',
     logo: `${SITE.url}/images/CVIL%20Logo.webp`, image: `${SITE.url}/images/og-image.webp`,
     address: { '@type': 'PostalAddress', streetAddress: 'Calle Suiza 721, Piso 3, Col. La Luneta', addressLocality: 'Zamora de Hidalgo', addressRegion: 'Michoacán', postalCode: '59689', addressCountry: 'MX' },
     geo: { '@type': 'GeoCoordinates', latitude: 19.9757124, longitude: -102.289546 },
     hasMap: SITE.map,
-    sameAs: [SITE.map, 'https://www.soloabogados.org/bufete/cvil-abogados-corporativos/20233', 'https://www.linkedin.com/company/cvil-abogados'],
-    areaServed: { '@type': 'City', name: 'Zamora de Hidalgo' },
+    sameAs: [SITE.map, 'https://www.soloabogados.org/bufete/cvil-abogados-corporativos/20233', 'https://www.linkedin.com/company/144049091', 'https://www.instagram.com/cvil.abogados/', 'https://www.facebook.com/profile.php?id=61595686288951'],
+    areaServed: { '@type': 'Country', name: 'México' },
   };
   const graph = [organization, {
     '@type': 'WebSite', '@id': `${SITE.url}/#website`, url: SITE.url + '/', name: SITE.name, inLanguage: ['es-MX', 'en'], publisher: { '@id': organizationId },
@@ -446,7 +446,7 @@ export function getStructuredData(pathname) {
   }
   if (page.type === 'practice') {
     graph.push({ '@type': 'Service', '@id': `${url}#service`, name: page.h1, description: page.description, url,
-      provider: { '@id': organizationId }, areaServed: { '@type': 'City', name: 'Zamora de Hidalgo' } });
+      provider: { '@id': organizationId }, areaServed: { '@type': 'Country', name: 'México' } });
   }
   if (page.path !== '/' && !page.noindex) {
     const crumbs = [{ '@type': 'ListItem', position: 1, name: page.lang === 'en' ? 'Home' : 'Inicio', item: SITE.url + (page.lang === 'en' ? '/en' : '/') }];
@@ -456,4 +456,3 @@ export function getStructuredData(pathname) {
   }
   return { '@context': 'https://schema.org', '@graph': graph };
 }
-

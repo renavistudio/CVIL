@@ -7,7 +7,7 @@ const Manifesto: React.FC = () => {
 
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img width="800" height="600"
+        <img loading="lazy" decoding="async" width="800" height="600"
           src="/images/office/IMG_0585.webp"
           alt="Oficinas de CVIL en La Luneta, Zamora"
           className="w-full h-full object-cover opacity-40"

@@ -345,7 +345,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                             >
                                 {/* Full-Height Left Image Column */}
                                 <div className="w-full sm:w-5/12 shrink-0 relative overflow-hidden" style={{ minHeight: '280px' }}>
-                                    <img width="800" height="600"
+                                    <img loading="lazy" decoding="async" width="800" height="600"
                                         src={currentPartner.image}
                                         alt={currentPartner.name}
                                         className="w-full h-full object-cover object-[center_top] sm:absolute sm:inset-0"
@@ -394,4 +394,3 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
 };
 
 export default Partners;
-

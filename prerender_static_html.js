@@ -3,7 +3,7 @@ import path from 'node:path';
 import http from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
-import { ROUTES, getPageMeta, SITE } from './data/site.js';
+import { ROUTES, getPageMeta, SITE, BLOG_ARTICLES } from './data/site.js';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const dist = path.join(root, 'dist');
@@ -63,6 +63,7 @@ try {
     let html = await page.content();
     // Only preload the hero on the page that actually displays it.
     if (meta.type !== 'home') html = html.replace(/<link[^>]+rel="preload"[^>]+as="image"[^>]*>/g, '');
+    if (meta.type === 'blog') html = html.replace('</head>', `<link rel="preload" as="image" fetchpriority="high" href="${BLOG_ARTICLES[0].imageUrl}"></head>`);
     // Runtime-only flag must not make a subsequent validation pass prematurely.
     html = html.replace(/ data-seo-ready="true"/, '');
     const output = pathname === '/404.html' ? path.join(dist, '404.html') : path.join(dist, pathname === '/' ? '' : pathname.slice(1), 'index.html');

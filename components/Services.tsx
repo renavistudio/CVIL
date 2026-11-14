@@ -91,6 +91,7 @@ const services: (ServiceItem & { image: string, tag: string, href?: string })[] 
         id: 6,
         category: 'INMOBILIARIO',
         title: "Contratos e inmuebles",
+        href: "/derecho-corporativo-zamora",
         description: "Antes de comprar, arrendar o invertir en un inmueble, revisamos los documentos disponibles y las condiciones de la operación.",
         actionText: "Ver revisión de inmuebles",
         icon: Building2,
@@ -140,6 +141,7 @@ const Services: React.FC = () => {
                         </div>
                     </div>
 
+                    <p className="text-gray-300 leading-relaxed max-w-2xl mb-8">También atendemos asuntos civiles, familiares y <a href="/abogados-penalistas-zamora" className="font-semibold text-white hover:text-gold">penales</a>. Si tu caso no aparece aquí, cuéntanoslo.</p>
                     {/* Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {services.map((service, idx) => (
@@ -149,11 +151,11 @@ const Services: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1, duration: 0.6 }}
-                                className={`group relative h-[420px] bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-8 transition-all duration-500 hover:border-white/20 ${!showAllMobile && idx >= 3 ? 'hidden md:flex' : 'flex'}`}
+                                className={`group relative min-h-[420px] gap-8 bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-6 lg:p-8 transition-all duration-500 hover:border-white/20 ${!showAllMobile && idx >= 3 ? 'hidden md:flex' : 'flex'}`}
                             >
                                 {/* BG image */}
                                 <div className="absolute inset-0">
-                                    <img width="800" height="600"
+                                    <img loading="lazy" decoding="async" width="800" height="600"
                                         src={service.image}
                                         alt={service.title}
                                         className="w-full h-full object-cover opacity-30 mix-blend-overlay group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
@@ -169,20 +171,14 @@ const Services: React.FC = () => {
                                 {/* Top */}
                                 <div className="relative z-10 flex justify-between items-start">
                                     <service.icon className="w-16 h-16 text-white/50 group-hover:text-white/80 transition-colors duration-300" strokeWidth={1} />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/40 border border-white/10 px-2 py-1 rounded-full group-hover:border-white/30 transition-colors mt-2">
-                                        {service.tag}
-                                    </span>
                                 </div>
 
                                 {/* Bottom */}
                                 <div className="relative z-10">
-                                    <span className="text-xs font-bold text-stone tracking-widest uppercase mb-2 block opacity-80 group-hover:text-white transition-colors">
-                                        {service.category}
-                                    </span>
                                     <h3 className="text-3xl font-serif text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
                                         {service.title}
                                     </h3>
-                                    <p className="text-stone text-sm font-light leading-relaxed mb-5 opacity-60 group-hover:opacity-90 transition-opacity duration-300">
+                                    <p className="text-gray-300 text-sm font-light leading-relaxed mb-5 transition-opacity duration-300">
                                         {service.description}
                                     </p>
                                     {service.href ? <a href={service.href} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{service.actionText}<ArrowUpRight className="w-3 h-3" /></a> : <button onClick={() => setSelected(service)} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{service.actionText}<ArrowUpRight className="w-3 h-3" /></button>}
@@ -293,4 +289,3 @@ const Services: React.FC = () => {
 };
 
 export default Services;
-

@@ -17,7 +17,7 @@ export default {
         gold: '#B8860B',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'Inter Fallback', 'sans-serif'],
         serif: ['Playfair Display', 'serif'], 
       },
       animation: {
