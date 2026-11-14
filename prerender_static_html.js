@@ -69,6 +69,9 @@ try {
       for (const node of boundaries) node.after(document.createComment(' '));
     });
     let html = await page.content();
+    // Animation features are activated when their sections become visible.
+    // Do not persist Vite's runtime preload from the prerender viewport.
+    html = html.replace(/<link[^>]+rel="modulepreload"[^>]+href="[^"]*motionFeatures[^"]*"[^>]*>/g, '');
     // Only preload the hero on the page that actually displays it.
     if (meta.type !== 'home') html = html.replace(/<link[^>]+rel="preload"[^>]+as="image"[^>]*>/g, '');
     if (meta.type === 'blog') html = html.replace('</head>', `<link rel="preload" as="image" fetchpriority="high" href="${BLOG_ARTICLES[0].imageUrl}"></head>`);

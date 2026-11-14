@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Shield, FileSignature, Building2, Users, Landmark, TreePine, X } from 'lucide-react';
 import { ServiceItem } from '../types';
 
@@ -124,7 +124,7 @@ const Services: React.FC = () => {
                     {/* Header */}
                     <div className="flex flex-col md:flex-row justify-between items-end mb-6 lg:mb-10 border-b border-white/10 pb-8">
                         <div className="max-w-2xl">
-                            <motion.div
+                            <m.div
                                 initial={false}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
@@ -134,7 +134,7 @@ const Services: React.FC = () => {
                                 <span className="text-xs font-bold tracking-[0.3em] text-white/60 uppercase">
                                     En qué podemos ayudarte
                                 </span>
-                            </motion.div>
+                            </m.div>
                             <h2 className="text-5xl md:text-7xl font-serif text-white leading-[0.9] tracking-tight">
                                 Asuntos que <span className="text-stone italic font-light">atendemos.</span>
                             </h2>
@@ -145,7 +145,7 @@ const Services: React.FC = () => {
                     {/* Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {services.map((service, idx) => (
-                            <motion.div
+                            <m.div
                                 key={service.id}
                                 initial={false}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -183,7 +183,7 @@ const Services: React.FC = () => {
                                     </p>
                                     {service.href ? <a href={service.href} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{service.actionText}<ArrowUpRight className="w-3 h-3" /></a> : <button onClick={() => setSelected(service)} className="inline-flex items-center gap-2 text-white text-xs font-semibold underline underline-offset-4">{service.actionText}<ArrowUpRight className="w-3 h-3" /></button>}
                                 </div>
-                            </motion.div>
+                            </m.div>
                         ))}
                     </div>
                     
@@ -206,7 +206,7 @@ const Services: React.FC = () => {
                 {selected && (
                     <>
                         {/* Backdrop */}
-                        <motion.div
+                        <m.div
                             key="backdrop"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -217,7 +217,7 @@ const Services: React.FC = () => {
                         />
 
                         {/* Modal */}
-                        <motion.div
+                        <m.div
                             key="modal"
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -255,7 +255,7 @@ const Services: React.FC = () => {
                                         </span>
                                         <ul className="space-y-3">
                                             {selected.details?.map((detail, i) => (
-                                                <motion.li
+                                                <m.li
                                                     key={i}
                                                     initial={{ opacity: 0, x: -8 }}
                                                     animate={{ opacity: 1, x: 0 }}
@@ -264,7 +264,7 @@ const Services: React.FC = () => {
                                                 >
                                                     <span className="text-stone mr-3 mt-1 shrink-0">›</span>
                                                     <span className="leading-snug">{detail}</span>
-                                                </motion.li>
+                                                </m.li>
                                             ))}
                                         </ul>
                                     </div>
@@ -280,7 +280,7 @@ const Services: React.FC = () => {
                                     </a>
                                 </div>
                             </div>
-                        </motion.div>
+                        </m.div>
                     </>
                 )}
             </AnimatePresence>

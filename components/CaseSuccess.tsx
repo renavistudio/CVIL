@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { CaseStudy } from '../types';
 import { FileText, CheckCircle2, ArrowRight } from 'lucide-react';
 
@@ -58,7 +58,7 @@ const CaseSuccess: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {cases.map((c, idx) => {
                         return (
-                            <motion.div
+                            <m.div
                                 key={c.id}
                                 initial={false}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +97,7 @@ const CaseSuccess: React.FC = () => {
                                     </p>
 
                                 </div>
-                            </motion.div>
+                            </m.div>
                         );
                     })}
                 </div>

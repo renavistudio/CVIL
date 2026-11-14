@@ -1,4 +1,18 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { LazyMotion } from 'framer-motion';
+const loadMotionFeatures = () => new Promise<typeof import('./motionFeatures').default>(resolve => {
+  const load = () => import('./motionFeatures').then(module => resolve(module.default));
+  if (!('IntersectionObserver' in window)) { void load(); return; }
+  const sections = document.querySelectorAll('#partners, #cases, #services');
+  if (!sections.length) { void load(); return; }
+  const observer = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      observer.disconnect();
+      void load();
+    }
+  });
+  sections.forEach(section => observer.observe(section));
+});
 import Navbar from './Navbar';
 import LiveTicker from './LiveTicker';
 import Hero from './Hero';
@@ -40,7 +54,7 @@ export default function HomePage() {
 
   const closeSocio = () => { setActiveSocio(null); window.location.hash = 'partners'; };
   return (
-    <>
+    <LazyMotion features={loadMotionFeatures} strict>
       <div className="min-h-screen bg-white text-obsidian selection:bg-stone selection:text-white font-sans antialiased">
         <Navbar />
         <main>
@@ -53,6 +67,6 @@ export default function HomePage() {
       {activeSocio && <div role="dialog" aria-modal="true" aria-label="Perfil profesional" className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-fade-in">
         <Suspense fallback={<p role="status" className="p-8 text-center">Cargando perfil…</p>}>{activeSocio === 'mario' ? <SocioMario onClose={closeSocio} /> : <SocioAlejandro onClose={closeSocio} />}</Suspense>
       </div>}
-    </>
+    </LazyMotion>
   );
 }

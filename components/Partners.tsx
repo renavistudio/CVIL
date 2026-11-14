@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 
 const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean }> = ({ onOpenSocio, paused = false }) => {
         const partners = [
@@ -255,7 +255,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                                     WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
                                 }}
                             >
-                                <motion.div 
+                                <m.div 
                                     className="absolute flex items-center gap-1.5"
                                     animate={{ x: (1 - currentIndex) * 14 + 4 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -263,7 +263,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                                     {partners.map((_, dotIdx) => {
                                         const isActive = currentIndex === dotIdx;
                                         return (
-                                            <motion.button
+                                            <m.button
                                                 key={dotIdx}
                                                 onClick={() => {
                                                     resetDelay();
@@ -282,7 +282,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                                             />
                                         );
                                     })}
-                                </motion.div>
+                                </m.div>
                             </div>
                         </div>
                     </div>
@@ -317,7 +317,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                         </button>
 
                         <AnimatePresence initial={false} mode="popLayout" custom={direction}>
-                            <motion.div
+                            <m.div
                                 key={currentIndex}
                                 custom={direction}
                                 variants={{
@@ -383,7 +383,7 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                                         </div>
                                     )}
                                 </div>
-                            </motion.div>
+                            </m.div>
                         </AnimatePresence>
                     </div>
 
