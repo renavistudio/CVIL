@@ -1,7 +1,26 @@
 import React from 'react';
 import { BLOG_ARTICLES } from '../data/site.js';
-const categories = ['Socios y empresas', 'Cobro de deudas', 'Laboral para empresas', 'Locales y negocios', 'Locales y negocios', 'Laboral para empresas'];
-const BLOG_POSTS = BLOG_ARTICLES.map((article, index) => ({ ...article, category: categories[index], subtitle: article.description, readTime: 'Lectura práctica' }));
+const CATEGORY_BY_SLUG: Record<string, string> = {
+  'como-sacar-a-un-socio-de-una-empresa-zamora': 'Socios y empresas',
+  'como-cobrar-un-pagare-en-zamora-michoacan': 'Cobro de deudas',
+  'como-despedir-a-un-trabajador-sin-demanda-zamora': 'Laboral para empresas',
+  'como-sacar-a-un-inquilino-que-no-paga-renta-zamora': 'Locales y negocios',
+  'traspaso-de-negocio-deudas-anteriores-zamora': 'Locales y negocios',
+  'citatorio-centro-de-conciliacion-laboral-zamora-que-hacer': 'Laboral para empresas',
+  'citatorio-fiscalia-zamora-ministerio-publico-que-hacer': 'Asuntos penales',
+  'denuncia-penal-por-deuda-o-conflicto-comercial-zamora': 'Asuntos penales',
+};
+const FEATURED_HOME_SLUGS = [
+  'como-sacar-a-un-socio-de-una-empresa-zamora',
+  'como-cobrar-un-pagare-en-zamora-michoacan',
+  'citatorio-fiscalia-zamora-ministerio-publico-que-hacer',
+  'como-despedir-a-un-trabajador-sin-demanda-zamora',
+  'como-sacar-a-un-inquilino-que-no-paga-renta-zamora',
+  'citatorio-centro-de-conciliacion-laboral-zamora-que-hacer',
+];
+const BLOG_POSTS = BLOG_ARTICLES
+  .filter((article) => FEATURED_HOME_SLUGS.includes(article.slug))
+  .map((article) => ({ ...article, category: CATEGORY_BY_SLUG[article.slug] || 'Guías legales', subtitle: article.description, readTime: 'Lectura práctica' }));
 import { ArrowRight, BookOpen, Clock } from 'lucide-react';
 
 interface BlogSectionProps {
@@ -93,4 +112,3 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBlog }) => {
     </section>
   );
 };
-

@@ -222,9 +222,23 @@ const Partners: React.FC<{ onOpenSocio?: (id: number) => void; paused?: boolean 
                         <h2 className="text-4xl lg:text-5xl font-serif text-obsidian leading-[1.1] mb-6">
                             Conoce al equipo.
                         </h2>
-                        <p className="text-charcoal/70 font-light text-base leading-relaxed mb-8">
+                        <p className="text-charcoal/70 font-light text-base leading-relaxed mb-6">
                             Consulta la trayectoria de nuestros socios y conoce a quienes participan en la atención de los asuntos.
                         </p>
+                        <div className="mb-8 space-y-2.5 border-l-2 border-gold/40 pl-4">
+                            <a
+                                href="/socios/mario-cervantes"
+                                className="block text-sm font-medium text-obsidian hover:text-[#B8860B] transition-colors"
+                            >
+                                Dr. Mario Enrique Cervantes Vieyra <span className="text-stone font-light">— Litigio y defensa penal</span>
+                            </a>
+                            <a
+                                href="/socios/alejandro-arriaga"
+                                className="block text-sm font-medium text-obsidian hover:text-[#B8860B] transition-colors"
+                            >
+                                Lic. Alejandro Arriaga Bastida <span className="text-stone font-light">— Empresas, contratos y litigio</span>
+                            </a>
+                        </div>
 
                         {/* Custom Slider Navigation (Arrows & Dots) — desktop only */}
                         <div className="hidden lg:flex items-center space-x-8 mt-4">

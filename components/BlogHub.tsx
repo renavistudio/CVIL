@@ -234,6 +234,85 @@ const articleDetails: Record<string, ArticleDetail> = {
     "relatedSlugs": [
       "como-despedir-a-un-trabajador-sin-demanda-zamora"
     ]
+  },
+  "citatorio-fiscalia-zamora-ministerio-publico-que-hacer": {
+    "category": "Asuntos penales",
+    "intro": "Recibir un citatorio de la Fiscalía genera preocupación inmediata, pero acudir sin entender qué documento tienes en las manos suele complicar la situación. Antes de presentarte, conviene confirmar en qué calidad te llaman, qué autoridad lo envía y qué hechos se están revisando.",
+    "excerpt": "Qué revisar antes de acudir a un citatorio del Ministerio Público o de la Fiscalía en Zamora.",
+    "sections": [
+      {
+        "title": "Verifica primero en qué carácter te están citando",
+        "text": "Un citatorio no significa lo mismo para todas las personas. Puede enviarse para recabar tu testimonio sobre hechos de terceros, para responder como persona investigada o para comparecer como parte afectada. Revisar el texto completo y los datos de identificación permite saber si te acompañará un abogado defensor o asesor jurídico antes de dar cualquier versión."
+      },
+      {
+        "title": "No te presentes sin conocer qué hay en el expediente",
+        "text": "Quien acude sin preparación corre el riesgo de declarar sobre hechos incompletos, confundir fechas o entregar documentos que perjudiquen su propia postura. Antes de acudir a la cita, tu abogado puede revisar el documento original, confirmar ante la mesa o agencia correspondiente el motivo del llamado y preparar cómo responder con orden."
+      },
+      {
+        "title": "Reúne documentos sin alterar los originales",
+        "text": "Junta el citatorio completo junto con el acta de entrega, contratos, recibos, mensajes o comprobantes vinculados con el asunto. Nunca rayes, corrijas ni entregues documentos originales sin haber guardado copias claras y sin que un especialista valore primero qué conviene aportar y qué datos requieren reserva."
+      },
+      {
+        "title": "Qué ocurre si ya existe una fecha límite o un citatorio previo",
+        "text": "Si la cita es próxima o recibiste un segundo requerimiento con advertencia de multa o comparecencia forzosa, la prioridad es notificar de inmediato a tu defensa. Actuar a tiempo permite comparecer representado, justificar cualquier imposibilidad real o preparar la postura adecuada sin improvisar el mismo día."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Código Nacional de Procedimientos Penales",
+        "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CNPP.pdf"
+      },
+      {
+        "label": "Constitución Política de los Estados Unidos Mexicanos",
+        "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+      }
+    ],
+    "ctaTitle": "Envía los datos del citatorio antes de acudir",
+    "ctaText": "Indica la autoridad, la fecha y hora señaladas y si es el primer aviso que recibes. Revisaremos qué documento tienes y cómo preparar tu comparecencia por un canal privado.",
+    "serviceLabel": "Defensa y asesoría penal en Zamora",
+    "relatedSlugs": [
+      "denuncia-penal-por-deuda-o-conflicto-comercial-zamora"
+    ]
+  },
+  "denuncia-penal-por-deuda-o-conflicto-comercial-zamora": {
+    "category": "Asuntos penales",
+    "intro": "En conflictos comerciales, societarios o laborales a veces una de las partes intenta presionar por la vía penal. También ocurre lo contrario: un socio, proveedor o empleado dispone indebidamente de dinero o mercancía y la empresa necesita actuar como víctima. Distinguir entre un desacuerdo comercial y un hecho penal define toda la estrategia.",
+    "excerpt": "Cómo distinguir un adeudo o disputa comercial de una denuncia penal y proteger tanto tu patrimonio como tu libertad.",
+    "sections": [
+      {
+        "title": "Cuándo una deuda no es un delito y cuándo sí cruza el límite",
+        "text": "No poder pagar un préstamo, retrasarse en una entrega o discutir el cierre de un negocio suele corresponder a tribunales civiles o mercantiles. Sin embargo, presentar documentos alterados, vender bienes ajenos o quedarse con recursos administrados por cuenta de otro sí puede dar origen a una denuncia penal que requiere defensa técnica desde el primer aviso."
+      },
+      {
+        "title": "Si te denunciaron por un negocio o préstamo pendiente",
+        "text": "Cuando un acreedor o exsocio acude ante la Fiscalía por un conflicto mercantil, es necesario acreditar desde el principio la relación comercial real, los pagos realizados, las facturas y los acuerdos previos. Mostrar con pruebas claras el origen comercial del conflicto evita que un desacuerdo de dinero sea presentado fuera de contexto."
+      },
+      {
+        "title": "Si tu empresa sufrió un fraude o disposición indebida de bienes",
+        "text": "Cuando alguien retiene inventario, cobra a nombre del negocio sin entregar el dinero o abusa de facultades de administración, el orden de las pruebas es determinante. Revisamos contratos, arqueos, estados de cuenta y comunicaciones para evaluar si corresponde denunciar penalmente, buscar la reparación del daño o actuar en ambas vías sin entorpecerlas."
+      },
+      {
+        "title": "Cuidar acuerdos de pago para no reabrir el conflicto",
+        "text": "Tanto en la defensa como en la asesoría a la empresa afectada, cualquier convenio de pago o reparación debe revisarse por escrito antes de entregarse o desistirse. Un acuerdo mal redactado deja obligaciones abiertas o revive el problema semanas después cuando falta el siguiente abono."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Código Nacional de Procedimientos Penales",
+        "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CNPP.pdf"
+      },
+      {
+        "label": "Ley de Amparo",
+        "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LAmp.pdf"
+      }
+    ],
+    "ctaTitle": "Cuéntanos si estás enfrentando una denuncia o sufres un daño patrimonial",
+    "ctaText": "Indica si recibiste un citatorio, si existe una operación comercial de por medio y qué documentos conservas. Evaluaremos la vía penal y su relación con tu empresa antes de dar el siguiente paso.",
+    "serviceLabel": "Defensa y asesoría penal en Zamora",
+    "relatedSlugs": [
+      "citatorio-fiscalia-zamora-ministerio-publico-que-hacer",
+      "como-sacar-a-un-socio-de-una-empresa-zamora"
+    ]
   }
 };
 
@@ -250,7 +329,7 @@ export default function BlogHub({ initialSlug }: BlogProps) {
   const currentArticle = BLOG_POSTS.find((post) => post.slug === initialSlug);
   const practice = PRACTICE_PAGES.find((item) => item.slug === currentArticle?.practiceSlug);
   const filteredPosts = activeCategory === 'Todos' ? BLOG_POSTS : BLOG_POSTS.filter((post) => post.category === activeCategory);
-  const categories = ['Todos', 'Socios y empresas', 'Cobro de deudas', 'Laboral para empresas', 'Locales y negocios'];
+  const categories = ['Todos', 'Socios y empresas', 'Cobro de deudas', 'Laboral para empresas', 'Locales y negocios', 'Asuntos penales'];
   const relatedPosts = currentArticle ? BLOG_POSTS.filter(post => currentArticle.relatedSlugs.includes(post.slug)) : [];
   return (
     <div className="min-h-screen bg-white text-obsidian flex flex-col">
@@ -262,7 +341,7 @@ export default function BlogHub({ initialSlug }: BlogProps) {
             <p className="text-xs font-bold uppercase tracking-widest text-gold mb-4">{currentArticle.category}</p>
             <h1 className="text-3xl md:text-5xl font-serif font-medium leading-tight mb-5">{currentArticle.title}</h1>
             <p className="text-lg text-charcoal mb-5">{currentArticle.intro}</p>
-            <p className="text-sm text-stone mb-8">Por <a href="/#partners" className="underline">CVIL Abogados Corporativos</a> · Actualizado el <time dateTime={currentArticle.dateModified}>{formatArticleDate(currentArticle.dateModified)}</time></p>
+            <p className="text-sm text-stone mb-8">Por <a href="/#partners" className="underline">CVIL Abogados</a> · Actualizado el <time dateTime={currentArticle.dateModified}>{formatArticleDate(currentArticle.dateModified)}</time></p>
             <img src={currentArticle.imageUrl} width="1200" height="675" alt={currentArticle.imageAlt} className="w-full h-64 md:h-96 object-cover rounded-sm mb-10" />
             <div className="space-y-8 text-charcoal leading-relaxed">
               {currentArticle.sections.map((section, i) => <section id={`seccion-${i + 1}`} key={section.title}><h2 className="text-2xl font-serif text-obsidian mb-3">{section.title}</h2><p>{section.text}</p></section>)}

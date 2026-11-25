@@ -14,6 +14,7 @@ export const BLOG_ARTICLES = [
       "Actas de asamblea, acuerdos de socios y poderes vigentes.",
       "Relación de participaciones y comunicaciones sobre el desacuerdo."
     ],
+    "datePublished": "2026-10-21",
     "dateModified": "2026-11-13"
   },
   {
@@ -29,6 +30,7 @@ export const BLOG_ARTICLES = [
       "Comprobantes de abonos y cálculo separado de capital e intereses reclamados.",
       "Datos disponibles del obligado y comunicaciones sobre el pago."
     ],
+    "datePublished": "2026-10-21",
     "dateModified": "2026-11-13"
   },
   {
@@ -44,6 +46,7 @@ export const BLOG_ARTICLES = [
       "Controles de asistencia, incidencias y comunicaciones relevantes.",
       "Cualquier convenio, renuncia o aviso relacionado con la terminación."
     ],
+    "datePublished": "2026-10-21",
     "dateModified": "2026-11-13"
   },
   {
@@ -59,6 +62,7 @@ export const BLOG_ARTICLES = [
       "Relación de mensualidades pendientes y comprobantes de pagos.",
       "Documentos del inmueble y comunicaciones con el arrendatario."
     ],
+    "datePublished": "2026-10-21",
     "dateModified": "2026-11-13"
   },
   {
@@ -74,6 +78,7 @@ export const BLOG_ARTICLES = [
       "Contratos con proveedores, trabajadores y arrendador.",
       "Documentos de representación, licencias y propuesta de compraventa."
     ],
+    "datePublished": "2026-10-21",
     "dateModified": "2026-11-13"
   },
   {
@@ -89,7 +94,40 @@ export const BLOG_ARTICLES = [
       "Identificación y documentos de representación del empleador.",
       "Contrato, nómina, antigüedad y antecedentes del desacuerdo."
     ],
+    "datePublished": "2026-10-21",
     "dateModified": "2026-11-13"
+  },
+  {
+    "slug": "citatorio-fiscalia-zamora-ministerio-publico-que-hacer",
+    "title": "Citatorio de la Fiscalía en Zamora: qué revisar antes de acudir",
+    "description": "¿Recibiste un citatorio de la Fiscalía en Zamora? Revisa en qué calidad te requieren, qué documentos reunir y cómo preparar tu defensa antes de presentarte.",
+    "seoTitle": "Citatorio de la Fiscalía en Zamora: qué hacer | CVIL Abogados",
+    "practiceSlug": "abogados-penalistas-zamora",
+    "imageUrl": "/images/blog/blog_citatorio_fiscalia_editorial.webp",
+    "imageAlt": "Sobre manila cerrado, libreta y pluma sobre una mesa de madera en una oficina luminosa",
+    "checklist": [
+      "Citatorio completo o notificación con fecha y hora de recepción.",
+      "Nombre de la autoridad, unidad o juzgado y número de expediente, si aparece.",
+      "Cronología breve de hechos y documentos relacionados, conservando sus originales."
+    ],
+    "datePublished": "2026-11-24",
+    "dateModified": "2026-11-24"
+  },
+  {
+    "slug": "denuncia-penal-por-deuda-o-conflicto-comercial-zamora",
+    "title": "Conflicto de negocios o adeudo con denuncia penal en Zamora",
+    "description": "Cuando un desacuerdo entre socios, empleados o clientes deriva en denuncia penal, revisamos contratos, hechos y opciones de defensa o reparación del daño.",
+    "seoTitle": "Denuncia penal por conflicto comercial en Zamora | CVIL",
+    "practiceSlug": "abogados-penalistas-zamora",
+    "imageUrl": "/images/blog/blog_conflicto_patrimonial_editorial.webp",
+    "imageAlt": "Dos sillones claros, una mesa de madera con expedientes cerrados y persianas iluminadas",
+    "checklist": [
+      "Contratos, pagarés, facturas o convenios que respaldan la operación.",
+      "Comprobantes de pagos, entregas, transferencias y mensajes previos.",
+      "Copia del citatorio, denuncia o número de asunto, si ya existe trámite."
+    ],
+    "datePublished": "2026-11-24",
+    "dateModified": "2026-11-24"
   }
 ];
 
@@ -310,50 +348,58 @@ export const PRACTICE_PAGES = [
     "slug": "abogados-penalistas-zamora",
     "title": "Abogados penalistas en Zamora, Michoacán | CVIL",
     "h1": "Abogados penalistas en Zamora, Michoacán",
-    "description": "Asesoría y defensa penal en Zamora, Michoacán. Revisión de citatorios, investigación y representación en juicio oral. Contacta a CVIL en La Luneta.",
-    "subtitle": "Si recibiste un citatorio o necesitas defensa en una investigación, empecemos por saber qué autoridad interviene y qué está ocurriendo.",
-    "p1": "Un citatorio, una investigación y un juicio requieren intervenciones distintas. Para orientar la primera consulta necesitamos conocer los hechos, la calidad en que interviene la persona y cualquier actuación próxima. Esa revisión permite explicar qué puede asumir el despacho y qué información hace falta para preparar la defensa.",
+    "description": "Abogado penalista en Zamora, Michoacán. Defensa en investigaciones, audiencias iniciales, juicios orales, delitos patrimoniales y asesoría a víctimas en CVIL.",
+    "subtitle": "Cuando una investigación o una acusación penal toca tu libertad, tu familia o tu patrimonio, necesitas claridad desde las primeras horas.",
+    "p1": "El área penal de CVIL en Zamora atiende tanto a personas y empresas que enfrentan una acusación o un citatorio, como a quienes sufrieron un daño en su patrimonio y buscan representación como víctimas. Revisamos quién interviene, qué existe realmente en el expediente ante la autoridad y qué paso conviene dar antes de comparecer.",
     "sections": [
       [
-        "Recibiste un citatorio",
-        "Conserva el documento completo, incluidos anexos y datos de recepción. Revisamos qué autoridad lo emitió, a quién se dirige y qué actuación señala. El contexto importa: no es suficiente conocer el título del documento o una fotografía de una sola parte."
+        "Citatorios e investigaciones ante la Fiscalía",
+        "Antes de acudir a declarar o entregar papeles sin respaldo, revisamos el citatorio completo, en qué calidad te requieren y qué hechos investiga la autoridad. Tener claro qué existe en el expediente evita compromisos innecesarios y permite preparar una defensa ordenada desde el inicio."
       ],
       [
-        "Hay una investigación o un proceso en curso",
-        "La defensa se prepara con el conocimiento del expediente y de la etapa que se atenderá. El trabajo puede incluir el estudio de los antecedentes, la preparación de actuaciones y la representación acordada. Antes de contratar, se debe precisar el alcance y la forma de dar seguimiento al asunto."
+        "Defensa y juicios orales",
+        "Representamos al cliente ante juzgados y tribunales estatales y federales desde el control de una detención y las primeras audiencias hasta la etapa de juicio oral, buscando que lleve el proceso en libertad cuando la ley lo permite, presentando pruebas de descargo y promoviendo recursos o juicios de amparo frente a decisiones injustas."
       ],
       [
-        "El problema involucra bienes o dinero",
-        "Es necesario distinguir los hechos que pueden tener relevancia penal de un incumplimiento civil o comercial. Revisamos cómo ocurrió la operación y qué documentos la respaldan. Una deuda o un desacuerdo contractual no deben presentarse automáticamente como un delito."
+        "Delitos patrimoniales y conflictos de negocio",
+        "No todo incumplimiento de contrato o deuda pendiente es delito, pero ciertos fraudes, abusos de confianza o retenciones indebidas sí escalan al ámbito penal. Separamos los hechos que corresponden al área mercantil de aquellos que requieren defensa o denuncia penal para proteger tanto tu libertad como los bienes de tu empresa."
       ]
     ],
     "situations": [
-      "Una autoridad te citó y necesitas entender qué se requiere de ti.",
-      "Buscas representación para una persona en una investigación o un proceso penal.",
-      "Necesitas consultar hechos que afectan bienes, dinero o la actividad de tu negocio."
+      "Recibiste un citatorio de la Fiscalía o una notificación para acudir ante una autoridad.",
+      "Detuvieron a un familiar o necesitas representación urgente para las primeras audiencias y el proceso penal.",
+      "Un conflicto con socios, empleados o clientes involucra denuncias por fraude, abuso de confianza o patrimonio.",
+      "Eres víctima o parte afectada y requieres asesoría jurídica para presentar una denuncia o reclamar la reparación del daño."
     ],
     "documents": [
-      "Citatorio o notificación completos, con la fecha en que se recibieron.",
-      "Datos de la autoridad y número de carpeta o expediente, si los conoces.",
-      "Una cronología breve y los documentos disponibles, sin alterar sus originales."
+      "Citatorio, boleta o notificación completos, con la fecha y hora en que se recibieron.",
+      "Datos de la autoridad o juzgado y número de expediente o folio de seguimiento, si los conoces.",
+      "Cronología breve de lo ocurrido y copias de pruebas, contratos o comprobantes, conservando siempre sus originales."
     ],
     "faqs": [
       [
-        "¿Qué información necesitan en el primer contacto?",
-        "Indica la autoridad, el tipo de documento recibido y si hay una fecha o actuación próxima. No necesitas relatar información sensible en un formulario público: el equipo confirmará disponibilidad y un canal privado para revisar el asunto."
+        "¿Conviene presentarse ante la Fiscalía sin revisar antes el citatorio?",
+        "No es recomendable acudir sin saber en qué calidad te llaman y qué hechos se revisan. Una lectura previa del documento y una consulta con tu abogado permiten acudir preparado o solicitar acceso formal al expediente antes de rendir cualquier declaración."
       ],
       [
-        "¿Pueden asegurar cómo terminará el asunto?",
-        "No se puede asegurar un resultado. Sí se puede explicar el trabajo que se propone, las cuestiones que deben revisarse y los siguientes pasos según el expediente. Esa claridad debe formar parte de la decisión de contratar."
+        "¿Pueden ayudar si la persona acaba de ser detenida o ya hay audiencias programadas?",
+        "Indica de inmediato el lugar, la autoridad y la hora de la audiencia o detención. Confirmaremos disponibilidad para revisar la situación de forma urgente y explicar los pasos que corresponden en las primeras horas."
+      ],
+      [
+        "¿Atienden solo a quienes enfrentan una acusación o también a personas afectadas?",
+        "Atendemos ambas posturas según el caso. Además de la defensa en procedimientos penales y juicios orales, representamos a personas y empresas afectadas que buscan denunciar un delito patrimonial y exigir la reparación del daño."
       ]
     ],
-    "guides": [],
+    "guides": [
+      "citatorio-fiscalia-zamora-ministerio-publico-que-hacer",
+      "denuncia-penal-por-deuda-o-conflicto-comercial-zamora"
+    ],
     "related": [
       "abogados-corporativos-zamora",
       "abogados-mercantiles-zamora"
     ],
-    "consultationTitle": "Indica si hay una actuación próxima",
-    "consultationText": "Al contactar, empieza por la fecha, la autoridad y el documento recibido. Confirmaremos si el despacho puede intervenir y cómo revisar la información de forma privada antes de acordar la representación.",
+    "consultationTitle": "Actúa con rapidez si hay una citación o fecha próxima",
+    "consultationText": "Indica al escribir la autoridad, el tipo de notificación y si existe audiencia o detención reciente. Revisaremos la urgencia y la vía privada para atender el caso con absoluta reserva antes de acordar cualquier representación.",
     "linkLabel": "Asuntos penales"
   }
 ];
@@ -398,7 +444,7 @@ export const PAGE_META = {
 
 BLOG_ARTICLES.forEach((article) => {
   PAGE_META[`/blog/${article.slug}`] = {
-    type: 'article', title: article.seoTitle, h1: article.title, description: article.description, image: article.imageUrl, dateModified: article.dateModified,
+    type: 'article', title: article.seoTitle, h1: article.title, description: article.description, image: article.imageUrl, datePublished: article.datePublished, dateModified: article.dateModified,
   };
 });
 PRACTICE_PAGES.forEach((practice) => {
@@ -417,6 +463,29 @@ export function getPageMeta(pathname) {
   if (english && base) return { path, sourcePath, lang: 'en', ...base, ...EN_META[sourcePath] };
   return { path, sourcePath, lang: 'es-MX', ...(PAGE_META[path] || { type: 'notFound', title: 'Página no encontrada | CVIL Abogados', h1: 'Página no encontrada', description: 'La página solicitada no existe. Consulta los servicios y guías de CVIL Abogados.', noindex: true }) };
 }
+const PARTNER_PROFILES = {
+  mario: {
+    name: 'Dr. Mario Enrique Cervantes Vieyra',
+    jobTitle: 'Socio fundador · Litigio penal y asesoría a víctimas',
+    image: '/images/dsc/DSC_6010_opt.webp',
+    knowsAbout: ['Litigio penal', 'Juicios orales', 'Juicio de amparo', 'Asesoría jurídica a víctimas', 'Litigio estratégico'],
+    alumniOf: ['Instituto Especializado en Ciencias Penales (IECP)', 'Universidad Contemporánea de las Américas (UNICLA)'],
+  },
+  alejandro: {
+    name: 'Lic. Alejandro Arriaga Bastida',
+    jobTitle: 'Socio fundador · Empresas, contratos y litigio',
+    image: '/images/dsc/DSC_6058_opt.webp',
+    knowsAbout: ['Derecho corporativo', 'Contratos mercantiles', 'Derecho civil y mercantil', 'Derecho familiar', 'Cobro de adeudos y pagarés'],
+    alumniOf: ['Poder Judicial del Estado de Guanajuato', 'Universidad UNIVER'],
+    credential: '11122194',
+  },
+};
+const LOCAL_AREA_SERVED = [
+  { '@type': 'City', name: 'Zamora de Hidalgo' },
+  { '@type': 'City', name: 'Zamora' },
+  { '@type': 'AdministrativeArea', name: 'Michoacán' },
+  { '@type': 'Country', name: 'México' },
+];
 export function getStructuredData(pathname) {
   const page = getPageMeta(pathname);
   const url = SITE.url + (page.path === '/' ? '/' : page.path);
@@ -424,7 +493,7 @@ export function getStructuredData(pathname) {
   const organization = {
     '@type': 'LegalService', '@id': organizationId, name: SITE.name, url: SITE.url + '/',
     alternateName: ['CVIL Abogados', 'CVIL Abogados Corporativos', 'Firma CVIL Zamora'],
-    knowsAbout: ['Derecho corporativo', 'Derecho civil', 'Derecho familiar', 'Derecho mercantil', 'Derecho laboral', 'Derecho penal', 'Derecho fiscal', 'Derecho administrativo'],
+    knowsAbout: ['Derecho corporativo', 'Derecho civil', 'Derecho familiar', 'Derecho mercantil', 'Derecho laboral', 'Derecho penal', 'Defensa penal', 'Juicios orales', 'Contratos mercantiles', 'Propiedad intelectual', 'Derecho fiscal', 'Derecho administrativo'],
     telephone: SITE.phones, email: 'contacto@cvilabogados.mx',
     description: 'Firma jurídica para personas, familias y empresas. Oficina en Zamora, Michoacán, y atención de asuntos en todo México.',
     logo: `${SITE.url}/images/CVIL%20Logo.webp`, image: `${SITE.url}/images/og-image.webp`,
@@ -432,21 +501,39 @@ export function getStructuredData(pathname) {
     geo: { '@type': 'GeoCoordinates', latitude: 19.9757124, longitude: -102.289546 },
     hasMap: SITE.map,
     sameAs: [SITE.map, 'https://www.soloabogados.org/bufete/cvil-abogados-corporativos/20233', 'https://www.linkedin.com/company/144049091', 'https://www.instagram.com/cvil.abogados/', 'https://www.facebook.com/profile.php?id=61595686288951'],
-    areaServed: { '@type': 'Country', name: 'México' },
+    areaServed: LOCAL_AREA_SERVED,
+  };
+  const webPageType = page.type === 'blog' ? 'CollectionPage' : page.type === 'profile' ? 'ProfilePage' : 'WebPage';
+  const webPage = {
+    '@type': webPageType, '@id': `${url}#webpage`, url, name: page.title,
+    description: page.description, inLanguage: page.lang, isPartOf: { '@id': `${SITE.url}/#website` }, about: { '@id': organizationId },
   };
   const graph = [organization, {
     '@type': 'WebSite', '@id': `${SITE.url}/#website`, url: SITE.url + '/', name: SITE.name, inLanguage: ['es-MX', 'en'], publisher: { '@id': organizationId },
-  }, {
-    '@type': page.type === 'blog' ? 'CollectionPage' : 'WebPage', '@id': `${url}#webpage`, url, name: page.title,
-    description: page.description, inLanguage: page.lang, isPartOf: { '@id': `${SITE.url}/#website` }, about: { '@id': organizationId },
-  }];
+  }, webPage];
+  if (page.type === 'profile' && PARTNER_PROFILES[page.profile]) {
+    const partner = PARTNER_PROFILES[page.profile];
+    const personId = `${url}#person`;
+    webPage.mainEntity = { '@id': personId };
+    webPage.about = { '@id': personId };
+    const person = {
+      '@type': 'Person', '@id': personId, name: partner.name, jobTitle: partner.jobTitle,
+      description: page.description, url, image: SITE.url + partner.image,
+      worksFor: { '@id': organizationId }, knowsAbout: partner.knowsAbout,
+      alumniOf: partner.alumniOf.map((school) => ({ '@type': 'EducationalOrganization', name: school })),
+    };
+    if (partner.credential) {
+      person.hasCredential = { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Cédula profesional federal', identifier: partner.credential };
+    }
+    graph.push(person);
+  }
   if (page.type === 'article') {
     graph.push({ '@type': 'BlogPosting', '@id': `${url}#article`, headline: page.h1, description: page.description,
-      mainEntityOfPage: { '@id': `${url}#webpage` }, author: { '@id': organizationId }, publisher: { '@id': organizationId }, inLanguage: page.lang, image: SITE.url + page.image, dateModified: page.dateModified });
+      mainEntityOfPage: { '@id': `${url}#webpage` }, author: { '@id': organizationId }, publisher: { '@id': organizationId }, inLanguage: page.lang, image: SITE.url + page.image, datePublished: page.datePublished, dateModified: page.dateModified });
   }
   if (page.type === 'practice') {
     graph.push({ '@type': 'Service', '@id': `${url}#service`, name: page.h1, description: page.description, url,
-      provider: { '@id': organizationId }, areaServed: { '@type': 'Country', name: 'México' } });
+      provider: { '@id': organizationId }, areaServed: LOCAL_AREA_SERVED });
   }
   if (page.path !== '/' && !page.noindex) {
     const crumbs = [{ '@type': 'ListItem', position: 1, name: page.lang === 'en' ? 'Home' : 'Inicio', item: SITE.url + (page.lang === 'en' ? '/en' : '/') }];

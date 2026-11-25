@@ -13,9 +13,9 @@ const Hero: React.FC = () => {
           </button>
           <div className="lg:order-1">
             <p className="text-[10px] lg:text-xs uppercase tracking-[0.22em] text-gold font-semibold mb-3">Oficina en Zamora · Atención en todo México</p>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium tracking-tight mb-4">Abogados en Zamora Michoacán</h1>
-            <p className="text-[13vw] lg:text-[6.5rem] leading-[0.9] font-serif font-medium tracking-tighter mb-6 lg:mb-8">Hablemos de <br /><span className="italic text-gray-400 font-light">tu asunto.</span></p>
-            <p className="text-base lg:text-xl text-charcoal/80 font-light leading-relaxed max-w-2xl">Hay decisiones que necesitan asesoría y problemas que requieren representación. Atendemos asuntos legales de personas, familias y empresas, desde una consulta hasta un juicio. Cuéntanos qué está pasando.</p>
+            <h1 className="text-[2.45rem] leading-[1.06] sm:text-5xl lg:text-[4.6rem] lg:leading-[1.02] font-serif font-medium tracking-tight mb-4 text-obsidian">Abogados en Zamora Michoacán</h1>
+            <p className="text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-serif font-normal tracking-tight text-charcoal/75 mb-5 lg:mb-7">Hablemos de <span className="italic text-stone font-light">tu asunto.</span></p>
+            <p className="text-base lg:text-xl text-charcoal/80 font-light leading-relaxed max-w-2xl">Si buscas un abogado en Zamora, Michoacán, aquí atendemos asuntos de personas, familias y empresas, desde una consulta preventiva hasta la representación en juicio. Escuchamos tu caso y te explicamos con claridad qué camino conviene tomar.</p>
             <div className="mt-8 lg:mt-12 flex flex-wrap gap-6 items-center">
               <a href="https://wa.me/524432735543?text=Hola%2C%20me%20interesa%20agendar%20una%20consulta%20con%20CVIL%20Abogados." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-4 bg-gold text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-obsidian transition-colors shadow-lg w-full sm:w-auto">Hablar con el despacho<ArrowRight className="w-4 h-4" /></a>
               <span className="text-[10px] text-stone uppercase tracking-widest">443 273 5543 · WhatsApp</span>

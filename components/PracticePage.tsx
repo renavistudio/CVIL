@@ -17,7 +17,7 @@ export default function PracticePage({ slug }: { slug: string }) {
               <a href="/" className="underline">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">{practice.linkLabel}</span>
             </nav>
             <div className="max-w-3xl mt-8 mb-12">
-              <p className="text-xs uppercase tracking-widest text-gold font-semibold mb-3">CVIL Abogados Corporativos</p>
+              <p className="text-xs uppercase tracking-widest text-gold font-semibold mb-3">CVIL Abogados</p>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight mb-6">{practice.h1}</h1>
               <p className="text-lg md:text-xl text-charcoal mb-6">{practice.subtitle}</p>
               <p className="text-base text-charcoal leading-relaxed mb-8">{practice.p1}</p>
@@ -56,11 +56,12 @@ export default function PracticePage({ slug }: { slug: string }) {
               <h2 className="text-2xl font-serif mb-4">{practice.consultationTitle}</h2>
               <p className="text-sm text-gray-300 leading-relaxed mb-5">{practice.consultationText}</p>
               <p className="text-sm mb-4"><span>Nuestra oficina está en Zamora; atendemos asuntos de todo México.</span><br />{SITE.address}</p>
+              <p className="text-sm text-gray-300 mb-4"><span>Área a cargo de </span><a href={slug === 'abogados-penalistas-zamora' ? '/socios/mario-cervantes' : '/socios/alejandro-arriaga'} className="text-gold underline">{slug === 'abogados-penalistas-zamora' ? 'Dr. Mario Enrique Cervantes Vieyra' : 'Lic. Alejandro Arriaga Bastida'}</a></p>
               <div className="flex flex-wrap gap-6 text-sm"><a href={SITE.map} target="_blank" rel="noopener noreferrer" className="text-gold underline">Cómo llegar al despacho</a><a href="/#partners" className="underline">Conoce al equipo de CVIL</a><a href="https://wa.me/524432735543" target="_blank" rel="noopener noreferrer" className="underline">Escribir al 443 273 5543</a><a href="tel:+523511277317" className="underline">Oficina: 351 127 7317</a></div>
             </section>
             <nav aria-label="Servicios relacionados" className="mt-10 flex flex-wrap gap-5 text-sm">
               {PRACTICE_PAGES.filter((item) => practice.related.includes(item.slug)).map((item) => <a key={item.slug} href={`/${item.slug}`} className="underline">{item.linkLabel}</a>)}
-              <a href="/blog" className="underline">Más guías para tu negocio</a>
+              <a href="/blog" className="underline">{slug === 'abogados-penalistas-zamora' ? 'Más guías legales' : 'Más guías para tu negocio'}</a>
             </nav>
           </div>
         </section>
@@ -69,4 +70,3 @@ export default function PracticePage({ slug }: { slug: string }) {
     </div>
   );
 }
-

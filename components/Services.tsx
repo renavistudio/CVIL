@@ -110,7 +110,6 @@ type ServiceWithDetails = ServiceItem & { image: string; tag: string };
 
 const Services: React.FC = () => {
     const [selected, setSelected] = useState<ServiceWithDetails | null>(null);
-    const [showAllMobile, setShowAllMobile] = useState(false);
 
     return (
         <>
@@ -141,7 +140,7 @@ const Services: React.FC = () => {
                         </div>
                     </div>
 
-                    <p className="text-gray-300 leading-relaxed max-w-2xl mb-8">También atendemos asuntos civiles, familiares y <a href="/abogados-penalistas-zamora" className="font-semibold text-white hover:text-gold">penales</a>. Si tu caso no aparece aquí, cuéntanoslo.</p>
+                    <p className="text-gray-300 leading-relaxed max-w-2xl mb-8">También brindamos <a href="/abogados-penalistas-zamora" className="font-semibold text-white underline underline-offset-4 hover:text-gold">defensa y representación en asuntos penales</a>, así como asuntos civiles y familiares. Si tu caso no aparece aquí, cuéntanoslo.</p>
                     {/* Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {services.map((service, idx) => (
@@ -151,7 +150,7 @@ const Services: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1, duration: 0.6 }}
-                                className={`group relative min-h-[420px] gap-8 bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-6 lg:p-8 transition-all duration-500 hover:border-white/20 ${!showAllMobile && idx >= 3 ? 'hidden md:flex' : 'flex'}`}
+                                className="group relative min-h-[420px] gap-8 bg-[#0A0A0A] border border-white/5 overflow-hidden flex flex-col justify-between p-6 lg:p-8 transition-all duration-500 hover:border-white/20"
                             >
                                 {/* BG image */}
                                 <div className="absolute inset-0">
@@ -186,18 +185,6 @@ const Services: React.FC = () => {
                             </m.div>
                         ))}
                     </div>
-                    
-                    {/* Botón Ver Más para Móviles */}
-                    {!showAllMobile && (
-                        <div className="mt-8 flex justify-center md:hidden">
-                            <button
-                                onClick={() => setShowAllMobile(true)}
-                                className="border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-white hover:text-black transition-colors"
-                            >
-                                Ver otros servicios
-                            </button>
-                        </div>
-                    )}
                 </div>
             </section>
 

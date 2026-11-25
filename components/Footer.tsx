@@ -16,6 +16,14 @@ const Footer: React.FC = () => (
           <a href="https://www.facebook.com/profile.php?id=61595686288951" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
         </nav>
       </div>
+      <nav aria-label="Áreas de práctica" className="footer-areas">
+        <a href="/abogados-corporativos-zamora">Empresas y socios</a>
+        <a href="/derecho-corporativo-zamora">Contratos</a>
+        <a href="/abogados-laborales-zamora">Relaciones laborales</a>
+        <a href="/abogados-mercantiles-zamora">Cobros mercantiles</a>
+        <a href="/abogados-penalistas-zamora">Asuntos penales</a>
+        <a href="/blog">Guías legales</a>
+      </nav>
       <div className="footer-bottom">
         <a href="https://maps.google.com/?cid=8710019042285162848" target="_blank" rel="noopener noreferrer">Suiza 721, piso 3 · La Luneta · Zamora, Michoacán · C.P. 59689 ↗</a>
         <div className="footer-legal"><span>© {new Date().getFullYear()} CVIL</span><a href="/aviso-de-privacidad">Privacidad</a></div>
